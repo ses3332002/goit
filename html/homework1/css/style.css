@@ -1,0 +1,56 @@
+﻿* {
+  font-family: serif;
+  font-size: 20px;
+  color: black;
+}
+
+body { 
+  background-color: #efefef; 
+}
+
+.book {
+  width: 800px;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 0px 1px 2px 1px #bbb;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 130%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.photo {
+  margin: 0 auto;
+  text-align: center;
+  margin: 10px;
+}
+
+.picture {
+  width: 200px;
+}
+
+.line {
+  text-align: center;
+  width: 90%;
+  height: 1px;
+  background: #000;
+  margin: 5px 5% 5px 5%;
+}
+
+p , 
+ul{
+  width: 80%;
+  margin: 0 10% 0 10%;
+  text-align: left;
+}
+
+a {
+  color: blue;
+}
+
+.feedback {
+  padding-bottom: 30px;		
+}
