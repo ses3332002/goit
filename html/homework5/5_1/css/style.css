@@ -126,11 +126,11 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: #4eabda;
-  display: flex; 
+  display: table-cell; 
+  vertical-align: middle; 
 }
 
 .forma {
-  display: block;
   margin: auto;
   width: 560px;
   height: 610px;
