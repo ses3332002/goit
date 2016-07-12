@@ -117,6 +117,17 @@ form .submit {
   text-decoration: none;
 }
 
+.v_line {
+  display: inline-block;
+  width: 0;
+  height: 10px;
+  vertical-align: top; 
+  border-left: 1px solid #fff;
+  margin-left: 2px;
+  margin-right: 1px;
+  margin-top: 1px;
+}
+
 .pwd_forget {
   margin-left: 8px;
   font-size: 12px;
@@ -292,12 +303,13 @@ form .submit {
 }
 
 .cont_left li {
-  height: 15px;
+  height: 15px;  
   margin-bottom: 6px;
   margin-top: 9px;
 }
 
 .cont_left a {
+  line-height: 10px;
   text-decoration: none;
   color: #465961;
 }
@@ -380,11 +392,6 @@ form .submit {
   margin-bottom: 7px;
 }
 
-.cur {
-  color: red;
-  border: 0px solid red;
-}
-
 .sub_btn {
   width: 80px;
   height: 24px;
@@ -450,6 +457,12 @@ form .submit {
   border-radius: 8px;
   display: table-cell; 
   vertical-align: middle;
+}
+
+.photo:hover {
+  border: 3px solid #b0b9bc;
+  height: 123px;
+  width: 135px;
 }
 
 .t_text1 {
@@ -524,4 +537,15 @@ footer a:hover {
   margin-top: 15px;
   color: #7f4740;
   font-size: 10px;
+}
+
+.v_line2 {
+  display: inline-block;
+  width: 0;
+  height: 11px;
+  vertical-align: top; 
+  border-left: 1px solid #bec6c9;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-top: 1px;
 }
