@@ -110,22 +110,17 @@ form .submit {
   font-size: 10.91px;
   color: #fff;
   margin-right: 9px;
+  padding-left: 4px;
+  margin-left: 2px;
+  padding-bottom: 1px;
+  padding-top: 0px;
+  border-left: 1px solid #fff;
+  line-height: 9px; 
 }
 
 .form_text a {
   color: #fff;
   text-decoration: none;
-}
-
-.v_line {
-  display: inline-block;
-  width: 0;
-  height: 10px;
-  vertical-align: top; 
-  border-left: 1px solid #fff;
-  margin-left: 2px;
-  margin-right: 1px;
-  margin-top: 1px;
 }
 
 .pwd_forget {
@@ -525,8 +520,15 @@ footer {
 footer a {
   color: #bec6c9;
   text-decoration: none;
-  margin-left: 9px;
-  margin-right: 9px;
+  margin-left: 0px;
+  padding-right: 11px;
+  border-left: 1px solid #fff;
+  padding-left: 12px;
+}
+
+footer a:first-of-type {
+  border-left: 0px solid #fff;
+  padding-left: 10px;
 }
 
 footer a:hover {
@@ -537,15 +539,4 @@ footer a:hover {
   margin-top: 15px;
   color: #7f4740;
   font-size: 10px;
-}
-
-.v_line2 {
-  display: inline-block;
-  width: 0;
-  height: 11px;
-  vertical-align: top; 
-  border-left: 1px solid #bec6c9;
-  margin-left: 1px;
-  margin-right: 1px;
-  margin-top: 1px;
 }
