@@ -520,15 +520,13 @@ footer {
 footer a {
   color: #bec6c9;
   text-decoration: none;
-  margin-left: 0px;
   padding-right: 11px;
-  border-left: 1px solid #fff;
-  padding-left: 12px;
 }
 
-footer a:first-of-type {
-  border-left: 0px solid #fff;
-  padding-left: 10px;
+footer a:not(:first-child) {
+  margin-left: 0px;
+  border-left: 1px solid #fff;
+  padding-left: 12px;
 }
 
 footer a:hover {
