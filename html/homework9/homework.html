@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,19 +11,18 @@
 	<link rel="stylesheet" href="css/style.css">
 	<!--[if lte IE 9]>
     <script src="js/html5shiv-printshiv.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+		<script src="js/nwmatcher.js"></script>
+		<script src="js/selectivizr.js"></script>
+		<link rel="stylesheet" href="css/ie8.css">	
 	<![endif]-->
+
+
 </head>
 
 <body>
 	<header>
 		<div class="header__wrapper">
-		<!--[if lte IE 8]>
-			<style type="text/css">
-				.header__wrapper { 
-			  background: url(img/header__wrapper.png) center 0 repeat-x;  
-				}
-			</style>
-		<![endif]-->		
 			<div class="header__content">	
 				<div class="header__logo">
 					<span class="logo__text1">PINGBULL</span><span class="logo__text2">ER</span>
@@ -47,29 +47,18 @@
 							<a href=#><img src = "img/slider__run.png" align="bottom" alt="Запустить"></a>
 						</div>
 						<div class="slider__bullets">
+							<form action="">
 								<input type="radio" name="option" id="1" class="slider__forma"/><label for="1"></label>
 								<input type="radio" name="option" id="2" class="slider__forma" checked/><label for="2"></label>
 								<input type="radio" name="option" id="3" class="slider__forma"/><label for="3"></label>
 								<input type="radio" name="option" id="4" class="slider__forma"/><label for="4"></label>
+							</form>
 						</div>
 				</section>
 			</div>
 		</div>
 	</header>
 	
-							<!--[if lte IE 8]>
-							<style type="text/css">
-								.slider__content { 
-								background: url(img/slider_ie.png) -5px 0px no-repeat;  
-								}
-								label {
-								width: 17px;
-								height: 17px;
-								background: url(img/header__bullet_ie.png) -0px 0px no-repeat;
-								}
-								</style>
-							<![endif]-->	
-
 	<aside class="blogs">
 		<div class="blogs__content">
 			<article class="blogs__artcl">
@@ -90,24 +79,6 @@
 		</div>
 	</aside>	
 	
-							<!--[if lte IE 8]>
-							<style type="text/css">
-								.blogs__artcl { 
-								margin-left: 42px;
-								margin-right: 42px;
-								}
-								.blogs__artcl:before {
-								background: url(img/icons.png) -67px 12px no-repeat transparent;
-								}
-								.blogs__artcl ~ .blogs__artcl:before {
-								background: url(img/icons.png) -33px 14px no-repeat transparent;
-								}								
-								.blogs__artcl ~ .blogs__artcl ~ .blogs__artcl:before {
-								background: url(img/icons.png) 1px 12px no-repeat transparent;
-								}
-							</style>
-							<![endif]-->	
-		
 	<main>
 		<div class="main__container">
 			<section class="main_content">
@@ -151,17 +122,6 @@
 				</div>
 			</section>
 		</div>
-
-							<!--[if lte IE 8]>
-							<style>
-								.slider__bullets-main label {
-								width: 17px;
-								height: 17px;
-								border: 0 solid transparent;
-								background: url(img/main__bullet_ie.png) -0px 0px no-repeat;
-								}
-							</style>
-							<![endif]-->	
 		
 		<section class="logos">
 			<div class="logos__content">
@@ -193,15 +153,6 @@
 		</section>
 	</main>
 	
-							<!--[if lte IE 8]>
-							<style type="text/css">
-								.news { 
-								margin-left: 20px;
-								margin-right: 20px;								
-								}
-							</style>
-							<![endif]-->	
-	
 	<footer>
 		<div class="footer__content">
 			<nav class="menu menu-footer">
@@ -217,6 +168,6 @@
 			</div>
 		</div>
 	</footer>
-	
+
 </body>
 </html>
