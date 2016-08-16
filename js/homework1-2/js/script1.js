@@ -1,25 +1,28 @@
 function pow(a, b) {
+  
+  var result;
+  var extent = b;
 
   // проверка на ввод чисел
 
-  if (isNaN(a * 2) || isNaN(b * 2)) {
-    alert('Ввели не число');
-    return;
+  if (!(!isNaN(parseFloat(a)) && isFinite(a)) || !(!isNaN(parseFloat(b)) && isFinite(b))) {
+    result = 'Ввели не число';
+    return result;
   }
-  
-  if ((a.indexOf('.') + 1) || (b.indexOf('.') + 1)) {
-    alert('Ввели не целое число');
-    return;
+
+  if ((parseInt(a,10) != a) || (parseInt(b,10) != b)) {
+    result = 'Ввели не целое число';
+    return result;
   }
   
   // расчет
-
-  var result = 1;
   
-  if (a === 0) {
-    result = 0;
+  if (a == 0) {
+    result = a + ' ^ ' + b + ' = 0';
     return result;
   }
+  
+  result = 1;
   
   if (b >= 0) {
     for (var i = 0; i < b; i++) {
@@ -33,10 +36,11 @@ function pow(a, b) {
     result = 1 / result;
   }
   
+  result = a + ' ^ ' + extent + ' = ' + result;
   return result;
 
 }
 
 var x = prompt('Введите число', 0);
 var n = prompt('Введите степень', 1);
-console.log(x, ' ^ ', n, ' = ', pow(x, n));
+console.log(pow(x, n));
