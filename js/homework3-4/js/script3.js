@@ -4,21 +4,18 @@ var testPage = {
 };
 
 //методы
-testPage.createPage = function() {
+testPage.createTestPage = function(numOfQuestions, numOfOptions) {
   document.body.style.fontFamily = "Arial";
   document.body.style.marginLeft = "20%";
   document.body.style.marginRight = "20%";
-  var header = document.createElement("div");
-  header.innerHTML = "<h3>Тест по программированию</h3>";
-  header.style.textAlign = "center";
-  document.body.appendChild(header);
-};
-
-testPage.createTest = function(numOfQuestions, numOfOptions) {
   var testForm = document.createElement("form");
   testForm.setAttribute("action","");
   document.body.appendChild(testForm);
-
+  var header = document.createElement("div");
+  header.innerHTML = "<h3>Тест по программированию</h3>";
+  header.style.textAlign = "center";
+  testForm.appendChild(header);
+  
   //цикл по вопросам
   var question;
   for (var q = 1; q < numOfQuestions+1; q++) {
@@ -64,5 +61,4 @@ testPage.createTest = function(numOfQuestions, numOfOptions) {
   commitButton.appendChild(commitInput);
 };
 
-testPage.createPage();
-testPage.createTest(3,3);
+testPage.createTestPage(3,3);
