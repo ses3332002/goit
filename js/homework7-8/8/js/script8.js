@@ -1,10 +1,10 @@
 $(document).ready(function(){
   $("input").hover(
     function(){
-      $("input:hover").next().show();
+      $(this).next().show();
     },
     function(){
-      $("input:hover").next().hide();
+      $(this).next().hide();
   });
   $(".helpButton").mousedown(function(){
     $(".helpButton").css({color: "white", background: "#4444c1"});
