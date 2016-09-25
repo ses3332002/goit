@@ -1,0 +1,54 @@
+.car_body {
+  width: 900px;
+  height: 200px;
+  margin: 100px auto;
+  text-align: center;
+  font-size: 0;
+}
+
+.car_element p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.car_hider {
+  overflow: hidden;
+  display: inline-block;
+  text-align: left;
+}
+
+.car_list {    
+  list-style: none;
+  width: 10000px;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+ 
+.car_element {
+  margin-right: 25px;
+  display: inline-block;
+}
+ 
+.car_arrow-left, .car_arrow-right {
+  display: inline-block;
+  border: 1px solid grey;
+  background-color: lightgrey;
+  padding: 5px;
+  margin-top: 40px;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+.car_arrow-left:hover, .car_arrow-right:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+
+.car_arrow-left {
+  margin-right: 25px;
+}
+ 
+.car_arrow-right {
+  margin-left: 25px;
+}

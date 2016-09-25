@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  padding-top: 50px;
+}
+
+.wrapper {
+  width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
+}
+
+.star {
+  height: 20px;
+  margin-top: 15px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.star span {
+  display: inline-block;
+  width: 120px;
+}
+
+.name {
+  font-weight: bold;
+}
