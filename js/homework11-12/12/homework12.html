@@ -16,23 +16,25 @@
 <body>
 	<div class="wrapper">
 		Звезды азиатских боевиков
-		<div class="star">
-			<span>Имя</span>
-			<span>Фамилия</span>
-			<span>Страна</span>
-			<span>Дата рождения</span>
-			<span>Дата смерти</span>
-		</div>
 		<script type="text/template" id="tmplt">
-			<% for (var i=0; i<data.length; i++) {%>
-			<div class="star">
-			<span class="name"><%= data[i].name %></span>
-			<span class="name"><%= data[i].lastName %></span>
-			<span class=""><%= data[i].state %></span>
-			<span class=""><%= data[i].birth %></span>
-			<span class=""><%= data[i].death %></span>
-			</div>
-			<%};%>
+			<table>
+				<tr class="star">
+					<th>Имя</th>
+					<th>Фамилия</th>
+					<th>Страна</th>
+					<th>Дата рождения</th>
+					<th>Дата смерти</th>
+				</tr>
+				<% for (var i=0; i<data.length; i++) {%>
+				<tr class="star">
+				<td class="name"><%= data[i].name %></td>
+				<td class="name"><%= data[i].lastName %></td>
+				<td class=""><%= data[i].state %></td>
+				<td class=""><%= data[i].birth %></td>
+				<td class=""><%= data[i].death %></td>
+				</tr>
+				<%};%>
+			</table>
 		</script>
 	</div>
 	
