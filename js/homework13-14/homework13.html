@@ -18,7 +18,7 @@
 	<form action="">
 		<div class="formContent">
 			<script type="text/template" id="tmplt">
-					<% for (var i=0; i<data.length; i++) {%>	
+					<% for (var i=0; i<data.length; i++) {%>
 						<div class="questionText">
 							<h4><%= (i+1) + ". " + data[i].questionText %></h4>
 							<% for (var j=0; j<data[i].questionOptions.length; j++) {%>
@@ -37,10 +37,8 @@
 	</form>
 	<div class="resultsBack"></div>
 	<div class="resultsMessage">
-		<form action="">
-			<div class="message"></div>
-			<input type="submit" value="ОК"/>
-		</form>
+		<div class="message"></div>
+		<button class="messageButton">ОК</button>
 	</div>
 </body>
 </html>
