@@ -1,0 +1,13 @@
+.wrapper {
+  font-family: sans-serif;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.block1 {
+  margin-top: 80px;
+  padding: 10px;
+  border: 2px solid black;
+  background: #eee;
+}
+
