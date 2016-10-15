@@ -1,0 +1,40 @@
+/* Carousel */
+
+.mycarousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.mycarousel_body {
+  width: 3500px;
+  position: relative;
+}
+
+.mycarousel_body img {
+  float: left;
+}
+
+.jcarousel_pagination {
+  position: absolute;
+  bottom: 20px;
+  width: 60px;
+  height: 16px;
+  left: calc(580px - 30px);
+}
+
+.jcarousel_pagination a {
+  text-decoration: none;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #fff;
+  background: #fff;
+  font-size: 0px;
+  background: #fff;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.jcarousel_pagination a.active {
+  background: #000;
+}
