@@ -1,0 +1,121 @@
+$contentWidth: 960px;
+$buttonSize: 24px;
+$siteColor1: #8a8a8a;
+$siteColor2: #1c2c71;
+$siteColor3: #22cc22;
+$siteColor4: #eee;
+$siteColor5: #ccc;
+$siteColor6: #c22;
+$siteColor7: rgba(0, 0, 90, .3);
+$siteFont: Arial, sans-serif;
+
+.wrapper {
+  width: $contentWidth;
+  margin: 0 auto;
+  font-family: $siteFont;
+  font-size: 14px;
+}
+
+.button {
+  display: inline-block;
+  width: $buttonSize;
+  height: $buttonSize;
+  border-radius: 14px;
+  font-size: 25px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+
+  &:hover {
+    background: $siteColor7;
+  }
+}
+
+body {
+  background: $siteColor4;
+
+  header {
+    @extend .wrapper;
+    font-size: 22px;
+    background: $siteColor1;
+    color: #fff;
+    text-align: center;
+    height: 70px;
+    padding-top: 40px;
+  }
+
+  .tasks {
+    @extend .wrapper;
+
+    .tasks__task {
+      height: 34px;
+      padding-left: 10px;
+      vertical-align: top;
+      font-size: 0;
+
+      .tasks__txt {
+        display: inline-block;
+        width: $contentWidth - $buttonSize - 51px;
+        padding-top: 9px;
+        font-size: 14px;
+      }
+
+      .tasks__edt {
+        @extend .button;
+        border: 2px solid $siteColor2;
+        color: $siteColor2;
+        line-height: 20px;
+        margin-top: 3px;
+        font-size: 20px;
+        vertical-align: top;
+      }
+
+      .tasks__rmv {
+        @extend .button;
+        border: 2px solid $siteColor6;
+        color: $siteColor6;
+        line-height: 20px;
+        margin-top: 3px;
+        margin-left: 2px;
+      }
+
+      &:nth-child(even) {
+        background: $siteColor5;
+      }
+    }
+  }
+
+  .service {
+    @extend .wrapper;
+    box-sizing: border-box;
+    background: $siteColor1;
+    height: 35px;
+    padding-top: 4px;
+    padding-left: 5px;
+    vertical-align: top;
+
+    .service__input {
+      height: 19px;
+      padding-left: 5px;
+      font-size: 14px;
+      margin-top: -1px;
+      width: $contentWidth - $buttonSize - 35px;
+      margin-top: 1px;
+    }
+
+    .service__add {
+      @extend .button;
+      line-height: 24px;
+      color: $siteColor3;
+      border: 2px solid $siteColor3;
+      margin-left: 5px;
+      vertical-align: top;
+    }
+
+    .service__edt {
+      color: $siteColor2;
+      border: 2px solid $siteColor2;
+      font-size: 18px;
+    }
+  }
+}
