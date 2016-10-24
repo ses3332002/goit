@@ -1,9 +1,4 @@
-define (
-  'controller',
-  [],
-  function () {
-    return {
-      controller: function(model,view) {
+      function Controller(model,view) {
         var self = this;
 
         view.elements.addBtn.on('click', function() {
@@ -31,7 +26,4 @@ define (
           view.elements.input.val($(this).prev().text());
           view.elements.addBtn.html('&#10000;').addClass('service__edt');
         });
-      }
-    };
-  }
-);
+      };

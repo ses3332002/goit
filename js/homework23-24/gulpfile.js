@@ -6,6 +6,22 @@ var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var webserver = require('gulp-webserver');
 var concatCss = require('gulp-concat-css');
+var concat = require('gulp-concat');
+var amdOptimize = require('gulp-amd-optimizer');
+
+var requireConfig = {
+  baseUrl: './src/js'
+};
+var options = {
+  umd: false
+};
+
+gulp.task('scripts', function () {
+  return gulp.src('./src/js/*.js', {base: requireConfig.baseUrl})
+    .pipe(amdOptimize(requireConfig, options))
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('./build/js'));
+});
 
 gulp.task('webserver', function() {
   gulp.src('./')

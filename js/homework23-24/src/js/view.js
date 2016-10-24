@@ -1,9 +1,4 @@
-define (
-  'view',
-  [],
-  function () {
-    return {
-      view: function(model) {
+      function View(model) {
         var self = this;
 
         self.elements = {
@@ -25,7 +20,4 @@ define (
         };
 
         self.initPage();
-      }
-    };
-  }
-);
+      };

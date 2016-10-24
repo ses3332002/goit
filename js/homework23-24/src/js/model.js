@@ -1,9 +1,4 @@
-define (
-  'model',
-  [],
-  function () {
-    return {
-      model: function(data) {
+      function Model(data) {
         var self = this;
         self.data = data;
 
@@ -25,7 +20,4 @@ define (
           self.data[itemIndex] = item;
           return self.data;
         };
-      }
-    };
-  }
-);
+      };
