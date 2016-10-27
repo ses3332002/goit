@@ -83,6 +83,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   color: #333333;
   text-align: center; }
 
+.effect1:hover, header .header__content .header__button:hover {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); }
+
+.effect2:hover, .users .users__content .users__partner .users__photo:hover, .users .users__button:hover, .banners .banners__content .banners__item:hover, .banners .banners__form .banners__button input:hover {
+  box-shadow: 0 0 8px #ff4e50; }
+
+.effect3:hover, footer .footer__content .footer__list a:hover {
+  color: #ff4e50; }
+
+.effect4:focus, .banners .banners__form .banners__search:focus {
+  box-shadow: 0 0 8px #ff4e50;
+  border: 1px solid #ff4e50; }
+
 header {
   height: 700px;
   width: 1420px;
@@ -109,6 +122,12 @@ header {
       header .header__content .header__top .header__in {
         display: inline-block;
         float: right; }
+        header .header__content .header__top .header__in .header__signup {
+          border: 2px solid #fff; }
+          header .header__content .header__top .header__in .header__signup:hover {
+            border: 2px solid #ff4e50; }
+            header .header__content .header__top .header__in .header__signup:hover a {
+              color: #ff4e50; }
     header .header__content .header__caption {
       clear: both;
       width: 500px;
@@ -159,7 +178,8 @@ header {
       vertical-align: bottom;
       padding: 15px;
       color: #fff;
-      font-size: 0; }
+      font-size: 0;
+      text-align: left; }
       .sliders .owl-carousel .item .item__step {
         font-family: "montserratregular";
         font-size: 10px;
@@ -173,12 +193,14 @@ header {
       .sliders .owl-carousel .item .item__caption {
         font-family: "montserratbold";
         font-size: 24px;
-        margin-top: 15px; }
+        margin-top: 15px;
+        text-align: left; }
       .sliders .owl-carousel .item .item__text {
         font-family: "robotolight";
         font-size: 14px;
         color: #cccccc;
-        margin-top: 15px; }
+        margin-top: 15px;
+        text-align: left; }
     .sliders .owl-carousel .item-1 {
       background-image: url(../img/slide1.jpg); }
     .sliders .owl-carousel .item-2 {
@@ -223,7 +245,8 @@ header {
         height: 120px;
         width: 120px;
         border-radius: 60px;
-        overflow: hidden; }
+        overflow: hidden;
+        cursor: pointer; }
         .users .users__content .users__partner .users__photo img {
           vertical-align: middle;
           text-align: center; }
@@ -265,9 +288,13 @@ header {
         font-size: 14px;
         color: #666666; }
   .users .users__button {
-    margin-top: 40px; }
+    margin-top: 40px;
+    border: 2px solid #ff4e50; }
     .users .users__button:hover {
-      border: 2px solid #ff4e50; }
+      border: 2px solid #ff4e50;
+      background-color: #ff4e50; }
+      .users .users__button:hover a {
+        color: #fff; }
     .users .users__button a {
       text-decoration: none;
       color: #ff4e50;
@@ -285,13 +312,22 @@ header {
     margin: 0;
     padding: 0; }
     .banners .banners__content .banners__item {
-      width: 300px;
-      height: 308px;
+      width: 298px;
+      height: 306px;
       border-radius: 3px;
       float: left;
-      margin-left: 0px;
       overflow: hidden;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      display: inline-block;
+      font-family: "montserratbold";
+      font-size: 22px;
+      color: #fff; }
+      .banners .banners__content .banners__item span {
+        display: inline-block;
+        width: inherit;
+        vertical-align: top;
+        text-align: center;
+        margin-top: -160px; }
     .banners .banners__content .banners__item-width2 {
       width: 620px; }
   .banners .banners__form {

@@ -80,6 +80,31 @@ $siteColor9: #cccccc;
   text-align: center;
 }
 
+.effect1 {
+  &:hover {
+    box-shadow: 0 0 8px rgba(255,255,255,.8);;
+  }
+}
+
+.effect2 {
+  &:hover {
+    box-shadow: 0 0 8px $siteColor1;
+  }
+}
+
+.effect3 {
+  &:hover {
+    color: $siteColor1;
+  }
+}
+
+.effect4 {
+  &:focus {
+    box-shadow: 0 0 8px $siteColor1;
+    border: 1px solid $siteColor1;
+  }
+}
+
 header {
   height: 700px;
   width: $contentWidth5;
@@ -121,6 +146,13 @@ header {
 
         .header__signup {
           @extend .header_top_log;
+            border: 2px solid $siteColor8;
+            &:hover {
+              border: 2px solid $siteColor1;
+              a {
+                color: $siteColor1;
+              }
+            }
         }
       }
     }
@@ -143,6 +175,7 @@ header {
     }
 
     .header__button {
+      @extend .effect1;
       width: 225px;
       height: 35px;
       margin: 30px auto;
@@ -151,6 +184,9 @@ header {
       text-align: center;
       cursor: pointer;
 
+      // &:hover {
+      // }
+
       a {
         text-decoration: none;
         color: $siteColor8;
@@ -158,6 +194,7 @@ header {
         font-size: 14px;
         line-height: 34px;
       }
+
     }
   }
 }
@@ -193,6 +230,7 @@ header {
       padding: 15px;
       color: $siteColor8;
       font-size: 0;
+      text-align: left;
 
       .item__step {
         font-family: $siteFont2;
@@ -210,6 +248,7 @@ header {
         font-family: $siteFont1;
         font-size: 24px;
         margin-top: 15px;
+        text-align: left;
       }
 
       .item__text {
@@ -217,6 +256,7 @@ header {
         font-size: 14px;
         color: $siteColor9;
         margin-top: 15px;
+        text-align: left;
       }
     }
 
@@ -280,11 +320,13 @@ header {
       }
 
       .users__photo {
+        @extend .effect2;
         display: inline-block;
         height: 120px;
         width: 120px;
         border-radius: 60px;
         overflow: hidden;
+        cursor: pointer;
 
         img {
           vertical-align: middle;
@@ -359,10 +401,16 @@ header {
 
   .users__button {
     @extend .header_top_log;
+    @extend .effect2;
     margin-top: 40px;
+    border: 2px solid $siteColor1;
 
     &:hover {
       border: 2px solid $siteColor1;
+      background-color: $siteColor1;
+      a {
+        color: $siteColor8;
+      }
     }
 
     a {
@@ -392,21 +440,33 @@ header {
     // text-align: center;
 
     .banners__item {
-      width: 300px;
-      height: 308px;
+      @extend .effect2;
+      width: 298px;
+      height: 306px;
       border-radius: 3px;
       float: left;
-      margin-left: 0px;
-      // margin-right: 20px;
+      // border: 1px solid $siteColor1;
       overflow: hidden;
       margin-bottom: 20px;
+      display: inline-block;
+      font-family: $siteFont1;
+      font-size: 22px;
+      color: $siteColor8;
+
+      // &:hover {
+      // }
+
+      span {
+        display: inline-block;
+        width: inherit;
+        vertical-align: top;
+        text-align: center;
+        margin-top: -160px;
+      }
     }
 
     .banners__item-width2 {
       width: 620px;
-      // height: 308px;
-      // margin-left: 20px;
-      // margin-right: 20px;
     }
   }
 
@@ -420,6 +480,7 @@ header {
     }
 
     .banners__search {
+      @extend .effect4;
       width: 240px;
       height: 40px;
       border: 1px solid $siteColor6;
@@ -428,13 +489,20 @@ header {
       font-size: 14px;
       color: $siteColor6;
       padding-left: 15px;
+
+      // &:focus {
+      //   border: 1px solid $siteColor1;
+      //   // background-color: $siteColor1;
+      // }
     }
 
     .banners__button {
       display: inline-block;
       margin-left: 10px;
 
+
       input {
+        @extend .effect2;
         border: 0 solid $siteColor1;
         width: 160px;
         height: 40px;
@@ -444,6 +512,8 @@ header {
         cursor: pointer;
         font-family: $siteFont1;
         font-size: 14px;
+        // &:hover {
+        // }
       }
     }
   }
@@ -477,6 +547,10 @@ footer {
       a {
         text-decoration: none;
         color: $siteColor7;
+        @extend .effect3;
+
+        // &:hover {
+        // }
       }
 
       p {
