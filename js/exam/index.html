@@ -10,9 +10,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="build/js/script.min.js"></script>
 	<!--[if lte IE 9]>
-		<script src="build/js/html5shiv.min.js"></script>
-		<script src="build/js/css3-mediaqueries.min.js"></script>
-		<link rel="stylesheet" href="js/css/ie8.css">
+		<script src="build/js/html5shiv.js"></script>
+		<script src="build/js/css3-mediaqueries.js"></script>
+		<link rel="stylesheet" href="build/css/ie8.css">
 	<![endif]-->
 </head>
 
@@ -20,7 +20,9 @@
 	<header>
 		<div class="header__content">
 			<div class="header__top">
-				<img src = "./build/img/header__logo.png" alt="Лого" class="header__logo">
+				<div class="header__logo">
+					<img src = "./build/img/header__logo.png" alt="Лого">
+				</div>
 				<div class="header__in">
 					<div class="header__login"><a href="#">Log in</a></div>
 					<div class="header__signup"><a href="#">Sign up</a></div>
@@ -165,13 +167,13 @@
 	<footer>
 		<div class="footer__content">
 			<img src = "./build/img/footer__logo.png" alt="Лого" class="footer__logo">
-			<div class="footer__list">
+			<nav class="footer__list">
 				<p class="footer__caption">Company</p>
-				<a href="#">About</a><br>
-				<a href="#">Contacts</a><br>
-				<a href="#">Press</a><br>
-				<a href="#">Blog</a>
-			</div>
+				<div class="footer__menu"><a href="#">About</a></div>
+				<div class="footer__menu"><a href="#">Contacts</a></div>
+				<div class="footer__menu"><a href="#">Press</a></div>
+				<div class="footer__menu"><a href="#">Blog</a></div>
+			</nav>
 			<div class="footer__list">
 				<p class="footer__caption">Partners</p>
 			</div>

@@ -35,6 +35,9 @@ gulp.task('prepare_css', function() {
       }))
       .pipe(cleanCSS())
       .pipe(gulp.dest(''));
+  gulp.src('./src/css/ie8.css')
+      .pipe(cleanCSS())
+      .pipe(gulp.dest('./build/css/'));
 });
 
 gulp.task('prepare_js', function() {
@@ -48,7 +51,7 @@ gulp.task('sass', function () {
   gulp.src('./src/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
-      browsers: ['last 5 versions'],
+      browsers: ['last 4 versions'],
       cascade: false
     }))
     .pipe(gulp.dest('./src/css'));

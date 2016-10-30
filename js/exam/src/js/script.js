@@ -31,6 +31,7 @@ $(document).ready(function(){
   };
 
 //поисковый запрос по нажатию кнопки
+jQuery.support.cors = true;
   var searchPhrase;
   $('.banners__submit').click(function() {
     searchPhrase=$('.banners__search').val();
@@ -43,10 +44,10 @@ $(document).ready(function(){
       for (var i=0; i < data.images.length; i++) {
         textString = data.images[i].word.charAt(0).toUpperCase() + data.images[i].word.substring(1);
         if (i===4 || i===5) {
-          $('.banners__item:eq(' + i + ')').append('<img src=' +data.images[i].imageurl +' height="308" width="620"><span>' + textString + '</span>');
+          $('.banners__item:eq(' + i + ')').append('<img src=' +data.images[i].imageurl +' height="100%" width="100%"><span>' + textString + '</span>');
           continue;
         };
-      $('.banners__item:eq(' + i + ')').append('<img src=' +data.images[i].imageurl +' height="308" width="300"><span>' + textString + '</span>');
+      $('.banners__item:eq(' + i + ')').append('<img src=' +data.images[i].imageurl +' height="100%" width="100%"><span>' + textString + '</span>');
       }
     }, type: 'get'});
   };
@@ -57,10 +58,14 @@ $(document).ready(function(){
 //инициализация плитки
   $('.banners__content').masonry({
     // options
+    containerWidth: 940,
     itemSelector: '.banners__item',
-    // singleMode: false,
+    isAnimated: true,
+    isFitWidth: true,
+    animationOptions: {
+    duration: 400
+  },
     isResizable: true,
-    // columnWidth: '.banners__content',
-    gutter: 20
+    gutterWidth: 20
   });
 });
