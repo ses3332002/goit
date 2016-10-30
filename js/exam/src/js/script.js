@@ -39,15 +39,15 @@ jQuery.support.cors = true;
   });
   var textString;
   var searchRequest = function(searchKey) {
-    $.ajax({url:'http://api.pixplorer.co.uk/image?word=' + searchKey + '&amount=7?size=s', dataType: 'json', success: function(data) {
+    $.ajax({url:'https://pixabay.com/api/?key=3641379-74c8a2cbe60ef2c004424aed7&q=' + searchKey + '&image_type=photo&per_page=7&orientation=vertical', dataType: 'json', success: function(data) {
       $('.banners__item').html('');
-      for (var i=0; i < data.images.length; i++) {
-        textString = data.images[i].word.charAt(0).toUpperCase() + data.images[i].word.substring(1);
+      for (var i=0; i < 7; i++) {
+        textString = data.hits[i].tags.charAt(0).toUpperCase() + data.hits[i].tags.substring(1);
         if (i===4 || i===5) {
-          $('.banners__item:eq(' + i + ')').append('<img src=' +data.images[i].imageurl +' height="100%" width="100%"><span>' + textString + '</span>');
+          $('.banners__item:eq(' + i + ')').append('<img src=' +data.hits[i].webformatURL +'><span>' + textString + '</span>');
           continue;
         };
-      $('.banners__item:eq(' + i + ')').append('<img src=' +data.images[i].imageurl +' height="100%" width="100%"><span>' + textString + '</span>');
+      $('.banners__item:eq(' + i + ')').append('<img src=' +data.hits[i].webformatURL +'><span>' + textString + '</span>');
       }
     }, type: 'get'});
   };

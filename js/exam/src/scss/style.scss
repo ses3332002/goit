@@ -604,6 +604,11 @@ header {
         width: $contentWidth6;
       }
 
+      img {
+        width: 100%;
+        height: auto;
+      }
+
       span {
         position: absolute;
         top: 50%;

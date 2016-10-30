@@ -469,6 +469,9 @@ header {
       @media screen and (min-width: 940px) {
         .banners .banners__content .banners__item {
           width: 300px; } }
+      .banners .banners__content .banners__item img {
+        width: 100%;
+        height: auto; }
       .banners .banners__content .banners__item span {
         position: absolute;
         top: 50%;
