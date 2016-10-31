@@ -31,7 +31,7 @@ $(document).ready(function(){
   };
 
 //поисковый запрос по нажатию кнопки
-jQuery.support.cors = true;
+// jQuery.support.cors = true;
   var searchPhrase;
   $('.banners__submit').click(function() {
     searchPhrase=$('.banners__search').val();
