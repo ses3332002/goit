@@ -39,7 +39,7 @@ $(document).ready(function(){
   });
   var textString;
   var searchRequest = function(searchKey) {
-    $.ajax({url:'http://pixabay.com/api/?key=3641379-74c8a2cbe60ef2c004424aed7&q=' + searchKey + '&image_type=photo&per_page=7&orientation=vertical', dataType: 'json', success: function(data) {
+    $.ajax({url:'https://pixabay.com/api/?key=3641379-74c8a2cbe60ef2c004424aed7&q=' + searchKey + '&image_type=photo&per_page=7&orientation=vertical', dataType: 'json', success: function(data) {
       $('.banners__item').html('');
       for (var i=0; i < 7; i++) {
         textString = data.hits[i].tags.charAt(0).toUpperCase() + data.hits[i].tags.substring(1);
