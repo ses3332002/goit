@@ -66,6 +66,7 @@ jQuery.support.cors = true;
     duration: 400
   },
     isResizable: true,
-    gutterWidth: 20
+    // gutterWidth: 20
+    gutter: 20
   });
 });
