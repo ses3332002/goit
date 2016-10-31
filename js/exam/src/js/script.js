@@ -31,7 +31,6 @@ $(document).ready(function(){
   };
 
 //поисковый запрос по нажатию кнопки
-// jQuery.support.cors = true;
   var searchPhrase;
   $('.banners__submit').click(function() {
     searchPhrase=$('.banners__search').val();
@@ -39,18 +38,26 @@ $(document).ready(function(){
   });
   var textString;
   var searchRequest = function(searchKey) {
-    $.ajax({url:'http://pixabay.com/api/?key=3641379-74c8a2cbe60ef2c004424aed7&q=' + searchKey + '&image_type=photo&per_page=7&orientation=vertical', dataType: 'json', success: function(data) {
-      $('.banners__item').html('');
-      for (var i=0; i < 7; i++) {
-        textString = data.hits[i].tags.charAt(0).toUpperCase() + data.hits[i].tags.substring(1);
-        if (i===4 || i===5) {
-          $('.banners__item:eq(' + i + ')').append('<img src=' +data.hits[i].webformatURL +'><span>' + textString + '</span>');
-          continue;
+    var searchUrl = 'https://pixabay.com/api/?key=3641379-74c8a2cbe60ef2c004424aed7&q=' + searchKey + '&image_type=photo&per_page=7&orientation=vertical';
+    var XHR = ('onload' in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+      var xhr = new XHR();
+      xhr.open('GET', searchUrl, true);
+      xhr.onload = function() {
+          $('.banners__item').html('');
+          for (var i=0; i < 7; i++) {
+            textString = JSON.parse(this.responseText).hits[i].tags.charAt(0).toUpperCase() + JSON.parse(this.responseText).hits[i].tags.substring(1);
+            if (i===4 || i===5) {
+              $('.banners__item:eq(' + i + ')').append('<img src=' +JSON.parse(this.responseText).hits[i].webformatURL +'><span>' + textString + '</span>');
+              continue;
+            };
+          $('.banners__item:eq(' + i + ')').append('<img src=' +JSON.parse(this.responseText).hits[i].webformatURL +'><span>' + textString + '</span>');
         };
-      $('.banners__item:eq(' + i + ')').append('<img src=' +data.hits[i].webformatURL +'><span>' + textString + '</span>');
-      }
-    }, type: 'get'});
-  };
+      };
+      xhr.onerror = function() {
+        console.log('Ошибка ' + this.status);
+      };
+      xhr.send();
+};
 
 //случайный поиск при инициализации
   searchRequest('');
