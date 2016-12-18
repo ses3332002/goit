@@ -30,12 +30,18 @@ $(document).ready(function(){
     $('.banners__content').append('<div class="banners__item"></div>');
   };
 
-//поисковый запрос по нажатию кнопки
+//поисковый запрос по нажатию кнопки или Enter
   jQuery.support.cors = true;
   var searchPhrase;
   $('.banners__submit').click(function() {
     searchPhrase=$('.banners__search').val();
     searchRequest(searchPhrase);
+  });
+  $('.banners__search').keydown(function(eventObject) {
+    if (eventObject.which==13) {
+      searchPhrase=$('.banners__search').val();
+      searchRequest(searchPhrase);
+    };
   });
   var textString;
   var searchRequest = function(searchKey) {
@@ -44,10 +50,10 @@ $(document).ready(function(){
       for (var i=0; i < 7; i++) {
         textString = data.hits[i].tags.charAt(0).toUpperCase() + data.hits[i].tags.substring(1);
         if (i===4 || i===5) {
-          $('.banners__item:eq(' + i + ')').append('<img src=' +data.hits[i].webformatURL +'><span>' + textString + '</span>');
+          $('.banners__item:eq(' + i + ')').append('<a href="' + data.hits[i].pageURL + '"><img src=' +data.hits[i].webformatURL +'></a><span>' + textString + '</span>');
           continue;
         };
-      $('.banners__item:eq(' + i + ')').append('<img src=' +data.hits[i].webformatURL +'><span>' + textString + '</span>');
+      $('.banners__item:eq(' + i + ')').append('<a href="' + data.hits[i].pageURL + '"><img src=' +data.hits[i].webformatURL +'></a><span>' + textString + '</span>');
       }
     }, type: 'get'});
   };
