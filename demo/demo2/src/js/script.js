@@ -1,25 +1,30 @@
 $(document).ready(function(){
 
 //инициализация слайдеров
-  // $('.owl-carousel').owlCarousel(
-  //   {
-  //     loop: true,
-  //     margin: 1,
-  //     nav: true,
-  //     navText: '',
-  //     responsive: {
-  //       320: {
-  //         items:1
-  //       },
-  //       748: {
-  //         items:1
-  //       },
-  //       940: {
-  //         items:1
-  //       }
-  //     }
-  //   }
-  // );
+  $('.owl-carousel').owlCarousel(
+    {
+      loop: true,
+      margin: 1,
+      // nav: true,
+      nav: false,
+      dots: true,
+      animateOut: 'fadeOut',
+      // autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      responsive: {
+        320: {
+          items:1
+        },
+        748: {
+          items:1
+        },
+        940: {
+          items:1
+        }
+      }
+    }
+  );
 
 //создание разметки для плитки
   // for (var j=0; j < 7; j++) {
