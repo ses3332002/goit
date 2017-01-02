@@ -2395,7 +2395,8 @@ body {
           display: inline-block; } }
       body .phonecall .phonecall__face img {
         vertical-align: middle;
-        text-align: center; }
+        text-align: center;
+        width: 120px; }
   body .phonecall-2 {
     background: #ffa507; }
     body .phonecall-2 .phonecall__face-2 {
@@ -2567,6 +2568,7 @@ body {
         border-radius: 4px;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         display: table-cell;
         vertical-align: top;
         padding: 20px;
@@ -2575,7 +2577,10 @@ body {
         color: #fff;
         text-shadow: 0px 0px 4px #000;
         height: 280px;
-        overflow: hidden; }
+        overflow: hidden;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0); }
         @media screen and (min-width: 748px) {
           body .sliders .owl-carousel .item {
             height: 450px; } }
@@ -2629,3 +2634,27 @@ body {
         background-image: url(../img/slide3.jpg); }
       body .sliders .owl-carousel .item-4 {
         background-image: url(../img/slide4.jpg); }
+      body .sliders .owl-carousel .owl-controls {
+        display: none; }
+        @media screen and (min-width: 748px) {
+          body .sliders .owl-carousel .owl-controls {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            bottom: 55px; } }
+        body .sliders .owl-carousel .owl-controls .owl-dots {
+          margin: 0 auto; }
+          body .sliders .owl-carousel .owl-controls .owl-dots .owl-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background: #1cd7ad;
+            margin-right: 10px;
+            display: inline-block; }
+          body .sliders .owl-carousel .owl-controls .owl-dots .active {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            margin-right: 10px;
+            display: inline-block;
+            background: #4e73db; }

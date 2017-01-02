@@ -306,6 +306,7 @@ body {
       img {
         vertical-align: middle;
         text-align: center;
+        width: 120px;
       }
     }
   }
@@ -559,6 +560,7 @@ body {
         border-radius: 4px;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         display: table-cell;
         vertical-align: top;
         padding: 20px;
@@ -568,6 +570,9 @@ body {
         text-shadow: 0px 0px 4px $siteColor5;
         height: 280px;
         overflow: hidden;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
         @media screen and (min-width: $contentWidth2) {
           height: 450px;
           // border-radius: 40px;
@@ -605,8 +610,8 @@ body {
             }
             //
             // img {
-              // vertical-align: middle;
-              // text-align: center;
+            //   vertical-align: middle;
+            //   text-align: center;
             // }
           }
         }
@@ -647,37 +652,37 @@ body {
         background-image: url(../img/slide4.jpg);
       }
 
-      // .owl-controls {
-      //   display: none;
-      //   @media screen and (min-width: $contentWidth2) {
-      //     display: inline-block;
-      //     position: relative;
-      //     width: 100%;
-      //     bottom: 75px;
-      //   }
-      //
-      //   .owl-dots {
-      //     margin: 0 auto;
-      //
-      //     .owl-dot {
-      //       width: 20px;
-      //       height: 20px;
-      //       border-radius: 100%;
-      //       background: $siteColor2;
-      //       margin-right: 10px;
-      //       display: inline-block;
-      //     }
-      //
-      //     .active {
-      //       width: 20px;
-      //       height: 20px;
-      //       border-radius: 100%;
-      //       margin-right: 10px;
-      //       display: inline-block;
-      //       background: $siteColor4;
-      //     }
-      //   }
-      // }
+      .owl-controls {
+        display: none;
+        @media screen and (min-width: $contentWidth2) {
+          display: inline-block;
+          position: relative;
+          width: 100%;
+          bottom: 55px;
+        }
+
+        .owl-dots {
+          margin: 0 auto;
+
+          .owl-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background: $siteColor2;
+            margin-right: 10px;
+            display: inline-block;
+          }
+
+          .active {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            margin-right: 10px;
+            display: inline-block;
+            background: $siteColor4;
+          }
+        }
+      }
     }
   }
 }
