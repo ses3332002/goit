@@ -74,4 +74,4 @@ gulp.task('watch', function () {
 //   spriteData.css.pipe(gulp.dest('./src/css/'));
 // });
 
-gulp.task('default', ['imagemin', 'prepare_js', 'sass', 'prepare_css', 'webserver', 'watch']);
+gulp.task('default', ['prepare_js', 'sass', 'prepare_css', 'webserver', 'watch']);

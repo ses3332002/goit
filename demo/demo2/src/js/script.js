@@ -26,6 +26,36 @@ $(document).ready(function(){
     }
   );
 
+//прогресс-бар и анимация
+  $(window).on("scroll resize", function() {
+    var o = $(window).scrollTop() / ($(document).height() - $(window).height());
+    $('.progress__bar').css({"width": (100 * o | 0) + "%"});
+    $('.progress').value = o;
+    if (($(window).scrollTop() < 460) || ($(window).width() < 748)) {
+      $('.back__top').hide();
+    } else {
+      $('.back__top').show();
+    };
+    if (($(window).scrollTop() < 560) || ($(window).width() < 748)) {
+      $('.easy123__part:eq(0)').delay(500).animate({
+        opacity: 1
+      }, 'slow');
+      $('.easy123__part:eq(1)').delay(1000).animate({
+        opacity: 1
+      }, 'slow');
+      $('.easy123__part:eq(2)').delay(1500).animate({
+        opacity: 1
+      }, 'slow');
+    };
+  });
+
+//кнопка вверх
+  $('.back__up').click(function() {
+    $('body,html').animate({scrollTop:0}, 'slow');
+    return false;
+  });
+
+
 //создание разметки для плитки
   // for (var j=0; j < 7; j++) {
   //   if (j===4 || j===5) {

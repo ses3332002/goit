@@ -120,7 +120,6 @@ $fontSize10: 180px;
 body {
   min-width: $contentWidth3;
   font-family: 'helvetica neue';
-  // height: 3000px;
 
   .header {
     margin: 0 auto;
@@ -363,6 +362,7 @@ body {
       margin-bottom: 0;
       // height: 190px;
       padding: 10px;
+      opacity: 0;
       @media screen and (min-width: $contentWidth2) {
         width: $contentWidth2 / 3;
         margin-top: 30px;
@@ -682,6 +682,74 @@ body {
             background: $siteColor4;
           }
         }
+      }
+    }
+  }
+
+  .progress {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: $siteColor4;
+    z-index: 10;
+
+    .progress__container {
+      width: 100%;
+      background: transparent;
+      position: fixed;
+      height: 5px;
+      display: block;
+
+      .progress__bar {
+        background: $siteColor4;
+        width: 0%;
+        display: block;
+        height: inherit;
+      }
+    }
+  }
+
+  .back__top {
+    position: fixed;
+    bottom: 10px;
+    // padding: 0px;
+    // left: 50%;
+    right: 20px;
+    // margin-left: 500px;
+    z-index: 20;
+    display: none;
+
+    a {
+      width: 50px;
+      // height: 30px;
+      // background: rgba(0, 0, 0, 0.25);
+      display: block;
+      text-decoration: none;
+      // -webkit-transition: all 0.4s ease;
+      // -moz-transition: all 0.4s ease;
+      // -ms-transition: all 0.4s ease;
+      // -o-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+      text-align: center;
+      color: $siteColor4;
+
+      &:hover {
+        // height: 70px;
+        // background: $siteColor4;
+        // -webkit-transition: all 0.4s ease;
+        // -moz-transition: all 0.4s ease;
+        // -ms-transition: all 0.4s ease;
+        // -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        color: $siteColor7;
+        // content: '<i class="fa fa-arrow-circle-o-up fa-inverse fa-3x"></i>';
       }
     }
   }
