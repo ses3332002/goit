@@ -412,13 +412,14 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     color: $siteColor8;
-    // background-attachment: fixed;
 
     .action__content {
       @extend .content;
       font-size: 0;
       vertical-align: top;
       padding-top: 30px;
+
+
 
       .action__slogan {
         // max-width: $contentWidth2 / 2;
@@ -445,6 +446,7 @@ body {
           // margin-bottom: 295px;
         }
 
+
         span {
           white-space: nowrap;
           font-weight: bold;
@@ -459,11 +461,9 @@ body {
           padding: 30px;
           font-size: $fontSize4;
           margin-bottom: 40px;
-
         }
       }
       .action__counter {
-        // max-width: $contentWidth2 / 2;
         box-sizing: border-box;
         vertical-align: top;
         @media screen and (min-width: $contentWidth2) {
@@ -471,8 +471,6 @@ body {
           max-width: $contentWidth2 / 2;
           width: 100%;
           margin-bottom: 50px;
-          // font-size: $fontSize3;
-          // line-height: $fontSize4;
           margin-top: 120px;
           padding-left: 20px;
           padding-right: 20px;
@@ -480,24 +478,19 @@ body {
         @media screen and (min-width: $contentWidth1) {
           max-width: $contentWidth1 / 2;
           width: 100%;
-          // margin-bottom: 295px;
         }
 
         #countdoun {
           max-width: $contentWidth4 !important;
           margin: 20px auto;
           width: 100%;
-          // font-size: 14px !important;
         }
 
         .countdownHolder {
-          // max-width: $contentWidth4 !important;
-          // font: 20px/1.5 'Open Sans Condensed',sans-serif !important;
           font-family: 'Open Sans Condensed',sans-serif;
           font-size: 20px;
           line-height: 1.5;
           @media screen and (min-width: $contentWidth2) {
-            // font-size: 30px/1.5 !important;
             font-size: 30px !important;
             line-height: 1.5;
           }
@@ -515,11 +508,9 @@ body {
         }
 
         .action__book {
-          // margin-bottom: 20px;
           padding-bottom: 20px;
         }
       }
-      // }
     }
   }
 
@@ -538,14 +529,10 @@ body {
 
     .owl-carousel {
       width: $contentWidth4;
-      // height: 440px;
       margin: 25px auto;
-      // margin-bottom: 40px;
       position: relative;
       @media screen and (min-width: $contentWidth2) {
-        // display: inline-block;
         width: $contentWidth2 - 40px;
-        // height: 450px;
         margin-bottom: 80px;
       }
       @media screen and (min-width: $contentWidth1) {
@@ -553,7 +540,6 @@ body {
       }
 
       .item {
-        // width: 100%;
         width: inherit;
         box-sizing: border-box;
         // height: 100%;
@@ -575,7 +561,6 @@ body {
         -ms-transform: translateZ(0);
         @media screen and (min-width: $contentWidth2) {
           height: 450px;
-          // border-radius: 40px;
         }
 
         .item__photo {
@@ -584,7 +569,6 @@ body {
           font-size: $fontSize1;
           line-height: $fontSize2;
           width: 120px;
-          // height: 300px;
           font-weight: bold;
           color: $siteColor5;
           text-shadow: 0px 0px 3px $siteColor8;
@@ -596,7 +580,6 @@ body {
           }
 
           .item__face {
-            // @extend .phonecall__face;
             box-sizing: border-box;
             height: 120px;
             width: 120px;
@@ -608,32 +591,22 @@ body {
             @media screen and (min-width: $contentWidth2) {
               display: inline-block;
             }
-            //
-            // img {
-            //   vertical-align: middle;
-            //   text-align: center;
-            // }
           }
         }
 
         .item__text {
           display: inline-block;
-          // width: auto;
           font-size: $fontSize1;
           line-height: $fontSize2;
           margin-top: 10px;
           text-align: right;
-          // vertical-align: bottom;
           @media screen and (min-width: $contentWidth2) {
             font-size: $fontSize2;
             line-height: $fontSize4;
-            // width: $contentWidth2 - 40px - 120px;
             margin-left: 30px;
             width: 500px;
           }
           @media screen and (min-width: $contentWidth1) {
-            // font-size: $fontSize2;
-            // line-height: $fontSize3;
             width: 700px;
           }
         }
@@ -686,6 +659,43 @@ body {
     }
   }
 
+  .showcase {
+    margin: 0 auto;
+    background-image: url(../img/bg__new_life.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: $siteColor8;
+    background-attachment: fixed;
+
+    .showcase__content {
+      @extend .content;
+      height: 500px;
+      font-size: $fontSize2;
+      padding-top: 20px;
+      font-weight: bold;
+      @media screen and (min-width: $contentWidth2) {
+        padding-top: 50px;
+        height: 600px;
+      }
+
+      h2 {
+        margin: 30px auto;
+        @media screen and (min-width: $contentWidth2) {
+          margin: 80px auto;
+        }
+
+        span {
+          color: $siteColor1;
+        }
+      }
+
+      #gallery {
+        // display: none;
+      }
+
+    }
+  }
+
   .progress {
     position: fixed;
     left: 0;
@@ -719,37 +729,25 @@ body {
   .back__top {
     position: fixed;
     bottom: 10px;
-    // padding: 0px;
-    // left: 50%;
     right: 20px;
-    // margin-left: 500px;
     z-index: 20;
     display: none;
 
     a {
       width: 50px;
-      // height: 30px;
-      // background: rgba(0, 0, 0, 0.25);
       display: block;
       text-decoration: none;
-      // -webkit-transition: all 0.4s ease;
-      // -moz-transition: all 0.4s ease;
-      // -ms-transition: all 0.4s ease;
-      // -o-transition: all 0.4s ease;
       transition: all 0.4s ease;
       text-align: center;
       color: $siteColor4;
 
       &:hover {
-        // height: 70px;
-        // background: $siteColor4;
-        // -webkit-transition: all 0.4s ease;
-        // -moz-transition: all 0.4s ease;
-        // -ms-transition: all 0.4s ease;
-        // -o-transition: all 0.4s ease;
         transition: all 0.4s ease;
         color: $siteColor7;
-        // content: '<i class="fa fa-arrow-circle-o-up fa-inverse fa-3x"></i>';
+      }
+
+      i {
+        text-shadow: 0px 0px 2px $siteColor8;
       }
     }
   }

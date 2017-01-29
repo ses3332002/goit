@@ -5,7 +5,6 @@ $(document).ready(function(){
     {
       loop: true,
       margin: 1,
-      // nav: true,
       nav: false,
       dots: true,
       animateOut: 'fadeOut',
@@ -36,14 +35,14 @@ $(document).ready(function(){
     } else {
       $('.back__top').show();
     };
-    if (($(window).scrollTop() < 560) || ($(window).width() < 748)) {
+    if (($(window).scrollTop() < 500) || ($(window).width() < 748)) {
       $('.easy123__part:eq(0)').delay(500).animate({
         opacity: 1
       }, 'slow');
-      $('.easy123__part:eq(1)').delay(1000).animate({
+      $('.easy123__part:eq(1)').delay(1500).animate({
         opacity: 1
       }, 'slow');
-      $('.easy123__part:eq(2)').delay(1500).animate({
+      $('.easy123__part:eq(2)').delay(2500).animate({
         opacity: 1
       }, 'slow');
     };
@@ -55,61 +54,51 @@ $(document).ready(function(){
     return false;
   });
 
+//подготовка галереи
+for (var i=0; i < 6; i++) {
+  $('#gallery').append('<img alt="Слон ' + (i+1) + '">');
+};
 
-//создание разметки для плитки
-  // for (var j=0; j < 7; j++) {
-  //   if (j===4 || j===5) {
-  //     $('.banners__content').append('<div class="banners__item banners__item-width2"></div>');
-  //     continue;
-  //   };
-  //   $('.banners__content').append('<div class="banners__item"></div>');
-  // };
-
-//поисковый запрос по нажатию кнопки или Enter
-  // jQuery.support.cors = true;
-  // var searchPhrase;
-  // $('.banners__submit').click(function() {
-  //   searchPhrase=$('.banners__search').val();
-  //   searchRequest(searchPhrase);
-  // });
-  // $('.banners__search').keydown(function(eventObject) {
-  //   if (eventObject.which==13) {
-  //     searchPhrase=$('.banners__search').val();
-  //     searchRequest(searchPhrase);
-  //   };
-  // });
-  // var textString;
-  // var searchRequest = function(searchKey) {
-  //   $.ajax({url:'https://pixabay.com/api/?key=3641379-74c8a2cbe60ef2c004424aed7&q=' + searchKey + '&image_type=photo&per_page=7&orientation=vertical', dataType: 'json', success: function(data) {
-  //     $('.banners__item').html('');
-  //     for (var i=0; i < 7; i++) {
-  //       textString = data.hits[i].tags.charAt(0).toUpperCase() + data.hits[i].tags.substring(1);
-  //       if (i===4 || i===5) {
-  //         $('.banners__item:eq(' + i + ')').append('<a href="' + data.hits[i].pageURL + '" target="_blank"><img src=' +data.hits[i].webformatURL +'></a><span>' + textString + '</span>');
-  //         continue;
-  //       };
-  //     $('.banners__item:eq(' + i + ')').append('<a href="' + data.hits[i].pageURL + '" target="_blank"><img src=' +data.hits[i].webformatURL +'></a><span>' + textString + '</span>');
-  //     }
-  //   }, type: 'get'});
-  // };
+//поисковый запрос
+  jQuery.support.cors = true;
+  var searchRequest = function(searchKey) {
+    $.ajax({url:'https://pixabay.com/api/?key=3641379-74c8a2cbe60ef2c004424aed7&q=' + searchKey + '&image_type=photo&orientation=horizontal', dataType: 'json', success: function(data) {
+      for (var i=0; i < 6; i++) {
+        $('#gallery img:eq(' + i + ')').attr({"src":data.hits[i].webformatURL, "data-image":data.hits[i].webformatURL});
+      };
+      $('#gallery').css("display", "none");
+      $("#gallery").unitegallery({
+        tile_width: 260,						//tile width
+        tile_height: 260,						//tile height
+        theme_gallery_padding: 0,				//the padding of the gallery wrapper
+        theme_carousel_align: "center",			//the align of the carousel
+        theme_carousel_offset: 0,				//the offset of the carousel from the align sides
+        gallery_theme: "carousel",				//choose gallery theme (if more then one themes includes)
+        gallery_width:"100%",				//gallery width
+        gallery_min_width: 260,				//gallery minimal width when resizing
+        gallery_background_color: "",		//set custom background color. If not set it will be taken from css.
+        carousel_padding: 8,					//padding at the sides of the carousel
+        carousel_space_between_tiles: 15,		//space between tiles
+        carousel_navigation_numtiles:3,			//number of tiles to scroll when user clicks on next/prev button
+        carousel_scroll_duration:500,			//duration of scrolling to tile
+        carousel_scroll_easing:"easeOutCubic",	//easing of scrolling to tile animation
+        carousel_autoplay: true,				//true,false - autoplay of the carousel on start
+        carousel_autoplay_timeout: 3000,		//autoplay timeout
+        carousel_autoplay_direction: "right",	//left,right - autoplay direction
+        carousel_autoplay_pause_onhover: true,	//pause the autoplay on mouse over
+        theme_enable_navigation: true,
+        theme_navigation_position: "bottom",	//top,bottom: the vertical position of the navigation reative to the carousel
+        theme_navigation_enable_play: true,		//enable / disable the play button of the navigation
+        theme_navigation_align: "center",		//the align of the navigation
+        theme_navigation_offset_hor: 0,			//horizontal offset of the navigation
+        theme_navigation_margin: 20,			//the space between the carousel and the navigation
+        theme_space_between_arrows: 5			//the space between arrows in the navigation
+      });
+    }, type: 'get'});
+  };
 
 //случайный поиск при инициализации
-  // searchRequest('');
-
-//инициализация плитки
-  // $('.banners__content').masonry({
-  //   // options
-  //   containerWidth: 940,
-  //   itemSelector: '.banners__item',
-  //   isAnimated: true,
-  //   isFitWidth: true,
-  //   animationOptions: {
-  //   duration: 400
-  // },
-  //   isResizable: true,
-  //   gutterWidth: 20
-  //   // gutter: 20
-  // });
+  searchRequest('elephant');
 
   var note = $('#note');
   // ts = new Date(2012, 0, 1),
@@ -129,22 +118,11 @@ $(document).ready(function(){
 
   $('#countdown').countdown({
     timestamp	: ts,
-    callback	: function(days, hours, minutes, seconds){
-
+    callback	: function(days, hours, minutes, seconds) {
       var message = "До конца акции осталось: <span>";
-    // alert(wordend(5, ['день','дня','дней']));
-
       message += days + wordend(days, [' день, ',' дня, ',' дней, ']);
       message += hours + wordend(hours, [' час, ',' часа, ',' часов, ']);
       message += minutes + wordend(minutes, [' минута.',' минуты.',' минут.']) + '</span>';
-      // message += "секунд: " + seconds + " <br />";
-
-      // if(newYear){
-      //   message += "осталось до Нового года!";
-      // }
-      // else {
-      // }
-
       note.html(message);
     }
   });

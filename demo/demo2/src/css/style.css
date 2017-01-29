@@ -2216,16 +2216,16 @@
   overflow: visible;
   clip: auto; }
 
-.content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders {
+.content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .showcase .showcase__content {
   text-align: center;
   margin: 0 auto;
   max-width: 300px;
   width: 100%; }
   @media screen and (min-width: 748px) {
-    .content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders {
+    .content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .showcase .showcase__content {
       max-width: 748px; } }
   @media screen and (min-width: 940px) {
-    .content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders {
+    .content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .showcase .showcase__content {
       max-width: 940px; } }
 
 .caption, body .sliders .sliders__caption {
@@ -2659,6 +2659,29 @@ body {
             margin-right: 10px;
             display: inline-block;
             background: #4e73db; }
+  body .showcase {
+    margin: 0 auto;
+    background-image: url(../img/bg__new_life.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    background-attachment: fixed; }
+    body .showcase .showcase__content {
+      height: 500px;
+      font-size: 22px;
+      padding-top: 20px;
+      font-weight: bold; }
+      @media screen and (min-width: 748px) {
+        body .showcase .showcase__content {
+          padding-top: 50px;
+          height: 600px; } }
+      body .showcase .showcase__content h2 {
+        margin: 30px auto; }
+        @media screen and (min-width: 748px) {
+          body .showcase .showcase__content h2 {
+            margin: 80px auto; } }
+        body .showcase .showcase__content h2 span {
+          color: #f00; }
   body .progress {
     position: fixed;
     left: 0;
@@ -2699,3 +2722,5 @@ body {
       body .back__top a:hover {
         transition: all 0.4s ease;
         color: #666666; }
+      body .back__top a i {
+        text-shadow: 0px 0px 2px #fff; }

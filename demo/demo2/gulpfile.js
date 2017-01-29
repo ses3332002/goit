@@ -29,7 +29,7 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('prepare_css', function() {
-  gulp.src(['./src/css/reset.css', './src/css/owl.carousel.css', './src/css/jquery.countdown.css', './src/css/style.css'])
+  gulp.src(['./src/css/reset.css', './src/css/owl.carousel.css', './src/css/jquery.countdown.css', './src/css/unite-gallery.css', './src/css/ug-theme-default.css', './src/css/style.css'])
       .pipe(concatCss('./build/css/style.min.css', {
         rebaseUrls: false
       }))
