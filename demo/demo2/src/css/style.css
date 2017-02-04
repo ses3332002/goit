@@ -2216,24 +2216,30 @@
   overflow: visible;
   clip: auto; }
 
-.content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .showcase .showcase__content {
+.content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .questions .questions__content, body .showcase .showcase__content, body .footer__content {
   text-align: center;
   margin: 0 auto;
   max-width: 300px;
   width: 100%; }
   @media screen and (min-width: 748px) {
-    .content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .showcase .showcase__content {
+    .content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .questions .questions__content, body .showcase .showcase__content, body .footer__content {
       max-width: 748px; } }
   @media screen and (min-width: 940px) {
-    .content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .showcase .showcase__content {
+    .content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .questions .questions__content, body .showcase .showcase__content, body .footer__content {
       max-width: 940px; } }
 
-.caption, body .sliders .sliders__caption {
-  font-size: 20px;
-  text-align: center; }
+.caption, body .easy123__content h2, body .easy123__content .easy123__slogan, body .sliders h2, body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__slogan, body .easy123__content .questions .questions__content .easy123__slogan, body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__slogan, body .easy123__content .showcase .showcase__content .easy123__slogan {
+  text-align: center;
+  font-size: 22px;
+  line-height: 24px; }
   @media screen and (min-width: 748px) {
-    .caption, body .sliders .sliders__caption {
-      font-size: 22px; } }
+    .caption, body .easy123__content h2, body .easy123__content .easy123__slogan, body .sliders h2, body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__slogan, body .easy123__content .questions .questions__content .easy123__slogan, body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__slogan, body .easy123__content .showcase .showcase__content .easy123__slogan {
+      font-size: 24px;
+      line-height: 30px; } }
+  @media screen and (min-width: 940px) {
+    .caption, body .easy123__content h2, body .easy123__content .easy123__slogan, body .sliders h2, body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__slogan, body .easy123__content .questions .questions__content .easy123__slogan, body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__slogan, body .easy123__content .showcase .showcase__content .easy123__slogan {
+      font-size: 30px;
+      line-height: 36px; } }
 
 .effect1:hover, .buy_button:hover, body .phonecall .phonecall__face:hover {
   background: #4e73db;
@@ -2261,11 +2267,23 @@
     font-size: 24px;
     line-height: 60px; }
 
+.bang {
+  background-image: url(../img/bg__bang.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 30px;
+  font-size: 30px;
+  margin-bottom: 40px; }
+  .bang:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out; }
+
 body {
   min-width: 320px;
   font-family: 'helvetica neue'; }
   body .header {
-    margin: 0 auto;
     background-image: url(../img/bg__top.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -2354,13 +2372,6 @@ body {
               border-radius: 0;
               font-size: 30px;
               line-height: 60px; } }
-        body .header .header__content .header__appeal-right .header__bang {
-          background-image: url(../img/bg__bang.png);
-          background-repeat: no-repeat;
-          background-position: center;
-          padding: 30px;
-          font-size: 30px;
-          margin-bottom: 40px; }
   body .phonecall {
     height: 160px;
     background: #1cd7ad;
@@ -2409,22 +2420,12 @@ body {
           left: 830px; } }
   body .easy123__content {
     font-size: 0; }
-    body .easy123__content .easy123__slogan {
-      margin: 20px auto;
-      margin-bottom: 0;
-      font-size: 22px;
-      line-height: 24px;
-      margin-bottom: 20px; }
+    body .easy123__content h2, body .easy123__content .easy123__slogan {
+      margin: 20px auto; }
       @media screen and (min-width: 748px) {
-        body .easy123__content .easy123__slogan {
+        body .easy123__content h2, body .easy123__content .easy123__slogan {
           margin-top: 50px;
-          margin-bottom: 30px;
-          font-size: 24px;
-          line-height: 30px; } }
-      @media screen and (min-width: 940px) {
-        body .easy123__content .easy123__slogan {
-          font-size: 30px;
-          line-height: 36px; } }
+          margin-bottom: 30px; } }
     body .easy123__content .easy123__part {
       display: inline-block;
       box-sizing: border-box;
@@ -2500,13 +2501,6 @@ body {
           white-space: nowrap;
           font-weight: bold;
           font-style: italic; }
-        body .action .action__content .action__slogan .action__bang {
-          background-image: url(../img/bg__bang.png);
-          background-repeat: no-repeat;
-          background-position: center;
-          padding: 30px;
-          font-size: 30px;
-          margin-bottom: 40px; }
       body .action .action__content .action__counter {
         box-sizing: border-box;
         vertical-align: top; }
@@ -2546,11 +2540,11 @@ body {
           padding-bottom: 20px; }
   body .sliders {
     font-size: 0; }
-    body .sliders .sliders__caption {
+    body .sliders h2, body .sliders .easy123__content .easy123__slogan, body .easy123__content .sliders .easy123__slogan {
       margin-top: 30px;
       margin-bottom: 15px; }
       @media screen and (min-width: 748px) {
-        body .sliders .sliders__caption {
+        body .sliders h2, body .sliders .easy123__content .easy123__slogan, body .easy123__content .sliders .easy123__slogan {
           margin-top: 40px; } }
     body .sliders .owl-carousel {
       width: 300px;
@@ -2576,7 +2570,6 @@ body {
         font-size: 0;
         text-align: left;
         color: #fff;
-        text-shadow: 0px 0px 4px #000;
         height: 280px;
         overflow: hidden;
         transform: translateZ(0);
@@ -2589,11 +2582,9 @@ body {
           text-align: left;
           display: inline-block;
           font-size: 20px;
-          line-height: 22px;
           width: 120px;
           font-weight: bold;
-          color: #000;
-          text-shadow: 0px 0px 3px #fff; }
+          color: #000; }
           @media screen and (min-width: 748px) {
             body .sliders .owl-carousel .item .item__photo {
               text-align: center;
@@ -2612,21 +2603,30 @@ body {
             @media screen and (min-width: 748px) {
               body .sliders .owl-carousel .item .item__photo .item__face {
                 display: inline-block; } }
+          body .sliders .owl-carousel .item .item__photo .item__name {
+            background-color: RGBA(255, 255, 255, 0.5);
+            padding-left: 10px; }
+            @media screen and (min-width: 748px) {
+              body .sliders .owl-carousel .item .item__photo .item__name {
+                padding-left: 0; } }
         body .sliders .owl-carousel .item .item__text {
           display: inline-block;
           font-size: 20px;
           line-height: 22px;
+          background-color: RGBA(0, 0, 0, 0.5);
           margin-top: 10px;
+          padding-right: 4px;
+          padding-left: 4px;
           text-align: right; }
           @media screen and (min-width: 748px) {
             body .sliders .owl-carousel .item .item__text {
               font-size: 22px;
               line-height: 30px;
               margin-left: 30px;
-              width: 500px; } }
+              width: 450px; } }
           @media screen and (min-width: 940px) {
             body .sliders .owl-carousel .item .item__text {
-              width: 700px; } }
+              width: 650px; } }
       body .sliders .owl-carousel .item-1 {
         background-image: url(../img/slide1.jpg); }
       body .sliders .owl-carousel .item-2 {
@@ -2659,6 +2659,44 @@ body {
             margin-right: 10px;
             display: inline-block;
             background: #4e73db; }
+  body .questions {
+    background-color: #cccccc;
+    padding-top: 30px;
+    height: 800px; }
+    @media screen and (min-width: 748px) {
+      body .questions {
+        padding-top: 40px;
+        height: 580px; } }
+    body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__slogan, body .easy123__content .questions .questions__content .easy123__slogan {
+      margin-bottom: 15px; }
+    body .questions .questions__content .accordion {
+      min-height: 60px;
+      border: 1px solid #999999;
+      margin-top: 10px;
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 100%;
+      background: #fff;
+      font-size: 20px;
+      line-height: 30px;
+      position: relative;
+      cursor: pointer; }
+      @media screen and (min-width: 748px) {
+        body .questions .questions__content .accordion {
+          min-height: 50px;
+          line-height: 50px; } }
+    @media screen and (min-width: 748px) {
+      body .questions .questions__content .accordion:nth-of-type(9) {
+        line-height: 25px; } }
+    body .questions .questions__content .accordion:first-of-type {
+      margin-top: 40px; }
+    body .questions .questions__content .active {
+      background: #ffa507; }
+    body .questions .questions__content .accordion__content {
+      font-size: 20px;
+      line-height: 24px;
+      margin-top: 10px; }
   body .showcase {
     margin: 0 auto;
     background-image: url(../img/bg__new_life.jpg);
@@ -2675,12 +2713,9 @@ body {
         body .showcase .showcase__content {
           padding-top: 50px;
           height: 600px; } }
-      body .showcase .showcase__content h2 {
-        margin: 30px auto; }
-        @media screen and (min-width: 748px) {
-          body .showcase .showcase__content h2 {
-            margin: 80px auto; } }
-        body .showcase .showcase__content h2 span {
+      body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__slogan, body .easy123__content .showcase .showcase__content .easy123__slogan {
+        margin-bottom: 60px; }
+        body .showcase .showcase__content h2 span, body .showcase .showcase__content .easy123__content .easy123__slogan span, body .easy123__content .showcase .showcase__content .easy123__slogan span {
           color: #f00; }
   body .progress {
     position: fixed;
@@ -2720,7 +2755,6 @@ body {
       text-align: center;
       color: #4e73db; }
       body .back__top a:hover {
-        transition: all 0.4s ease;
         color: #666666; }
       body .back__top a i {
         text-shadow: 0px 0px 2px #fff; }

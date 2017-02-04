@@ -15,8 +15,6 @@ $contentWidth1: 940px;
 $contentWidth2: 748px;
 $contentWidth3: 320px;
 $contentWidth4: 300px;
-// $contentWidth5: ($contentWidth2 + 20px) / 3 - 20px;
-// $contentWidth6: ($contentWidth1 + 20px) / 3 - 20px;
 
 $siteColor1: #f00;
 $siteColor2: #1cd7ad;
@@ -27,6 +25,8 @@ $siteColor6: #999999;
 $siteColor7: #666666;
 $siteColor8: #fff;
 $siteColor9: #cccccc;
+$siteColor10: RGBA(255,255,255,0.5);
+$siteColor11: RGBA(0,0,0,0.5);
 
 $fontSize1: 20px;
 $fontSize2: 22px;
@@ -38,6 +38,7 @@ $fontSize7: 40px;
 $fontSize8: 50px;
 $fontSize9: 60px;
 $fontSize10: 180px;
+$fontSize11: 26px;
 
 .content {
   text-align: center;
@@ -53,13 +54,16 @@ $fontSize10: 180px;
 }
 
 .caption {
-  font-size: $fontSize1;
-  // line-height: $fontSize3;
-  // color: $siteColor5;
   text-align: center;
+  font-size: $fontSize2;
+  line-height: $fontSize3;
   @media screen and (min-width: $contentWidth2) {
-    font-size: $fontSize2;
-    // line-height: $fontSize3;
+    font-size: $fontSize3;
+    line-height: $fontSize4;
+  }
+  @media screen and (min-width: $contentWidth1) {
+    font-size: $fontSize4;
+    line-height: $fontSize5;
   }
 }
 
@@ -75,25 +79,6 @@ $fontSize10: 180px;
     }
   }
 }
-
-// .effect2 {
-//   &:hover {
-//     box-shadow: 0 0 8px $siteColor1;
-//   }
-// }
-//
-// .effect3 {
-//   &:hover {
-//     color: $siteColor1;
-//   }
-// }
-//
-// .effect4 {
-//   &:focus {
-//     box-shadow: 0 0 8px $siteColor1;
-//     border: 1px solid $siteColor1;
-//   }
-// }
 
 .buy_button {
   @extend .effect1;
@@ -117,12 +102,25 @@ $fontSize10: 180px;
   }
 }
 
+.bang {
+  background-image: url(../img/bg__bang.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 30px;
+  font-size: $fontSize4;
+  margin-bottom: 40px;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+}
+
 body {
   min-width: $contentWidth3;
   font-family: 'helvetica neue';
 
   .header {
-    margin: 0 auto;
     background-image: url(../img/bg__top.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -162,8 +160,6 @@ body {
 
       .header__appeal {
         margin: 40px auto;
-        // margin-bottom: 40px;
-
         font-size: $fontSize5;
         line-height: $fontSize6;
         text-align: center;
@@ -227,38 +223,7 @@ body {
             line-height: $fontSize9;
           }
         }
-
-        .header__bang {
-          background-image: url(../img/bg__bang.png);
-          background-repeat: no-repeat;
-          background-position: center;
-          padding: 30px;
-          font-size: $fontSize4;
-          margin-bottom: 40px;
-        }
       }
-
-      // .header__button {
-      //   @extend .effect1;
-      //   width: $contentWidth4 - 40px;
-      //   height: 60px;
-      //   margin: 40px auto;
-      //   background: $siteColor3;
-      //   border-radius: 10px;
-      //   text-align: center;
-      //   cursor: pointer;
-      //   @media screen and (min-width: $contentWidth2) {
-      //     margin-top: 35px;
-      //     width: 240px;
-      //   }
-
-        // a {
-        //   text-decoration: none;
-        //   color: $siteColor8;
-        //   font-size: $fontSize3;
-        //   line-height: $fontSize9;
-        // }
-      // }
     }
   }
 
@@ -314,17 +279,12 @@ body {
     background: $siteColor3;
 
     .phonecall__face-2 {
-      // display: none;
-      // top: -50px;
-      // right: 100px;
       border: 4px solid $siteColor3;
       @media screen and (min-width: $contentWidth2) {
         left: $contentWidth2 - 110px;
-        // display: inline-block;
       }
       @media screen and (min-width: $contentWidth1) {
         left: $contentWidth1 - 110px;
-        // display: inline-block;
       }
     }
   }
@@ -333,24 +293,17 @@ body {
     @extend .content;
     font-size: 0;
 
-    .easy123__slogan {
-      // text-align: center;
+    h2 {
+      @extend .caption;
       margin: 20px auto;
-      margin-bottom: 0;
-      // height: 60px;
-      font-size: $fontSize2;
-      line-height: $fontSize3;
-      margin-bottom: 20px;
       @media screen and (min-width: $contentWidth2) {
         margin-top: 50px;
         margin-bottom: 30px;
-        font-size: $fontSize3;
-        line-height: $fontSize4;
       }
-      @media screen and (min-width: $contentWidth1) {
-        font-size: $fontSize4;
-        line-height: $fontSize5;
-      }
+    }
+
+    .easy123__slogan {
+      @extend h2;
     }
 
     .easy123__part {
@@ -360,7 +313,6 @@ body {
       width: $contentWidth4;
       margin: 10px auto;
       margin-bottom: 0;
-      // height: 190px;
       padding: 10px;
       opacity: 0;
       @media screen and (min-width: $contentWidth2) {
@@ -375,11 +327,7 @@ body {
       .easy123__step {
         vertical-align: sub;
         height: 40px;
-        // line-height: 60px;
-        // background: blue;
         font-size: $fontSize1;
-        // margin-bottom: 20px;
-        // vertical-align: bottom;
         @media screen and (min-width: $contentWidth2) {
           margin-bottom: 30px;
           font-size: $fontSize1;
@@ -393,7 +341,6 @@ body {
         margin: 10px auto;
         height: 140px;
         width: 140px;
-        // margin-bottom: 10px;
         border-radius: 70px;
         overflow: hidden;
         background: $siteColor4;
@@ -401,7 +348,6 @@ body {
         line-height: $fontSize10;
         color: $siteColor8;
         box-shadow: 0 0 14px rgba(255,255,255,.9);
-        // vertical-align: middle;
       }
     }
   }
@@ -419,10 +365,7 @@ body {
       vertical-align: top;
       padding-top: 30px;
 
-
-
       .action__slogan {
-        // max-width: $contentWidth2 / 2;
         font-size: $fontSize1;
         line-height: $fontSize4;
         margin: 0 auto;
@@ -443,26 +386,15 @@ body {
         @media screen and (min-width: $contentWidth1) {
           max-width: $contentWidth1 / 2;
           width: 100%;
-          // margin-bottom: 295px;
         }
-
 
         span {
           white-space: nowrap;
           font-weight: bold;
           font-style: italic;
-          // text-decoration: overline;
-        }
-
-        .action__bang {
-          background-image: url(../img/bg__bang.png);
-          background-repeat: no-repeat;
-          background-position: center;
-          padding: 30px;
-          font-size: $fontSize4;
-          margin-bottom: 40px;
         }
       }
+
       .action__counter {
         box-sizing: border-box;
         vertical-align: top;
@@ -518,7 +450,7 @@ body {
     @extend .content;
     font-size: 0;
 
-    .sliders__caption {
+    h2 {
       @extend .caption;
       margin-top: 30px;
       margin-bottom: 15px;
@@ -542,7 +474,6 @@ body {
       .item {
         width: inherit;
         box-sizing: border-box;
-        // height: 100%;
         border-radius: 4px;
         background-repeat: no-repeat;
         background-position: center;
@@ -553,7 +484,6 @@ body {
         font-size: 0;
         text-align: left;
         color: $siteColor8;
-        text-shadow: 0px 0px 4px $siteColor5;
         height: 280px;
         overflow: hidden;
         transform: translateZ(0);
@@ -567,11 +497,9 @@ body {
           text-align: left;
           display: inline-block;
           font-size: $fontSize1;
-          line-height: $fontSize2;
           width: 120px;
           font-weight: bold;
           color: $siteColor5;
-          text-shadow: 0px 0px 3px $siteColor8;
           @media screen and (min-width: $contentWidth2) {
             text-align: center;
             padding-top: 30px;
@@ -592,22 +520,33 @@ body {
               display: inline-block;
             }
           }
+
+          .item__name {
+            background-color: $siteColor10;
+            padding-left: 10px;
+            @media screen and (min-width: $contentWidth2) {
+              padding-left: 0;
+            }
+          }
         }
 
         .item__text {
           display: inline-block;
           font-size: $fontSize1;
           line-height: $fontSize2;
+          background-color: $siteColor11;
           margin-top: 10px;
+          padding-right: 4px;
+          padding-left: 4px;
           text-align: right;
           @media screen and (min-width: $contentWidth2) {
             font-size: $fontSize2;
             line-height: $fontSize4;
             margin-left: 30px;
-            width: 500px;
+            width: 450px;
           }
           @media screen and (min-width: $contentWidth1) {
-            width: 700px;
+            width: 650px;
           }
         }
       }
@@ -659,6 +598,64 @@ body {
     }
   }
 
+  .questions {
+    background-color: $siteColor9;
+    padding-top: 30px;
+    height: 800px;
+    @media screen and (min-width: $contentWidth2) {
+      padding-top: 40px;
+      height: 580px;
+    }
+
+    .questions__content {
+      @extend .content;
+
+      h2 {
+        @extend .caption;
+        margin-bottom: 15px;
+      }
+
+      .accordion {
+        min-height: 60px;
+        border: 1px solid $siteColor6;
+        margin-top: 10px;
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        background: $siteColor8;
+        font-size: $fontSize1;
+        line-height: 30px;
+        position: relative;
+        cursor: pointer;
+        @media screen and (min-width: $contentWidth2) {
+          min-height: 50px;
+          line-height: 50px;
+        }
+      }
+
+      .accordion:nth-of-type(9) {
+        @media screen and (min-width: $contentWidth2) {
+          line-height: 25px;
+        }
+      }
+
+      .accordion:first-of-type {
+        margin-top: 40px;
+      }
+
+      .active {
+        background: $siteColor3;
+      }
+
+      .accordion__content {
+        font-size: $fontSize1;
+        line-height: $fontSize3;
+        margin-top: 10px;
+      }
+    }
+  }
+
   .showcase {
     margin: 0 auto;
     background-image: url(../img/bg__new_life.jpg);
@@ -679,21 +676,18 @@ body {
       }
 
       h2 {
-        margin: 30px auto;
-        @media screen and (min-width: $contentWidth2) {
-          margin: 80px auto;
-        }
+        @extend .caption;
+        margin-bottom: 60px;
 
         span {
           color: $siteColor1;
         }
       }
-
-      #gallery {
-        // display: none;
-      }
-
     }
+  }
+
+  .footer__content {
+    @extend .content;
   }
 
   .progress {
@@ -742,7 +736,6 @@ body {
       color: $siteColor4;
 
       &:hover {
-        transition: all 0.4s ease;
         color: $siteColor7;
       }
 
