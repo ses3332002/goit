@@ -2249,6 +2249,15 @@
     color: #ffa507;
     transition: all 0.4s ease; }
 
+.effect2:hover, body .phonecall-2 .phonecall__form .phonecall__button .phonecall__submit:hover {
+  background: #f00;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.9);
+  transition: all 0.4s ease; }
+
+.effect4:focus, body .phonecall-2 .phonecall__form .phonecall__search:focus {
+  box-shadow: 0 0 8px #4e73db;
+  border: 1px solid #4e73db; }
+
 .buy_button {
   width: 260px;
   height: 60px;
@@ -2409,7 +2418,46 @@ body {
         text-align: center;
         width: 120px; }
   body .phonecall-2 {
-    background: #ffa507; }
+    background: #ffa507;
+    height: 196px; }
+    @media screen and (min-width: 748px) {
+      body .phonecall-2 {
+        height: 80px; } }
+    body .phonecall-2 .phonecall__form {
+      text-align: center; }
+      @media screen and (min-width: 748px) {
+        body .phonecall-2 .phonecall__form {
+          text-align: left; } }
+      @media screen and (min-width: 940px) {
+        body .phonecall-2 .phonecall__form {
+          text-align: center; } }
+      body .phonecall-2 .phonecall__form .phonecall__search {
+        font-size: 20px;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 298px;
+        height: 28px;
+        border: 1px solid #999999;
+        border-radius: 3px;
+        color: #999999;
+        padding-left: 10px; }
+        @media screen and (min-width: 748px) {
+          body .phonecall-2 .phonecall__form .phonecall__search {
+            width: 200px; } }
+      body .phonecall-2 .phonecall__form .phonecall__button {
+        display: inline-block; }
+        body .phonecall-2 .phonecall__form .phonecall__button .phonecall__submit {
+          border-radius: 3px;
+          background: #4e73db;
+          height: 28px;
+          font-size: 20px;
+          cursor: pointer;
+          color: #fff;
+          border: 0 solid red;
+          width: 298px; }
+          @media screen and (min-width: 748px) {
+            body .phonecall-2 .phonecall__form .phonecall__button .phonecall__submit {
+              width: 190px; } }
     body .phonecall-2 .phonecall__face-2 {
       border: 4px solid #ffa507; }
       @media screen and (min-width: 748px) {
@@ -2418,6 +2466,11 @@ body {
       @media screen and (min-width: 940px) {
         body .phonecall-2 .phonecall__face-2 {
           left: 830px; } }
+  body .phonecall-last {
+    height: 150px; }
+    @media screen and (min-width: 748px) {
+      body .phonecall-last {
+        height: 80px; } }
   body .easy123__content {
     font-size: 0; }
     body .easy123__content h2, body .easy123__content .easy123__slogan {
@@ -2717,6 +2770,20 @@ body {
         margin-bottom: 60px; }
         body .showcase .showcase__content h2 span, body .showcase .showcase__content .easy123__content .easy123__slogan span, body .easy123__content .showcase .showcase__content .easy123__slogan span {
           color: #f00; }
+  body .footer__content img {
+    width: 160px; }
+  body .footer__content div {
+    display: inline-block;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    vertical-align: middle; }
+    @media screen and (min-width: 748px) {
+      body .footer__content div {
+        width: 244.33333px; } }
+    @media screen and (min-width: 940px) {
+      body .footer__content div {
+        width: 308.33333px; } }
   body .progress {
     position: fixed;
     left: 0;

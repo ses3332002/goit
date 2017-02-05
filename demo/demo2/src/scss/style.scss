@@ -15,6 +15,9 @@ $contentWidth1: 940px;
 $contentWidth2: 748px;
 $contentWidth3: 320px;
 $contentWidth4: 300px;
+$contentWidth5: $contentWidth1 / 3 - 5px;
+$contentWidth6: $contentWidth2 / 3 - 5px;
+$contentWidth7: 160px;
 
 $siteColor1: #f00;
 $siteColor2: #1cd7ad;
@@ -77,6 +80,21 @@ $fontSize11: 26px;
       color: $siteColor3;
       transition: all 0.4s ease;
     }
+  }
+}
+
+.effect2 {
+  &:hover {
+    background: $siteColor1;
+    box-shadow: 0 0 14px rgba(255,255,255,.9);
+    transition: all 0.4s ease;
+  }
+}
+
+.effect4 {
+  &:focus {
+    box-shadow: 0 0 8px $siteColor4;
+    border: 1px solid $siteColor4;
   }
 }
 
@@ -277,6 +295,55 @@ body {
 
   .phonecall-2 {
     background: $siteColor3;
+    height: 196px;
+    @media screen and (min-width: $contentWidth2) {
+      height: 80px;
+    }
+
+    .phonecall__form {
+      text-align: center;
+      @media screen and (min-width: $contentWidth2) {
+        text-align: left;
+      }
+      @media screen and (min-width: $contentWidth1) {
+        text-align: center;
+      }
+
+      .phonecall__search {
+        @extend .effect4;
+        font-size: $fontSize1;
+        display: inline-block;
+        box-sizing: border-box;
+        width: $contentWidth4 - 2px;
+        height: 28px;
+        border: 1px solid $siteColor6;
+        border-radius: 3px;
+        color: $siteColor6;
+        padding-left: 10px;
+        @media screen and (min-width: $contentWidth2) {
+          width: 200px;
+        }
+      }
+
+      .phonecall__button {
+        display: inline-block;
+
+        .phonecall__submit {
+          @extend .effect2;
+          border-radius: 3px;
+          background: $siteColor4;
+          height: 28px;
+          font-size: $fontSize1;
+          cursor: pointer;
+          color: $siteColor8;
+          border: 0 solid red;
+          width: $contentWidth4 - 2px;
+          @media screen and (min-width: $contentWidth2) {
+            width: 190px;
+          }
+        }
+      }
+    }
 
     .phonecall__face-2 {
       border: 4px solid $siteColor3;
@@ -286,6 +353,13 @@ body {
       @media screen and (min-width: $contentWidth1) {
         left: $contentWidth1 - 110px;
       }
+    }
+  }
+
+  .phonecall-last {
+    height: 150px;
+    @media screen and (min-width: $contentWidth2) {
+      height: 80px;
     }
   }
 
@@ -688,6 +762,24 @@ body {
 
   .footer__content {
     @extend .content;
+
+    img {
+      width: $contentWidth7;
+    }
+
+    div {
+      display: inline-block;
+      width: $contentWidth4;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      vertical-align: middle;
+      @media screen and (min-width: $contentWidth2) {
+        width: $contentWidth6;
+      }
+      @media screen and (min-width: $contentWidth1) {
+        width: $contentWidth5;
+      }
+    }
   }
 
   .progress {
