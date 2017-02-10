@@ -2228,16 +2228,16 @@
     .content, body .header .header__content, body .phonecall .phonecall__content, body .easy123__content, body .action .action__content, body .sliders, body .questions .questions__content, body .showcase .showcase__content, body .footer__content {
       max-width: 940px; } }
 
-.caption, body .easy123__content h2, body .easy123__content .easy123__slogan, body .sliders h2, body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__slogan, body .easy123__content .questions .questions__content .easy123__slogan, body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__slogan, body .easy123__content .showcase .showcase__content .easy123__slogan {
+.caption, body .easy123__content h2, body .easy123__content .easy123__payment, body .sliders h2, body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__payment, body .easy123__content .questions .questions__content .easy123__payment, body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__payment, body .easy123__content .showcase .showcase__content .easy123__payment, body .showcase .showcase__content .showcase__slogan {
   text-align: center;
   font-size: 22px;
   line-height: 24px; }
   @media screen and (min-width: 748px) {
-    .caption, body .easy123__content h2, body .easy123__content .easy123__slogan, body .sliders h2, body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__slogan, body .easy123__content .questions .questions__content .easy123__slogan, body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__slogan, body .easy123__content .showcase .showcase__content .easy123__slogan {
+    .caption, body .easy123__content h2, body .easy123__content .easy123__payment, body .sliders h2, body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__payment, body .easy123__content .questions .questions__content .easy123__payment, body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__payment, body .easy123__content .showcase .showcase__content .easy123__payment, body .showcase .showcase__content .showcase__slogan {
       font-size: 24px;
       line-height: 30px; } }
   @media screen and (min-width: 940px) {
-    .caption, body .easy123__content h2, body .easy123__content .easy123__slogan, body .sliders h2, body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__slogan, body .easy123__content .questions .questions__content .easy123__slogan, body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__slogan, body .easy123__content .showcase .showcase__content .easy123__slogan {
+    .caption, body .easy123__content h2, body .easy123__content .easy123__payment, body .sliders h2, body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__payment, body .easy123__content .questions .questions__content .easy123__payment, body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__payment, body .easy123__content .showcase .showcase__content .easy123__payment, body .showcase .showcase__content .showcase__slogan {
       font-size: 30px;
       line-height: 36px; } }
 
@@ -2473,12 +2473,20 @@ body {
         height: 80px; } }
   body .easy123__content {
     font-size: 0; }
-    body .easy123__content h2, body .easy123__content .easy123__slogan {
+    body .easy123__content h2, body .easy123__content .easy123__payment, body .easy123__content .showcase .showcase__content .showcase__slogan, body .showcase .showcase__content .easy123__content .showcase__slogan {
       margin: 20px auto; }
       @media screen and (min-width: 748px) {
-        body .easy123__content h2, body .easy123__content .easy123__slogan {
+        body .easy123__content h2, body .easy123__content .easy123__payment, body .easy123__content .showcase .showcase__content .showcase__slogan, body .showcase .showcase__content .easy123__content .showcase__slogan {
           margin-top: 50px;
           margin-bottom: 30px; } }
+    body .easy123__content .easy123__payment {
+      line-height: 30px; }
+      body .easy123__content .easy123__payment .pay-blue {
+        color: #4e73db; }
+      body .easy123__content .easy123__payment .pay-red {
+        color: #f00; }
+      body .easy123__content .easy123__payment .pay-blue2 {
+        color: #1cd7ad; }
     body .easy123__content .easy123__part {
       display: inline-block;
       box-sizing: border-box;
@@ -2593,11 +2601,11 @@ body {
           padding-bottom: 20px; }
   body .sliders {
     font-size: 0; }
-    body .sliders h2, body .sliders .easy123__content .easy123__slogan, body .easy123__content .sliders .easy123__slogan {
+    body .sliders h2, body .sliders .easy123__content .easy123__payment, body .easy123__content .sliders .easy123__payment, body .sliders .showcase .showcase__content .showcase__slogan, body .showcase .showcase__content .sliders .showcase__slogan {
       margin-top: 30px;
       margin-bottom: 15px; }
       @media screen and (min-width: 748px) {
-        body .sliders h2, body .sliders .easy123__content .easy123__slogan, body .easy123__content .sliders .easy123__slogan {
+        body .sliders h2, body .sliders .easy123__content .easy123__payment, body .easy123__content .sliders .easy123__payment, body .sliders .showcase .showcase__content .showcase__slogan, body .showcase .showcase__content .sliders .showcase__slogan {
           margin-top: 40px; } }
     body .sliders .owl-carousel {
       width: 300px;
@@ -2688,6 +2696,8 @@ body {
         background-image: url(../img/slide3.jpg); }
       body .sliders .owl-carousel .item-4 {
         background-image: url(../img/slide4.jpg); }
+      body .sliders .owl-carousel .item-5 {
+        background-image: url(../img/slide5.jpg); }
       body .sliders .owl-carousel .owl-controls {
         display: none; }
         @media screen and (min-width: 748px) {
@@ -2715,12 +2725,12 @@ body {
   body .questions {
     background-color: #cccccc;
     padding-top: 30px;
-    height: 800px; }
+    min-height: 940px; }
     @media screen and (min-width: 748px) {
       body .questions {
         padding-top: 40px;
-        height: 580px; } }
-    body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__slogan, body .easy123__content .questions .questions__content .easy123__slogan {
+        min-height: 700px; } }
+    body .questions .questions__content h2, body .questions .questions__content .easy123__content .easy123__payment, body .easy123__content .questions .questions__content .easy123__payment, body .questions .questions__content .showcase .showcase__content .showcase__slogan, body .showcase .showcase__content .questions .questions__content .showcase__slogan {
       margin-bottom: 15px; }
     body .questions .questions__content .accordion {
       min-height: 60px;
@@ -2758,18 +2768,25 @@ body {
     color: #fff;
     background-attachment: fixed; }
     body .showcase .showcase__content {
-      height: 500px;
+      height: 650px;
       font-size: 22px;
-      padding-top: 20px;
-      font-weight: bold; }
+      padding-top: 20px; }
       @media screen and (min-width: 748px) {
         body .showcase .showcase__content {
-          padding-top: 50px;
-          height: 600px; } }
-      body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__slogan, body .easy123__content .showcase .showcase__content .easy123__slogan {
+          padding-top: 50px; } }
+      body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__payment, body .easy123__content .showcase .showcase__content .easy123__payment, body .showcase .showcase__content .showcase__slogan {
         margin-bottom: 60px; }
-        body .showcase .showcase__content h2 span, body .showcase .showcase__content .easy123__content .easy123__slogan span, body .easy123__content .showcase .showcase__content .easy123__slogan span {
+        body .showcase .showcase__content h2 span, body .showcase .showcase__content .easy123__content .easy123__payment span, body .easy123__content .showcase .showcase__content .easy123__payment span, body .showcase .showcase__content .showcase__slogan span {
           color: #f00; }
+      body .showcase .showcase__content .showcase__slogan {
+        margin: 20px auto;
+        background-color: #4e73db;
+        line-height: 30px; }
+        @media screen and (min-width: 748px) {
+          body .showcase .showcase__content .showcase__slogan {
+            line-height: 38px;
+            margin-top: 50px;
+            margin-bottom: 30px; } }
   body .footer__content img {
     width: 160px; }
   body .footer__content div {

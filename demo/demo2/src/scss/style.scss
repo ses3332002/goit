@@ -376,8 +376,21 @@ body {
       }
     }
 
-    .easy123__slogan {
+    .easy123__payment {
       @extend h2;
+      line-height: $fontSize4;
+
+      .pay-blue {
+        color: $siteColor4;
+      }
+
+      .pay-red {
+        color: $siteColor1;
+      }
+
+      .pay-blue2 {
+        color: $siteColor2;
+      }
     }
 
     .easy123__part {
@@ -637,6 +650,9 @@ body {
       .item-4 {
         background-image: url(../img/slide4.jpg);
       }
+      .item-5 {
+        background-image: url(../img/slide5.jpg);
+      }
 
       .owl-controls {
         display: none;
@@ -675,10 +691,10 @@ body {
   .questions {
     background-color: $siteColor9;
     padding-top: 30px;
-    height: 800px;
+    min-height: 940px;
     @media screen and (min-width: $contentWidth2) {
       padding-top: 40px;
-      height: 580px;
+      min-height: 700px;
     }
 
     .questions__content {
@@ -740,13 +756,13 @@ body {
 
     .showcase__content {
       @extend .content;
-      height: 500px;
+      height: 650px;
       font-size: $fontSize2;
       padding-top: 20px;
-      font-weight: bold;
+      // font-weight: bold;
       @media screen and (min-width: $contentWidth2) {
         padding-top: 50px;
-        height: 600px;
+        // height: 650px;
       }
 
       h2 {
@@ -757,6 +773,19 @@ body {
           color: $siteColor1;
         }
       }
+
+      .showcase__slogan {
+        @extend h2;
+        margin: 20px auto;
+        background-color: $siteColor4;
+        line-height: $fontSize4;
+        @media screen and (min-width: $contentWidth2) {
+          line-height: $fontSize6;
+          margin-top: 50px;
+          margin-bottom: 30px;
+        }
+      }
+
     }
   }
 

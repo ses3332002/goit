@@ -35,7 +35,7 @@ $(document).ready(function(){
     } else {
       $('.back__top').show(700);
     };
-    if (($(window).scrollTop() < 500) || ($(window).width() < 748)) {
+    if (($(window).scrollTop() < 460) || ($(window).width() < 748)) {
       $('.easy123__part:eq(0)').delay(500).animate({
         opacity: 1
       }, 'slow');
@@ -138,5 +138,5 @@ for (var i=0; i < 6; i++) {
       $(this).siblings('.accordion').removeClass('active');
     };
   });
-  
+
 });
