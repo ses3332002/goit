@@ -2842,3 +2842,39 @@ body {
         color: #666666; }
       body .back__top a i {
         text-shadow: 0px 0px 2px #fff; }
+  body .readme {
+    display: none;
+    padding: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -157px;
+    margin-top: -257px;
+    width: 300px;
+    height: 500px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background: #cccccc;
+    z-index: 100;
+    opacity: 0.9;
+    text-align: center;
+    font-size: 20px;
+    line-height: 22px; }
+    @media screen and (min-width: 748px) {
+      body .readme {
+        padding: 10px;
+        top: 50%;
+        left: 50%;
+        line-height: 24px;
+        margin-left: -312px;
+        margin-top: -162px;
+        width: 600px;
+        height: 300px; } }
+    body .readme .readme__message {
+      text-align: left; }
+    body .readme button {
+      font-size: 20px;
+      line-height: 20px;
+      margin-top: 15px;
+      font-weight: normal;
+      cursor: pointer; }

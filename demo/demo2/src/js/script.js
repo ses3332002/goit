@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+// всплывающее окно с readme
+$('body').append('<div class="readme">Особенности сайта:<div class="readme__message"></div><button class="readme__button">Закрыть</button></div>');
+
+$('.readme__message').load('readme.html');
+$('.readme').show();
+
+$('.readme__button').click(function(){
+  $('.readme').hide();
+});
+
 //инициализация слайдеров
   $('.owl-carousel').owlCarousel(
     {
