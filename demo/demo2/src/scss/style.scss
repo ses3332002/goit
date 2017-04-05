@@ -768,6 +768,7 @@ body {
       h2 {
         @extend .caption;
         margin-bottom: 60px;
+        text-shadow: 1px 1px 2px $siteColor4;
 
         span {
           color: $siteColor1;
@@ -875,7 +876,6 @@ body {
     margin-left: -157px;
     margin-top: -257px;
     width: 300px;
-    height: 500px;
     border: 2px solid $siteColor5;
     border-radius: 5px;
     background: $siteColor9;
@@ -885,6 +885,7 @@ body {
     font-size: $fontSize1;
     line-height: $fontSize2;
     @media screen and (min-width: $contentWidth2) {
+      height: 500px;
       padding: 10px;
       top: 50%;
       left: 50%;
@@ -897,6 +898,11 @@ body {
 
     .readme__message {
       text-align: left;
+      overflow-y: scroll;
+      max-height: 310px;
+      @media screen and (min-width: $contentWidth2) {
+        max-height: 480px;
+      }
     }
 
     button {

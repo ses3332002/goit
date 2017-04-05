@@ -2775,7 +2775,8 @@ body {
         body .showcase .showcase__content {
           padding-top: 50px; } }
       body .showcase .showcase__content h2, body .showcase .showcase__content .easy123__content .easy123__payment, body .easy123__content .showcase .showcase__content .easy123__payment, body .showcase .showcase__content .showcase__slogan {
-        margin-bottom: 60px; }
+        margin-bottom: 60px;
+        text-shadow: 1px 1px 2px #4e73db; }
         body .showcase .showcase__content h2 span, body .showcase .showcase__content .easy123__content .easy123__payment span, body .easy123__content .showcase .showcase__content .easy123__payment span, body .showcase .showcase__content .showcase__slogan span {
           color: #f00; }
       body .showcase .showcase__content .showcase__slogan {
@@ -2851,7 +2852,6 @@ body {
     margin-left: -157px;
     margin-top: -257px;
     width: 300px;
-    height: 500px;
     border: 2px solid #000;
     border-radius: 5px;
     background: #cccccc;
@@ -2862,6 +2862,7 @@ body {
     line-height: 22px; }
     @media screen and (min-width: 748px) {
       body .readme {
+        height: 500px;
         padding: 10px;
         top: 50%;
         left: 50%;
@@ -2871,7 +2872,12 @@ body {
         width: 600px;
         height: 300px; } }
     body .readme .readme__message {
-      text-align: left; }
+      text-align: left;
+      overflow-y: scroll;
+      max-height: 310px; }
+      @media screen and (min-width: 748px) {
+        body .readme .readme__message {
+          max-height: 480px; } }
     body .readme button {
       font-size: 20px;
       line-height: 20px;

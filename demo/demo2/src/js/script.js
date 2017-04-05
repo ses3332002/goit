@@ -39,7 +39,7 @@ $('.readme__button').click(function(){
   $(window).on("scroll resize", function() {
     var o = $(window).scrollTop() / ($(document).height() - $(window).height());
     $('.progress__bar').css({"width": (100 * o | 0) + "%"});
-    $('.progress').value = o;
+    // $('.progress').value = o;
     if (($(window).scrollTop() < 460) || ($(window).width() < 748)) {
       $('.back__top').hide(700);
     } else {
