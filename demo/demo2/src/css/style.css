@@ -2850,7 +2850,7 @@ body {
     top: 50%;
     left: 50%;
     margin-left: -157px;
-    margin-top: -257px;
+    margin-top: -190px;
     width: 300px;
     border: 2px solid #000;
     border-radius: 5px;
@@ -2873,7 +2873,7 @@ body {
         height: 300px; } }
     body .readme .readme__message {
       text-align: left;
-      overflow-y: scroll;
+      overflow-y: auto;
       max-height: 310px; }
       @media screen and (min-width: 748px) {
         body .readme .readme__message {

@@ -874,7 +874,7 @@ body {
     top: 50%;
     left: 50%;
     margin-left: -157px;
-    margin-top: -257px;
+    margin-top: -190px;
     width: 300px;
     border: 2px solid $siteColor5;
     border-radius: 5px;
@@ -898,7 +898,7 @@ body {
 
     .readme__message {
       text-align: left;
-      overflow-y: scroll;
+      overflow-y: auto;
       max-height: 310px;
       @media screen and (min-width: $contentWidth2) {
         max-height: 480px;
