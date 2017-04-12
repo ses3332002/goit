@@ -1,0 +1,397 @@
+@font-face {
+  font-family: 'helvetica neue';
+  src: url('../fonts/helveticaneuecyr-light-webfont.eot');
+  src: url('../fonts/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helveticaneuecyr-light-webfont.woff2') format('woff2'),
+  url('../fonts/helveticaneuecyr-light-webfont.woff') format('woff'),
+  url('../fonts/helveticaneuecyr-light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import '../css/font-awesome.min';
+
+$contentWidth1: 940px;
+$contentWidth2: 748px;
+$contentWidth3: 320px;
+$contentWidth4: 300px;
+$contentWidth5: $contentWidth1 / 3 - 5px;
+$contentWidth6: $contentWidth2 / 3 - 5px;
+
+$siteColor1: #fff;
+$siteColor2: #f00;
+$siteColor3: #fc8800;
+$siteColor4: #e4370f;
+$siteColor5: #862009;
+$siteColor6: #000;
+$siteColor7: RGBA(0,0,0,0.5);
+$siteColor8: RGBA(241,136,45,0.9);
+$siteColor9: #aaa;
+
+$fontSize1: 14px;
+$fontSize2: 16px;
+$fontSize3: 18px;
+$fontSize4: 20px;
+$fontSize5: 24px;
+$fontSize6: 28px;
+$fontSize7: 32px;
+$fontSize8: 40px;
+$fontSize9: 60px;
+$fontSize10: 80px;
+
+.content {
+  text-align: center;
+  margin: 0 auto;
+  max-width: $contentWidth4;
+  width: 100%;
+  @media screen and (min-width: $contentWidth2) {
+    max-width: $contentWidth2;
+  }
+  @media screen and (min-width: $contentWidth1) {
+    max-width: $contentWidth1;
+  }
+}
+
+.caption {
+  text-align: center;
+  font-size: $fontSize3;
+  line-height: $fontSize4;
+  @media screen and (min-width: $contentWidth2) {
+    font-size: $fontSize4;
+    line-height: $fontSize5;
+  }
+  @media screen and (min-width: $contentWidth1) {
+    font-size: $fontSize6;
+    line-height: $fontSize7;
+  }
+}
+
+body {
+  min-width: $contentWidth3;
+  font-family: 'helvetica neue';
+  background-color: $siteColor8;
+
+  header {
+    .header__content {
+      @extend .content;
+      color: $siteColor6;
+      font-size: 0;
+
+      h2 {
+        @extend .caption;
+        // position: relative;
+        margin-top: 30px;
+        margin-bottom: 5px;
+        text-align: right;
+        @media screen and (min-width: $contentWidth2) {
+          margin-right: 20px;
+        }
+        @media screen and (min-width: $contentWidth1) {
+          text-align: center;
+        }
+
+        span {
+          white-space: nowrap;
+          color: $siteColor5;
+          font-weight: bold;
+        }
+      }
+
+      .owl-carousel {
+        width: $contentWidth4;
+        margin: 10px auto;
+        position: relative;
+        @media screen and (min-width: $contentWidth2) {
+          width: $contentWidth2 - 40px;
+        }
+        @media screen and (min-width: $contentWidth1) {
+          width: $contentWidth1 - 40px;
+        }
+
+        .item {
+          width: inherit;
+          box-sizing: border-box;
+          border-radius: 4px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          display: table-cell;
+          vertical-align: top;
+          padding: 20px;
+          padding-top: 100px;
+          font-size: 0;
+          text-align: center;
+          color: $siteColor1;
+          height: 280px;
+          overflow: hidden;
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
+          -ms-transform: translateZ(0);
+          @media screen and (min-width: $contentWidth2) {
+            height: 340px;
+          }
+          @media screen and (min-width: $contentWidth1) {
+            height: 400px;
+          }
+
+          .item__text {
+            display: inline-block;
+            font-size: $fontSize4;
+            line-height: $fontSize5;
+            background-color: $siteColor7;
+            margin-top: 10px;
+            padding-right: 4px;
+            padding-left: 4px;
+            text-align: center;
+            @media screen and (min-width: $contentWidth2) {
+              font-size: $fontSize7;
+              line-height: $fontSize8;
+              width: 660px;
+            }
+            @media screen and (min-width: $contentWidth1) {
+              width: 800px;
+            }
+
+            img {
+              display: inline;
+              height: 200px;
+              width: 150px;
+            }
+          }
+        }
+
+        .item-1 {
+          background: linear-gradient(0deg, $siteColor5, $siteColor4);
+          padding-top: 20px;
+          @media screen and (min-width: $contentWidth2) {
+            padding-top: 80px;
+          }
+          @media screen and (min-width: $contentWidth1) {
+            padding-top: 100px;
+          }
+
+          .item__text {
+            background: transparent;
+            font-family: serif;
+            font-size: $fontSize6;
+            color: $siteColor3;
+            text-shadow: $siteColor6 1px 1px 0, $siteColor6 -1px -1px 0,
+                 $siteColor6 -1px 1px 0, $siteColor6 1px -1px 0;
+            @media screen and (min-width: $contentWidth2) {
+              font-size: $fontSize9;
+            }
+            @media screen and (min-width: $contentWidth1) {
+              font-size: $fontSize10;
+            }
+
+            .item__name {
+              display: inline-block;
+              vertical-align: top;
+              @media screen and (min-width: $contentWidth2) {
+                margin-top: 70px;
+              }
+
+              span {
+                color: $siteColor1;
+              }
+            }
+          }
+        }
+
+        .item-2 {
+          background-image: url(../img/slide2.jpg);
+        }
+        .item-3 {
+          background-image: url(../img/slide3.jpg);
+        }
+        .item-4 {
+          background-image: url(../img/slide4.jpg);
+        }
+        .item-5 {
+          background-image: url(../img/slide5.jpg);
+        }
+        .item-6 {
+          background-image: url(../img/slide6.jpg);
+        }
+
+        .owl-controls {
+          display: none;
+          @media screen and (min-width: $contentWidth2) {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            bottom: 55px;
+          }
+
+          .owl-dots {
+            margin: 0 auto;
+
+            .owl-dot {
+              width: 20px;
+              height: 20px;
+              border-radius: 100%;
+              background: $siteColor4;
+              margin-right: 10px;
+              display: inline-block;
+
+              &:last-of-type {
+                margin-right: 0px;
+              }
+            }
+
+            .active {
+              background: $siteColor1;
+            }
+          }
+        }
+      }
+
+      .header__menu_cover {
+        text-align: left;
+        position: relative;
+
+        nav {
+        	margin: 10px 0;
+          font-size: $fontSize3;
+          display: inline-block;
+
+          .header__bars {
+            position: absolute;
+            top: -45px;
+            left: 0px;
+            color: $siteColor5;
+            cursor: pointer;
+            padding-left: 2px;
+            padding-right: 2px;
+            border: solid 1px $siteColor9;
+            box-shadow: 1px 2px 2px $siteColor7;
+            background: $siteColor1;
+            border-radius: 5px;
+            @media screen and (min-width: $contentWidth2) {
+              top: -40px;
+              padding-left: 10px;
+              padding-right: 10px;
+              margin-left: 20px;
+            }
+            @media screen and (min-width: $contentWidth1) {
+              display: none;
+            }
+
+            .header__label {
+              display: none;
+              padding-left: 10px;
+              font-family: 'helvetica neue';
+              font-size: $fontSize6;
+              line-height: $fontSize6;
+              @media screen and (min-width: $contentWidth2) {
+                display: inline;
+              }
+            }
+          }
+
+          &:hover .header__menu {
+            display: block;
+          }
+
+          &:hover .header__bars {
+            display: none;
+          }
+
+          ul {
+            display: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            width: 180px;
+            padding: 5px 0;
+            position: fixed;
+            top: 20px;
+            left: 18px;
+            border: solid 1px $siteColor9;
+            background: $siteColor1;
+            border-radius: 5px;
+            box-shadow: 1px 2px 2px $siteColor7;
+            z-index: 400;
+            @media screen and (min-width: $contentWidth1) {
+              display: block;
+            }
+
+            li {
+            	padding: 0;
+            	list-style: none;
+              margin-top: 5px;
+              margin-bottom: 5px;
+
+              a {
+                padding: 4px 12px;
+                text-decoration: none;
+                color: $siteColor6;
+                line-height: 100%;
+                display: block;
+            		text-align: left;
+
+                &:hover {
+                  color: $siteColor2;
+                }
+              }
+            }
+
+            .current {
+
+              a {
+                color: $siteColor4;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .footer__content {
+      @extend .content;
+      padding-bottom: 20px;
+
+      h3 {
+        @extend .caption;
+      }
+
+      .footer__phones {
+        font-weight: bold;
+        font-size: $fontSize3;
+        line-height: $fontSize4;
+        @media screen and (min-width: $contentWidth2) {
+          font-size: $fontSize4;
+          line-height: $fontSize5;
+        }
+        @media screen and (min-width: $contentWidth1) {
+          font-size: $fontSize6;
+          line-height: $fontSize7;
+        }
+
+        .footer__phone {
+          display: inline-block;
+          margin: 10px;
+          border: solid 2px $siteColor2;
+          border-radius: 5px;
+          padding: 5px;
+          @media screen and (min-width: $contentWidth2) {
+            border: solid 0px $siteColor2;
+          }
+
+          a {
+            color: $siteColor2;
+            text-decoration: none;
+          }
+
+          i {
+            color: $siteColor5;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
