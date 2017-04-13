@@ -2199,30 +2199,38 @@
   overflow: visible;
   clip: auto; }
 
-.content, body header .header__content, body footer .footer__content {
+.content, body header .header__content, body .articles__content, body .questions .questions__content, body footer .footer__content {
   text-align: center;
   margin: 0 auto;
   max-width: 300px;
   width: 100%; }
   @media screen and (min-width: 748px) {
-    .content, body header .header__content, body footer .footer__content {
+    .content, body header .header__content, body .articles__content, body .questions .questions__content, body footer .footer__content {
       max-width: 748px; } }
   @media screen and (min-width: 940px) {
-    .content, body header .header__content, body footer .footer__content {
+    .content, body header .header__content, body .articles__content, body .questions .questions__content, body footer .footer__content {
       max-width: 940px; } }
 
-.caption, body header .header__content h2, body footer .footer__content h3 {
+.caption, body header .header__content h1, body footer .footer__content h3 {
   text-align: center;
   font-size: 18px;
   line-height: 20px; }
   @media screen and (min-width: 748px) {
-    .caption, body header .header__content h2, body footer .footer__content h3 {
+    .caption, body header .header__content h1, body footer .footer__content h3 {
       font-size: 20px;
       line-height: 24px; } }
   @media screen and (min-width: 940px) {
-    .caption, body header .header__content h2, body footer .footer__content h3 {
-      font-size: 28px;
-      line-height: 32px; } }
+    .caption, body header .header__content h1, body footer .footer__content h3 {
+      font-size: 24px;
+      line-height: 28px; } }
+
+.words__important {
+  color: #f00;
+  font-weight: bold; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
 
 body {
   min-width: 320px;
@@ -2231,17 +2239,17 @@ body {
   body header .header__content {
     color: #000;
     font-size: 0; }
-    body header .header__content h2 {
+    body header .header__content h1 {
       margin-top: 30px;
       margin-bottom: 5px;
       text-align: right; }
       @media screen and (min-width: 748px) {
-        body header .header__content h2 {
+        body header .header__content h1 {
           margin-right: 20px; } }
       @media screen and (min-width: 940px) {
-        body header .header__content h2 {
+        body header .header__content h1 {
           text-align: center; } }
-      body header .header__content h2 span {
+      body header .header__content h1 span {
         white-space: nowrap;
         color: #862009;
         font-weight: bold; }
@@ -2254,9 +2262,9 @@ body {
           width: 708px; } }
       @media screen and (min-width: 940px) {
         body header .header__content .owl-carousel {
-          width: 900px; } }
+          width: 800px; } }
       body header .header__content .owl-carousel .item {
-        width: inherit;
+        width: auto;
         box-sizing: border-box;
         border-radius: 4px;
         background-repeat: no-repeat;
@@ -2276,10 +2284,10 @@ body {
         -ms-transform: translateZ(0); }
         @media screen and (min-width: 748px) {
           body header .header__content .owl-carousel .item {
-            height: 340px; } }
+            height: 300px; } }
         @media screen and (min-width: 940px) {
           body header .header__content .owl-carousel .item {
-            height: 400px; } }
+            height: 330px; } }
         body header .header__content .owl-carousel .item .item__text {
           display: inline-block;
           font-size: 20px;
@@ -2296,20 +2304,20 @@ body {
               width: 660px; } }
           @media screen and (min-width: 940px) {
             body header .header__content .owl-carousel .item .item__text {
-              width: 800px; } }
+              width: 752px; } }
           body header .header__content .owl-carousel .item .item__text img {
             display: inline;
             height: 200px;
             width: 150px; }
       body header .header__content .owl-carousel .item-1 {
         background: linear-gradient(0deg, #862009, #e4370f);
-        padding-top: 20px; }
+        padding-top: 15px; }
         @media screen and (min-width: 748px) {
           body header .header__content .owl-carousel .item-1 {
-            padding-top: 80px; } }
+            padding-top: 50px; } }
         @media screen and (min-width: 940px) {
           body header .header__content .owl-carousel .item-1 {
-            padding-top: 100px; } }
+            padding-top: 60px; } }
         body header .header__content .owl-carousel .item-1 .item__text {
           background: transparent;
           font-family: serif;
@@ -2321,13 +2329,13 @@ body {
               font-size: 60px; } }
           @media screen and (min-width: 940px) {
             body header .header__content .owl-carousel .item-1 .item__text {
-              font-size: 80px; } }
+              font-size: 70px; } }
           body header .header__content .owl-carousel .item-1 .item__text .item__name {
             display: inline-block;
             vertical-align: top; }
             @media screen and (min-width: 748px) {
               body header .header__content .owl-carousel .item-1 .item__text .item__name {
-                margin-top: 70px; } }
+                margin-top: 50px; } }
             body header .header__content .owl-carousel .item-1 .item__text .item__name span {
               color: #fff; }
       body header .header__content .owl-carousel .item-2 {
@@ -2347,7 +2355,7 @@ body {
             display: inline-block;
             position: relative;
             width: 100%;
-            bottom: 55px; } }
+            bottom: 35px; } }
         body header .header__content .owl-carousel .owl-controls .owl-dots {
           margin: 0 auto; }
           body header .header__content .owl-carousel .owl-controls .owl-dots .owl-dot {
@@ -2427,7 +2435,6 @@ body {
             margin-bottom: 5px; }
             body header .header__content .header__menu_cover nav ul li a {
               padding: 4px 12px;
-              text-decoration: none;
               color: #000;
               line-height: 100%;
               display: block;
@@ -2437,12 +2444,75 @@ body {
           body header .header__content .header__menu_cover nav ul .current a {
             color: #e4370f;
             font-weight: bold; }
+  body .articles__content {
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px; }
+    @media screen and (min-width: 748px) {
+      body .articles__content {
+        font-size: 18px;
+        line-height: 24px;
+        padding-left: 20px;
+        padding-right: 20px; } }
+    body .articles__content .articles__article {
+      margin-top: 20px; }
+    body .articles__content .articles__article-center {
+      text-align: center; }
+    body .articles__content .articles__article-slogan {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: bold; }
+      @media screen and (min-width: 940px) {
+        body .articles__content .articles__article-slogan {
+          font-size: 24px;
+          line-height: 32px; } }
+    body .articles__content .articles__article-italic {
+      font-style: italic; }
+    body .articles__content .articles__article-bold {
+      font-weight: bold;
+      color: #862009;
+      line-height: 28px; }
+  body .questions .questions__content {
+    text-align: left; }
+    body .questions .questions__content .accordion {
+      margin-top: 10px;
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 100%;
+      font-size: 16px;
+      line-height: 20px;
+      position: relative;
+      cursor: pointer;
+      font-weight: bold;
+      color: #862009; }
+      @media screen and (min-width: 748px) {
+        body .questions .questions__content .accordion {
+          font-size: 18px;
+          line-height: 24px; } }
+      body .questions .questions__content .accordion i {
+        padding-left: 6px; }
+    body .questions .questions__content .accordion:first-of-type {
+      margin-top: 40px; }
+    body .questions .questions__content .accordion__content {
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 10px;
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-right: 10px; }
+      @media screen and (min-width: 748px) {
+        body .questions .questions__content .accordion__content {
+          font-size: 18px;
+          line-height: 24px; } }
   body footer .footer__content {
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    margin-top: 20px; }
     body footer .footer__content .footer__phones {
       font-weight: bold;
-      font-size: 18px;
-      line-height: 20px; }
+      font-size: 20px;
+      line-height: 24px; }
       @media screen and (min-width: 748px) {
         body footer .footer__content .footer__phones {
           font-size: 20px;
@@ -2456,13 +2526,20 @@ body {
         margin: 10px;
         border: solid 2px #f00;
         border-radius: 5px;
-        padding: 5px; }
+        padding: 7px;
+        padding-left: 10px;
+        padding-right: 10px;
+        cursor: pointer; }
         @media screen and (min-width: 748px) {
           body footer .footer__content .footer__phones .footer__phone {
             border: solid 0px #f00; } }
+        body footer .footer__content .footer__phones .footer__phone:hover {
+          background: #fff; }
+          @media screen and (min-width: 748px) {
+            body footer .footer__content .footer__phones .footer__phone:hover {
+              background: transparent; } }
         body footer .footer__content .footer__phones .footer__phone a {
-          color: #f00;
-          text-decoration: none; }
+          color: #f00; }
         body footer .footer__content .footer__phones .footer__phone i {
           color: #862009;
           padding-right: 10px; }

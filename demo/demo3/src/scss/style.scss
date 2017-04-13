@@ -37,7 +37,7 @@ $fontSize6: 28px;
 $fontSize7: 32px;
 $fontSize8: 40px;
 $fontSize9: 60px;
-$fontSize10: 80px;
+$fontSize10: 70px;
 
 .content {
   text-align: center;
@@ -61,9 +61,19 @@ $fontSize10: 80px;
     line-height: $fontSize5;
   }
   @media screen and (min-width: $contentWidth1) {
-    font-size: $fontSize6;
-    line-height: $fontSize7;
+    font-size: $fontSize5;
+    line-height: $fontSize6;
   }
+}
+
+.words__important {
+  color: $siteColor2;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -77,9 +87,8 @@ body {
       color: $siteColor6;
       font-size: 0;
 
-      h2 {
+      h1 {
         @extend .caption;
-        // position: relative;
         margin-top: 30px;
         margin-bottom: 5px;
         text-align: right;
@@ -105,11 +114,11 @@ body {
           width: $contentWidth2 - 40px;
         }
         @media screen and (min-width: $contentWidth1) {
-          width: $contentWidth1 - 40px;
+          width: $contentWidth1 - 140px;
         }
 
         .item {
-          width: inherit;
+          width: auto;
           box-sizing: border-box;
           border-radius: 4px;
           background-repeat: no-repeat;
@@ -128,10 +137,10 @@ body {
           -webkit-transform: translateZ(0);
           -ms-transform: translateZ(0);
           @media screen and (min-width: $contentWidth2) {
-            height: 340px;
+            height: 300px;
           }
           @media screen and (min-width: $contentWidth1) {
-            height: 400px;
+            height: 330px;
           }
 
           .item__text {
@@ -149,7 +158,7 @@ body {
               width: 660px;
             }
             @media screen and (min-width: $contentWidth1) {
-              width: 800px;
+              width: 752px;
             }
 
             img {
@@ -162,12 +171,12 @@ body {
 
         .item-1 {
           background: linear-gradient(0deg, $siteColor5, $siteColor4);
-          padding-top: 20px;
+          padding-top: 15px;
           @media screen and (min-width: $contentWidth2) {
-            padding-top: 80px;
+            padding-top: 50px;
           }
           @media screen and (min-width: $contentWidth1) {
-            padding-top: 100px;
+            padding-top: 60px;
           }
 
           .item__text {
@@ -188,7 +197,7 @@ body {
               display: inline-block;
               vertical-align: top;
               @media screen and (min-width: $contentWidth2) {
-                margin-top: 70px;
+                margin-top: 50px;
               }
 
               span {
@@ -220,7 +229,7 @@ body {
             display: inline-block;
             position: relative;
             width: 100%;
-            bottom: 55px;
+            bottom: 35px;
           }
 
           .owl-dots {
@@ -324,7 +333,6 @@ body {
 
               a {
                 padding: 4px 12px;
-                text-decoration: none;
                 color: $siteColor6;
                 line-height: 100%;
                 display: block;
@@ -337,7 +345,6 @@ body {
             }
 
             .current {
-
               a {
                 color: $siteColor4;
                 font-weight: bold;
@@ -349,10 +356,100 @@ body {
     }
   }
 
+  .articles__content {
+    @extend .content;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: $fontSize2;
+    line-height: $fontSize4;
+    @media screen and (min-width: $contentWidth2) {
+      font-size: $fontSize3;
+      line-height: $fontSize5;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .articles__article {
+      margin-top: 20px;
+    }
+
+    .articles__article-center {
+      text-align: center;
+    }
+
+    .articles__article-slogan {
+      font-size: $fontSize4;
+      line-height: $fontSize6;
+      font-weight: bold;
+      @media screen and (min-width: $contentWidth1) {
+        font-size: $fontSize5;
+        line-height: $fontSize7;
+      }
+    }
+
+    .articles__article-italic {
+      font-style: italic;
+    }
+
+    .articles__article-bold {
+      font-weight: bold;
+      color: $siteColor5;
+      line-height: $fontSize6;
+    }
+  }
+
+  .questions {
+
+    .questions__content {
+      @extend .content;
+      text-align: left;
+
+      .accordion {
+        margin-top: 10px;
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        font-size: $fontSize2;
+        line-height: $fontSize4;
+        position: relative;
+        cursor: pointer;
+        font-weight: bold;
+        color: $siteColor5;
+        @media screen and (min-width: $contentWidth2) {
+          font-size: $fontSize3;
+          line-height: $fontSize5;
+        }
+
+        i {
+          padding-left: 6px;
+        }
+      }
+
+      .accordion:first-of-type {
+        margin-top: 40px;
+      }
+
+      .accordion__content {
+        font-size: $fontSize2;
+        line-height: $fontSize4;
+        margin-top: 10px;
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-right: 10px;
+        @media screen and (min-width: $contentWidth2) {
+          font-size: $fontSize3;
+          line-height: $fontSize5;
+        }
+      }
+    }
+  }
+
   footer {
     .footer__content {
       @extend .content;
       padding-bottom: 20px;
+      margin-top: 20px;
 
       h3 {
         @extend .caption;
@@ -360,8 +457,8 @@ body {
 
       .footer__phones {
         font-weight: bold;
-        font-size: $fontSize3;
-        line-height: $fontSize4;
+        font-size: $fontSize4;
+        line-height: $fontSize5;
         @media screen and (min-width: $contentWidth2) {
           font-size: $fontSize4;
           line-height: $fontSize5;
@@ -376,14 +473,23 @@ body {
           margin: 10px;
           border: solid 2px $siteColor2;
           border-radius: 5px;
-          padding: 5px;
+          padding: 7px;
+          padding-left: 10px;
+          padding-right: 10px;
+          cursor: pointer;
           @media screen and (min-width: $contentWidth2) {
             border: solid 0px $siteColor2;
           }
 
+          &:hover {
+            background: $siteColor1;
+            @media screen and (min-width: $contentWidth2) {
+              background: transparent;
+            }
+          }
+
           a {
             color: $siteColor2;
-            text-decoration: none;
           }
 
           i {
