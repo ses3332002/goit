@@ -2543,3 +2543,44 @@ body {
         body footer .footer__content .footer__phones .footer__phone i {
           color: #862009;
           padding-right: 10px; }
+    body footer .footer__content .weather_informer {
+      display: inline-block;
+      text-align: center;
+      z-index: 400;
+      width: 180px;
+      margin: 0;
+      vertical-align: top; }
+      @media screen and (min-width: 748px) {
+        body footer .footer__content .weather_informer {
+          margin-left: 60px;
+          margin-right: 60px; } }
+      @media screen and (min-width: 940px) {
+        body footer .footer__content .weather_informer {
+          margin: 0;
+          position: fixed;
+          top: 20px;
+          right: 18px; } }
+    body footer .footer__content .currency_informer {
+      text-align: center;
+      display: inline-block;
+      z-index: 400;
+      width: 180px;
+      margin: 0;
+      vertical-align: top; }
+      @media screen and (min-width: 748px) {
+        body footer .footer__content .currency_informer {
+          margin-left: 60px;
+          margin-right: 60px; } }
+      @media screen and (min-width: 940px) {
+        body footer .footer__content .currency_informer {
+          position: fixed;
+          top: 240px;
+          right: 18px;
+          margin: 0; } }
+    body footer .footer__content .informer_name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #862009;
+      display: inline-block;
+      padding-bottom: 15px;
+      margin-top: 20px; }
