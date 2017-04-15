@@ -526,6 +526,7 @@ body {
         width: 180px;
         margin: 0;
         vertical-align: top;
+        font-size: $fontSize1;
         @media screen and (min-width: $contentWidth2) {
           margin-left: 60px;
           margin-right: 60px;
@@ -535,6 +536,37 @@ body {
           top: 240px;
           right: 18px;
           margin: 0;
+        }
+
+        .informer_table {
+          box-sizing: border-box;
+          padding: 6px;
+          border: 1px solid $siteColor9;
+          border-radius: 4px;
+          height: 136px;
+          background-color: $siteColor1;
+
+          .currency_label {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+          }
+
+          tr {
+            height: $fontSize4;
+            vertical-align: middle;
+          }
+
+          td, th {
+            box-sizing: border-box;
+            width: 56px;
+            text-align: right;
+            padding-right: 5px;
+          }
+
+          th {
+            color: $siteColor5;
+          }
         }
       }
 

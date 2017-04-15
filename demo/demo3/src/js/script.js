@@ -38,4 +38,16 @@ $(document).ready(function(){
       $(this).next('.accordion__content').hide('slow');
     };
   });
+
+  //поисковый запрос
+  jQuery.support.cors = true;
+  $.getJSON('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5', {}, function(json){
+    $('.informer_table').html('');
+    $('.informer_table').append('<span class="currency_label">Приватбанк,<br> наличный курс</span>');
+    $('.informer_table').append('<table><tr><th></th><th>Покупка</th><th>Продажа</th></tr>');
+      for (var i=0; i<3; i++) {
+        $('.informer_table').append('<tr><td>' + json[i].ccy + '</td><td>' +  (Math.round(json[i].buy * 1000) / 1000).toFixed(2) + '</td><td>' + (Math.round(json[i].sale * 1000) / 1000).toFixed(2) + '</td></tr>');
+      }
+    $('.informer_table').append('</table>');
+  });
 });
