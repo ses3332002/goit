@@ -2543,7 +2543,7 @@ body {
         body footer .footer__content .footer__phones .footer__phone i {
           color: #862009;
           padding-right: 10px; }
-    body footer .footer__content .weather_informer {
+    body footer .footer__content .footer__informer {
       display: inline-block;
       text-align: center;
       z-index: 400;
@@ -2551,58 +2551,62 @@ body {
       margin: 0;
       vertical-align: top; }
       @media screen and (min-width: 748px) {
-        body footer .footer__content .weather_informer {
+        body footer .footer__content .footer__informer {
           margin-left: 60px;
           margin-right: 60px; } }
       @media screen and (min-width: 940px) {
-        body footer .footer__content .weather_informer {
+        body footer .footer__content .footer__informer {
           margin: 0;
           position: fixed;
-          top: 20px;
           right: 18px; } }
-    body footer .footer__content .currency_informer {
-      text-align: center;
-      display: inline-block;
-      z-index: 400;
-      width: 180px;
-      margin: 0;
-      vertical-align: top;
-      font-size: 14px; }
-      @media screen and (min-width: 748px) {
-        body footer .footer__content .currency_informer {
-          margin-left: 60px;
-          margin-right: 60px; } }
-      @media screen and (min-width: 940px) {
-        body footer .footer__content .currency_informer {
-          position: fixed;
-          top: 240px;
-          right: 18px;
-          margin: 0; } }
-      body footer .footer__content .currency_informer .informer_table {
+      body footer .footer__content .footer__informer .informer_table {
         box-sizing: border-box;
         padding: 6px;
         border: 1px solid #aaa;
         border-radius: 4px;
         height: 136px;
         background-color: #fff; }
-        body footer .footer__content .currency_informer .informer_table .currency_label {
+        body footer .footer__content .footer__informer .informer_table .currency_label {
           display: inline-block;
           margin-bottom: 10px;
           font-weight: bold; }
-        body footer .footer__content .currency_informer .informer_table tr {
+        body footer .footer__content .footer__informer .informer_table tr {
           height: 20px;
           vertical-align: middle; }
-        body footer .footer__content .currency_informer .informer_table td, body footer .footer__content .currency_informer .informer_table th {
+        body footer .footer__content .footer__informer .informer_table th {
           box-sizing: border-box;
           width: 56px;
-          text-align: right;
-          padding-right: 5px; }
-        body footer .footer__content .currency_informer .informer_table th {
+          text-align: center;
           color: #862009; }
-    body footer .footer__content .informer_name {
-      font-size: 18px;
-      font-weight: bold;
-      color: #862009;
-      display: inline-block;
-      padding-bottom: 15px;
-      margin-top: 20px; }
+        body footer .footer__content .footer__informer .informer_table td {
+          box-sizing: border-box;
+          width: 58px;
+          text-align: right;
+          padding-right: 5px;
+          border: none; }
+          body footer .footer__content .footer__informer .informer_table td .fa {
+            padding-right: 3px; }
+        body footer .footer__content .footer__informer .informer_table .currency_name {
+          text-align: left;
+          padding-right: 0;
+          font-size: 14px; }
+        body footer .footer__content .footer__informer .informer_table p {
+          margin: 0;
+          padding-bottom: 8px; }
+        body footer .footer__content .footer__informer .informer_table .weather_description {
+          font-size: 14px; }
+        body footer .footer__content .footer__informer .informer_table .temp {
+          font-size: 28px; }
+      body footer .footer__content .footer__informer .informer_name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #862009;
+        display: inline-block;
+        padding-bottom: 15px;
+        margin-top: 20px; }
+    @media screen and (min-width: 940px) {
+      body footer .footer__content .footer__informer-weather {
+        top: 20px; } }
+    @media screen and (min-width: 940px) {
+      body footer .footer__content .footer__informer-currency {
+        top: 200px; } }

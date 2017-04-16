@@ -500,7 +500,7 @@ body {
         }
       }
 
-      .weather_informer {
+      .footer__informer {
         display: inline-block;
         text-align: center;
         z-index: 400;
@@ -514,28 +514,7 @@ body {
         @media screen and (min-width: $contentWidth1) {
           margin: 0;
           position: fixed;
-          top: 20px;
           right: 18px;
-        }
-      }
-
-      .currency_informer {
-        text-align: center;
-        display: inline-block;
-        z-index: 400;
-        width: 180px;
-        margin: 0;
-        vertical-align: top;
-        font-size: $fontSize1;
-        @media screen and (min-width: $contentWidth2) {
-          margin-left: 60px;
-          margin-right: 60px;
-        }
-        @media screen and (min-width: $contentWidth1) {
-          position: fixed;
-          top: 240px;
-          right: 18px;
-          margin: 0;
         }
 
         .informer_table {
@@ -557,26 +536,65 @@ body {
             vertical-align: middle;
           }
 
-          td, th {
+          th {
             box-sizing: border-box;
             width: 56px;
-            text-align: right;
-            padding-right: 5px;
-          }
-
-          th {
+            text-align: center;
             color: $siteColor5;
           }
+
+          td {
+            box-sizing: border-box;
+            width: 58px;
+            text-align: right;
+            padding-right: 5px;
+            border: none;
+
+            .fa {
+              padding-right: 3px;
+            }
+          }
+
+          .currency_name {
+            text-align: left;
+            padding-right: 0;
+            font-size: $fontSize1;
+          }
+
+          p {
+            margin: 0;
+            padding-bottom: 8px;
+          }
+
+          .weather_description {
+            font-size: $fontSize1;
+          }
+
+          .temp {
+            font-size: $fontSize6;
+          }
+        }
+
+        .informer_name {
+          font-size: $fontSize3;
+          font-weight: bold;
+          color: $siteColor5;
+          display: inline-block;
+          padding-bottom: 15px;
+          margin-top: 20px;
         }
       }
 
-      .informer_name {
-        font-size: $fontSize3;
-        font-weight: bold;
-        color: $siteColor5;
-        display: inline-block;
-        padding-bottom: 15px;
-        margin-top: 20px;
+      .footer__informer-weather {
+        @media screen and (min-width: $contentWidth1) {
+          top: 20px;
+        }
+      }
+
+      .footer__informer-currency {
+        @media screen and (min-width: $contentWidth1) {
+          top: 200px;
+        }
       }
     }
   }
