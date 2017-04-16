@@ -56,7 +56,7 @@ $(document).ready(function(){
     $('td:contains("USD")').css("color","green").find('i').addClass('fa-usd');
   });
 
-  $.getJSON('http://api.openweathermap.org/data/2.5/weather?id=710791&APPID=' + APIKEY + '&units=metric&lang=ru ', {}, function(json){
+  $.getJSON('http://api.openweathermap.org/data/2.5/weather?id=710791&APPID=' + APIKEY + '&cluster=yes&units=metric&lang=ru ', {}, function(json){
     $('.footer__informer-weather .informer_table').html('');
     $('.footer__informer-weather .informer_table').append('<img src="http://openweathermap.org/img/w/' + json.weather[0].icon + '.png">');
     $('.footer__informer-weather .informer_table').append('<p class="weather_description">' + json.weather[0].description + '</p>');
