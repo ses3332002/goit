@@ -27,7 +27,6 @@ $siteColor6: #000;
 $siteColor7: RGBA(0,0,0,0.5);
 $siteColor8: RGBA(241,136,45,0.9);
 $siteColor9: #aaa;
-$siteColor10: #aaa;
 
 $fontSize1: 14px;
 $fontSize2: 16px;
@@ -75,6 +74,45 @@ $fontSize10: 70px;
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.accordion {
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  font-size: $fontSize2;
+  line-height: $fontSize4;
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  color: $siteColor5;
+  @media screen and (min-width: $contentWidth2) {
+    font-size: $fontSize3;
+    line-height: $fontSize5;
+  }
+
+  i {
+    padding-left: 6px;
+  }
+}
+
+.accordion:first-of-type {
+  margin-top: 40px;
+}
+
+.accordion__content {
+  font-size: $fontSize2;
+  line-height: $fontSize4;
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  @media screen and (min-width: $contentWidth2) {
+    font-size: $fontSize3;
+    line-height: $fontSize5;
+  }
 }
 
 body {
@@ -274,7 +312,7 @@ body {
             padding-left: 2px;
             padding-right: 2px;
             border: solid 1px $siteColor9;
-            box-shadow: 1px 2px 2px $siteColor7;
+            // box-shadow: 1px 2px 2px $siteColor7;
             background: $siteColor1;
             border-radius: 5px;
             @media screen and (min-width: $contentWidth2) {
@@ -320,7 +358,7 @@ body {
             border: solid 1px $siteColor9;
             background: $siteColor1;
             border-radius: 5px;
-            box-shadow: 1px 2px 2px $siteColor7;
+            // box-shadow: 1px 2px 2px $siteColor7;
             z-index: 400;
             @media screen and (min-width: $contentWidth1) {
               display: block;
@@ -373,10 +411,22 @@ body {
 
     .articles__article {
       margin-top: 20px;
+      text-align: left;
+      // max-height: 150px;
+      @media screen and (min-width: $contentWidth2) {
+        text-align: justify;
+        // overflow: hidden;
+        // white-space: normal;
+        // text-overflow: ellipsis;
+      }
     }
 
     .articles__article-center {
-      text-align: center;
+      text-align: center !important;
+    }
+
+    .articles__article-left {
+      text-align: left !important;
     }
 
     .articles__article-slogan {
@@ -398,50 +448,35 @@ body {
       color: $siteColor5;
       line-height: $fontSize6;
     }
-  }
 
-  .questions {
+    .articles__container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: stretch;
+      align-content: stretch;
+      @media screen and (min-width: $contentWidth2) {
+        flex-direction: row;
+      }
 
-    .questions__content {
-      @extend .content;
-      text-align: left;
-
-      .accordion {
-        margin-top: 10px;
-        box-sizing: border-box;
-        padding-left: 10px;
-        padding-right: 10px;
+      .articles__flex {
         width: 100%;
-        font-size: $fontSize2;
-        line-height: $fontSize4;
-        position: relative;
-        cursor: pointer;
-        font-weight: bold;
-        color: $siteColor5;
-        @media screen and (min-width: $contentWidth2) {
-          font-size: $fontSize3;
-          line-height: $fontSize5;
-        }
-
-        i {
-          padding-left: 6px;
-        }
-      }
-
-      .accordion:first-of-type {
-        margin-top: 40px;
-      }
-
-      .accordion__content {
-        font-size: $fontSize2;
-        line-height: $fontSize4;
-        margin-top: 10px;
+        min-height: 200px;
+        // background-color: white;
+        text-align: center;
+        padding: 10px;
         box-sizing: border-box;
-        padding-left: 10px;
-        padding-right: 10px;
         @media screen and (min-width: $contentWidth2) {
-          font-size: $fontSize3;
-          line-height: $fontSize5;
+          width: 50%;
+        }
+
+        .articles__picture {
+          width: 250px;
+          height: 167px;
+          overflow: hidden;
+          text-align: center;
+          display: inline-block;
+          border-radius: 4px;
         }
       }
     }
@@ -541,6 +576,7 @@ body {
             box-sizing: border-box;
             width: 56px;
             text-align: center;
+            font-size: $fontSize1;
             color: $siteColor5;
           }
 
@@ -564,7 +600,7 @@ body {
 
           p {
             margin: 0;
-            padding-bottom: 8px;
+            padding-bottom: 6px;
           }
 
           .weather_description {

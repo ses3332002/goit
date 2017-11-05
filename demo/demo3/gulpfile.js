@@ -11,6 +11,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var webserver = require('gulp-webserver');
 var gutil = require('gulp-util');
+var gcmq = require('gulp-group-css-media-queries');
 
 gulp.task('webserver', function() {
   gulp.src('./')
@@ -29,10 +30,11 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('prepare_css', function() {
-  gulp.src(['./src/css/reset.css', './src/css/owl.carousel.css', './src/css/jquery.countdown.css', './src/css/unite-gallery.css', './src/css/ug-theme-default.css', './src/css/style.css'])
+  gulp.src(['./src/css/reset.css', './src/css/owl.carousel.css', './src/css/style.css'])
       .pipe(concatCss('./build/css/style.min.css', {
         rebaseUrls: false
       }))
+      .pipe(gcmq())
       .pipe(cleanCSS())
       .pipe(gulp.dest(''));
   // gulp.src('./src/css/ie8.css')
@@ -74,4 +76,4 @@ gulp.task('watch', function () {
 //   spriteData.css.pipe(gulp.dest('./src/css/'));
 // });
 
-gulp.task('default', ['imagemin', 'prepare_js', 'sass', 'prepare_css', 'webserver', 'watch']);
+gulp.task('default', ['prepare_js', 'sass', 'prepare_css', 'webserver', 'watch']);

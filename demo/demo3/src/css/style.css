@@ -5,10 +5,6 @@
   font-weight: normal;
   font-style: normal; }
 
-/*!
- *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
- *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
- */
 @font-face {
   font-family: 'FontAwesome';
   src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
@@ -130,7 +126,6 @@
   transform: scale(1, -1); }
 
 :root .fa-rotate-90, :root .fa-rotate-180, :root .fa-rotate-270, :root .fa-flip-horizontal, :root .fa-flip-vertical {
-  -webkit-filter: none;
   filter: none; }
 
 .fa-stack {
@@ -2199,16 +2194,16 @@
   overflow: visible;
   clip: auto; }
 
-.content, body header .header__content, body .articles__content, body .questions .questions__content, body footer .footer__content {
+.content, body header .header__content, body .articles__content, body footer .footer__content {
   text-align: center;
   margin: 0 auto;
   max-width: 300px;
   width: 100%; }
   @media screen and (min-width: 748px) {
-    .content, body header .header__content, body .articles__content, body .questions .questions__content, body footer .footer__content {
+    .content, body header .header__content, body .articles__content, body footer .footer__content {
       max-width: 748px; } }
   @media screen and (min-width: 940px) {
-    .content, body header .header__content, body .articles__content, body .questions .questions__content, body footer .footer__content {
+    .content, body header .header__content, body .articles__content, body footer .footer__content {
       max-width: 940px; } }
 
 .caption, body header .header__content h1, body footer .footer__content h3 {
@@ -2231,6 +2226,40 @@
 a {
   text-decoration: none;
   color: inherit; }
+
+.accordion {
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  color: #862009; }
+  @media screen and (min-width: 748px) {
+    .accordion {
+      font-size: 18px;
+      line-height: 24px; } }
+  .accordion i {
+    padding-left: 6px; }
+
+.accordion:first-of-type {
+  margin-top: 40px; }
+
+.accordion__content {
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px; }
+  @media screen and (min-width: 748px) {
+    .accordion__content {
+      font-size: 18px;
+      line-height: 24px; } }
 
 body {
   min-width: 320px;
@@ -2385,7 +2414,6 @@ body {
           padding-left: 2px;
           padding-right: 2px;
           border: solid 1px #aaa;
-          box-shadow: 1px 2px 2px RGBA(0, 0, 0, 0.5);
           background: #fff;
           border-radius: 5px; }
           @media screen and (min-width: 748px) {
@@ -2423,7 +2451,6 @@ body {
           border: solid 1px #aaa;
           background: #fff;
           border-radius: 5px;
-          box-shadow: 1px 2px 2px RGBA(0, 0, 0, 0.5);
           z-index: 400; }
           @media screen and (min-width: 940px) {
             body header .header__content .header__menu_cover nav ul {
@@ -2456,9 +2483,15 @@ body {
         padding-left: 20px;
         padding-right: 20px; } }
     body .articles__content .articles__article {
-      margin-top: 20px; }
+      margin-top: 20px;
+      text-align: left; }
+      @media screen and (min-width: 748px) {
+        body .articles__content .articles__article {
+          text-align: justify; } }
     body .articles__content .articles__article-center {
-      text-align: center; }
+      text-align: center !important; }
+    body .articles__content .articles__article-left {
+      text-align: left !important; }
     body .articles__content .articles__article-slogan {
       font-size: 20px;
       line-height: 28px;
@@ -2473,39 +2506,37 @@ body {
       font-weight: bold;
       color: #862009;
       line-height: 28px; }
-  body .questions .questions__content {
-    text-align: left; }
-    body .questions .questions__content .accordion {
-      margin-top: 10px;
-      box-sizing: border-box;
-      padding-left: 10px;
-      padding-right: 10px;
-      width: 100%;
-      font-size: 16px;
-      line-height: 20px;
-      position: relative;
-      cursor: pointer;
-      font-weight: bold;
-      color: #862009; }
+    body .articles__content .articles__container {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch; }
       @media screen and (min-width: 748px) {
-        body .questions .questions__content .accordion {
-          font-size: 18px;
-          line-height: 24px; } }
-      body .questions .questions__content .accordion i {
-        padding-left: 6px; }
-    body .questions .questions__content .accordion:first-of-type {
-      margin-top: 40px; }
-    body .questions .questions__content .accordion__content {
-      font-size: 16px;
-      line-height: 20px;
-      margin-top: 10px;
-      box-sizing: border-box;
-      padding-left: 10px;
-      padding-right: 10px; }
-      @media screen and (min-width: 748px) {
-        body .questions .questions__content .accordion__content {
-          font-size: 18px;
-          line-height: 24px; } }
+        body .articles__content .articles__container {
+          -ms-flex-direction: row;
+          flex-direction: row; } }
+      body .articles__content .articles__container .articles__flex {
+        width: 100%;
+        min-height: 200px;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box; }
+        @media screen and (min-width: 748px) {
+          body .articles__content .articles__container .articles__flex {
+            width: 50%; } }
+        body .articles__content .articles__container .articles__flex .articles__picture {
+          width: 250px;
+          height: 167px;
+          overflow: hidden;
+          text-align: center;
+          display: inline-block;
+          border-radius: 4px; }
   body footer .footer__content {
     padding-bottom: 20px;
     margin-top: 20px; }
@@ -2577,6 +2608,7 @@ body {
           box-sizing: border-box;
           width: 56px;
           text-align: center;
+          font-size: 14px;
           color: #862009; }
         body footer .footer__content .footer__informer .informer_table td {
           box-sizing: border-box;
@@ -2592,7 +2624,7 @@ body {
           font-size: 14px; }
         body footer .footer__content .footer__informer .informer_table p {
           margin: 0;
-          padding-bottom: 8px; }
+          padding-bottom: 6px; }
         body footer .footer__content .footer__informer .informer_table .weather_description {
           font-size: 14px; }
         body footer .footer__content .footer__informer .informer_table .temp {
