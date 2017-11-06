@@ -35,7 +35,7 @@ $fontSize4: 20px;
 $fontSize5: 24px;
 $fontSize6: 28px;
 $fontSize7: 32px;
-$fontSize8: 40px;
+$fontSize8: 42px;
 $fontSize9: 60px;
 $fontSize10: 70px;
 
@@ -226,10 +226,10 @@ body {
             text-shadow: $siteColor6 1px 1px 0, $siteColor6 -1px -1px 0,
                  $siteColor6 -1px 1px 0, $siteColor6 1px -1px 0;
             @media screen and (min-width: $contentWidth2) {
-              font-size: $fontSize9;
+              font-size: $fontSize8;
             }
             @media screen and (min-width: $contentWidth1) {
-              font-size: $fontSize10;
+              font-size: $fontSize9;
             }
 
             .item__name {

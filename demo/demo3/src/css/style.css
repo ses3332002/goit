@@ -89,43 +89,61 @@
   margin-left: .3em; }
 
 .fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear; }
 
 .fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
   animation: fa-spin 1s infinite steps(8); }
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
 
 @keyframes fa-spin {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
+    -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
 
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .fa-rotate-180 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg); }
 
 .fa-rotate-270 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg); }
 
 .fa-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
 .fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1); }
 
 :root .fa-rotate-90, :root .fa-rotate-180, :root .fa-rotate-270, :root .fa-flip-horizontal, :root .fa-flip-vertical {
+  -webkit-filter: none;
   filter: none; }
 
 .fa-stack {
@@ -2229,6 +2247,7 @@ a {
 
 .accordion {
   margin-top: 10px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding-left: 10px;
   padding-right: 10px;
@@ -2253,6 +2272,7 @@ a {
   font-size: 16px;
   line-height: 20px;
   margin-top: 10px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding-left: 10px;
   padding-right: 10px; }
@@ -2294,6 +2314,7 @@ body {
           width: 800px; } }
       body header .header__content .owl-carousel .item {
         width: auto;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         border-radius: 4px;
         background-repeat: no-repeat;
@@ -2329,7 +2350,7 @@ body {
           @media screen and (min-width: 748px) {
             body header .header__content .owl-carousel .item .item__text {
               font-size: 32px;
-              line-height: 40px;
+              line-height: 42px;
               width: 660px; } }
           @media screen and (min-width: 940px) {
             body header .header__content .owl-carousel .item .item__text {
@@ -2339,6 +2360,9 @@ body {
             height: 200px;
             width: 150px; }
       body header .header__content .owl-carousel .item-1 {
+        background: -webkit-gradient(linear, left bottom, left top, from(#862009), to(#e4370f));
+        background: -webkit-linear-gradient(bottom, #862009, #e4370f);
+        background: -o-linear-gradient(bottom, #862009, #e4370f);
         background: linear-gradient(0deg, #862009, #e4370f);
         padding-top: 15px; }
         @media screen and (min-width: 748px) {
@@ -2355,10 +2379,10 @@ body {
           text-shadow: #000 1px 1px 0, #000 -1px -1px 0, #000 -1px 1px 0, #000 1px -1px 0; }
           @media screen and (min-width: 748px) {
             body header .header__content .owl-carousel .item-1 .item__text {
-              font-size: 60px; } }
+              font-size: 42px; } }
           @media screen and (min-width: 940px) {
             body header .header__content .owl-carousel .item-1 .item__text {
-              font-size: 70px; } }
+              font-size: 60px; } }
           body header .header__content .owl-carousel .item-1 .item__text .item__name {
             display: inline-block;
             vertical-align: top; }
@@ -2472,6 +2496,7 @@ body {
             color: #e4370f;
             font-weight: bold; }
   body .articles__content {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     text-align: left;
     font-size: 16px;
@@ -2507,18 +2532,24 @@ body {
       color: #862009;
       line-height: 28px; }
     body .articles__content .articles__container {
+      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+      -webkit-box-align: stretch;
       -ms-flex-align: stretch;
       align-items: stretch;
       -ms-flex-line-pack: stretch;
       align-content: stretch; }
       @media screen and (min-width: 748px) {
         body .articles__content .articles__container {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
           -ms-flex-direction: row;
           flex-direction: row; } }
       body .articles__content .articles__container .articles__flex {
@@ -2526,6 +2557,7 @@ body {
         min-height: 200px;
         text-align: center;
         padding: 10px;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box; }
         @media screen and (min-width: 748px) {
           body .articles__content .articles__container .articles__flex {
@@ -2591,6 +2623,7 @@ body {
           position: fixed;
           right: 18px; } }
       body footer .footer__content .footer__informer .informer_table {
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         padding: 6px;
         border: 1px solid #aaa;
@@ -2605,12 +2638,14 @@ body {
           height: 20px;
           vertical-align: middle; }
         body footer .footer__content .footer__informer .informer_table th {
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           width: 56px;
           text-align: center;
           font-size: 14px;
           color: #862009; }
         body footer .footer__content .footer__informer .informer_table td {
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           width: 58px;
           text-align: right;

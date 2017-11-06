@@ -57,26 +57,26 @@ $(document).ready(function(){
   if (!localStorage.getItem('valuta')) {
   curRequest();
   } else {
-  timeMark = new Date();
-  curCashe = JSON.parse(localStorage.getItem('valuta'));
-  if (+timeMark - +curCashe.time > 3600000) {
-    curRequest();
-  } else {
-    fillCur();
-  };
+    timeMark = new Date();
+    curCashe = JSON.parse(localStorage.getItem('valuta'));
+    if (+timeMark - +curCashe.time > 3600000) {
+      curRequest();
+    } else {
+      fillCur();
+    };
   };
 
   //проверка для погоды, есть ли в локал стораж нужные данные
   if (!localStorage.getItem('pogoda')) {
   weaRequest();
   } else {
-  timeMark = new Date();
-  weaCashe = JSON.parse(localStorage.getItem('pogoda'));
-  if (+timeMark - +weaCashe.time > 3600000) {
-    weaRequest();
-  } else {
-    fillWea();
-  };
+    timeMark = new Date();
+    weaCashe = JSON.parse(localStorage.getItem('pogoda'));
+    if (+timeMark - +weaCashe.time > 3600000) {
+      weaRequest();
+    } else {
+      fillWea();
+    };
   };
 
   function fillCur() {
@@ -94,39 +94,39 @@ $(document).ready(function(){
   };
 
   function fillWea() {
-  weaCashe = JSON.parse(localStorage.getItem('pogoda'));
-  $('.footer__informer-weather .informer_table').html('');
-  $('.footer__informer-weather .informer_table').append('<img src="http://openweathermap.org/img/w/' + weaCashe.json.weather[0].icon + '.png">');
-  $('.footer__informer-weather .informer_table').append('<p class="weather_description">' + weaCashe.json.weather[0].description + '</p>');
-  $('.footer__informer-weather .informer_table').append('<p class="temp">' + Math.round(weaCashe.json.main.temp) + '&deg; C</p>');
-  if (Math.round(weaCashe.json.main.temp) > 0) {
-    $('.temp').css("color","red");
-  } else {
-    $('.temp').css("color","blue");
-  };
-  $('.footer__informer-weather .informer_table').append('<p class="weather_description">ветер: ' + Math.round(weaCashe.json.wind.speed) + ' м/с</p>');
+    weaCashe = JSON.parse(localStorage.getItem('pogoda'));
+    $('.footer__informer-weather .informer_table').html('');
+    $('.footer__informer-weather .informer_table').append('<img src="http://openweathermap.org/img/w/' + weaCashe.json.weather[0].icon + '.png">');
+    $('.footer__informer-weather .informer_table').append('<p class="weather_description">' + weaCashe.json.weather[0].description + '</p>');
+    $('.footer__informer-weather .informer_table').append('<p class="temp">' + Math.round(weaCashe.json.main.temp) + '&deg; C</p>');
+    if (Math.round(weaCashe.json.main.temp) > 0) {
+      $('.temp').css("color","red");
+    } else {
+      $('.temp').css("color","blue");
+    };
+    $('.footer__informer-weather .informer_table').append('<p class="weather_description">ветер: ' + Math.round(weaCashe.json.wind.speed) + ' м/с</p>');
   };
 
   // запрос данных по валюте
   function curRequest() {
-  $.getJSON('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5', {}, function(json) {
-  curData.json = json;
-  timeMark = new Date();
-  curData.time = timeMark.valueOf();
-  localStorage.setItem('valuta', JSON.stringify(curData));
-  fillCur();
-  });
+    $.getJSON('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5', {}, function(json) {
+    curData.json = json;
+    timeMark = new Date();
+    curData.time = timeMark.valueOf();
+    localStorage.setItem('valuta', JSON.stringify(curData));
+    fillCur();
+    });
   };
 
   // запрос данных по погоде
   function weaRequest() {
-  $.getJSON('http://api.openweathermap.org/data/2.5/weather?id=710791&APPID=' + APIKEY + '&cluster=yes&units=metric&lang=ru ', {}, function(json){
-  weaData.json = json;
-  timeMark = new Date();
-  weaData.time = timeMark.valueOf();
-  localStorage.setItem('pogoda', JSON.stringify(weaData));
-  fillWea();
-  });
+    $.getJSON('http://api.openweathermap.org/data/2.5/weather?id=710791&APPID=' + APIKEY + '&cluster=yes&units=metric&lang=ru ', {}, function(json){
+    weaData.json = json;
+    timeMark = new Date();
+    weaData.time = timeMark.valueOf();
+    localStorage.setItem('pogoda', JSON.stringify(weaData));
+    fillWea();
+    });
   };
 
 });
