@@ -1,22 +1,24 @@
 @font-face {
   font-family: 'helvetica neue';
-  src: url('../fonts/helveticaneuecyr-light-webfont.eot');
-  src: url('../fonts/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
+  // src: url('../fonts/helveticaneuecyr-light-webfont.eot');
+  src:
+  // url('../fonts/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
+  // url('../fonts/helveticaneuecyr-light-webfont.ttf') format('truetype'),
   url('../fonts/helveticaneuecyr-light-webfont.woff2') format('woff2'),
-  url('../fonts/helveticaneuecyr-light-webfont.woff') format('woff'),
-  url('../fonts/helveticaneuecyr-light-webfont.ttf') format('truetype');
+  url('../fonts/helveticaneuecyr-light-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @import '../css/font-awesome.min';
 
-$contentWidth1: 940px;
+$contentWidth1: 1024px;
 $contentWidth2: 748px;
 $contentWidth3: 320px;
 $contentWidth4: 300px;
 $contentWidth5: $contentWidth1 / 3 - 5px;
 $contentWidth6: $contentWidth2 / 3 - 5px;
+
 
 $siteColor1: #fff;
 $siteColor2: #f00;
@@ -117,7 +119,7 @@ a {
 
 body {
   min-width: $contentWidth3;
-  font-family: 'helvetica neue';
+  font-family: 'helvetica neue', Arial, sans-serif;
   background-color: $siteColor8;
 
   header {
@@ -153,8 +155,10 @@ body {
           width: $contentWidth2 - 40px;
         }
         @media screen and (min-width: $contentWidth1) {
-          width: $contentWidth1 - 140px;
+          width: $contentWidth1 - 224px;
+          // width: $contentWidth1 - 140px;
         }
+
 
         .item {
           width: auto;
@@ -220,7 +224,7 @@ body {
 
           .item__text {
             background: transparent;
-            font-family: serif;
+            // font-family: serif;
             font-size: $fontSize6;
             color: $siteColor3;
             text-shadow: $siteColor6 1px 1px 0, $siteColor6 -1px -1px 0,
@@ -328,7 +332,7 @@ body {
             .header__label {
               display: none;
               padding-left: 10px;
-              font-family: 'helvetica neue';
+              // font-family: 'helvetica neue';
               font-size: $fontSize6;
               line-height: $fontSize6;
               @media screen and (min-width: $contentWidth2) {
@@ -613,7 +617,7 @@ body {
         }
 
         .informer_name {
-          font-size: $fontSize3;
+          font-size: $fontSize2;
           font-weight: bold;
           color: $siteColor5;
           display: inline-block;

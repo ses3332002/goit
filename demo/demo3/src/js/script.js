@@ -19,12 +19,13 @@ $(document).ready(function(){
         748: {
           items:1
         },
-        940: {
+        1024: {
           items:1
         }
       }
     }
   );
+
 
   $('.accordion__content').hide();
   $('.accordion-active').next().show();

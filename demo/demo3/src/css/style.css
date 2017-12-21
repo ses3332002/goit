@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'helvetica neue';
-  src: url("../fonts/helveticaneuecyr-light-webfont.eot");
-  src: url("../fonts/helveticaneuecyr-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/helveticaneuecyr-light-webfont.woff2") format("woff2"), url("../fonts/helveticaneuecyr-light-webfont.woff") format("woff"), url("../fonts/helveticaneuecyr-light-webfont.ttf") format("truetype");
+  src: url("../fonts/helveticaneuecyr-light-webfont.woff2") format("woff2"), url("../fonts/helveticaneuecyr-light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -2220,9 +2219,9 @@
   @media screen and (min-width: 748px) {
     .content, body header .header__content, body .articles__content, body footer .footer__content {
       max-width: 748px; } }
-  @media screen and (min-width: 940px) {
+  @media screen and (min-width: 1024px) {
     .content, body header .header__content, body .articles__content, body footer .footer__content {
-      max-width: 940px; } }
+      max-width: 1024px; } }
 
 .caption, body header .header__content h1, body footer .footer__content h3 {
   text-align: center;
@@ -2232,7 +2231,7 @@
     .caption, body header .header__content h1, body footer .footer__content h3 {
       font-size: 20px;
       line-height: 24px; } }
-  @media screen and (min-width: 940px) {
+  @media screen and (min-width: 1024px) {
     .caption, body header .header__content h1, body footer .footer__content h3 {
       font-size: 24px;
       line-height: 28px; } }
@@ -2283,7 +2282,7 @@ a {
 
 body {
   min-width: 320px;
-  font-family: 'helvetica neue';
+  font-family: 'helvetica neue', Arial, sans-serif;
   background-color: RGBA(241, 136, 45, 0.9); }
   body header .header__content {
     color: #000;
@@ -2295,7 +2294,7 @@ body {
       @media screen and (min-width: 748px) {
         body header .header__content h1 {
           margin-right: 20px; } }
-      @media screen and (min-width: 940px) {
+      @media screen and (min-width: 1024px) {
         body header .header__content h1 {
           text-align: center; } }
       body header .header__content h1 span {
@@ -2309,7 +2308,7 @@ body {
       @media screen and (min-width: 748px) {
         body header .header__content .owl-carousel {
           width: 708px; } }
-      @media screen and (min-width: 940px) {
+      @media screen and (min-width: 1024px) {
         body header .header__content .owl-carousel {
           width: 800px; } }
       body header .header__content .owl-carousel .item {
@@ -2335,7 +2334,7 @@ body {
         @media screen and (min-width: 748px) {
           body header .header__content .owl-carousel .item {
             height: 300px; } }
-        @media screen and (min-width: 940px) {
+        @media screen and (min-width: 1024px) {
           body header .header__content .owl-carousel .item {
             height: 330px; } }
         body header .header__content .owl-carousel .item .item__text {
@@ -2352,7 +2351,7 @@ body {
               font-size: 32px;
               line-height: 42px;
               width: 660px; } }
-          @media screen and (min-width: 940px) {
+          @media screen and (min-width: 1024px) {
             body header .header__content .owl-carousel .item .item__text {
               width: 752px; } }
           body header .header__content .owl-carousel .item .item__text img {
@@ -2368,19 +2367,18 @@ body {
         @media screen and (min-width: 748px) {
           body header .header__content .owl-carousel .item-1 {
             padding-top: 50px; } }
-        @media screen and (min-width: 940px) {
+        @media screen and (min-width: 1024px) {
           body header .header__content .owl-carousel .item-1 {
             padding-top: 60px; } }
         body header .header__content .owl-carousel .item-1 .item__text {
           background: transparent;
-          font-family: serif;
           font-size: 28px;
           color: #fc8800;
           text-shadow: #000 1px 1px 0, #000 -1px -1px 0, #000 -1px 1px 0, #000 1px -1px 0; }
           @media screen and (min-width: 748px) {
             body header .header__content .owl-carousel .item-1 .item__text {
               font-size: 42px; } }
-          @media screen and (min-width: 940px) {
+          @media screen and (min-width: 1024px) {
             body header .header__content .owl-carousel .item-1 .item__text {
               font-size: 60px; } }
           body header .header__content .owl-carousel .item-1 .item__text .item__name {
@@ -2446,13 +2444,12 @@ body {
               padding-left: 10px;
               padding-right: 10px;
               margin-left: 20px; } }
-          @media screen and (min-width: 940px) {
+          @media screen and (min-width: 1024px) {
             body header .header__content .header__menu_cover nav .header__bars {
               display: none; } }
           body header .header__content .header__menu_cover nav .header__bars .header__label {
             display: none;
             padding-left: 10px;
-            font-family: 'helvetica neue';
             font-size: 28px;
             line-height: 28px; }
             @media screen and (min-width: 748px) {
@@ -2476,7 +2473,7 @@ body {
           background: #fff;
           border-radius: 5px;
           z-index: 400; }
-          @media screen and (min-width: 940px) {
+          @media screen and (min-width: 1024px) {
             body header .header__content .header__menu_cover nav ul {
               display: block; } }
           body header .header__content .header__menu_cover nav ul li {
@@ -2521,7 +2518,7 @@ body {
       font-size: 20px;
       line-height: 28px;
       font-weight: bold; }
-      @media screen and (min-width: 940px) {
+      @media screen and (min-width: 1024px) {
         body .articles__content .articles__article-slogan {
           font-size: 24px;
           line-height: 32px; } }
@@ -2580,7 +2577,7 @@ body {
         body footer .footer__content .footer__phones {
           font-size: 20px;
           line-height: 24px; } }
-      @media screen and (min-width: 940px) {
+      @media screen and (min-width: 1024px) {
         body footer .footer__content .footer__phones {
           font-size: 28px;
           line-height: 32px; } }
@@ -2617,7 +2614,7 @@ body {
         body footer .footer__content .footer__informer {
           margin-left: 60px;
           margin-right: 60px; } }
-      @media screen and (min-width: 940px) {
+      @media screen and (min-width: 1024px) {
         body footer .footer__content .footer__informer {
           margin: 0;
           position: fixed;
@@ -2665,15 +2662,15 @@ body {
         body footer .footer__content .footer__informer .informer_table .temp {
           font-size: 28px; }
       body footer .footer__content .footer__informer .informer_name {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
         color: #862009;
         display: inline-block;
         padding-bottom: 15px;
         margin-top: 20px; }
-    @media screen and (min-width: 940px) {
+    @media screen and (min-width: 1024px) {
       body footer .footer__content .footer__informer-weather {
         top: 20px; } }
-    @media screen and (min-width: 940px) {
+    @media screen and (min-width: 1024px) {
       body footer .footer__content .footer__informer-currency {
         top: 200px; } }
