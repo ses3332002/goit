@@ -1,9 +1,6 @@
 @font-face {
   font-family: 'helvetica neue';
-  // src: url('../fonts/helveticaneuecyr-light-webfont.eot');
   src:
-  // url('../fonts/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
-  // url('../fonts/helveticaneuecyr-light-webfont.ttf') format('truetype'),
   url('../fonts/helveticaneuecyr-light-webfont.woff2') format('woff2'),
   url('../fonts/helveticaneuecyr-light-webfont.woff') format('woff');
   font-weight: normal;
@@ -18,7 +15,6 @@ $contentWidth3: 320px;
 $contentWidth4: 300px;
 $contentWidth5: $contentWidth1 / 3 - 5px;
 $contentWidth6: $contentWidth2 / 3 - 5px;
-
 
 $siteColor1: #fff;
 $siteColor2: #f00;
@@ -35,10 +31,10 @@ $fontSize2: 16px;
 $fontSize3: 18px;
 $fontSize4: 20px;
 $fontSize5: 24px;
-$fontSize6: 28px;
+$fontSize6: 26px;
 $fontSize7: 32px;
 $fontSize8: 42px;
-$fontSize9: 60px;
+$fontSize9: 56px;
 $fontSize10: 70px;
 
 .content {
@@ -78,565 +74,398 @@ a {
   color: inherit;
 }
 
-.accordion {
-  margin-top: 10px;
-  box-sizing: border-box;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%;
-  font-size: $fontSize2;
-  line-height: $fontSize4;
-  position: relative;
-  cursor: pointer;
-  font-weight: bold;
-  color: $siteColor5;
-  @media screen and (min-width: $contentWidth2) {
-    font-size: $fontSize3;
-    line-height: $fontSize5;
-  }
-
-  i {
-    padding-left: 6px;
-  }
-}
-
-.accordion:first-of-type {
-  margin-top: 40px;
-}
-
-.accordion__content {
-  font-size: $fontSize2;
-  line-height: $fontSize4;
-  margin-top: 10px;
-  box-sizing: border-box;
-  padding-left: 10px;
-  padding-right: 10px;
-  @media screen and (min-width: $contentWidth2) {
-    font-size: $fontSize3;
-    line-height: $fontSize5;
-  }
-}
-
 body {
   min-width: $contentWidth3;
   font-family: 'helvetica neue', Arial, sans-serif;
   background-color: $siteColor8;
+  color: $siteColor6;
+}
 
-  header {
-    .header__content {
-      @extend .content;
-      color: $siteColor6;
-      font-size: 0;
-
-      h1 {
-        @extend .caption;
-        margin-top: 30px;
-        margin-bottom: 5px;
-        text-align: right;
-        @media screen and (min-width: $contentWidth2) {
-          margin-right: 20px;
-        }
-        @media screen and (min-width: $contentWidth1) {
-          text-align: center;
-        }
-
-        span {
-          white-space: nowrap;
-          color: $siteColor5;
-          font-weight: bold;
-        }
-      }
-
-      .owl-carousel {
-        width: $contentWidth4;
-        margin: 10px auto;
-        position: relative;
-        @media screen and (min-width: $contentWidth2) {
-          width: $contentWidth2 - 40px;
-        }
-        @media screen and (min-width: $contentWidth1) {
-          width: $contentWidth1 - 224px;
-          // width: $contentWidth1 - 140px;
-        }
-
-
-        .item {
-          width: auto;
-          box-sizing: border-box;
-          border-radius: 4px;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: cover;
-          display: table-cell;
-          vertical-align: top;
-          padding: 20px;
-          padding-top: 100px;
-          font-size: 0;
-          text-align: center;
-          color: $siteColor1;
-          height: 280px;
-          overflow: hidden;
-          transform: translateZ(0);
-          -webkit-transform: translateZ(0);
-          -ms-transform: translateZ(0);
-          @media screen and (min-width: $contentWidth2) {
-            height: 300px;
-          }
-          @media screen and (min-width: $contentWidth1) {
-            height: 330px;
-          }
-
-          .item__text {
-            display: inline-block;
-            font-size: $fontSize4;
-            line-height: $fontSize5;
-            background-color: $siteColor7;
-            margin-top: 10px;
-            padding-right: 4px;
-            padding-left: 4px;
-            text-align: center;
-            @media screen and (min-width: $contentWidth2) {
-              font-size: $fontSize7;
-              line-height: $fontSize8;
-              width: 660px;
-            }
-            @media screen and (min-width: $contentWidth1) {
-              width: 752px;
-            }
-
-            img {
-              display: inline;
-              height: 200px;
-              width: 150px;
-            }
-          }
-        }
-
-        .item-1 {
-          background: linear-gradient(0deg, $siteColor5, $siteColor4);
-          padding-top: 15px;
-          @media screen and (min-width: $contentWidth2) {
-            padding-top: 50px;
-          }
-          @media screen and (min-width: $contentWidth1) {
-            padding-top: 60px;
-          }
-
-          .item__text {
-            background: transparent;
-            // font-family: serif;
-            font-size: $fontSize6;
-            color: $siteColor3;
-            text-shadow: $siteColor6 1px 1px 0, $siteColor6 -1px -1px 0,
-                 $siteColor6 -1px 1px 0, $siteColor6 1px -1px 0;
-            @media screen and (min-width: $contentWidth2) {
-              font-size: $fontSize8;
-            }
-            @media screen and (min-width: $contentWidth1) {
-              font-size: $fontSize9;
-            }
-
-            .item__name {
-              display: inline-block;
-              vertical-align: top;
-              @media screen and (min-width: $contentWidth2) {
-                margin-top: 50px;
-              }
-
-              span {
-                color: $siteColor1;
-              }
-            }
-          }
-        }
-
-        .item-2 {
-          background-image: url(../img/slide2.jpg);
-        }
-        .item-3 {
-          background-image: url(../img/slide3.jpg);
-        }
-        .item-4 {
-          background-image: url(../img/slide4.jpg);
-        }
-        .item-5 {
-          background-image: url(../img/slide5.jpg);
-        }
-        .item-6 {
-          background-image: url(../img/slide6.jpg);
-        }
-
-        .owl-controls {
-          display: none;
-          @media screen and (min-width: $contentWidth2) {
-            display: inline-block;
-            position: relative;
-            width: 100%;
-            bottom: 35px;
-          }
-
-          .owl-dots {
-            margin: 0 auto;
-
-            .owl-dot {
-              width: 20px;
-              height: 20px;
-              border-radius: 100%;
-              background: $siteColor4;
-              margin-right: 10px;
-              display: inline-block;
-
-              &:last-of-type {
-                margin-right: 0px;
-              }
-            }
-
-            .active {
-              background: $siteColor1;
-            }
-          }
-        }
-      }
-
-      .header__menu_cover {
-        text-align: left;
-        position: relative;
-
-        nav {
-        	margin: 10px 0;
-          font-size: $fontSize3;
-          display: inline-block;
-
-          .header__bars {
-            position: absolute;
-            top: -45px;
-            left: 0px;
-            color: $siteColor5;
-            cursor: pointer;
-            padding-left: 2px;
-            padding-right: 2px;
-            border: solid 1px $siteColor9;
-            // box-shadow: 1px 2px 2px $siteColor7;
-            background: $siteColor1;
-            border-radius: 5px;
-            @media screen and (min-width: $contentWidth2) {
-              top: -40px;
-              padding-left: 10px;
-              padding-right: 10px;
-              margin-left: 20px;
-            }
-            @media screen and (min-width: $contentWidth1) {
-              display: none;
-            }
-
-            .header__label {
-              display: none;
-              padding-left: 10px;
-              // font-family: 'helvetica neue';
-              font-size: $fontSize6;
-              line-height: $fontSize6;
-              @media screen and (min-width: $contentWidth2) {
-                display: inline;
-              }
-            }
-          }
-
-          &:hover .header__menu {
-            display: block;
-          }
-
-          &:hover .header__bars {
-            display: none;
-          }
-
-          ul {
-            display: none;
-            margin: 0;
-            padding: 0;
-            text-align: left;
-            width: 180px;
-            padding: 5px 0;
-            position: fixed;
-            top: 20px;
-            left: 18px;
-            border: solid 1px $siteColor9;
-            background: $siteColor1;
-            border-radius: 5px;
-            // box-shadow: 1px 2px 2px $siteColor7;
-            z-index: 400;
-            @media screen and (min-width: $contentWidth1) {
-              display: block;
-            }
-
-            li {
-            	padding: 0;
-            	list-style: none;
-              margin-top: 5px;
-              margin-bottom: 5px;
-
-              a {
-                padding: 4px 12px;
-                color: $siteColor6;
-                line-height: 100%;
-                display: block;
-            		text-align: left;
-
-                &:hover {
-                  color: $siteColor2;
-                }
-              }
-            }
-
-            .current {
-              a {
-                color: $siteColor4;
-                font-weight: bold;
-              }
-            }
-          }
-        }
-      }
-
-    }
-  }
-
-  .articles__content {
+header {
+  .header__content {
     @extend .content;
-    box-sizing: border-box;
-    text-align: left;
-    font-size: $fontSize2;
-    line-height: $fontSize4;
-    @media screen and (min-width: $contentWidth2) {
-      font-size: $fontSize3;
-      line-height: $fontSize5;
-      padding-left: 20px;
-      padding-right: 20px;
+    height: 0;
+    overflow: hidden;
+    @media screen and (min-width: $contentWidth1) {
+      height: 40px;
+      padding-top: 15px;
     }
 
-    .articles__article {
-      margin-top: 20px;
-      text-align: left;
-      // max-height: 150px;
-      @media screen and (min-width: $contentWidth2) {
-        text-align: justify;
-        // overflow: hidden;
-        // white-space: normal;
-        // text-overflow: ellipsis;
-      }
-    }
+    h1 {
+      @extend .caption;
 
-    .articles__article-center {
-      text-align: center !important;
-    }
-
-    .articles__article-left {
-      text-align: left !important;
-    }
-
-    .articles__article-slogan {
-      font-size: $fontSize4;
-      line-height: $fontSize6;
-      font-weight: bold;
-      @media screen and (min-width: $contentWidth1) {
-        font-size: $fontSize5;
-        line-height: $fontSize7;
-      }
-    }
-
-    .articles__article-italic {
-      font-style: italic;
-    }
-
-    .articles__article-bold {
-      font-weight: bold;
-      color: $siteColor5;
-      line-height: $fontSize6;
-    }
-
-    .articles__container {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: stretch;
-      align-content: stretch;
-      @media screen and (min-width: $contentWidth2) {
-        flex-direction: row;
-      }
-
-      .articles__flex {
-        width: 100%;
-        min-height: 200px;
-        // background-color: white;
-        text-align: center;
-        padding: 10px;
-        box-sizing: border-box;
-        @media screen and (min-width: $contentWidth2) {
-          width: 50%;
-        }
-
-        .articles__picture {
-          width: 250px;
-          height: 167px;
-          overflow: hidden;
-          text-align: center;
-          display: inline-block;
-          border-radius: 4px;
-        }
+      span {
+        // white-space: nowrap;
+        color: $siteColor5;
+        font-weight: bold;
       }
     }
   }
+}
 
-  footer {
-    .footer__content {
-      @extend .content;
-      padding-bottom: 20px;
-      margin-top: 20px;
 
-      h3 {
-        @extend .caption;
+main {
+  @extend .content;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  @media screen and (min-width: $contentWidth1) {
+    flex-direction: row;
+    max-width: 1400px;
+  }
+
+  nav {
+    font-size: $fontSize3;
+    border: solid 1px $siteColor9;
+    background: $siteColor1;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    @media screen and (min-width: $contentWidth1) {
+      width: 200px;
+      height: 400px;
+    }
+  }
+
+  .main__content {
+    text-align: center;
+    height: 500px;
+    flex-grow: 3;
+    flex-basis: auto;
+    border: solid 1px $siteColor9;
+    background: $siteColor2;
+    border-radius: 5px;
+
+    .owl-carousel {
+      width: $contentWidth4;
+      margin: 0px auto;
+      position: relative;
+      @media screen and (min-width: $contentWidth2) {
+        width: $contentWidth2 - 40px;
+      }
+      @media screen and (min-width: $contentWidth1) {
+        width: $contentWidth1 - 224px;
+        // width: $contentWidth1 - 140px;
       }
 
-      .footer__phones {
-        font-weight: bold;
-        font-size: $fontSize4;
-        line-height: $fontSize5;
+      .item {
+        width: auto;
+        box-sizing: border-box;
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: table-cell;
+        vertical-align: top;
+        padding: 20px;
+        padding-top: 100px;
+        font-size: 0;
+        text-align: center;
+        color: $siteColor1;
+        height: 280px;
+        overflow: hidden;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
         @media screen and (min-width: $contentWidth2) {
+          height: 300px;
+        }
+        @media screen and (min-width: $contentWidth1) {
+          height: 330px;
+        }
+
+        .item__text {
+          display: inline-block;
           font-size: $fontSize4;
           line-height: $fontSize5;
-        }
-        @media screen and (min-width: $contentWidth1) {
-          font-size: $fontSize6;
-          line-height: $fontSize7;
-        }
-
-        .footer__phone {
-          display: inline-block;
-          margin: 10px;
-          border: solid 2px $siteColor2;
-          border-radius: 5px;
-          padding: 7px;
-          padding-left: 10px;
-          padding-right: 10px;
-          cursor: pointer;
+          background-color: $siteColor7;
+          margin-top: 10px;
+          padding-right: 4px;
+          padding-left: 4px;
+          text-align: center;
           @media screen and (min-width: $contentWidth2) {
-            border: solid 0px $siteColor2;
+            font-size: $fontSize7;
+            line-height: $fontSize8;
+            width: 660px;
+          }
+          @media screen and (min-width: $contentWidth1) {
+            width: 752px;
           }
 
-          &:hover {
-            background: $siteColor1;
-            @media screen and (min-width: $contentWidth2) {
-              background: transparent;
-            }
-          }
-
-          a {
-            color: $siteColor2;
-          }
-
-          i {
-            color: $siteColor5;
-            padding-right: 10px;
+          img {
+            display: inline;
+            height: 200px;
+            width: 150px;
           }
         }
       }
 
-      .footer__informer {
-        display: inline-block;
-        text-align: center;
-        z-index: 400;
-        width: 180px;
-        margin: 0;
-        vertical-align: top;
+      .item-1 {
+        background: linear-gradient(0deg, $siteColor5, $siteColor4);
+        padding-top: 15px;
         @media screen and (min-width: $contentWidth2) {
-          margin-left: 60px;
-          margin-right: 60px;
+          padding-top: 50px;
         }
         @media screen and (min-width: $contentWidth1) {
-          margin: 0;
-          position: fixed;
-          right: 18px;
+          padding-top: 60px;
         }
 
-        .informer_table {
-          box-sizing: border-box;
-          padding: 6px;
-          border: 1px solid $siteColor9;
-          border-radius: 4px;
-          height: 136px;
-          background-color: $siteColor1;
+        .item__text {
+          background: transparent;
+          // font-family: serif;
+          font-size: $fontSize6;
+          color: $siteColor3;
+          text-shadow: $siteColor6 1px 1px 0, $siteColor6 -1px -1px 0,
+          $siteColor6 -1px 1px 0, $siteColor6 1px -1px 0;
+          @media screen and (min-width: $contentWidth2) {
+            font-size: $fontSize8;
+          }
+          @media screen and (min-width: $contentWidth1) {
+            font-size: $fontSize9;
+          }
 
-          .currency_label {
+          .item__name {
             display: inline-block;
-            margin-bottom: 10px;
-            font-weight: bold;
+            vertical-align: top;
+            @media screen and (min-width: $contentWidth2) {
+              margin-top: 50px;
+            }
+
+            span {
+              color: $siteColor1;
+            }
           }
+        }
+      }
 
-          tr {
-            height: $fontSize4;
-            vertical-align: middle;
-          }
+      .item-2 {
+        background-image: url(../img/slide2.jpg);
+      }
+      .item-3 {
+        background-image: url(../img/slide3.jpg);
+      }
+      .item-4 {
+        background-image: url(../img/slide4.jpg);
+      }
+      .item-5 {
+        background-image: url(../img/slide5.jpg);
+      }
+      .item-6 {
+        background-image: url(../img/slide6.jpg);
+      }
 
-          th {
-            box-sizing: border-box;
-            width: 56px;
-            text-align: center;
-            font-size: $fontSize1;
-            color: $siteColor5;
-          }
+      .owl-controls {
+        display: none;
+        @media screen and (min-width: $contentWidth2) {
+          display: inline-block;
+          position: relative;
+          width: 100%;
+          bottom: 35px;
+        }
 
-          td {
-            box-sizing: border-box;
-            width: 58px;
-            text-align: right;
-            padding-right: 5px;
-            border: none;
+        .owl-dots {
+          margin: 0 auto;
 
-            .fa {
-              padding-right: 3px;
+          .owl-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background: $siteColor4;
+            margin-right: 10px;
+            display: inline-block;
+
+            &:last-of-type {
+              margin-right: 0px;
             }
           }
 
-          .currency_name {
-            text-align: left;
-            padding-right: 0;
-            font-size: $fontSize1;
+          .active {
+            background: $siteColor1;
           }
-
-          p {
-            margin: 0;
-            padding-bottom: 6px;
-          }
-
-          .weather_description {
-            font-size: $fontSize1;
-          }
-
-          .temp {
-            font-size: $fontSize6;
-          }
-        }
-
-        .informer_name {
-          font-size: $fontSize2;
-          font-weight: bold;
-          color: $siteColor5;
-          display: inline-block;
-          padding-bottom: 15px;
-          margin-top: 20px;
-        }
-      }
-
-      .footer__informer-weather {
-        @media screen and (min-width: $contentWidth1) {
-          top: 20px;
-        }
-      }
-
-      .footer__informer-currency {
-        @media screen and (min-width: $contentWidth1) {
-          top: 200px;
         }
       }
     }
+  }
+}
+
+footer {
+  @extend .content;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  @media screen and (min-width: $contentWidth1) {
+    flex-direction: row-reverse;
+    max-width: 1400px;
+  }
+
+  .footer__informers {
+    @media screen and (min-width: $contentWidth1) {
+      width: 200px;
+      // height: 300px;
+      text-align: center;
+      margin-top: -100px;
+    }
+
+    .footer__informer {
+      display: inline-block;
+      text-align: center;
+      z-index: 400;
+      width: 180px;
+      margin: 0;
+      vertical-align: top;
+      @media screen and (min-width: $contentWidth2) {
+        margin-left: 60px;
+        margin-right: 60px;
+      }
+      @media screen and (min-width: $contentWidth1) {
+        margin: 0;
+        // position: absolute;
+        // left: 10px;
+        // bottom: 100px;
+      }
+
+
+      .informer_table {
+        box-sizing: border-box;
+        padding: 6px;
+        border: 1px solid $siteColor9;
+        border-radius: 4px;
+        height: 136px;
+        background-color: $siteColor1;
+
+        .currency_label {
+          display: inline-block;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+
+        tr {
+          height: $fontSize4;
+          vertical-align: middle;
+        }
+
+        th {
+          box-sizing: border-box;
+          width: 56px;
+          text-align: center;
+          font-size: $fontSize1;
+          color: $siteColor5;
+        }
+
+        td {
+          box-sizing: border-box;
+          width: 58px;
+          text-align: right;
+          padding-right: 5px;
+          border: none;
+
+          .fa {
+            padding-right: 3px;
+          }
+        }
+
+        .currency_name {
+          text-align: left;
+          padding-right: 0;
+          font-size: $fontSize1;
+        }
+
+        p {
+          margin: 0;
+          padding-bottom: 6px;
+        }
+
+        .weather_description {
+          font-size: $fontSize1;
+        }
+
+        .temp {
+          font-size: $fontSize6;
+        }
+      }
+
+      .informer_name {
+        font-size: $fontSize2;
+        font-weight: bold;
+        color: $siteColor5;
+        display: inline-block;
+        padding-bottom: 15px;
+        margin-top: 20px;
+      }
+    }
+
+    // .footer__informer-weather {
+      // @media screen and (min-width: $contentWidth1) {
+      //   top: 20px;
+      // }
+    // }
+
+    // .footer__informer-currency {
+      // @media screen and (min-width: $contentWidth1) {
+      //   top: 200px;
+      // }
+    // }
+  }
+
+  .footer__content {
+    // @extend .content;
+    text-align: center;
+    // height: 500px;
+    flex-grow: 3;
+    // border: solid 1px $siteColor9;
+    // background: $siteColor2;
+    // border-radius: 5px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+
+    h3 {
+      @extend .caption;
+    }
+
+    .footer__phones {
+      font-weight: bold;
+      font-size: $fontSize4;
+      line-height: $fontSize5;
+      @media screen and (min-width: $contentWidth2) {
+        font-size: $fontSize4;
+        line-height: $fontSize5;
+      }
+      @media screen and (min-width: $contentWidth1) {
+        font-size: $fontSize6;
+        line-height: $fontSize7;
+      }
+
+      .footer__phone {
+        display: inline-block;
+        margin: 10px;
+        border: solid 2px $siteColor2;
+        border-radius: 5px;
+        padding: 7px;
+        padding-left: 10px;
+        padding-right: 10px;
+        cursor: pointer;
+        @media screen and (min-width: $contentWidth2) {
+          border: solid 0px $siteColor2;
+        }
+
+        &:hover {
+          background: $siteColor1;
+          @media screen and (min-width: $contentWidth2) {
+            background: transparent;
+          }
+        }
+
+        a {
+          color: $siteColor2;
+        }
+
+        i {
+          color: $siteColor5;
+          padding-right: 10px;
+        }
+      }
+    }
+
+
   }
 }
