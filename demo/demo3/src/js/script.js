@@ -27,18 +27,24 @@ $(document).ready(function(){
   );
 
 
-  $('.accordion__content').hide();
-  $('.accordion-active').next().show();
+  // $('.accordion__content').hide();
+  // $('.accordion-active').next().show();
+  //
+  // $('.accordion').click(function() {
+  //   $(this).find("i").toggleClass("fa-arrow-down fa-arrow-up");
+  //   if (!$(this).hasClass('accordion-active')) {
+  //     $(this).toggleClass('accordion-active');
+  //     $(this).next('.accordion__content').show('slow');
+  //   }else{
+  //     $(this).toggleClass('accordion-active');
+  //     $(this).next('.accordion__content').hide('slow');
+  //   };
+  // });
 
-  $('.accordion').click(function() {
-    $(this).find("i").toggleClass("fa-arrow-down fa-arrow-up");
-    if (!$(this).hasClass('accordion-active')) {
-      $(this).toggleClass('accordion-active');
-      $(this).next('.accordion__content').show('slow');
-    }else{
-      $(this).toggleClass('accordion-active');
-      $(this).next('.accordion__content').hide('slow');
-    };
+  // открытие и закрытие мобильного меню
+  $('.nav__bars').click(function() {
+    $(this).toggleClass("fa-bars fa-close");
+    $('.nav__menu').toggleClass("nav__menu-opened");
   });
 
   var APIKEY = 'b886dd4b03e8d5aa871a26169725d822';
@@ -82,13 +88,13 @@ $(document).ready(function(){
 
   function fillCur() {
   curCashe = JSON.parse(localStorage.getItem('valuta'));
-  $('.footer__informer-currency .informer_table').html('');
-  $('.footer__informer-currency .informer_table').append('<span class="currency_label">Приватбанк,<br> наличный курс</span>');
-  $('.footer__informer-currency .informer_table').append('<table><tr><th></th><th>Покупка</th><th>Продажа</th></tr>');
+  $('.informer-currency .informer__table').html('');
+  $('.informer-currency .informer__table').append('<span class="currency_label">Приватбанк,<br> наличный курс</span>');
+  $('.informer-currency .informer__table').append('<table><tr><th></th><th>Покупка</th><th>Продажа</th></tr>');
   for (var i=0; i<3; i++) {
-    $('.footer__informer-currency .informer_table').append('<tr><td class="currency_name"><i class="fa fa-fw"></i>' + curCashe.json[i].ccy + '</td><td>' +  (Math.round(curCashe.json[i].buy * 1000) / 1000).toFixed(2) + '</td><td>' + (Math.round(curCashe.json[i].sale * 1000) / 1000).toFixed(2) + '</td></tr>');
+    $('.informer-currency .informer__table').append('<tr><td class="currency_name"><i class="fa fa-fw"></i>' + curCashe.json[i].ccy + '</td><td>' +  (Math.round(curCashe.json[i].buy * 1000) / 1000).toFixed(2) + '</td><td>' + (Math.round(curCashe.json[i].sale * 1000) / 1000).toFixed(2) + '</td></tr>');
   }
-  $('.footer__informer-currency .informer_table').append('</table>');
+  $('.informer-currency .informer__table').append('</table>');
   $('td:contains("RUR")').css("color","red").find('i').addClass('fa-rub');
   $('td:contains("EUR")').css("color","blue").find('i').addClass('fa-eur');
   $('td:contains("USD")').css("color","green").find('i').addClass('fa-usd');
@@ -96,16 +102,16 @@ $(document).ready(function(){
 
   function fillWea() {
     weaCashe = JSON.parse(localStorage.getItem('pogoda'));
-    $('.footer__informer-weather .informer_table').html('');
-    $('.footer__informer-weather .informer_table').append('<img src="http://openweathermap.org/img/w/' + weaCashe.json.weather[0].icon + '.png">');
-    $('.footer__informer-weather .informer_table').append('<p class="weather_description">' + weaCashe.json.weather[0].description + '</p>');
-    $('.footer__informer-weather .informer_table').append('<p class="temp">' + Math.round(weaCashe.json.main.temp) + '&deg; C</p>');
+    $('.informer-weather .informer__table').html('');
+    $('.informer-weather .informer__table').append('<img src="http://openweathermap.org/img/w/' + weaCashe.json.weather[0].icon + '.png">');
+    $('.informer-weather .informer__table').append('<p class="weather_description">' + weaCashe.json.weather[0].description + '</p>');
+    $('.informer-weather .informer__table').append('<p class="temp">' + Math.round(weaCashe.json.main.temp) + '&deg; C</p>');
     if (Math.round(weaCashe.json.main.temp) > 0) {
       $('.temp').css("color","red");
     } else {
       $('.temp').css("color","blue");
     };
-    $('.footer__informer-weather .informer_table').append('<p class="weather_description">ветер: ' + Math.round(weaCashe.json.wind.speed) + ' м/с</p>');
+    $('.informer-weather .informer__table').append('<p class="weather_description">ветер: ' + Math.round(weaCashe.json.wind.speed) + ' м/с</p>');
   };
 
   // запрос данных по валюте
