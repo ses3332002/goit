@@ -148,6 +148,8 @@ header {
       z-index: 400;
       height: 34px;
       overflow: hidden;
+      padding-top: 3px;
+      font-size: 0;
       @media screen and (min-width: $contentWidth1) {
         height: auto;
       }
@@ -158,6 +160,7 @@ header {
         padding-left: 5px;
         padding-right: 5px;
         display: inline;
+        font-size: $fontSize7;
         @media screen and (min-width: $contentWidth1) {
           display: none;
         }
@@ -200,7 +203,7 @@ header {
       height: auto;
       width: $contentWidth4 - 2px;
       @media screen and (min-width: $contentWidth2) {
-        width: $contentWidth2 - 40px;
+        width: $contentWidth2 - 42px;
       }
 
       li {

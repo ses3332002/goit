@@ -2300,7 +2300,9 @@ header .header__content {
       text-align: left;
       z-index: 400;
       height: 34px;
-      overflow: hidden; }
+      overflow: hidden;
+      padding-top: 3px;
+      font-size: 0; }
       @media screen and (min-width: 1024px) {
         .grid__container nav ul {
           height: auto; } }
@@ -2309,7 +2311,8 @@ header .header__content {
         cursor: pointer;
         padding-left: 5px;
         padding-right: 5px;
-        display: inline; }
+        display: inline;
+        font-size: 30px; }
         @media screen and (min-width: 1024px) {
           .grid__container nav ul .nav__bars {
             display: none; } }
@@ -2341,7 +2344,7 @@ header .header__content {
       width: 298px; }
       @media screen and (min-width: 748px) {
         .grid__container nav .nav__menu-opened {
-          width: 708px; } }
+          width: 706px; } }
       .grid__container nav .nav__menu-opened li {
         display: block; }
   .grid__container .main__content {
