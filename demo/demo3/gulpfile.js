@@ -12,6 +12,7 @@ var uglify = require('gulp-uglify');
 var webserver = require('gulp-webserver');
 var gutil = require('gulp-util');
 var gcmq = require('gulp-group-css-media-queries');
+var rigger = require('gulp-rigger');
 
 gulp.task('webserver', function() {
   gulp.src('./')
@@ -62,6 +63,14 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
   gulp.watch('./src/scss/*.scss', ['sass', 'prepare_css']);
   gulp.watch('./src/js/*.js', ['prepare_js']);
+  gulp.watch('./src/html/*.html', ['prepare_html']);
+});
+
+gulp.task('prepare_html', function () {
+    gulp.src('./src/html/*.html')
+        .pipe(rigger())
+        .pipe(gulp.dest('.'))
+        // .pipe(reload({stream: true}));
 });
 
 // gulp.task('sprite', function() {
@@ -76,4 +85,4 @@ gulp.task('watch', function () {
 //   spriteData.css.pipe(gulp.dest('./src/css/'));
 // });
 
-gulp.task('default', ['prepare_js', 'sass', 'prepare_css', 'webserver', 'watch']);
+gulp.task('default', ['prepare_js', 'prepare_html', 'sass', 'prepare_css', 'webserver', 'watch']);
