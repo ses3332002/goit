@@ -26,7 +26,11 @@ gulp.task('webserver', function() {
 
 gulp.task('imagemin', function() {
   gulp.src('./src/img/*.*')
-    .pipe(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true }))
+    .pipe(imagemin({
+      optimizationLevel: 7,
+      progressive: true,
+      interlaced: true
+    }))
     .pipe(gulp.dest('./build/img'))
 });
 

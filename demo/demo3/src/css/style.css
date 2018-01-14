@@ -2271,7 +2271,9 @@ header .header__content {
   grid-gap: 0px; }
   @media screen and (min-width: 1024px) {
     .grid__container {
-      grid-template-columns: 180px 1fr; } }
+      grid-template-columns: 180px 1fr;
+      grid-template-rows: minmax(100px, -webkit-max-content) 1fr;
+      grid-template-rows: minmax(100px, max-content) 1fr; } }
   .grid__container nav {
     grid-row: 1 / 2;
     width: 100%;
@@ -2288,6 +2290,7 @@ header .header__content {
     @media screen and (min-width: 1024px) {
       .grid__container nav {
         margin-top: 0;
+        grid-row: 1 / 2;
         grid-column: 1 / 2;
         width: 180px;
         height: auto;

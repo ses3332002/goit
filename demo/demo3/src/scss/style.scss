@@ -47,7 +47,6 @@ $fontSize10: 60px;
     max-width: $contentWidth2;
   }
   @media screen and (min-width: $contentWidth1) {
-    // max-width: $contentWidth1;
     max-width: $contentWidth7;
   }
 }
@@ -117,6 +116,7 @@ header {
   grid-gap: 0px;
   @media screen and (min-width: $contentWidth1) {
     grid-template-columns: 180px 1fr;
+    grid-template-rows: minmax(100px, max-content) 1fr;
   }
 
   nav {
@@ -133,6 +133,7 @@ header {
     }
     @media screen and (min-width: $contentWidth1) {
       margin-top: 0;
+      grid-row: 1 / 2;
       grid-column: 1 / 2;
       width: 180px;
       height: auto;
@@ -191,7 +192,6 @@ header {
       .current {
         display: inline;
         color: $siteColor4;
-        // font-weight: bold;
         @media screen and (min-width: $contentWidth1) {
           display: block;
         }
@@ -553,6 +553,7 @@ header {
 footer {
   @extend .content;
   grid-row: 3 / 4;
+  // grid-column: 1 / 2;
   @media screen and (min-width: $contentWidth1) {
     grid-column: 1 / 3;
   }
