@@ -13,6 +13,8 @@ var webserver = require('gulp-webserver');
 var gutil = require('gulp-util');
 var gcmq = require('gulp-group-css-media-queries');
 var rigger = require('gulp-rigger');
+var plumber = require('gulp-plumber');
+
 
 gulp.task('webserver', function() {
   gulp.src('./')
@@ -27,7 +29,7 @@ gulp.task('webserver', function() {
 gulp.task('imagemin', function() {
   gulp.src('./src/img/*.*')
     .pipe(imagemin({
-      optimizationLevel: 7,
+      optimizationLevel: 3,
       progressive: true,
       interlaced: true
     }))
@@ -49,6 +51,7 @@ gulp.task('prepare_css', function() {
 
 gulp.task('prepare_js', function() {
   gulp.src('./src/js/*.js')
+    .pipe(plumber())
     .pipe(concat('script.min.js', {newLine: ';'}))
     .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
@@ -58,7 +61,13 @@ gulp.task('sass', function () {
   gulp.src('./src/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
-      browsers: ['last 4 versions'],
+      browsers: [
+        "last 1 version",
+        "last 3 Chrome versions",
+        "last 3 Firefox versions",
+        "last 3 Opera versions",
+        "last 2 Edge versions"
+        ],
       cascade: false
     }))
     .pipe(gulp.dest('./src/css'));
