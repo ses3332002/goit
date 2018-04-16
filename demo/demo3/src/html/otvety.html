@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+//= templates/head.html
+<body>
+  <main>
+    //= templates/header.html
+    <div class="grid__container">
+      <nav>
+        <ul class="nav__menu">
+          <i class="nav__bars fa fa-fw fa-bars fa-2x"></i>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="kophelp.html">Компьютерная помощь</a></li>
+          <li><a href="obsluzhivanie.html">Абонентское обслуживание</a></li>
+          <li><a href="vosstanovlenie_dannyh.html">Восстановление данных</a></li>
+          <li><a href="remont_kompyuterov.html">Ремонт компьютеров и оргтехники</a></li>
+          <li><a href="lechenie_virusov.html">Лечение после вирусов</a></li>
+          <li><a href="internet.html">Настройка интернета</a></li>
+          <li><a href="lan.html">Настройка сетей</a></li>
+          <li><a href="nastroika_wifi.html">Настройка WiFi</a></li>
+          <!-- <li><a href="proekty.html">Готовые проекты</a></li> -->
+          <li class="current">Ответы на вопросы</li>
+        </ul>
+      </nav>
+      <section class="main__content">
+        //= templates/owl-carousel.html
+        <section class="articles">
+          <div class="articles__content">
+            <div class="articles__article articles__article-center articles__article-slogan">
+              <h2>Мы предлагаем ответы на самые распространенные вопросы</h2>
+            </div>
+      			<div class="accordion">
+      				Как часто нужно чистить компьютер от пыли?<i class="fa fa-arrow-down"></i>
+      			</div>
+      			<div class="articles__article accordion__content">
+      				Обычный системный блок рекомендуется чистить от пыли не реже, чем раз в год, ноутбук - не реже, чем раз в два года.
+              При наличии домашних животных, ремонтах, установке системного блока на пол - чистить нужно чаще.
+            </div>
+      			<div class="accordion">
+      				Почему мой компьютер/ноутбук начал жужжать?<i class="fa fa-arrow-down"></i>
+      			</div>
+      			<div class="articles__article accordion__content">
+      				Со временем смазка на вентиляторах высыхает или портится из-за пыли, и вентиляторы начинают шуметь. Выход - заменить вентилятор, а если
+              подходящую модель трудно подобрать - постараться сменить смазку.
+      			</div>
+      			<div class="accordion">
+      				Нужно ли обновлять программное обеспечение?<i class="fa fa-arrow-down"></i>
+      			</div>
+      			<div class="articles__article accordion__content">
+      				Некоторое программное обеспечение является критически важным в плане вашей безопасности. Это, например, антивирус или
+              броузер - программа, с помощью которой вы ходите в Интернет. Регулярно обновлять такое программное обеспечение крайне важно.
+      			</div>
+      			<div class="accordion">
+      				У меня есть необходимость иметь полностью лицензионно-чистый компьютер. Это реально?<i class="fa fa-arrow-down"></i>
+      			</div>
+      			<div class="articles__article accordion__content">
+              Если нет необходимости использовать MS Windows, то мы можем установить и настроить бесплатную операционную систему Linux и соответствующее ПО для нее.
+      				Если же платформа MS Windows является необходимым условием (например из-за использования каких-либо бухгалтерских программ),
+              то как минимум придется купить лицензионную версию MS Windows. Все остальное ПО (офисный пакет, антивирус, архиватор и т.д.) может быть бесплатным.
+            </div>
+      			<div class="accordion">
+      				Как часто нужно менять компьютер или ноутбук?<i class="fa fa-arrow-down"></i>
+      			</div>
+      			<div class="articles__article accordion__content">
+              Производители комплектующих, заинтересованные в том, чтобы их товар постоянно покупали, обычно не дают гарантии больше, чем на 5 лет. Считается,
+              что за это время устройство устареет не только морально, но и физически. Однако, если изначально вы покупали модель, дороже среднего уровня цены,
+              есть все основания рассчитывать, что и моральный, и физический износ наступят позже, чем через 5 лет.
+      			</div>
+      		</div>
+        </section>
+      </section>
+      //= templates/informers.html
+      //= templates/footer.html
+    </div>
+  </main>
+</body>
+</html>

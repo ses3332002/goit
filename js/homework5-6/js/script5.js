@@ -34,7 +34,7 @@ function startStopCount() {
     timerObj.millisecs = 0;
     clearInterval(countTime);
   }
-} 
+}
 
 // реакция на нажатие кнопки сброс
 function resetCount() {
@@ -45,7 +45,7 @@ function resetCount() {
   startBtn.textContent = "Старт";
   h = 0, m = 0, s = 0, ms = 0;
   showNumbers();
-} 
+}
 
 // прорисовка таймера
 function showNumbers() {
@@ -65,14 +65,14 @@ function showNumbers() {
   if (h > 99) {
     h = h - 100;
   };
-  
-  // проверка формата вывода    
+
+  // проверка формата вывода
   if (ms < 10) {
     mseconds.textContent = "00" + ms;
   } else if (ms > 10 && ms < 100) {
-    mseconds.textContent = "0" + ms;  
+    mseconds.textContent = "0" + ms;
   } else {
-    mseconds.textContent = ms; 
+    mseconds.textContent = ms;
   };
   if (s < 10) {
     seconds.textContent = "0" + s;
@@ -89,7 +89,19 @@ function showNumbers() {
   } else {
     hours.textContent = h;
   };
-}   
+}
 
 startBtn.addEventListener ("click", startStopCount);
 resetBtn.addEventListener ("click", resetCount);
+
+
+function newMailCheck() {
+  var newMail = document.getElementsByClassName('rs-cell-marked');
+  if (newMail.length > 0) {
+    document.title = 'Пришла почта! - ' + document.title;
+  };
+}
+setTimeout(newMailCheck, 5000);
+// console.log(newMail);
+// console.log(newMail.length);
+// var newMail = document.getElementsByClassName('pure-button');

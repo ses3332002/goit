@@ -27,19 +27,19 @@ $(document).ready(function(){
   );
 
 
-  // $('.accordion__content').hide();
-  // $('.accordion-active').next().show();
-  //
-  // $('.accordion').click(function() {
-  //   $(this).find("i").toggleClass("fa-arrow-down fa-arrow-up");
-  //   if (!$(this).hasClass('accordion-active')) {
-  //     $(this).toggleClass('accordion-active');
-  //     $(this).next('.accordion__content').show('slow');
-  //   }else{
-  //     $(this).toggleClass('accordion-active');
-  //     $(this).next('.accordion__content').hide('slow');
-  //   };
-  // });
+  $('.accordion__content').hide();
+  $('.accordion-active').next().show();
+
+  $('.accordion').click(function() {
+    $(this).find("i").toggleClass("fa-arrow-down fa-arrow-up");
+    if (!$(this).hasClass('accordion-active')) {
+      $(this).toggleClass('accordion-active');
+      $(this).next('.accordion__content').show('slow');
+    }else{
+      $(this).toggleClass('accordion-active');
+      $(this).next('.accordion__content').hide('slow');
+    };
+  });
 
   // открытие и закрытие мобильного меню
   $('.nav__bars').click(function() {

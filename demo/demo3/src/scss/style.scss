@@ -75,6 +75,45 @@ a {
   color: inherit;
 }
 
+.accordion {
+  margin-top: 10px;
+  box-sizing: border-box;
+  // padding-left: 10px;
+  // padding-right: 10px;
+  width: 100%;
+  font-size: $fontSize2;
+  line-height: $fontSize4;
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  color: $siteColor5;
+  @media screen and (min-width: $contentWidth2) {
+    font-size: $fontSize3;
+    line-height: $fontSize5;
+  }
+
+  i {
+    padding-left: 6px;
+  }
+}
+
+.accordion:first-of-type {
+  margin-top: 40px;
+}
+
+.accordion__content {
+  font-size: $fontSize2;
+  line-height: $fontSize4;
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  @media screen and (min-width: $contentWidth2) {
+    font-size: $fontSize3;
+    line-height: $fontSize5;
+  }
+}
+
 body {
   min-width: $contentWidth3;
   font-family: 'helvetica neue', Arial, sans-serif;
