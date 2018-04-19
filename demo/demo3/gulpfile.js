@@ -98,4 +98,4 @@ gulp.task('prepare_html', function () {
 //   spriteData.css.pipe(gulp.dest('./src/css/'));
 // });
 
-gulp.task('default', ['prepare_js', 'prepare_html', 'sass', 'prepare_css', 'webserver', 'watch']);
+gulp.task('default', ['imagemin', 'prepare_js', 'prepare_html', 'sass', 'prepare_css', 'webserver', 'watch']);

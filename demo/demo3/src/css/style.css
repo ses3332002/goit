@@ -2517,6 +2517,9 @@ header .header__content {
     @media screen and (min-width: 748px) {
       .articles__content .articles__article {
         text-align: justify; } }
+    .articles__content .articles__article ul {
+      list-style: disc;
+      padding-left: 12px; }
   .articles__content .articles__article-center {
     text-align: center !important; }
   .articles__content .articles__article-left {
@@ -2535,6 +2538,91 @@ header .header__content {
     font-weight: bold;
     color: #862009;
     line-height: 30px; }
+  .articles__content .articles__container {
+    text-align: center; }
+
+.flipping_card {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-top: 10px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-perspective: 400px;
+  perspective: 400px;
+  transition: 0.5s; }
+  @media screen and (min-width: 748px) {
+    .flipping_card {
+      width: 340px; } }
+  @media screen and (min-width: 1024px) {
+    .flipping_card {
+      width: 390px;
+      margin-right: 1px;
+      margin-left: 1px; } }
+  .flipping_card:hover .flipping_card__back {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg); }
+  .flipping_card:hover .flipping_card__front {
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg); }
+  .flipping_card .flipping_card__front, .flipping_card .flipping_card__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    transition: 0.5s;
+    box-sizing: border-box; }
+  .flipping_card .flipping_card__back {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    background-color: #fff;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px; }
+  .flipping_card .flipping_card__front {
+    overflow: hidden;
+    line-height: 300px;
+    color: #fff; }
+  .flipping_card .flipping_card__text {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 22px;
+    background-color: RGBA(0, 0, 0, 0.5);
+    margin-top: 10px;
+    padding-right: 4px;
+    padding-left: 4px;
+    text-align: center; }
+    @media screen and (min-width: 748px) {
+      .flipping_card .flipping_card__text {
+        font-size: 30px;
+        line-height: 40px;
+        width: 340px; } }
+    @media screen and (min-width: 1024px) {
+      .flipping_card .flipping_card__text {
+        width: 380px; } }
+
+.flipping_card:nth-of-type(1) .flipping_card__front {
+  background-image: url(../img/pk.jpg); }
+
+.flipping_card:nth-of-type(2) .flipping_card__front {
+  background-image: url(../img/rm.jpg); }
+
+.flipping_card:nth-of-type(3) .flipping_card__front {
+  background-image: url(../img/notebook-repair.jpg); }
+
+.flipping_card:nth-of-type(4) .flipping_card__front {
+  background-image: url(../img/printer-repair.jpg); }
 
 .informers {
   grid-row: 4 / 5;
