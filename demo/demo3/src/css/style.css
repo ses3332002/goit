@@ -2510,7 +2510,8 @@ header .header__content {
       font-size: 18px;
       line-height: 24px;
       padding-left: 20px;
-      padding-right: 20px; } }
+      padding-right: 20px;
+      text-align: center; } }
   .articles__content .articles__article {
     margin-top: 20px;
     text-align: left; }
@@ -2539,7 +2540,11 @@ header .header__content {
     color: #862009;
     line-height: 30px; }
   .articles__content .articles__container {
-    text-align: center; }
+    text-align: center;
+    display: inline-block; }
+    @media screen and (min-width: 1024px) {
+      .articles__content .articles__container {
+        width: 790px; } }
 
 .flipping_card {
   display: inline-block;
@@ -2557,9 +2562,7 @@ header .header__content {
       width: 340px; } }
   @media screen and (min-width: 1024px) {
     .flipping_card {
-      width: 390px;
-      margin-right: 1px;
-      margin-left: 1px; } }
+      width: 390px; } }
   .flipping_card:hover .flipping_card__back {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg); }

@@ -413,7 +413,6 @@ header {
   @extend .content;
   box-sizing: border-box;
   text-align: left;
-  // text-align: center;
   font-size: $fontSize3;
   line-height: $fontSize5;
   @media screen and (min-width: $contentWidth2) {
@@ -421,7 +420,7 @@ header {
     line-height: $fontSize6;
     padding-left: 20px;
     padding-right: 20px;
-    // text-align: center;
+    text-align: center;
   }
 
   .articles__article {
@@ -467,12 +466,10 @@ header {
 
   .articles__container {
     text-align: center;
-    // @media screen and (min-width: $contentWidth1) {
-      // text-align: center;
-      // width: 900px;
-      // margin-right: 10px;
-      // margin-left: 10px;
-    // }
+    display: inline-block;
+    @media screen and (min-width: $contentWidth1) {
+      width: 790px;
+    }
   }
 }
 
@@ -490,8 +487,6 @@ header {
   }
   @media screen and (min-width: $contentWidth1) {
     width: 390px;
-    margin-right: 1px;
-    margin-left: 1px;
   }
 
   &:hover .flipping_card__back {
