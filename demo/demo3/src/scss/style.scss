@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'helvetica neue';
   src:
-  // url('../fonts/helveticaneuecyr-light-webfont.woff2') format('woff2'),
   url('../fonts/helveticaneuecyr-light-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -78,18 +77,12 @@ a {
 .accordion {
   margin-top: 10px;
   box-sizing: border-box;
-  // padding-left: 10px;
-  // padding-right: 10px;
   width: 100%;
-  font-size: $fontSize2;
-  line-height: $fontSize4;
   position: relative;
   cursor: pointer;
   font-weight: bold;
   color: $siteColor5;
   @media screen and (min-width: $contentWidth2) {
-    font-size: $fontSize3;
-    line-height: $fontSize5;
   }
 
   i {
@@ -102,15 +95,11 @@ a {
 }
 
 .accordion__content {
-  font-size: $fontSize2;
-  line-height: $fontSize4;
   margin-top: 10px;
   box-sizing: border-box;
   padding-left: 10px;
   padding-right: 10px;
   @media screen and (min-width: $contentWidth2) {
-    font-size: $fontSize3;
-    line-height: $fontSize5;
   }
 }
 
@@ -126,6 +115,7 @@ body {
     margin: 0 auto;
   }
 }
+
 
 header {
   .header__content {
@@ -233,6 +223,10 @@ header {
         color: $siteColor4;
         @media screen and (min-width: $contentWidth1) {
           display: block;
+        }
+
+        .hide_words {
+          white-space: nowrap;
         }
       }
     }
@@ -559,7 +553,6 @@ header {
   background-image: url(../img/printer-repair.jpg);
 }
 
-
 .informers {
   grid-row: 4 / 5;
   margin-bottom: 10px;
@@ -644,7 +637,6 @@ header {
         font-size: $fontSize7;
       }
     }
-
 
     .informer__name {
       font-size: $fontSize3;

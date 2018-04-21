@@ -2243,16 +2243,10 @@ a {
   margin-top: 10px;
   box-sizing: border-box;
   width: 100%;
-  font-size: 14px;
-  line-height: 18px;
   position: relative;
   cursor: pointer;
   font-weight: bold;
   color: #862009; }
-  @media screen and (min-width: 748px) {
-    .accordion {
-      font-size: 16px;
-      line-height: 22px; } }
   .accordion i {
     padding-left: 6px; }
 
@@ -2260,16 +2254,10 @@ a {
   margin-top: 40px; }
 
 .accordion__content {
-  font-size: 14px;
-  line-height: 18px;
   margin-top: 10px;
   box-sizing: border-box;
   padding-left: 10px;
   padding-right: 10px; }
-  @media screen and (min-width: 748px) {
-    .accordion__content {
-      font-size: 16px;
-      line-height: 22px; } }
 
 body {
   min-width: 320px;
@@ -2367,6 +2355,8 @@ header .header__content {
         @media screen and (min-width: 1024px) {
           .grid__container nav ul .current {
             display: block; } }
+        .grid__container nav ul .current .hide_words {
+          white-space: nowrap; }
     .grid__container nav .nav__menu-opened {
       position: absolute;
       height: auto;
