@@ -2729,3 +2729,44 @@ footer {
         footer .footer__content .footer__phones .footer__phone i {
           color: #862009;
           padding-right: 10px; }
+
+.readme {
+  display: none;
+  padding: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -157px;
+  margin-top: -190px;
+  width: 300px;
+  border: 2px solid #862009;
+  border-radius: 5px;
+  background: #aaa;
+  z-index: 500;
+  opacity: 0.9;
+  text-align: center;
+  font-size: 18px;
+  line-height: 22px; }
+  @media screen and (min-width: 748px) {
+    .readme {
+      padding: 10px;
+      top: 50%;
+      left: 50%;
+      line-height: 24px;
+      margin-left: -312px;
+      margin-top: -162px;
+      width: 600px;
+      height: 335px; } }
+  .readme .readme__message {
+    text-align: left;
+    overflow-y: auto;
+    max-height: 310px; }
+    @media screen and (min-width: 748px) {
+      .readme .readme__message {
+        max-height: 480px; } }
+  .readme button {
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 15px;
+    font-weight: normal;
+    cursor: pointer; }

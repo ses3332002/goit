@@ -709,3 +709,49 @@ footer {
     }
   }
 }
+
+.readme {
+  display: none;
+  padding: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -157px;
+  margin-top: -190px;
+  width: 300px;
+  border: 2px solid $siteColor5;
+  border-radius: 5px;
+  background: $siteColor9;
+  z-index: 500;
+  opacity: 0.9;
+  text-align: center;
+  font-size: $fontSize4;
+  line-height: $fontSize5;
+  @media screen and (min-width: $contentWidth2) {
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    line-height: $fontSize6;
+    margin-left: -312px;
+    margin-top: -162px;
+    width: 600px;
+    height: 335px;
+  }
+
+  .readme__message {
+    text-align: left;
+    overflow-y: auto;
+    max-height: 310px;
+    @media screen and (min-width: $contentWidth2) {
+      max-height: 480px;
+    }
+  }
+
+  button {
+    font-size: $fontSize4;
+    line-height: $fontSize4;
+    margin-top: 15px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+}
