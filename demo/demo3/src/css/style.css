@@ -2729,6 +2729,12 @@ footer {
         footer .footer__content .footer__phones .footer__phone i {
           color: #862009;
           padding-right: 10px; }
+    footer .footer__content .footer__copyright {
+      display: none; }
+      @media screen and (min-width: 1024px) {
+        footer .footer__content .footer__copyright {
+          display: inline;
+          padding-bottom: 10px; } }
 
 .readme {
   display: none;

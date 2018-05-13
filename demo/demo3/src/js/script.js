@@ -1,15 +1,17 @@
 'use strict';
 $(document).ready(function(){
 
-// всплывающее окно с readme
-  $('body').append('<div class="readme">Особенности сайта:<div class="readme__message"></div><button class="readme__button">Закрыть</button></div>');
+// всплывающее окно с readme - только на index.html
+  if (window.location.pathname == '/index.html' || window.location.pathname == '/goit/demo/demo3/' || window.location.pathname == '/goit/demo/demo3/index.html') {
+    $('body').append('<div class="readme">Особенности сайта:<div class="readme__message"></div><button class="readme__button">Закрыть</button></div>');
 
-  $('.readme__message').load('readme.html');
-  $('.readme').show();
+    $('.readme__message').load('readme.html');
+    $('.readme').show();
 
-  $('.readme__button').click(function(){
-    $('.readme').hide();
-  });
+    $('.readme__button').click(function(){
+      $('.readme').hide();
+    });
+  };
 
 //инициализация слайдеров
   $('.owl-carousel').owlCarousel(
