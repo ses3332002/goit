@@ -1,0 +1,27 @@
+@import "modules/variables";
+
+// @mixin box($corner_radius) {
+//   border-radius: $corner_radius;
+//   display: inline-block;
+//   width: 100px;
+//   height: 70px;
+//   background-color: $siteColor1;
+// }
+
+
+%box {
+    border-radius: 10px;
+    display: inline-block;
+    width: 100px;
+    height: 70px;
+    background-color: $siteColor1;
+}
+
+.box1, .box2, .box3 {
+  // @include box(10px);
+  @extend %box;
+}
+
+.box2 {
+  box-shadow: blue 3px 3px;
+}
