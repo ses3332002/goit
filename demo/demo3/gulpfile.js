@@ -29,7 +29,7 @@ gulp.task('webserver', function() {
 gulp.task('imagemin', function() {
   gulp.src('./src/img/*.*')
     .pipe(imagemin({
-      optimizationLevel: 3,
+      optimizationLevel: 7,
       progressive: true,
       interlaced: true
     }))
