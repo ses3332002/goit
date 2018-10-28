@@ -24,7 +24,7 @@ gulp.task('webserver', function() {
 
 gulp.task('imagemin', function() {
   gulp.src('./src/img/*.*')
-    .pipe(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true }))
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest('./build/img'))
 });
 
@@ -74,4 +74,4 @@ gulp.task('watch', function () {
 //   spriteData.css.pipe(gulp.dest('./src/css/'));
 // });
 
-gulp.task('default', ['prepare_js', 'sass', 'prepare_css', 'webserver', 'watch']);
+gulp.task('default', ['imagemin', 'prepare_js', 'sass', 'prepare_css', 'webserver', 'watch']);
