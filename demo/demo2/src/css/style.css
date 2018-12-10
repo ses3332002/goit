@@ -2260,11 +2260,15 @@
 
 .bang {
   background-image: url(../img/bg__bang.png);
+  background-size: 139px;
   background-repeat: no-repeat;
   background-position: center;
   padding: 30px;
   font-size: 30px;
   margin-bottom: 40px; }
+  @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+    .bang {
+      background-image: url(../img/bg__bang_2x.png); } }
   .bang:hover {
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -2274,11 +2278,28 @@ body {
   min-width: 320px;
   font-family: 'helvetica neue'; }
   body .header {
-    background-image: url(../img/bg__top.jpg);
+    background-image: url(../img/bg__top_phone.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    color: #fff;
-    background-attachment: fixed; }
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff; }
+    @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+      body .header {
+        background-image: url(../img/bg__top_phone_2x.jpg); } }
+    @media screen and (min-width: 748px) {
+      body .header {
+        background-image: url(../img/bg__top_tablet.jpg); } }
+  @media screen and (min-width: 748px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 748px) and (min-resolution: 1.5dppx) {
+    body .header {
+      background-image: url(../img/bg__top_tablet_2x.jpg); } }
+    @media screen and (min-width: 940px) {
+      body .header {
+        background-image: url(../img/bg__top.jpg);
+        background-size: 1920px; } }
+  @media screen and (min-width: 940px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 940px) and (min-resolution: 1.5dppx) {
+    body .header {
+      background-image: url(../img/bg__top_2x.jpg); } }
     body .header .header__content {
       text-align: left;
       font-size: 0;
@@ -2509,10 +2530,27 @@ body {
         box-shadow: 0 0 14px rgba(255, 255, 255, 0.9); }
   body .action {
     margin: 0 auto;
-    background-image: url(../img/bg__next.jpg);
+    background-image: url(../img/bg__next_phone.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     color: #fff; }
+    @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+      body .action {
+        background-image: url(../img/bg__next_phone_2x.jpg); } }
+    @media screen and (min-width: 748px) {
+      body .action {
+        background-image: url(../img/bg__next_tablet.jpg); } }
+  @media screen and (min-width: 748px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 748px) and (min-resolution: 1.5dppx) {
+    body .action {
+      background-image: url(../img/bg__next_tablet_2x.jpg); } }
+    @media screen and (min-width: 940px) {
+      body .action {
+        background-image: url(../img/bg__next.jpg);
+        background-size: 1920px; } }
+  @media screen and (min-width: 940px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 940px) and (min-resolution: 1.5dppx) {
+    body .action {
+      background-image: url(../img/bg__next_2x.jpg); } }
     body .action .action__content {
       font-size: 0;
       vertical-align: top;
@@ -2670,15 +2708,90 @@ body {
             body .sliders .owl-carousel .item .item__text {
               width: 650px; } }
       body .sliders .owl-carousel .item-1 {
-        background-image: url(../img/slide1.jpg); }
+        background-image: url(../img/slide1_phone.jpg); }
+        @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+          body .sliders .owl-carousel .item-1 {
+            background-image: url(../img/slide1_phone_2x.jpg); } }
+        @media screen and (min-width: 748px) {
+          body .sliders .owl-carousel .item-1 {
+            background-image: url(../img/slide1_tablet.jpg); } }
+  @media screen and (min-width: 748px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 748px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-1 {
+      background-image: url(../img/slide1_tablet_2x.jpg); } }
+        @media screen and (min-width: 940px) {
+          body .sliders .owl-carousel .item-1 {
+            background-image: url(../img/slide1.jpg); } }
+  @media screen and (min-width: 940px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 940px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-1 {
+      background-image: url(../img/slide1_2x.jpg); } }
       body .sliders .owl-carousel .item-2 {
-        background-image: url(../img/slide2.jpg); }
+        background-image: url(../img/slide2_phone.jpg); }
+        @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+          body .sliders .owl-carousel .item-2 {
+            background-image: url(../img/slide2_phone_2x.jpg); } }
+        @media screen and (min-width: 748px) {
+          body .sliders .owl-carousel .item-2 {
+            background-image: url(../img/slide2_tablet.jpg); } }
+  @media screen and (min-width: 748px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 748px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-2 {
+      background-image: url(../img/slide2_tablet_2x.jpg); } }
+        @media screen and (min-width: 940px) {
+          body .sliders .owl-carousel .item-2 {
+            background-image: url(../img/slide2.jpg); } }
+  @media screen and (min-width: 940px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 940px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-2 {
+      background-image: url(../img/slide2_2x.jpg); } }
       body .sliders .owl-carousel .item-3 {
-        background-image: url(../img/slide3.jpg); }
+        background-image: url(../img/slide3_phone.jpg); }
+        @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+          body .sliders .owl-carousel .item-3 {
+            background-image: url(../img/slide3_phone_2x.jpg); } }
+        @media screen and (min-width: 748px) {
+          body .sliders .owl-carousel .item-3 {
+            background-image: url(../img/slide3_tablet.jpg); } }
+  @media screen and (min-width: 748px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 748px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-3 {
+      background-image: url(../img/slide3_tablet_2x.jpg); } }
+        @media screen and (min-width: 940px) {
+          body .sliders .owl-carousel .item-3 {
+            background-image: url(../img/slide3.jpg); } }
+  @media screen and (min-width: 940px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 940px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-3 {
+      background-image: url(../img/slide3_2x.jpg); } }
       body .sliders .owl-carousel .item-4 {
-        background-image: url(../img/slide4.jpg); }
+        background-image: url(../img/slide4_phone.jpg); }
+        @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+          body .sliders .owl-carousel .item-4 {
+            background-image: url(../img/slide4_phone_2x.jpg); } }
+        @media screen and (min-width: 748px) {
+          body .sliders .owl-carousel .item-4 {
+            background-image: url(../img/slide4_tablet.jpg); } }
+  @media screen and (min-width: 748px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 748px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-4 {
+      background-image: url(../img/slide4_tablet_2x.jpg); } }
+        @media screen and (min-width: 940px) {
+          body .sliders .owl-carousel .item-4 {
+            background-image: url(../img/slide4.jpg); } }
+  @media screen and (min-width: 940px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 940px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-4 {
+      background-image: url(../img/slide4_2x.jpg); } }
       body .sliders .owl-carousel .item-5 {
-        background-image: url(../img/slide5.jpg); }
+        background-image: url(../img/slide5_phone.jpg); }
+        @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+          body .sliders .owl-carousel .item-5 {
+            background-image: url(../img/slide5_phone_2x.jpg); } }
+        @media screen and (min-width: 748px) {
+          body .sliders .owl-carousel .item-5 {
+            background-image: url(../img/slide5_tablet.jpg); } }
+  @media screen and (min-width: 748px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 748px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-5 {
+      background-image: url(../img/slide5_tablet_2x.jpg); } }
+        @media screen and (min-width: 940px) {
+          body .sliders .owl-carousel .item-5 {
+            background-image: url(../img/slide5.jpg); } }
+  @media screen and (min-width: 940px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 940px) and (min-resolution: 1.5dppx) {
+    body .sliders .owl-carousel .item-5 {
+      background-image: url(../img/slide5_2x.jpg); } }
       body .sliders .owl-carousel .owl-controls {
         display: none; }
         @media screen and (min-width: 748px) {
@@ -2743,11 +2856,28 @@ body {
       margin-top: 10px; }
   body .showcase {
     margin: 0 auto;
-    background-image: url(../img/bg__new_life.jpg);
+    background-image: url(../img/bg__new_life_phone.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    color: #fff;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff; }
+    @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+      body .showcase {
+        background-image: url(../img/bg__new_life_phone_2x.jpg); } }
+    @media screen and (min-width: 748px) {
+      body .showcase {
+        background-image: url(../img/bg__new_life_tablet.jpg); } }
+  @media screen and (min-width: 748px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 748px) and (min-resolution: 1.5dppx) {
+    body .showcase {
+      background-image: url(../img/bg__new_life_tablet_2x.jpg); } }
+    @media screen and (min-width: 940px) {
+      body .showcase {
+        background-image: url(../img/bg__new_life.jpg);
+        background-size: 1920px; } }
+  @media screen and (min-width: 940px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-width: 940px) and (min-resolution: 1.5dppx) {
+    body .showcase {
+      background-image: url(../img/bg__new_life_2x.jpg); } }
     body .showcase .showcase__content {
       height: 650px;
       font-size: 22px;
@@ -2826,12 +2956,12 @@ body {
         text-shadow: 0px 0px 2px #fff; }
   body .readme {
     display: none;
-    padding: 5px;
+    padding: 8px;
     position: fixed;
     top: 50%;
     left: 50%;
     margin-left: -157px;
-    margin-top: -190px;
+    margin-top: -200px;
     width: 300px;
     border: 2px solid #000;
     border-radius: 5px;
@@ -2843,15 +2973,13 @@ body {
     line-height: 22px; }
     @media screen and (min-width: 748px) {
       body .readme {
-        height: 500px;
-        padding: 10px;
+        width: 600px;
+        height: 380px;
         top: 50%;
         left: 50%;
         line-height: 24px;
         margin-left: -312px;
-        margin-top: -162px;
-        width: 600px;
-        height: 340px; } }
+        margin-top: -160px; } }
     body .readme .readme__message {
       text-align: left;
       overflow-y: auto;

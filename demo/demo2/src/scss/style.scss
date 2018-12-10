@@ -122,11 +122,15 @@ $fontSize11: 26px;
 
 .bang {
   background-image: url(../img/bg__bang.png);
+  background-size: 139px;
   background-repeat: no-repeat;
   background-position: center;
   padding: 30px;
   font-size: $fontSize4;
   margin-bottom: 40px;
+  @media screen and (min-resolution: 1.5dppx) {
+    background-image: url(../img/bg__bang_2x.png);
+  }
 
   &:hover {
     transform: scale(1.1);
@@ -139,11 +143,28 @@ body {
   font-family: 'helvetica neue';
 
   .header {
-    background-image: url(../img/bg__top.jpg);
+    background-image: url(../img/bg__top_phone.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    color: $siteColor8;
+    background-size: cover;
     background-attachment: fixed;
+    color: $siteColor8;
+    @media screen and (min-resolution: 1.5dppx) {
+      background-image: url(../img/bg__top_phone_2x.jpg);
+    }
+    @media screen and (min-width: $contentWidth2) {
+      background-image: url(../img/bg__top_tablet.jpg);
+      @media screen and (min-resolution: 1.5dppx) {
+        background-image: url(../img/bg__top_tablet_2x.jpg);
+      }
+    }
+    @media screen and (min-width: $contentWidth1) {
+      background-image: url(../img/bg__top.jpg);
+      background-size: 1920px;
+      @media screen and (min-resolution: 1.5dppx) {
+        background-image: url(../img/bg__top_2x.jpg);
+      }
+    }
 
     .header__content {
       @extend .content;
@@ -441,10 +462,27 @@ body {
 
   .action {
     margin: 0 auto;
-    background-image: url(../img/bg__next.jpg);
+    background-image: url(../img/bg__next_phone.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     color: $siteColor8;
+    @media screen and (min-resolution: 1.5dppx) {
+      background-image: url(../img/bg__next_phone_2x.jpg);
+    }
+    @media screen and (min-width: $contentWidth2) {
+      background-image: url(../img/bg__next_tablet.jpg);
+      @media screen and (min-resolution: 1.5dppx) {
+        background-image: url(../img/bg__next_tablet_2x.jpg);
+      }
+    }
+    @media screen and (min-width: $contentWidth1) {
+      background-image: url(../img/bg__next.jpg);
+      background-size: 1920px;
+      @media screen and (min-resolution: 1.5dppx) {
+        background-image: url(../img/bg__next_2x.jpg);
+      }
+    }
 
     .action__content {
       @extend .content;
@@ -639,19 +677,94 @@ body {
       }
 
       .item-1 {
-        background-image: url(../img/slide1.jpg);
+        background-image: url(../img/slide1_phone.jpg);
+        @media screen and (min-resolution: 1.5dppx) {
+          background-image: url(../img/slide1_phone_2x.jpg);
+        }
+        @media screen and (min-width: $contentWidth2) {
+          background-image: url(../img/slide1_tablet.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide1_tablet_2x.jpg);
+          }
+        }
+        @media screen and (min-width: $contentWidth1) {
+          background-image: url(../img/slide1.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide1_2x.jpg);
+          }
+        }
       }
       .item-2 {
-        background-image: url(../img/slide2.jpg);
+        background-image: url(../img/slide2_phone.jpg);
+        @media screen and (min-resolution: 1.5dppx) {
+          background-image: url(../img/slide2_phone_2x.jpg);
+        }
+        @media screen and (min-width: $contentWidth2) {
+          background-image: url(../img/slide2_tablet.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide2_tablet_2x.jpg);
+          }
+        }
+        @media screen and (min-width: $contentWidth1) {
+          background-image: url(../img/slide2.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide2_2x.jpg);
+          }
+        }
       }
       .item-3 {
-        background-image: url(../img/slide3.jpg);
+        background-image: url(../img/slide3_phone.jpg);
+        @media screen and (min-resolution: 1.5dppx) {
+          background-image: url(../img/slide3_phone_2x.jpg);
+        }
+        @media screen and (min-width: $contentWidth2) {
+          background-image: url(../img/slide3_tablet.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide3_tablet_2x.jpg);
+          }
+        }
+        @media screen and (min-width: $contentWidth1) {
+          background-image: url(../img/slide3.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide3_2x.jpg);
+          }
+        }
       }
       .item-4 {
-        background-image: url(../img/slide4.jpg);
+        background-image: url(../img/slide4_phone.jpg);
+        @media screen and (min-resolution: 1.5dppx) {
+          background-image: url(../img/slide4_phone_2x.jpg);
+        }
+        @media screen and (min-width: $contentWidth2) {
+          background-image: url(../img/slide4_tablet.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide4_tablet_2x.jpg);
+          }
+        }
+        @media screen and (min-width: $contentWidth1) {
+          background-image: url(../img/slide4.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide4_2x.jpg);
+          }
+        }
       }
       .item-5 {
-        background-image: url(../img/slide5.jpg);
+        background-image: url(../img/slide5_phone.jpg);
+        @media screen and (min-resolution: 1.5dppx) {
+          background-image: url(../img/slide5_phone_2x.jpg);
+        }
+        @media screen and (min-width: $contentWidth2) {
+          background-image: url(../img/slide5_tablet.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide5_tablet_2x.jpg);
+          }
+        }
+        @media screen and (min-width: $contentWidth1) {
+          background-image: url(../img/slide5.jpg);
+          @media screen and (min-resolution: 1.5dppx) {
+            background-image: url(../img/slide5_2x.jpg);
+          }
+        }
       }
 
       .owl-controls {
@@ -748,21 +861,36 @@ body {
 
   .showcase {
     margin: 0 auto;
-    background-image: url(../img/bg__new_life.jpg);
+    background-image: url(../img/bg__new_life_phone.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    color: $siteColor8;
     background-attachment: fixed;
+    background-size: cover;
+    color: $siteColor8;
+    @media screen and (min-resolution: 1.5dppx) {
+      background-image: url(../img/bg__new_life_phone_2x.jpg);
+    }
+    @media screen and (min-width: $contentWidth2) {
+      background-image: url(../img/bg__new_life_tablet.jpg);
+      @media screen and (min-resolution: 1.5dppx) {
+        background-image: url(../img/bg__new_life_tablet_2x.jpg);
+      }
+    }
+    @media screen and (min-width: $contentWidth1) {
+      background-image: url(../img/bg__new_life.jpg);
+      background-size: 1920px;
+      @media screen and (min-resolution: 1.5dppx) {
+        background-image: url(../img/bg__new_life_2x.jpg);
+      }
+    }
 
     .showcase__content {
       @extend .content;
       height: 650px;
       font-size: $fontSize2;
       padding-top: 20px;
-      // font-weight: bold;
       @media screen and (min-width: $contentWidth2) {
         padding-top: 50px;
-        // height: 650px;
       }
 
       h2 {
@@ -869,12 +997,12 @@ body {
 
   .readme {
     display: none;
-    padding: 5px;
+    padding: 8px;
     position: fixed;
     top: 50%;
     left: 50%;
     margin-left: -157px;
-    margin-top: -190px;
+    margin-top: -200px;
     width: 300px;
     border: 2px solid $siteColor5;
     border-radius: 5px;
@@ -885,15 +1013,14 @@ body {
     font-size: $fontSize1;
     line-height: $fontSize2;
     @media screen and (min-width: $contentWidth2) {
-      height: 500px;
-      padding: 10px;
+      width: 600px;
+      height: 380px;
+      // padding: 7px;
       top: 50%;
       left: 50%;
       line-height: $fontSize3;
       margin-left: -312px;
-      margin-top: -162px;
-      width: 600px;
-      height: 340px;
+      margin-top: -160px;
     }
 
     .readme__message {
