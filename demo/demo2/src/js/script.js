@@ -111,13 +111,35 @@ for (var i=0; i < 6; i++) {
   searchRequest('elephant');
 
   var note = $('#note');
-  // ts = new Date(2012, 0, 1),
   // newYear = true;
+
+  // текущее время
+  var timeMark;
+  var currentTime;
+  var ts;
+  currentTime = (new Date()).getTime();
+
+  //проверка для акции, есть ли в локал стораж данные о начале акции
+  if (!localStorage.getItem('actionStartTime')) {
+    timeMark = (new Date()).getTime();
+    localStorage.setItem('actionStartTime',timeMark);
+  } else {
+    timeMark = localStorage.getItem('actionStartTime');
+    // проверка, не просрочено ли время начала акции
+    if (+currentTime - +timeMark > 345600000) {
+      timeMark = (new Date()).getTime();
+      localStorage.setItem('actionStartTime',timeMark);
+    };
+  };
 
   // if((new Date()) > ts){
     // Задаем точку отсчета для примера. Пусть будет очередной Новый год или дата через 10 дней.
     // Обратите внимание на *1000 в конце - время должно задаваться в миллисекундах
-    ts = (new Date()).getTime() + 4*24*60*60*1000;
+    // ts = timeMark + 5000;
+    // ts = timeMark + 4*24*60*60*1000;
+    // ts = new Date(2019, 0, 1);
+    ts = +timeMark + 4*24*60*60*1000;
+
   //   newYear = false;
   // }
 
