@@ -138,6 +138,14 @@ $fontSize11: 26px;
   }
 }
 
+.invisible_header {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
 body {
   min-width: $contentWidth3;
   font-family: 'helvetica neue';
