@@ -813,11 +813,13 @@ footer {
 .readme {
   display: none;
   padding: 5px;
-  position: fixed;
+  // position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -157px;
-  margin-top: -190px;
+  transform: translate(-50%,-50%);
+  // margin-left: -157px;
+  // margin-top: -190px;
   width: 300px;
   border: 2px solid $siteColor5;
   border-radius: 5px;
@@ -832,10 +834,10 @@ footer {
     top: 50%;
     left: 50%;
     line-height: $fontSize6;
-    margin-left: -312px;
-    margin-top: -162px;
+    // margin-left: -312px;
+    // margin-top: -162px;
     width: 600px;
-    height: 360px;
+    height: 400px;
   }
 
   .readme__message {
