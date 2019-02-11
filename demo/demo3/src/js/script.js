@@ -60,6 +60,7 @@ $(document).ready(function(){
   });
 
   var APIKEY = 'b886dd4b03e8d5aa871a26169725d822';
+  var APIKEY2 = '76b0c213a9334f2d9a3267f2e43808da';
   jQuery.support.cors = true;
 
   // данные из локал стораж
@@ -115,16 +116,30 @@ $(document).ready(function(){
   function fillWea() {
     weaCashe = JSON.parse(localStorage.getItem('pogoda'));
     $('.informer-weather .informer__table').html('');
-    $('.informer-weather .informer__table').append('<img src="http://openweathermap.org/img/w/' + weaCashe.json.weather[0].icon + '.png">');
-    $('.informer-weather .informer__table').append('<p class="weather_description">' + weaCashe.json.weather[0].description + '</p>');
-    $('.informer-weather .informer__table').append('<p class="temp">' + Math.round(weaCashe.json.main.temp) + '&deg; C</p>');
-    if (Math.round(weaCashe.json.main.temp) > 0) {
+    $('.informer-weather .informer__table').append('<img src="https://www.weatherbit.io/static/img/icons/' + weaCashe.json.data[0].weather.icon + '.png">');
+    $('.informer-weather .informer__table').append('<p class="weather_description">' + weaCashe.json.data[0].weather.description + '</p>');
+    $('.informer-weather .informer__table').append('<p class="temp">' + Math.round(weaCashe.json.data[0].temp) + '&deg; C</p>');
+    if (Math.round(weaCashe.json.data[0].temp) > 0) {
       $('.temp').css("color","red");
     } else {
       $('.temp').css("color","blue");
     };
-    $('.informer-weather .informer__table').append('<p class="weather_description">ветер: ' + Math.round(weaCashe.json.wind.speed) + ' м/с</p>');
+    $('.informer-weather .informer__table').append('<p class="weather_description">ветер: ' + Math.round(weaCashe.json.data[0].wind_spd) + ' м/с</p>');
   };
+
+  // function fillWea() {
+  //   weaCashe = JSON.parse(localStorage.getItem('pogoda'));
+  //   $('.informer-weather .informer__table').html('');
+  //   $('.informer-weather .informer__table').append('<img src="http://openweathermap.org/img/w/' + weaCashe.json.weather[0].icon + '.png">');
+  //   $('.informer-weather .informer__table').append('<p class="weather_description">' + weaCashe.json.weather[0].description + '</p>');
+  //   $('.informer-weather .informer__table').append('<p class="temp">' + Math.round(weaCashe.json.main.temp) + '&deg; C</p>');
+  //   if (Math.round(weaCashe.json.main.temp) > 0) {
+  //     $('.temp').css("color","red");
+  //   } else {
+  //     $('.temp').css("color","blue");
+  //   };
+  //   $('.informer-weather .informer__table').append('<p class="weather_description">ветер: ' + Math.round(weaCashe.json.wind.speed) + ' м/с</p>');
+  // };
 
   // запрос данных по валюте
   function curRequest() {
@@ -139,7 +154,7 @@ $(document).ready(function(){
 
   // запрос данных по погоде
   function weaRequest() {
-    $.getJSON('http://api.openweathermap.org/data/2.5/weather?id=710791&APPID=' + APIKEY + '&cluster=yes&units=metric&lang=ru ', {}, function(json){
+    $.getJSON('https://api.weatherbit.io/v2.0/current?city_id=710791&lang=ru&key=' + APIKEY2, {}, function(json){
     weaData.json = json;
     timeMark = new Date();
     weaData.time = timeMark.valueOf();
@@ -147,5 +162,15 @@ $(document).ready(function(){
     fillWea();
     });
   };
+
+  // function weaRequest() {
+  //   $.getJSON('http://api.openweathermap.org/data/2.5/weather?id=710791&APPID=' + APIKEY + '&cluster=yes&units=metric&lang=ru ', {}, function(json){
+  //   weaData.json = json;
+  //   timeMark = new Date();
+  //   weaData.time = timeMark.valueOf();
+  //   localStorage.setItem('pogoda', JSON.stringify(weaData));
+  //   fillWea();
+  //   });
+  // };
 
 });
