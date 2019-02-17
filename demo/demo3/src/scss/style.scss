@@ -723,6 +723,11 @@ header {
 
       .weather_description {
         font-size: $fontSize3;
+        // max-height: $fontSize3;
+        // max-width: 170px;
+        white-space: nowrap;
+        overflow-x: hidden;
+        // text-overflow: clip;
       }
 
       .temp {
