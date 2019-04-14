@@ -2231,6 +2231,13 @@
       font-size: 22px;
       line-height: 30px; } }
 
+.informers h2 {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0); }
+
 .words__important {
   color: #f00;
   font-weight: bold; }

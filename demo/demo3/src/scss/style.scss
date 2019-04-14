@@ -64,6 +64,15 @@ $fontSize10: 60px;
   }
 }
 
+%invisible_header {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  // top: -10px;
+  clip: rect(0 0 0 0);
+}
+
 .words__important {
   color: $siteColor2;
   font-weight: bold;
@@ -168,6 +177,7 @@ header {
       height: auto;
       padding: 0px;
     }
+
 
     ul {
       position: relative;
@@ -653,6 +663,11 @@ header {
     margin-bottom: 0px;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+  }
+
+  h2 {
+    // appearance: none;
+    @extend %invisible_header;
   }
 
   .informer {

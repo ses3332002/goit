@@ -76,7 +76,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
   gulp.watch('./src/scss/*.scss', ['sass', 'prepare_css']);
   gulp.watch('./src/js/*.js', ['prepare_js']);
-  gulp.watch('./src/html/*.html', ['prepare_html']);
+  gulp.watch('./src/html/**/*.html', ['prepare_html']);
 });
 
 gulp.task('prepare_html', function () {
