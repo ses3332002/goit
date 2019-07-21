@@ -2305,7 +2305,8 @@ header .header__content {
     height: 34px;
     text-align: center;
     margin-top: 3px;
-    margin-bottom: 6px; }
+    margin-bottom: 6px;
+    position: relative; }
     @media screen and (min-width: 748px) {
       .grid__container nav {
         box-sizing: border-box;
@@ -2319,6 +2320,23 @@ header .header__content {
         width: 180px;
         height: auto;
         padding: 0px; } }
+    .grid__container nav .nav__bars {
+      color: #862009;
+      cursor: pointer;
+      padding-left: 5px;
+      padding-right: 5px;
+      display: inline;
+      position: absolute;
+      top: 4px;
+      left: 0px;
+      font-size: 30px;
+      z-index: 500; }
+      @media screen and (min-width: 748px) {
+        .grid__container nav .nav__bars {
+          left: 15px; } }
+      @media screen and (min-width: 1024px) {
+        .grid__container nav .nav__bars {
+          display: none; } }
     .grid__container nav ul {
       position: relative;
       border: solid 1px #aaa;
@@ -2328,24 +2346,16 @@ header .header__content {
       z-index: 400;
       height: 34px;
       overflow: hidden;
-      padding-top: 3px;
+      padding-top: 2px;
+      padding-left: 26px;
       font-size: 0; }
       @media screen and (min-width: 1024px) {
         .grid__container nav ul {
+          padding-left: 0px;
           height: auto; } }
       @media (prefers-color-scheme: dark) {
         .grid__container nav ul {
           background-color: #cccccc; } }
-      .grid__container nav ul .nav__bars {
-        color: #862009;
-        cursor: pointer;
-        padding-left: 5px;
-        padding-right: 5px;
-        display: inline;
-        font-size: 30px; }
-        @media screen and (min-width: 1024px) {
-          .grid__container nav ul .nav__bars {
-            display: none; } }
       .grid__container nav ul li {
         display: none;
         padding: 0;
@@ -2363,20 +2373,21 @@ header .header__content {
         .grid__container nav ul li a:hover {
           color: #f00; }
       .grid__container nav ul .current {
-        display: inline;
-        color: #e4370f; }
+        display: block;
+        color: #e4370f;
+        height: 16px;
+        overflow-y: hidden; }
         @media screen and (min-width: 1024px) {
           .grid__container nav ul .current {
-            display: block; } }
+            height: auto; } }
         .grid__container nav ul .current .hide_words {
           white-space: nowrap; }
     .grid__container nav .nav__menu-opened {
-      position: absolute;
       height: auto;
-      width: 298px; }
+      width: 272px; }
       @media screen and (min-width: 748px) {
         .grid__container nav .nav__menu-opened {
-          width: 706px; } }
+          width: 680px; } }
       .grid__container nav .nav__menu-opened li {
         display: block; }
   .grid__container .main__content {
@@ -2872,7 +2883,7 @@ footer {
       left: 50%;
       line-height: 24px;
       width: 600px;
-      height: 400px; } }
+      height: 424px; } }
   .readme .readme__message {
     text-align: left;
     overflow-y: auto;
