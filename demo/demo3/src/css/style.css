@@ -2271,6 +2271,9 @@ body {
   font-family: 'helvetica neue', Arial, sans-serif;
   background-color: RGBA(241, 136, 45, 0.9);
   color: #000; }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #7d4300; } }
   body main {
     max-width: 1400px;
     text-align: center;
@@ -2330,6 +2333,9 @@ header .header__content {
       @media screen and (min-width: 1024px) {
         .grid__container nav ul {
           height: auto; } }
+      @media (prefers-color-scheme: dark) {
+        .grid__container nav ul {
+          background-color: #cccccc; } }
       .grid__container nav ul .nav__bars {
         color: #862009;
         cursor: pointer;
@@ -2743,6 +2749,9 @@ header .header__content {
       border-radius: 4px;
       height: 136px;
       background-color: #fff; }
+      @media (prefers-color-scheme: dark) {
+        .informers .informer .informer__table {
+          background-color: #cccccc; } }
       .informers .informer .informer__table .currency_label {
         display: inline-block;
         margin-bottom: 10px;
@@ -2772,9 +2781,11 @@ header .header__content {
         margin: 0;
         padding-bottom: 4px; }
       .informers .informer .informer__table .weather_description {
-        font-size: 16px;
+        font-size: 14px;
         white-space: nowrap;
         overflow-x: hidden; }
+      .informers .informer .informer__table .wind_description {
+        font-size: 16px; }
       .informers .informer .informer__table .temp {
         font-size: 30px; }
       .informers .informer .informer__table img {

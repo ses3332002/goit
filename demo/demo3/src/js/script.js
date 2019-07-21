@@ -124,7 +124,7 @@ $(document).ready(function(){
     } else {
       $('.temp').css("color","blue");
     };
-    $('.informer-weather .informer__table').append('<p class="weather_description">ветер: ' + Math.round(weaCashe.json.data[0].wind_spd) + ' м/с</p>');
+    $('.informer-weather .informer__table').append('<p class="wind_description">ветер: ' + Math.round(weaCashe.json.data[0].wind_spd) + ' м/с</p>');
   };
 
   // function fillWea() {

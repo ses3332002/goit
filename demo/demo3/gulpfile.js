@@ -63,9 +63,9 @@ gulp.task('sass', function () {
     .pipe(autoprefixer({
       browsers: [
         "last 1 version",
-        "last 3 Chrome versions",
-        "last 3 Firefox versions",
-        "last 3 Opera versions",
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Opera versions",
         "last 2 Edge versions"
         ],
       cascade: false

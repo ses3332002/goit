@@ -117,6 +117,9 @@ body {
   font-family: 'helvetica neue', Arial, sans-serif;
   background-color: $siteColor8;
   color: $siteColor6;
+  @media (prefers-color-scheme: dark) {
+      background-color: darken($siteColor3, 25%);
+  }
 
   main {
     max-width: $contentWidth7;
@@ -192,6 +195,9 @@ header {
       font-size: 0;
       @media screen and (min-width: $contentWidth1) {
         height: auto;
+      }
+      @media (prefers-color-scheme: dark) {
+          background-color: darken($siteColor1, 20%);
       }
 
       .nav__bars {
@@ -692,7 +698,9 @@ header {
       border-radius: 4px;
       height: 136px;
       background-color: $siteColor1;
-
+      @media (prefers-color-scheme: dark) {
+          background-color: darken($siteColor1, 20%);
+      }
       .currency_label {
         display: inline-block;
         margin-bottom: 10px;
@@ -737,12 +745,16 @@ header {
       }
 
       .weather_description {
-        font-size: $fontSize3;
+        font-size: $fontSize2;
         // max-height: $fontSize3;
         // max-width: 170px;
         white-space: nowrap;
         overflow-x: hidden;
         // text-overflow: clip;
+      }
+
+      .wind_description {
+        font-size: $fontSize3;
       }
 
       .temp {
