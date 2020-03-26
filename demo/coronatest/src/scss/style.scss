@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  min-width: 320px;
+  font-size: 18px;
+
+  main {
+    display: flex;
+    height: 99vh;
+    flex-direction: column;
+
+    .content {
+      text-align: center;
+      flex: auto;
+      padding-top: 10px;
+
+      .logo_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        img {
+          flex-grow: 0;
+          margin: 5px;
+        }
+
+        img + img {
+          margin-left: 2%;
+        }
+      }
+
+      .info {
+        margin: 10px;
+        line-height: 24px;;
+      }
+
+      .test_form {
+        display: none;
+        margin: 10px;
+        text-align: center;
+
+        .test_wrapper {
+          display: inline-block;
+          width: 400px;
+          text-align: left;
+
+          .test_line {
+            margin: 10px 0;
+          }
+        }
+      }
+    }
+
+    footer {
+      flex-shrink: 0;
+      text-align: center;
+    }
+  }
+
+  .results_back {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: gray;
+    opacity: 0.9;
+  }
+
+  .results_message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -60px;
+    padding-top: 10px;
+    width: 300px;
+    height: 120px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: white;
+    opacity: 1;
+    z-index: 100;
+    text-align: center;
+
+    .message {
+      padding: 10px;
+      line-height: 20px;
+    }
+  }
+
+  button {
+    font-size: 16px;
+  }
+}

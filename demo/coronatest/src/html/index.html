@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+//= templates/head.html
+<body>
+  <main>
+    <div class="content">
+      ГКФС при поддержке ВОЗ
+      <div class="logo_wrapper">
+        <img src="./build/img/logo.png" alt="logo" class="logo" width="200">
+        <img src="./build/img/who.png" alt="logo" class="logo" width="200">
+      </div>
+      <div class="info">
+        Если вы являетесь сотрудником ТОВ "Черкасихлiб ЛТД", ТОВ "Черкасихлiб ТД" или ПрАТ "Черкасихлiб" - вы можете бесплатно
+        пройти тест на COVID-19.<br>
+        Вся информация - конфиденциальна.
+      </div>
+      <div class="test_form">
+        <div class="test_wrapper">
+          <div class="test_line">
+            <input type="checkbox" name="question1" id="question1"/>
+            <label for="question1">Вы являетесь сотрудником Черкассихлеб</label>
+          </div>
+          <div class="test_line">
+            <input type="radio" name="option" id="1" class="slider__forma" checked/><label for="1">У вас нет коронавируса</label>
+          </div>
+          <div class="test_line">
+            <input type="radio" name="option" id="2" class="slider__forma"/><label for="2">У вас есть коронавирус</label>
+          </div>
+        </div>
+      </div>
+      <button id="testBtn">Пройти тест</button>
+    </div>
+  //= templates/footer.html
+</main>
+<div class="results_back"></div>
+<div class="results_message">
+  <div class="message">В каждой шутке есть что-то серьезное... но не в этой :)<br>Все будет хорошо.</div>
+  <button class="message_button">ОК</button>
+</div>
+</body>
+</html>
