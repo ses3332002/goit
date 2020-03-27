@@ -7,7 +7,7 @@ $(document).ready(function() {
   function startTest() {
     $('.info').slideUp("slow", function () {
       $('.test_form').slideDown( "slow" );
-      testBtn.textContent = "Отправить на проверку";
+      testBtn.textContent = "Отправить тест на проверку";
       testBtn.removeEventListener("click", startTest);
       testBtn.addEventListener("click", showResults);
     });
