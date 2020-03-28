@@ -23,7 +23,7 @@ body {
 
         img {
           flex-grow: 0;
-          margin: 5px;
+          margin: 12px;
         }
 
         img + img {
@@ -44,10 +44,11 @@ body {
         .test_wrapper {
           display: inline-block;
           width: 310px;
-          text-align: left;
+          text-align: center;
 
           .test_line {
             margin: 20px 0;
+            text-align: left;
           }
         }
       }
@@ -58,6 +59,7 @@ body {
       font-size: 16px;
       text-align: center;
       margin-top: 10px;
+      padding-bottom: 5px;
     }
   }
 

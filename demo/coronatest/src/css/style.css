@@ -19,7 +19,7 @@ body {
         flex-wrap: wrap; }
         body main .content .logo_wrapper img {
           flex-grow: 0;
-          margin: 5px; }
+          margin: 12px; }
         body main .content .logo_wrapper img + img {
           margin-left: 2%; }
       body main .content .info {
@@ -32,14 +32,16 @@ body {
         body main .content .test_form .test_wrapper {
           display: inline-block;
           width: 310px;
-          text-align: left; }
+          text-align: center; }
           body main .content .test_form .test_wrapper .test_line {
-            margin: 20px 0; }
+            margin: 20px 0;
+            text-align: left; }
     body main footer {
       flex-shrink: 0;
       font-size: 16px;
       text-align: center;
-      margin-top: 10px; }
+      margin-top: 10px;
+      padding-bottom: 5px; }
   body .results_back {
     display: none;
     position: fixed;
