@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="COVID-19 test">
+  <title>Черкассыхлеб. Тест на COVID-19</title>
+  <link rel="stylesheet" href="build/css/style.min.css">
+  <script src="build/js/jquery-3.4.1.min.js"></script>
+  <script src="build/js/script.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff"></head>
+<body>
+  <main>
+    <div class="content">
+      ГКФС при поддержке ВОЗ
+      <div class="logo_wrapper">
+        <img src="./build/img/logo.png" alt="logo" class="logo" width="200">
+        <img src="./build/img/who.png" alt="logo" class="logo" width="200">
+      </div>
+      <div class="info">
+        Если вы являетесь сотрудником ТОВ "Черкасихлiб ЛТД", ТОВ "Черкасихлiб ТД" или ПрАТ "Черкасихлiб" - вы можете бесплатно
+        пройти тест на COVID-19.<br>
+        Вся информация - конфиденциальна.
+      </div>
+      <div class="test_form">
+        <div class="test_wrapper">
+          Отметьте ваши варианты:
+          <div class="test_line">
+            <input type="checkbox" class="checkbox" name="question1" id="question1"/>
+            <label for="question1">Вы - сотрудник Черкассыхлеб</label>
+          </div>
+          <div class="test_line">
+            <input type="radio" name="option" id="1" class="radio"/><label for="1">У вас нет коронавируса</label>
+          </div>
+          <div class="test_line">
+            <input type="radio" name="option" id="2" class="radio"/><label for="2">У вас есть коронавирус</label>
+          </div>
+        </div>
+      </div>
+      <button id="testBtn">Пройти тест</button>
+    </div>
+  <footer>
+    <!-- <div class="footer__content">
+      <div class="footer__copyright"> -->
+        Разработка Сергея Гаврилова
+      <!-- </div>
+    </div> -->
+  </footer>
+</main>
+<div class="results_back"></div>
+<div class="results_message">
+  <div class="message">В каждой шутке есть что-то серьезное... но не в этой :)<br>Все будет хорошо.</div>
+  <button class="message_button">ОК</button>
+</div>
+</body>
+</html>
