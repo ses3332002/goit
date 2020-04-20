@@ -1,7 +1,7 @@
 "use strict";
 window.onload = function () {
 
-  // чтение EXIF
+  // чтение данных EXIF
   var allMetaData;
   var exifInfo = document.createElement("div");
   exifInfo.classList.add("fs_exif_info");
