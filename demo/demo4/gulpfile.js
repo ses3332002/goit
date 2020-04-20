@@ -9,14 +9,22 @@ var cleanCSS = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var webserver = require('gulp-webserver');
-var gutil = require('gulp-util');
 var gcmq = require('gulp-group-css-media-queries');
 var rigger = require('gulp-rigger');
 var plumber = require('gulp-plumber');
-var runSequence = require('run-sequence');
+var connect = require('gulp-connect');
+// var os = require('os');
+var open = require('gulp-open');
 var realFavicon = require ('gulp-real-favicon');
 var fs = require('fs');
+// sass.compiler = require('node-sass');
+// exports.default = () => (
+//     gulp.src('src/img/*')
+//         .pipe(imagemin())
+//         .pipe(gulp.dest('build/img'))
+// );
+const mozjpeg = require('imagemin-mozjpeg');
+const pngquant = require('imagemin-pngquant');
 
 var FAVICON_DATA_FILE = 'src/icons/faviconData.json';
 
@@ -89,98 +97,77 @@ gulp.task('inject-favicon-markups', function() {
 		.pipe(gulp.dest('./src/html/templates'));
 });
 
-// Check for updates on RealFaviconGenerator (think: Apple has just
-// released a new Touch icon along with the latest version of iOS).
-// Run this task from time to time. Ideally, make it part of your
-// continuous integration system.
-gulp.task('check-for-favicon-update', function(done) {
-	var currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
-	realFavicon.checkForUpdates(currentVersion, function(err) {
-		if (err) {
-			throw err;
-		}
-	});
-});
-
-gulp.task('icons', function() {
-  runSequence('generate-favicon',
-  'inject-favicon-markups');
-});
+gulp.task('icons', gulp.series('generate-favicon', 'inject-favicon-markups'));
 
 gulp.task('webserver', function() {
-  gulp.src('./')
-    .pipe(webserver({
-      livereload: true,
-      directoryListing: true,
-      open: true
-    }));
-    gutil.beep();
+  return connect.server(
+    {
+        // root: './',
+        livereload: true,
+        port: 3000
+    }
+  );
+});
+
+gulp.task('open', function() {
+  var options = {
+    uri: 'http://localhost:3000',
+    // app: 'firefox'
+  };
+  return gulp.src(__filename)
+  .pipe(open(options));
 });
 
 gulp.task('imagemin', function() {
-  gulp.src('./src/img/*.*')
-    .pipe(imagemin({
-      optimizationLevel: 7,
-      progressive: true,
-      interlaced: true
-    }))
-    .pipe(gulp.dest('./build/img'))
-});
-
-gulp.task('sass', function () {
-  return gulp.src('./src/scss/style.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(autoprefixer({
-    browsers: [
-      "last 1 version",
-      "last 3 Chrome versions",
-      "last 3 Firefox versions",
-      "last 3 Opera versions",
-      "last 2 Edge versions"
-    ],
-    cascade: false
-  }))
-  .pipe(gulp.dest('./src/css'));
+  return gulp.src('./src/img/*.*')
+	.pipe(imagemin([
+		pngquant({quality: [0.5, 0.5]}),
+      mozjpeg({quality: 75})
+    ]))
+    .pipe(gulp.dest('./build/img'));
 });
 
 gulp.task('prepare_css', function() {
-  gulp.src(['./src/css/reset.css', './src/css/style.css'])
+  return gulp.src(['./src/css/reset.css', './src/css/style.css'])
       .pipe(concatCss('./build/css/style.min.css', {
         rebaseUrls: false
       }))
       .pipe(gcmq())
       .pipe(cleanCSS())
-      .pipe(gulp.dest(''));
-  // gulp.src('./src/css/ie8.css')
-  //     .pipe(cleanCSS())
-  //     .pipe(gulp.dest('./build/css/'));
-});
-
-gulp.task('styles', function() {
- runSequence('sass',
-              'prepare_css');
+      .pipe(gulp.dest('.'))
+      .pipe(connect.reload());
 });
 
 gulp.task('prepare_js', function() {
-  gulp.src('./src/js/*.js')
+  return gulp.src('./src/js/*.js')
     .pipe(plumber())
     .pipe(concat('script.min.js', {newLine: ';'}))
     .pipe(uglify())
-    .pipe(gulp.dest('./build/js'));
+    .pipe(gulp.dest('./build/js'))
+    .pipe(connect.reload());
+});
+
+gulp.task('sass', function () {
+  return gulp.src('./src/scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      autoprefixer: ["last 2 versions"],
+      cascade: false
+    }))
+    .pipe(gulp.dest('./src/css'));
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./src/scss/**/*.scss', ['styles']);
-  // gulp.watch('./src/scss/**/*.scss', ['sass', 'prepare_css']);
-  gulp.watch('./src/js/*.js', ['prepare_js']);
-  gulp.watch('./src/html/**/*.html', ['prepare_html']);
+  gulp.watch('./src/scss/**/*.scss', gulp.series('sass', 'prepare_css'));
+  gulp.watch('./src/js/*.js', gulp.series('prepare_js'));
+  gulp.watch('./src/html/**/*.html', gulp.series('prepare_html'));
 });
 
 gulp.task('prepare_html', function () {
-    gulp.src('./src/html/*.html')
+    return gulp.src('./src/html/*.html')
         .pipe(rigger())
         .pipe(gulp.dest('.'))
-        // .pipe(reload({stream: true}));
+        .pipe(connect.reload());
 });
 
 // gulp.task('sprite', function() {
@@ -195,5 +182,4 @@ gulp.task('prepare_html', function () {
 //   spriteData.css.pipe(gulp.dest('./src/css/'));
 // });
 
-gulp.task('default', ['imagemin', 'prepare_js', 'prepare_html', 'styles', 'webserver', 'watch']);
-// gulp.task('default', ['imagemin', 'prepare_js', 'prepare_html', 'sass', 'prepare_css', 'webserver', 'watch']);
+gulp.task('default', gulp.series(gulp.parallel('prepare_js', 'prepare_html', gulp.series('sass', 'prepare_css')), gulp.parallel('webserver', 'open', 'watch')));
