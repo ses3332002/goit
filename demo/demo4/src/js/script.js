@@ -8,7 +8,11 @@ window.onload = function () {
   function getExif(el) {
     if (document.getElementById("question1").checked) {
       EXIF.getData(el, function() {
-        allMetaData = "Камера " + EXIF.getTag(this, "Make") + " " + EXIF.getTag(this, "Model") + ", дата и время " + EXIF.getTag(this, "DateTime") + ", ISO " + EXIF.getTag(this, "ISOSpeedRatings") + ", выдержка 1/" + Math.round(1 / EXIF.getTag(this, "ExposureTime")) + ", диафрагма " + EXIF.getTag(this, "FNumber");
+        if (Boolean(EXIF.getTag(this, "Make"))) {
+          allMetaData = "Камера " + EXIF.getTag(this, "Make") + " " + EXIF.getTag(this, "Model") + ", дата и время " + EXIF.getTag(this, "DateTime") + ", ISO " + EXIF.getTag(this, "ISOSpeedRatings") + ", выдержка 1/" + Math.round(1 / EXIF.getTag(this, "ExposureTime")) + ", диафрагма " + EXIF.getTag(this, "FNumber");
+        } else {
+          allMetaData = "";
+        }
         exifInfo.innerHTML = allMetaData;
         fullscreenBack.append(exifInfo);
       });
@@ -63,15 +67,32 @@ window.onload = function () {
     fullscreenBack.append(fullscreenImg);
     getExif(currImg);
     window.addEventListener("keydown", fsKeyHandler);
+    fullscreenImg.addEventListener("click", fsClickHandler);
   };
+
+  function fsClickHandler(e) {
+    exifInfo.remove();
+    fullscreenImg.classList.remove("fullscreen_img_fs");
+    fullscreenImg.removeEventListener("click", fsClickHandler);
+    fullscreenImg.remove();
+    doc.classList.remove("no_scroll");
+    fullscreenBack.remove();
+    window.removeEventListener("keydown", fsKeyHandler);
+  }
 
   function fsKeyHandler(e) {
     if (e.key == "Escape") {
       exifInfo.remove();
+      fullscreenImg.classList.remove("fullscreen_img_fs");
       fullscreenImg.remove();
       doc.classList.remove("no_scroll");
       fullscreenBack.remove();
       window.removeEventListener("keydown", fsKeyHandler);
+      fullscreenImg.removeEventListener("click", fsClickHandler);
+    } else if (e.keyCode == 106) {
+      fullscreenImg.classList.add("fullscreen_img_fs");
+    } else if (e.keyCode == 111) {
+      fullscreenImg.classList.remove("fullscreen_img_fs");
     } else if (e.key == "ArrowLeft" || e.key == "ArrowUp" || e.key == "PageUp") {
       if (!currImg.previousElementSibling) {
         currImg = images[images.length - 1];

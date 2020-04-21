@@ -55,6 +55,7 @@ h2 {
   z-index: 99;
   background-color: var(--background);
   opacity: 1;
+  // overflow: scroll;
 }
 
 .fullscreen_img {
@@ -62,6 +63,11 @@ h2 {
   height: 100vh;
   z-index: 100;
   object-fit: contain;
+}
+
+.fullscreen_img_fs {
+  object-fit: none;
+  // overflow: scroll;
 }
 
 .fs_exif_info {

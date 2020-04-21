@@ -90,6 +90,10 @@ body {
   -o-object-fit: contain;
   object-fit: contain; }
 
+.fullscreen_img_fs {
+  -o-object-fit: none;
+  object-fit: none; }
+
 .fs_exif_info {
   position: absolute;
   z-index: 101;
