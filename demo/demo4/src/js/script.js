@@ -12,7 +12,7 @@ window.onload = function () {
           allMetaData = "Камера " + EXIF.getTag(this, "Make") + " " + EXIF.getTag(this, "Model") + ", дата и время " + EXIF.getTag(this, "DateTime") + ", ISO " + EXIF.getTag(this, "ISOSpeedRatings") + ", выдержка 1/" + Math.round(1 / EXIF.getTag(this, "ExposureTime")) + ", диафрагма " + EXIF.getTag(this, "FNumber");
         } else {
           allMetaData = "";
-        }
+        };
         exifInfo.innerHTML = allMetaData;
         fullscreenBack.append(exifInfo);
       });
@@ -59,21 +59,56 @@ window.onload = function () {
     el.addEventListener("click", normalHandler);
   });
 
+// реакция на клик в режиме плитки
   function normalHandler(e) {
     doc.append(fullscreenBack);
     doc.classList.add("no_scroll");
     fullscreenImg.setAttribute("src", e.target.src);
     currImg = e.target;
     fullscreenBack.append(fullscreenImg);
-    getExif(currImg);
+    // if (document.getElementById("question1").checked) {
+      getExif(currImg);
+    // };
     window.addEventListener("keydown", fsKeyHandler);
-    fullscreenImg.addEventListener("click", fsClickHandler);
+    fullscreenImg.addEventListener("dragstart", function (e) {
+      e.preventDefault();
+    });
+    // fullscreenImg.addEventListener("click", fsClickHandler);
+    fullscreenImg.addEventListener("mousedown", fsMouseHandler);
+  };
+  
+  var firstX;
+  var firstY;
+  var lastX;
+  var lastY;
+
+  function fsMouseHandler(e) {
+    firstX = e.clientX;
+    firstY = e.clientY;
+    fullscreenImg.addEventListener("mouseup", mouseUpHandler);
+  };
+
+  function mouseUpHandler(e) {
+    // document.removeEventListener("mousemove", mouseMoveHandler);
+    fullscreenImg.removeEventListener("mouseup", mouseUpHandler);
+    lastX = e.clientX;
+    lastY = e.clientY;
+    if (lastX - firstX > 20) {
+      nextImg();
+      // block1.style.backgroundColor = "green";
+    } else if (firstX - lastX > 20) {
+      prevImg();
+      // block1.style.backgroundColor = "red";
+    } else if (firstX == lastX) {
+      fsClickHandler();
+    };
   };
 
   function fsClickHandler(e) {
     exifInfo.remove();
     fullscreenImg.classList.remove("fullscreen_img_fs");
-    fullscreenImg.removeEventListener("click", fsClickHandler);
+    // fullscreenImg.removeEventListener("click", fsClickHandler);
+    fullscreenImg.removeEventListener("mousedown", fsMouseHandler);
     fullscreenImg.remove();
     doc.classList.remove("no_scroll");
     fullscreenBack.remove();
@@ -94,22 +129,43 @@ window.onload = function () {
     } else if (e.keyCode == 111) {
       fullscreenImg.classList.remove("fullscreen_img_fs");
     } else if (e.key == "ArrowLeft" || e.key == "ArrowUp" || e.key == "PageUp") {
-      if (!currImg.previousElementSibling) {
-        currImg = images[images.length - 1];
-      } else {
-        currImg = currImg.previousElementSibling;
-      };
-      fullscreenImg.setAttribute("src", currImg.src);
-      getExif(currImg);
+      // if (!currImg.previousElementSibling) {
+      //   currImg = images[images.length - 1];
+      // } else {
+      //   currImg = currImg.previousElementSibling;
+      // };
+      // fullscreenImg.setAttribute("src", currImg.src);
+      // getExif(currImg);
+      prevImg();
     } else if (e.key == "ArrowRight" || e.key == "ArrowDown" || e.key == "PageDown") {
-      if (!currImg.nextElementSibling) {
-        currImg = images[0];
-      } else {
+      // if (!currImg.nextElementSibling) {
+      //   currImg = images[0];
+      // } else {
+      //   currImg = currImg.nextElementSibling;
+      // };
+      // fullscreenImg.setAttribute("src", currImg.src);
+      // getExif(currImg);
+      nextImg();
+    };
+  };
+function nextImg() {
+  if (!currImg.nextElementSibling) {
+      currImg = images[0];
+    } else {
         currImg = currImg.nextElementSibling;
       };
       fullscreenImg.setAttribute("src", currImg.src);
       getExif(currImg);
-    };
-  };
+};
 
+  function prevImg() {
+    if (!currImg.previousElementSibling) {
+        currImg = images[images.length - 1];
+      } else {
+          currImg = currImg.previousElementSibling;
+        };
+        fullscreenImg.setAttribute("src", currImg.src);
+        getExif(currImg);
+
+  }
 }
