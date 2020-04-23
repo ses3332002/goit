@@ -5,6 +5,7 @@ window.onload = function () {
   var allMetaData;
   var exifInfo = document.createElement("div");
   exifInfo.classList.add("fs_exif_info");
+
   function getExif(el) {
     if (document.getElementById("question1").checked) {
       EXIF.getData(el, function() {
@@ -56,116 +57,109 @@ window.onload = function () {
   fullscreenBack.classList.add("fullscreen_back");
 
   images.forEach(function (el,i) {
-    el.addEventListener("click", normalHandler);
+    el.addEventListener("click", galleryHandler);
   });
 
 // реакция на клик в режиме плитки
-  function normalHandler(e) {
+  function galleryHandler(e) {
     doc.append(fullscreenBack);
     doc.classList.add("no_scroll");
     fullscreenImg.setAttribute("src", e.target.src);
     currImg = e.target;
     fullscreenBack.append(fullscreenImg);
-    // if (document.getElementById("question1").checked) {
-      getExif(currImg);
-    // };
+    getExif(currImg);
     window.addEventListener("keydown", fsKeyHandler);
     fullscreenImg.addEventListener("dragstart", function (e) {
       e.preventDefault();
     });
-    // fullscreenImg.addEventListener("click", fsClickHandler);
     fullscreenImg.addEventListener("mousedown", fsMouseHandler);
+    fullscreenImg.addEventListener("touchstart", fstouchHandler);
   };
-  
+
   var firstX;
   var firstY;
   var lastX;
   var lastY;
+  var eventTouchToMouse;
+
+  function fstouchHandler(e) {
+    eventTouchToMouse = new Event("mousedown");
+    eventTouchToMouse.clientX = e.targetTouches[0].clientX;
+    fullscreenImg.dispatchEvent(eventTouchToMouse);
+    fullscreenImg.addEventListener("touchend", touchEndHandler);
+
+    function touchEndHandler(e) {
+      eventTouchToMouse = new Event("mouseup");
+      eventTouchToMouse.clientX = e.changedTouches[0].clientX;
+      fullscreenImg.dispatchEvent(eventTouchToMouse);
+      fullscreenImg.removeEventListener("touchend", touchEndHandler);
+    };
+  };
 
   function fsMouseHandler(e) {
     firstX = e.clientX;
     firstY = e.clientY;
     fullscreenImg.addEventListener("mouseup", mouseUpHandler);
-  };
 
-  function mouseUpHandler(e) {
-    // document.removeEventListener("mousemove", mouseMoveHandler);
-    fullscreenImg.removeEventListener("mouseup", mouseUpHandler);
-    lastX = e.clientX;
-    lastY = e.clientY;
-    if (lastX - firstX > 20) {
-      nextImg();
-      // block1.style.backgroundColor = "green";
-    } else if (firstX - lastX > 20) {
-      prevImg();
-      // block1.style.backgroundColor = "red";
-    } else if (firstX == lastX) {
-      fsClickHandler();
+    function mouseUpHandler(e) {
+      lastX = e.clientX;
+      lastY = e.clientY;
+      if (lastX - firstX > 20) {
+        nextImg();
+      } else if (firstX - lastX > 20) {
+        prevImg();
+      } else {
+        fsClickHandler();
+      };
+      fullscreenImg.removeEventListener("mouseup", mouseUpHandler);
     };
   };
 
-  function fsClickHandler(e) {
-    exifInfo.remove();
-    fullscreenImg.classList.remove("fullscreen_img_fs");
-    // fullscreenImg.removeEventListener("click", fsClickHandler);
-    fullscreenImg.removeEventListener("mousedown", fsMouseHandler);
-    fullscreenImg.remove();
-    doc.classList.remove("no_scroll");
-    fullscreenBack.remove();
-    window.removeEventListener("keydown", fsKeyHandler);
-  }
+  function fsClickHandler() {
+    fullscreenEsc();
+  };
 
   function fsKeyHandler(e) {
     if (e.key == "Escape") {
-      exifInfo.remove();
-      fullscreenImg.classList.remove("fullscreen_img_fs");
-      fullscreenImg.remove();
-      doc.classList.remove("no_scroll");
-      fullscreenBack.remove();
-      window.removeEventListener("keydown", fsKeyHandler);
-      fullscreenImg.removeEventListener("click", fsClickHandler);
+      fullscreenEsc();
     } else if (e.keyCode == 106) {
       fullscreenImg.classList.add("fullscreen_img_fs");
     } else if (e.keyCode == 111) {
       fullscreenImg.classList.remove("fullscreen_img_fs");
     } else if (e.key == "ArrowLeft" || e.key == "ArrowUp" || e.key == "PageUp") {
-      // if (!currImg.previousElementSibling) {
-      //   currImg = images[images.length - 1];
-      // } else {
-      //   currImg = currImg.previousElementSibling;
-      // };
-      // fullscreenImg.setAttribute("src", currImg.src);
-      // getExif(currImg);
       prevImg();
     } else if (e.key == "ArrowRight" || e.key == "ArrowDown" || e.key == "PageDown") {
-      // if (!currImg.nextElementSibling) {
-      //   currImg = images[0];
-      // } else {
-      //   currImg = currImg.nextElementSibling;
-      // };
-      // fullscreenImg.setAttribute("src", currImg.src);
-      // getExif(currImg);
       nextImg();
     };
   };
-function nextImg() {
-  if (!currImg.nextElementSibling) {
+
+  function fullscreenEsc() {
+    exifInfo.remove();
+    fullscreenImg.classList.remove("fullscreen_img_fs");
+    fullscreenImg.remove();
+    doc.classList.remove("no_scroll");
+    fullscreenBack.remove();
+    fullscreenImg.removeEventListener("mousedown", fsMouseHandler);
+    window.removeEventListener("keydown", fsKeyHandler);
+  };
+
+  function nextImg() {
+    if (!currImg.nextElementSibling) {
       currImg = images[0];
-    } else {
-        currImg = currImg.nextElementSibling;
-      };
-      fullscreenImg.setAttribute("src", currImg.src);
-      getExif(currImg);
-};
+      } else {
+      currImg = currImg.nextElementSibling;
+    };
+    fullscreenImg.setAttribute("src", currImg.src);
+    getExif(currImg);
+  };
 
   function prevImg() {
     if (!currImg.previousElementSibling) {
-        currImg = images[images.length - 1];
+      currImg = images[images.length - 1];
       } else {
-          currImg = currImg.previousElementSibling;
-        };
-        fullscreenImg.setAttribute("src", currImg.src);
-        getExif(currImg);
-
-  }
+      currImg = currImg.previousElementSibling;
+    };
+    fullscreenImg.setAttribute("src", currImg.src);
+    getExif(currImg);
+  };
 }
