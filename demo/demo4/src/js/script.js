@@ -69,11 +69,14 @@ window.onload = function () {
     fullscreenBack.append(fullscreenImg);
     getExif(currImg);
     window.addEventListener("keydown", fsKeyHandler);
-    fullscreenImg.addEventListener("dragstart", function (e) {
+    // fullscreenImg.addEventListener("dragstart", function (e) {
+    //   e.preventDefault();
+    // });
+    fullscreenImg.addEventListener("mousedown", fsMouseHandler);
+    fullscreenImg.addEventListener("touchstart", fsTouchHandler);
+    fullscreenImg.addEventListener("click", function (e) {
       e.preventDefault();
     });
-    fullscreenImg.addEventListener("mousedown", fsMouseHandler);
-    fullscreenImg.addEventListener("touchstart", fstouchHandler);
   };
 
   var firstX;
@@ -82,13 +85,15 @@ window.onload = function () {
   var lastY;
   var eventTouchToMouse;
 
-  function fstouchHandler(e) {
+  function fsTouchHandler(e) {
+    // console.log(e);
     eventTouchToMouse = new Event("mousedown");
     eventTouchToMouse.clientX = e.targetTouches[0].clientX;
     fullscreenImg.dispatchEvent(eventTouchToMouse);
     fullscreenImg.addEventListener("touchend", touchEndHandler);
 
     function touchEndHandler(e) {
+          // console.log(e);
       eventTouchToMouse = new Event("mouseup");
       eventTouchToMouse.clientX = e.changedTouches[0].clientX;
       fullscreenImg.dispatchEvent(eventTouchToMouse);
@@ -97,25 +102,35 @@ window.onload = function () {
   };
 
   function fsMouseHandler(e) {
+        // console.log(e);
     firstX = e.clientX;
     firstY = e.clientY;
     fullscreenImg.addEventListener("mouseup", mouseUpHandler);
 
-    function mouseUpHandler(e) {
-      lastX = e.clientX;
-      lastY = e.clientY;
-      if (lastX - firstX > 20) {
-        nextImg();
-      } else if (firstX - lastX > 20) {
-        prevImg();
-      } else {
-        fsClickHandler();
-      };
-      fullscreenImg.removeEventListener("mouseup", mouseUpHandler);
+  };
+  function mouseUpHandler(e) {
+    fullscreenImg.removeEventListener("mouseup", mouseUpHandler);
+    // console.log(e);
+    lastX = e.clientX;
+    lastY = e.clientY;
+    if (lastX - firstX > 20) {
+
+      console.log(lastX - firstX);
+      nextImg();
+    } else if (firstX - lastX > 20) {
+      console.log(firstX - lastX);
+      prevImg();
+    } else if ((firstX - lastX < 20)||(lastX - firstX < 20)) {
+      // fullscreenEsc();
+      // console.log(firstX - lastX);
+      // console.log("exit");
+      fsClickHandler();
     };
   };
 
   function fsClickHandler() {
+    // console.log("exit 2");
+
     fullscreenEsc();
   };
 
@@ -134,13 +149,17 @@ window.onload = function () {
   };
 
   function fullscreenEsc() {
+    // console.log("exit 3");
     exifInfo.remove();
     fullscreenImg.classList.remove("fullscreen_img_fs");
     fullscreenImg.remove();
     doc.classList.remove("no_scroll");
+    // console.log("exit 4");
     fullscreenBack.remove();
     fullscreenImg.removeEventListener("mousedown", fsMouseHandler);
     window.removeEventListener("keydown", fsKeyHandler);
+    fullscreenImg.removeEventListener("touchstart", fsTouchHandler);
+    // fullscreenImg.removeEventListener("click", fsClickHandler);
   };
 
   function nextImg() {
