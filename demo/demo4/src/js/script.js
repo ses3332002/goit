@@ -153,7 +153,11 @@ window.onload = function () {
       } else {
       currImg = currImg.nextElementSibling;
     };
-    fullscreenImg.setAttribute("src", currImg.src);
+    fullscreenImg.classList.add("fullscreen_img-fade_to_right");
+    setTimeout(function () {
+      fullscreenImg.classList.remove("fullscreen_img-fade_to_right");
+      fullscreenImg.setAttribute("src", currImg.src);
+    }, 300);
     getExif(currImg);
   };
 
@@ -163,7 +167,11 @@ window.onload = function () {
       } else {
       currImg = currImg.previousElementSibling;
     };
-    fullscreenImg.setAttribute("src", currImg.src);
+    fullscreenImg.classList.add("fullscreen_img-fade_to_left");
+    setTimeout(function () {
+      fullscreenImg.classList.remove("fullscreen_img-fade_to_left");
+      fullscreenImg.setAttribute("src", currImg.src);
+    }, 300);
     getExif(currImg);
   };
 }

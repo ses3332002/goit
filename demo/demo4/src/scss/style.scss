@@ -28,7 +28,7 @@ h2 {
 .gallery__container {
   columns: 450px auto;
   column-gap: 10px;
-  background-color: var(--background);
+  // background-color: var(--background);
 }
 
 .gallery__container img {
@@ -55,19 +55,32 @@ h2 {
   z-index: 99;
   background-color: var(--background);
   opacity: 1;
-  // overflow: scroll;
 }
 
 .fullscreen_img {
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 100%;
   z-index: 100;
+  margin-left: 0;
+  margin-right: 0;
   object-fit: contain;
+  transition: opacity 0.3s;
+}
+
+.fullscreen_img-fade_to_right {
+  transition: all 0.3s;
+  margin-left: 25px;
+  opacity: 0;
+}
+
+.fullscreen_img-fade_to_left {
+  transition: all 0.3s;
+  margin-left: -25px;
+  opacity: 0;
 }
 
 .fullscreen_img_fs {
   object-fit: none;
-  // overflow: scroll;
 }
 
 .fs_exif_info {
