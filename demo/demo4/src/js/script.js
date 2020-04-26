@@ -127,8 +127,11 @@ window.onload = function () {
       fullscreenEsc();
     } else if (e.keyCode == 106) {
       fullscreenImg.classList.add("fullscreen_img_fs");
+      fullscreenBack.classList.add("fullscreen_back_fs");
+
     } else if (e.keyCode == 111) {
       fullscreenImg.classList.remove("fullscreen_img_fs");
+      fullscreenBack.classList.remove("fullscreen_back_fs");
     } else if (e.key == "ArrowLeft" || e.key == "ArrowUp" || e.key == "PageUp") {
       prevImg();
     } else if (e.key == "ArrowRight" || e.key == "ArrowDown" || e.key == "PageDown") {
@@ -174,4 +177,28 @@ window.onload = function () {
     }, 300);
     getExif(currImg);
   };
+
+  // всплывающее окно с readme
+  var readmeWindow = document.createElement("div");
+  var readmeMessage = document.createElement("div");
+  var readmeButton = document.createElement("button");
+
+  readmeWindow.innerHTML = "Особенности сайта:";
+  readmeWindow.classList.add("readme");
+  readmeMessage.classList.add("readme__message");
+  readmeButton.innerHTML = "Закрыть";
+  readmeButton.classList.add("readme__button");
+
+  fetch("readme.html")
+  .then(response => response.text())
+  .then(data => readmeMessage.innerHTML = data)
+  .catch(console.error);
+  doc.append(readmeWindow);
+  readmeWindow.append(readmeMessage);
+  readmeWindow.append(readmeButton);
+  readmeButton.addEventListener("click", function () {
+    readmeButton.remove();
+    readmeMessage.remove();
+    readmeWindow.remove();
+  });
 }

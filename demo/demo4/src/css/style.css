@@ -37,6 +37,41 @@ body {
   border-radius: 3px;
   cursor: pointer; }
 
+.readme {
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  background: var(--background-color);
+  z-index: 200;
+  opacity: 0.9;
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px; }
+  @media screen and (min-width: 800px) {
+    .readme {
+      line-height: 20px;
+      width: 500px;
+      height: 200px; } }
+  .readme .readme__message {
+    text-align: left;
+    overflow-y: auto;
+    padding: 20px 0;
+    max-height: 460px; }
+    @media screen and (min-width: 800px) {
+      .readme .readme__message {
+        max-height: 380px; } }
+  .readme .readme__button {
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 15px;
+    font-weight: normal;
+    cursor: pointer; }
+
 h2 {
   height: 1px;
   width: 1px;
@@ -82,6 +117,9 @@ body {
   background-color: var(--background);
   opacity: 1; }
 
+.fullscreen_back_fs {
+  overflow: scroll; }
+
 .fullscreen_img {
   width: 100vw;
   height: 100%;
@@ -103,8 +141,8 @@ body {
   opacity: 0; }
 
 .fullscreen_img_fs {
-  -o-object-fit: none;
-  object-fit: none; }
+  height: auto;
+  width: auto; }
 
 .fs_exif_info {
   position: absolute;

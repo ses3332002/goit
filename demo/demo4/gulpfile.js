@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
+var babel = require('gulp-babel');
 // var spritesmith = require('gulp.spritesmith');
 var sass = require('gulp-sass');
 var concatCss = require('gulp-concat-css');
@@ -142,6 +143,9 @@ gulp.task('prepare_js', function() {
   return gulp.src('./src/js/*.js')
     .pipe(plumber())
     .pipe(concat('script.min.js', {newLine: ';'}))
+		.pipe(babel({
+      presets: ['es2015']
+    }))
     .pipe(uglify())
     .pipe(gulp.dest('./build/js'))
     .pipe(connect.reload());
