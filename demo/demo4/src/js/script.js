@@ -74,6 +74,7 @@ window.onload = function () {
     });
     fullscreenImg.addEventListener("mousedown", fsMouseHandler);
     fullscreenImg.addEventListener("touchstart", fsTouchHandler);
+    fullscreenImg.addEventListener("wheel", wheelHandler);
     fullscreenImg.addEventListener("click", function (e) {
       e.preventDefault();
     });
@@ -84,6 +85,14 @@ window.onload = function () {
   var lastX;
   var lastY;
   var eventTouchToMouse;
+
+  function wheelHandler(e) {
+    if (e.deltaY > 0) {
+      nextImg();
+    } else {
+      prevImg();
+    };
+  };
 
   function fsTouchHandler(e) {
     eventTouchToMouse = new Event("mousedown");
