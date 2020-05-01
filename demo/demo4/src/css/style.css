@@ -50,8 +50,7 @@ body {
   line-height: 25px;
   border: 2px solid var(--decor_color);
   border-radius: 3px;
-  cursor: pointer;
-  font-size: calc(var(--base_font_size) - 2px); }
+  cursor: pointer; }
 
 .bg_color_selector, .exif_checker {
   height: 20px; }

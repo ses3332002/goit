@@ -54,7 +54,7 @@ window.onload = function () {
     el.style.setProperty("background-color", themes[i].color2);
     el.style.setProperty("border-color", themes[i].color3);
     el.style.setProperty("font-family", themes[i].font);
-    el.style.setProperty("font-size", themes[i].baseFontSize + "px");
+    el.style.setProperty("font-size", (themes[i].baseFontSize - 1 ) + "px");
     el.addEventListener("click", function() {
       themeReset(i);
     });
