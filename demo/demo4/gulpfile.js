@@ -113,7 +113,7 @@ gulp.task('webserver', function() {
 gulp.task('open', function() {
   var options = {
     uri: 'http://localhost:3000',
-    // app: 'firefox'
+    app: 'firefox'
   };
   return gulp.src(__filename)
   .pipe(open(options));

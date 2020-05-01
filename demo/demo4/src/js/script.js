@@ -12,7 +12,7 @@ window.onload = function () {
         if (Boolean(EXIF.getTag(this, "Make"))) {
           allMetaData = "Камера " + EXIF.getTag(this, "Make") + " " + EXIF.getTag(this, "Model") + ", дата и время " + EXIF.getTag(this, "DateTime") + ", ISO " + EXIF.getTag(this, "ISOSpeedRatings") + ", выдержка 1/" + Math.round(1 / EXIF.getTag(this, "ExposureTime")) + ", диафрагма " + EXIF.getTag(this, "FNumber");
         } else {
-          allMetaData = "";
+          allMetaData = "нет данных";
         };
         exifInfo.innerHTML = allMetaData;
         fullscreenBack.append(exifInfo);
@@ -24,10 +24,37 @@ window.onload = function () {
   var theme_btn = document.querySelectorAll(".theme_selector__btn");
   var bg_btn = document.querySelectorAll(".bg_color_selector__btn");
   var doc = document.querySelector("body");
+  var themes = [
+    {
+    "color1": "#f6da73",
+    "color2": "#3e5336",
+    "color3": "#e55b7e",
+    "font": "theme1_font",
+    "baseFontSize": "16"
+  },
+    {
+    "color1": "#a4875a",
+    "color2": "#1a203c",
+    "color3": "#7e491f",
+    "font": "theme2_font",
+    "baseFontSize": "16"
+  },
+    {
+    "color1": "#f9e0ec",
+    "color2": "#7a1b38",
+    "color3": "#ec7ead",
+    "font": "theme3_font",
+    "baseFontSize": "18"
+  }];
 
   theme_btn.forEach(function(el,i) {
-    el.style.setProperty("color", "hsl(" + (10 + i*120) + ", 85%, 64%)");
-    el.style.setProperty("background-color", "hsl(" + (10 + i*120) + ", 40%, 10%)");
+    // el.style.setProperty("color", "hsl(" + (10 + i*120) + ", 85%, 64%)");
+    // el.style.setProperty("background-color", "hsl(" + (10 + i*120) + ", 40%, 10%)");
+    el.style.setProperty("color", themes[i].color1);
+    el.style.setProperty("background-color", themes[i].color2);
+    el.style.setProperty("border-color", themes[i].color3);
+    el.style.setProperty("font-family", themes[i].font);
+    el.style.setProperty("font-size", themes[i].baseFontSize + "px");
     el.addEventListener("click", function() {
       themeReset(i);
     });
@@ -41,11 +68,18 @@ window.onload = function () {
   });
 
   function themeReset(elem) {
-    doc.style.setProperty('--theme-color', 10 + elem*120);
+    doc.style.setProperty("--color", themes[elem].color1);
+    doc.style.setProperty("--background_color", themes[elem].color2);
+    doc.style.setProperty("--decor_color", themes[elem].color3);
+    doc.style.setProperty("--font_family", themes[elem].font);
+    doc.style.setProperty("--base_font_size", themes[elem].baseFontSize + "px");
+    // el.style.setProperty("color", themes[i].color1);
+    // el.style.setProperty("background-color", themes[i].color2);
+    // el.style.setProperty("border-color", themes[i].color3);
   };
 
   function bgReset(elem) {
-    doc.style.setProperty('--bg-color', 1 + elem*18 + "%");
+    doc.style.setProperty('--fs_bg_color', 1 + elem*18 + "%");
   };
 
   // реакция на выбор фотографии
