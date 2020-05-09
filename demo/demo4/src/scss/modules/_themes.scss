@@ -7,14 +7,14 @@
 
 @font-face {
   font-family: theme3_font;
-  src: url('../fonts/PoiretOne-Regular.ttf') format('truetype');
+  src: url('../fonts/Bellota-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: theme2_font;
-  src: url('../fonts/Sansation-Bold.ttf') format('truetype');
+  src: url('../fonts/PTSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,11 +34,14 @@ body {
 }
 
 %selector {
-  margin: 20px;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  margin: 20px;
+  @media screen and (min-width: $contentWidth2) {
+    justify-content: flex-start;
+  }
 }
 
 .theme_selector {
@@ -59,7 +62,6 @@ body {
   border: 2px solid var(--decor_color);
   border-radius: 3px;
   cursor: pointer;
-  // font-size: calc(var(--base_font_size) - 2px);
 }
 
 .bg_color_selector, .exif_checker {

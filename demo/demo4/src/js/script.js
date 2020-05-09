@@ -25,7 +25,16 @@ window.onload = function () {
   var bg_btn = document.querySelectorAll(".bg_color_selector__btn");
   var doc = document.querySelector("body");
   var themes = [
+  //   {
+  //     // Color Palette #3663
+  //   "color1": "#fefefe",
+  //   "color2": "#710000",
+  //   "color3": "#ffcf3f",
+  //   "font": "theme1_font",
+  //   "baseFontSize": "16"
+  // },
     {
+      // Color Palette #4209
     "color1": "#f6da73",
     "color2": "#3e5336",
     "color3": "#e55b7e",
@@ -33,18 +42,20 @@ window.onload = function () {
     "baseFontSize": "16"
   },
     {
-    "color1": "#a4875a",
-    "color2": "#1a203c",
-    "color3": "#7e491f",
+      // Color Palette #4197
+    "color1": "#e4eaea",
+    "color2": "#141a13",
+    "color3": "#ae621f",
     "font": "theme2_font",
     "baseFontSize": "16"
   },
     {
-    "color1": "#f9e0ec",
-    "color2": "#7a1b38",
-    "color3": "#ec7ead",
+      // Color Palette #3964
+    "color1": "#f4f6ec",
+    "color2": "#2d0c03",
+    "color3": "#f8b786",
     "font": "theme3_font",
-    "baseFontSize": "18"
+    "baseFontSize": "16"
   }];
 
   theme_btn.forEach(function(el,i) {
@@ -94,6 +105,14 @@ window.onload = function () {
     el.addEventListener("click", galleryHandler);
   });
 
+  //отключаем масштабирование сайта
+  doc.addEventListener("wheel", function (e) {
+    if (e.ctrlKey) {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+  });
+
 // реакция на клик в режиме плитки
   function galleryHandler(e) {
     doc.append(fullscreenBack);
@@ -108,7 +127,8 @@ window.onload = function () {
     });
     fullscreenImg.addEventListener("mousedown", fsMouseHandler);
     fullscreenImg.addEventListener("touchstart", fsTouchHandler);
-    fullscreenImg.addEventListener("wheel", wheelHandler);
+    // fullscreenImg.addEventListener("wheel", wheelHandler);
+    fullscreenBack.addEventListener("wheel", wheelHandler);
     fullscreenImg.addEventListener("click", function (e) {
       e.preventDefault();
     });
@@ -121,20 +141,60 @@ window.onload = function () {
   var eventTouchToMouse;
 
   function wheelHandler(e) {
-    if (e.deltaY > 0) {
-      nextImg();
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.ctrlKey) {
+      if (e.deltaY > 0) {
+        zoomIn();
+      } else {
+        zoomOut();
+      };
     } else {
-      prevImg();
+      if (e.deltaY > 0) {
+        nextImg();
+      } else {
+        prevImg();
+      };
+    }
+  };
+
+  // масштабирование прокруткой
+  var scaleFactor = 1;
+  var minScale = 0.5;
+  var maxScale = 4;
+  function zoomIn () {
+    scaleFactor = scaleFactor + 0.1;
+    if (scaleFactor > maxScale) {
+      scaleFactor = maxScale;
     };
+    if (scaleFactor > 1) {
+      fullscreenBack.classList.add("fullscreen_back_fs");
+    };
+    fullscreenImg.style.transform = 'scale(' + scaleFactor + ')';
+  };
+
+  function zoomOut () {
+    scaleFactor = scaleFactor - 0.1;
+    if (scaleFactor < minScale) {
+      scaleFactor = minScale;
+    };
+    if (scaleFactor < 1) {
+      fullscreenBack.classList.remove("fullscreen_back_fs");
+    };
+    fullscreenImg.style.transform = 'scale(' + scaleFactor + ')';
   };
 
   function fsTouchHandler(e) {
+    e.preventDefault();
+    e.stopPropagation();
     eventTouchToMouse = new Event("mousedown");
     eventTouchToMouse.clientX = e.targetTouches[0].clientX;
     fullscreenImg.dispatchEvent(eventTouchToMouse);
     fullscreenImg.addEventListener("touchend", touchEndHandler);
 
     function touchEndHandler(e) {
+      e.preventDefault();
+      e.stopPropagation();
       eventTouchToMouse = new Event("mouseup");
       eventTouchToMouse.clientX = e.changedTouches[0].clientX;
       fullscreenImg.dispatchEvent(eventTouchToMouse);
@@ -168,13 +228,13 @@ window.onload = function () {
   function fsKeyHandler(e) {
     if (e.key == "Escape") {
       fullscreenEsc();
-    } else if (e.keyCode == 106) {
-      fullscreenImg.classList.add("fullscreen_img_fs");
-      fullscreenBack.classList.add("fullscreen_back_fs");
-
-    } else if (e.keyCode == 111) {
-      fullscreenImg.classList.remove("fullscreen_img_fs");
-      fullscreenBack.classList.remove("fullscreen_back_fs");
+    // } else if (e.keyCode == 106) {
+    //   fullscreenImg.classList.add("fullscreen_img_fs");
+    //   fullscreenBack.classList.add("fullscreen_back_fs");
+    //
+    // } else if (e.keyCode == 111) {
+    //   fullscreenImg.classList.remove("fullscreen_img_fs");
+    //   fullscreenBack.classList.remove("fullscreen_back_fs");
     } else if (e.key == "ArrowLeft" || e.key == "ArrowUp" || e.key == "PageUp") {
       prevImg();
     } else if (e.key == "ArrowRight" || e.key == "ArrowDown" || e.key == "PageDown") {
@@ -193,7 +253,14 @@ window.onload = function () {
     fullscreenImg.removeEventListener("touchstart", fsTouchHandler);
   };
 
+  function normalScale() {
+    scaleFactor = 1;
+    fullscreenImg.style.transform = 'scale(1)';
+    fullscreenBack.classList.remove("fullscreen_back_fs");
+  };
+
   function nextImg() {
+    normalScale();
     if (!currImg.nextElementSibling) {
       currImg = images[0];
       } else {
@@ -207,7 +274,9 @@ window.onload = function () {
     getExif(currImg);
   };
 
+
   function prevImg() {
+    normalScale();
     if (!currImg.previousElementSibling) {
       currImg = images[images.length - 1];
       } else {

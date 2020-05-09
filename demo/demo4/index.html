@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Landing demo 2">
   <title>Фотогалерея</title>
@@ -20,31 +20,37 @@
 <body>
   <h1>Фотогалерея</h1>
 
-  <aside class="theme_selector">
-    <div class="theme_selector__caption">Выбор темы оформления:</div>
-    <div class="theme_selector__btn">тема 1</div>
-    <div class="theme_selector__btn">тема 2</div>
-    <div class="theme_selector__btn">тема 3</div>
-  </aside>
+  <section class="gallery_settings">
+    <h2>Настройки</h2>
+    <div class="settings">
+      <aside class="theme_selector">
+        <div class="theme_selector__caption">Выбор темы оформления:</div>
+        <div class="theme_selector__btn">тема 1</div>
+        <div class="theme_selector__btn">тема 2</div>
+        <div class="theme_selector__btn">тема 3</div>
+      </aside>
 
-  <aside class="bg_color_selector">
-    <div class="bg_color_selector__caption">Выбор фона:</div>
-    <div class="bg_color_selector__btn"></div>
-    <div class="bg_color_selector__btn"></div>
-    <div class="bg_color_selector__btn"></div>
-    <div class="bg_color_selector__btn"></div>
-    <div class="bg_color_selector__btn"></div>
-  </aside>
+      <aside class="bg_color_selector">
+        <div class="bg_color_selector__caption">Выбор фона:</div>
+        <div class="bg_color_selector__btn"></div>
+        <div class="bg_color_selector__btn"></div>
+        <div class="bg_color_selector__btn"></div>
+        <div class="bg_color_selector__btn"></div>
+        <div class="bg_color_selector__btn"></div>
+      </aside>
 
-  <aside class="exif_checker">
-    <div class="check_line">
-      <label for="question1">Показывать Exif:</label>
-      <input type="checkbox" class="checkbox" name="question1" id="question1"/>
+      <aside class="exif_checker">
+        <div class="check_line">
+          <label for="question1">Показывать EXIF:</label>
+          <input type="checkbox" class="checkbox" name="question1" id="question1"/>
+        </div>
+      </aside>
+
     </div>
-  </aside>
 
-  <div class="disclaimer">Полноэкранный режим: клик/тач. Выход: клик/тач/Esc. Масштаб: * и /. Предыдущий/следующий снимок: как угодно.</div>
+    <div class="disclaimer">Полноэкранный режим: клик/тач.<br>Выход: клик/тач/Esc.<br>Масштаб: Ctrl+прокрутка/щипок.<br>Предыдущий/следующий снимок: как угодно.</div>
 
+  </section>
   <section class="gallery">
     <h2>Фотографии</h2>
     <div class="gallery__container">

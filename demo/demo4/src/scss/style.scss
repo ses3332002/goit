@@ -11,10 +11,10 @@
 }
 
 body {
-  font-size: 16px;
-  padding-top: 20px;
   box-sizing: border-box;
+  padding-top: 20px;
   text-align: center;
+  font-size: 16px;
 }
 
 h1 {
@@ -29,8 +29,19 @@ h2 {
   @extend %invisible_header;
 }
 
+.gallery_settings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .disclaimer {
   font-size: var(--base_font_size);
+  line-height: calc(var(--base_font_size) + 8px);
+  @media screen and (min-width: $contentWidth2) {
+    text-align: right;
+  }
 }
 
 .gallery__container {
@@ -88,11 +99,6 @@ h2 {
   transition: all 0.3s;
   margin-left: -25px;
   opacity: 0;
-}
-
-.fullscreen_img_fs {
-  height: auto;
-  width: auto;
 }
 
 .fs_exif_info {

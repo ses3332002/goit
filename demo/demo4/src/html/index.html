@@ -4,14 +4,20 @@
 <body>
   <h1>Фотогалерея</h1>
 
-  //= templates/theme_selector.html
+  <section class="gallery_settings">
+    <h2>Настройки</h2>
+    <div class="settings">
+      //= templates/theme_selector.html
 
-  //= templates/bg_color_selector.html
+      //= templates/bg_color_selector.html
 
-  //= templates/exif_checker.html
+      //= templates/exif_checker.html
 
-  <div class="disclaimer">Полноэкранный режим: клик/тач. Выход: клик/тач/Esc. Масштаб: * и /. Предыдущий/следующий снимок: как угодно.</div>
+    </div>
 
+    <div class="disclaimer">Полноэкранный режим: клик/тач.<br>Выход: клик/тач/Esc.<br>Масштаб: Ctrl+прокрутка/щипок.<br>Предыдущий/следующий снимок: как угодно.</div>
+
+  </section>
   <section class="gallery">
     <h2>Фотографии</h2>
     <div class="gallery__container">

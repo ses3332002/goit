@@ -6,13 +6,13 @@
 
 @font-face {
   font-family: theme3_font;
-  src: url("../fonts/PoiretOne-Regular.ttf") format("truetype");
+  src: url("../fonts/Bellota-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: theme2_font;
-  src: url("../fonts/Sansation-Bold.ttf") format("truetype");
+  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -30,11 +30,14 @@ body {
   font-family: var(--font_family); }
 
 .theme_selector, .bg_color_selector, .exif_checker {
-  margin: 20px;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center; }
+  justify-content: center;
+  align-items: center;
+  margin: 20px; }
+  @media screen and (min-width: 800px) {
+    .theme_selector, .bg_color_selector, .exif_checker {
+      justify-content: flex-start; } }
 
 .theme_selector {
   height: 25px; }
@@ -64,12 +67,12 @@ body {
   cursor: pointer; }
 
 .readme {
-  box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 200;
+  box-sizing: border-box;
   width: 300px;
   padding: 10px;
   border: 2px solid var(--decor_color);
@@ -119,10 +122,10 @@ h2 {
   clip: rect(0 0 0 0); }
 
 body {
-  font-size: 16px;
-  padding-top: 20px;
   box-sizing: border-box;
-  text-align: center; }
+  padding-top: 20px;
+  text-align: center;
+  font-size: 16px; }
 
 h1 {
   font-size: calc(var(--base_font_size) + 4px); }
@@ -130,8 +133,18 @@ h1 {
 .no_scroll {
   overflow-y: hidden; }
 
+.gallery_settings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly; }
+
 .disclaimer {
-  font-size: var(--base_font_size); }
+  font-size: var(--base_font_size);
+  line-height: calc(var(--base_font_size) + 8px); }
+  @media screen and (min-width: 800px) {
+    .disclaimer {
+      text-align: right; } }
 
 .gallery__container {
   -moz-columns: 450px auto;
@@ -183,10 +196,6 @@ h1 {
   transition: all 0.3s;
   margin-left: -25px;
   opacity: 0; }
-
-.fullscreen_img_fs {
-  height: auto;
-  width: auto; }
 
 .fs_exif_info {
   position: absolute;
