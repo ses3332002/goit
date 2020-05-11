@@ -141,6 +141,7 @@ gulp.task('prepare_css', function() {
 
 gulp.task('prepare_js', function() {
   return gulp.src('./src/js/*.js')
+		.pipe(rigger())
     .pipe(plumber())
     .pipe(concat('script.min.js', {newLine: ';'}))
 		.pipe(babel({

@@ -46,6 +46,13 @@ body {
   text-align: left;
   font-size: var(--base_font_size); }
 
+.theme_selector__caption {
+  flex-basis: 50px;
+  flex-grow: 0; }
+  @media screen and (min-width: 800px) {
+    .theme_selector__caption {
+      flex-grow: 1; } }
+
 .theme_selector__btn {
   width: 80px;
   height: 25px;
@@ -84,7 +91,7 @@ body {
   line-height: calc(var(--base_font_size) + 2px); }
   @media screen and (min-width: 800px) {
     .readme {
-      width: 500px;
+      width: 400px;
       line-height: calc(var(--base_font_size) + 4px); } }
   .readme .readme__message {
     max-height: 320px;
@@ -138,38 +145,36 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly; }
-
-.disclaimer {
-  font-size: var(--base_font_size);
-  line-height: calc(var(--base_font_size) + 8px); }
-  @media screen and (min-width: 800px) {
-    .disclaimer {
-      text-align: right; } }
+  .gallery_settings label, .gallery_settings .checkbox {
+    cursor: pointer; }
+  .gallery_settings .disclaimer {
+    font-size: var(--base_font_size);
+    line-height: calc(var(--base_font_size) + 8px); }
+    @media screen and (min-width: 800px) {
+      .gallery_settings .disclaimer {
+        text-align: right; } }
 
 .gallery__container {
   -moz-columns: 450px auto;
   columns: 450px auto;
   -moz-column-gap: 10px;
   column-gap: 10px; }
-
-.gallery__container img {
-  width: 100%;
-  height: auto;
-  margin: 5px 0;
-  transition: .8s opacity; }
-
-.gallery__container:hover img {
-  opacity: 0.6; }
-
-.gallery__container:hover img:hover {
-  opacity: 1; }
+  .gallery__container img {
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+    transition: .8s opacity; }
+  .gallery__container:hover img {
+    opacity: 0.6; }
+  .gallery__container:hover img:hover {
+    opacity: 1; }
 
 .fullscreen_back {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
   height: 100vh;
+  width: 100vw;
   z-index: 99;
   background-color: var(--fs_background);
   opacity: 1; }
@@ -181,8 +186,6 @@ h1 {
   width: 100vw;
   height: 100%;
   z-index: 100;
-  margin-left: 0;
-  margin-right: 0;
   -o-object-fit: contain;
   object-fit: contain;
   transition: opacity 0.3s; }

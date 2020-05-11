@@ -54,6 +54,14 @@ body {
   font-size: var(--base_font_size);
 }
 
+.theme_selector__caption {
+  flex-basis: 50px;
+  flex-grow: 0;
+  @media screen and (min-width: $contentWidth2) {
+    flex-grow: 1;
+  }
+}
+
 .theme_selector__btn {
   width: 80px;
   height: 25px;

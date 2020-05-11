@@ -15,7 +15,7 @@
   font-size: var(--base_font_size);
   line-height: calc(var(--base_font_size) + 2px);
   @media screen and (min-width: $contentWidth2) {
-    width: 500px;
+    width: 400px;
     line-height: calc(var(--base_font_size) + 4px);
   }
 

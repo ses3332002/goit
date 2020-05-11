@@ -21,12 +21,12 @@ h1 {
   font-size: calc(var(--base_font_size) + 4px);
 }
 
-.no_scroll {
-  overflow-y: hidden;
-}
-
 h2 {
   @extend %invisible_header;
+}
+
+.no_scroll {
+  overflow-y: hidden;
 }
 
 .gallery_settings {
@@ -34,42 +34,49 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-}
 
-.disclaimer {
-  font-size: var(--base_font_size);
-  line-height: calc(var(--base_font_size) + 8px);
-  @media screen and (min-width: $contentWidth2) {
-    text-align: right;
+  label, .checkbox {
+    cursor: pointer;
+  }
+
+  .disclaimer {
+    font-size: var(--base_font_size);
+    line-height: calc(var(--base_font_size) + 8px);
+    @media screen and (min-width: $contentWidth2) {
+      text-align: right;
+    }
   }
 }
 
 .gallery__container {
   columns: 450px auto;
   column-gap: 10px;
-}
 
-.gallery__container img {
-  width: 100%;
-  height: auto;
-  margin: 5px 0;
-  transition: .8s opacity;
-}
+  & img {
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+    transition: .8s opacity;
+  }
 
-.gallery__container:hover img {
-  opacity: 0.6;
-}
+  &:hover img {
+    opacity: 0.6;
+  }
 
-.gallery__container:hover img:hover {
-  opacity: 1;
+  &:hover img:hover {
+    opacity: 1;
+  }
 }
 
 .fullscreen_back {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
+  // right: 0;
+  // bottom: 0;
   height: 100vh;
+  width: 100vw;
+  // display: flex;
   z-index: 99;
   background-color: var(--fs_background);
   opacity: 1;
@@ -83,8 +90,7 @@ h2 {
   width: 100vw;
   height: 100%;
   z-index: 100;
-  margin-left: 0;
-  margin-right: 0;
+  // flex: 0 0 auto;
   object-fit: contain;
   transition: opacity 0.3s;
 }
