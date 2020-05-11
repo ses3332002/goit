@@ -40,8 +40,10 @@ window.onload = function () {
     fullscreenBack.addEventListener("mousedown", fsMouseHandler);
     fullscreenBack.addEventListener("wheel", wheelHandler);
     fullscreenImg.addEventListener("touchstart", fsTouchHandler);
-    fullscreenBack.addEventListener("click", function (e) {
+    fullscreenImg.addEventListener("click", function (e) {
       e.preventDefault();
+      // e.stopPropagation();
+      // fsClickHandler();
     });
   };
 
@@ -66,7 +68,7 @@ window.onload = function () {
       } else {
         prevImg();
       };
-    }
+    };
   };
 
   // масштабирование прокруткой
@@ -112,10 +114,10 @@ window.onload = function () {
       distanceSwipeStart = distance(e.targetTouches[0],e.targetTouches[1]);
       fullscreenImg.addEventListener('touchmove', touchMoveHandler);
     };
-
+    // console.log(e);
     eventTouchToMouse = new Event("mousedown");
     eventTouchToMouse.clientX = e.targetTouches[0].clientX;
-    fullscreenImg.dispatchEvent(eventTouchToMouse);
+    fullscreenBack.dispatchEvent(eventTouchToMouse);
     fullscreenImg.addEventListener("touchend", touchEndHandler);
 
     function touchMoveHandler(e) {
@@ -134,10 +136,11 @@ window.onload = function () {
     function touchEndHandler(e) {
       e.preventDefault();
       e.stopPropagation();
+      console.log(e);
 
       eventTouchToMouse = new Event("mouseup");
       eventTouchToMouse.clientX = e.changedTouches[0].clientX;
-      fullscreenImg.dispatchEvent(eventTouchToMouse);
+      fullscreenBack.dispatchEvent(eventTouchToMouse);
       fullscreenImg.removeEventListener("touchend", touchEndHandler);
       fullscreenImg.removeEventListener("touchmove", touchMoveHandler);
     };
@@ -212,9 +215,13 @@ window.onload = function () {
     };
     fullscreenImg.classList.add("fullscreen_img-fade_to_right");
     setTimeout(function () {
+      fullscreenImg.classList.add("fullscreen_img-appear");
       fullscreenImg.classList.remove("fullscreen_img-fade_to_right");
       fullscreenImg.setAttribute("src", currImg.src);
-    }, 300);
+      }, 300);
+    setTimeout(function () {
+      fullscreenImg.classList.remove("fullscreen_img-appear");
+    }, 500);
     getExif(currImg);
   };
 
@@ -227,9 +234,13 @@ window.onload = function () {
     };
     fullscreenImg.classList.add("fullscreen_img-fade_to_left");
     setTimeout(function () {
+      fullscreenImg.classList.add("fullscreen_img-appear");
       fullscreenImg.classList.remove("fullscreen_img-fade_to_left");
       fullscreenImg.setAttribute("src", currImg.src);
     }, 300);
+    setTimeout(function () {
+      fullscreenImg.classList.remove("fullscreen_img-appear");
+    }, 500);
     getExif(currImg);
   };
 

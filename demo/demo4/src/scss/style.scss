@@ -90,20 +90,27 @@ h2 {
   width: 100vw;
   height: 100%;
   z-index: 100;
+  margin-left: 0;
+  margin-right: 0;
   // flex: 0 0 auto;
   object-fit: contain;
   transition: opacity 0.3s;
 }
 
+.fullscreen_img-appear {
+  opacity: 0;
+  
+}
+
 .fullscreen_img-fade_to_right {
   transition: all 0.3s;
-  margin-left: 25px;
+  margin-left: 35px;
   opacity: 0;
 }
 
 .fullscreen_img-fade_to_left {
   transition: all 0.3s;
-  margin-left: -25px;
+  margin-left: -35px;
   opacity: 0;
 }
 
