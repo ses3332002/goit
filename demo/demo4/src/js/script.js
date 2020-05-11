@@ -113,12 +113,12 @@ window.onload = function () {
       swipeStart = 1;
       distanceSwipeStart = distance(e.targetTouches[0],e.targetTouches[1]);
       fullscreenImg.addEventListener('touchmove', touchMoveHandler);
+    } else {
+      eventTouchToMouse = new Event("mousedown");
+      eventTouchToMouse.clientX = e.targetTouches[0].clientX;
+      fullscreenBack.dispatchEvent(eventTouchToMouse);
+      fullscreenImg.addEventListener("touchend", touchEndHandler);
     };
-    // console.log(e);
-    eventTouchToMouse = new Event("mousedown");
-    eventTouchToMouse.clientX = e.targetTouches[0].clientX;
-    fullscreenBack.dispatchEvent(eventTouchToMouse);
-    fullscreenImg.addEventListener("touchend", touchEndHandler);
 
     function touchMoveHandler(e) {
       e.preventDefault();
