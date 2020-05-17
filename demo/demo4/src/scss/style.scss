@@ -72,21 +72,32 @@ h2 {
   position: fixed;
   left: 0;
   top: 0;
-  // right: 0;
-  // bottom: 0;
-  height: 100vh;
-  width: 100vw;
+  right: 0;
+  bottom: 0;
+  // height: 100vh;
+  // width: 100vw;
   // display: flex;
   z-index: 99;
   background-color: var(--fs_background);
   opacity: 1;
 }
 
+// .fullscreen_container {
+//
+//   height: 100vh;
+//   width: 100vw;
+// }
+
 .fullscreen_back_fs {
   overflow: scroll;
 }
 
 .fullscreen_img {
+  // position: fixed;
+  // left: 0;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
   width: 100vw;
   height: 100%;
   z-index: 100;
@@ -95,11 +106,11 @@ h2 {
   // flex: 0 0 auto;
   object-fit: contain;
   transition: opacity 0.3s;
+  transform-origin: left top;
 }
 
 .fullscreen_img-appear {
   opacity: 0;
-  
 }
 
 .fullscreen_img-fade_to_right {

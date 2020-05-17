@@ -17,7 +17,7 @@ window.onload = function () {
     el.addEventListener("click", galleryHandler);
   });
 
-  //отключаем масштабирование сайта
+  //отключаем масштабирование сайта колесом мыши
   doc.addEventListener("wheel", function (e) {
     if (e.ctrlKey) {
       e.preventDefault();
@@ -32,7 +32,7 @@ window.onload = function () {
     fullscreenImg.setAttribute("src", e.target.src);
     currImg = e.target;
     fullscreenBack.append(fullscreenImg);
-    getExif(fullscreenImg);
+    getExif(currImg);
     window.addEventListener("keydown", fsKeyHandler);
     fullscreenImg.addEventListener("dragstart", function (e) {
       e.preventDefault();
@@ -42,8 +42,6 @@ window.onload = function () {
     fullscreenImg.addEventListener("touchstart", fsTouchHandler);
     fullscreenImg.addEventListener("click", function (e) {
       e.preventDefault();
-      // e.stopPropagation();
-      // fsClickHandler();
     });
   };
 
@@ -84,7 +82,7 @@ window.onload = function () {
     if (scaleFactor > 1) {
       fullscreenBack.classList.add("fullscreen_back_fs");
     };
-    fullscreenImg.style.transform = 'scale(' + scaleFactor + ')';
+    fullscreenImg.style.transform = "scale(" + scaleFactor + ")";
   };
 
   function zoomOut() {
@@ -95,7 +93,7 @@ window.onload = function () {
     if (scaleFactor < 1) {
       fullscreenBack.classList.remove("fullscreen_back_fs");
     };
-    fullscreenImg.style.transform = 'scale(' + scaleFactor + ')';
+    fullscreenImg.style.transform = "scale(" + scaleFactor + ")";
   };
 
   function fsTouchHandler(e) {
@@ -123,6 +121,7 @@ window.onload = function () {
     function touchMoveHandler(e) {
       e.preventDefault();
       e.stopPropagation();
+      fullscreenImg.addEventListener("touchend", touchEndHandler);
       if (swipeStart) {
         distanceSwipeEnd = distance(e.targetTouches[0],e.targetTouches[1]);
         if (distanceSwipeStart > distanceSwipeEnd) {
@@ -136,7 +135,6 @@ window.onload = function () {
     function touchEndHandler(e) {
       e.preventDefault();
       e.stopPropagation();
-      console.log(e);
 
       eventTouchToMouse = new Event("mouseup");
       eventTouchToMouse.clientX = e.changedTouches[0].clientX;
@@ -245,5 +243,4 @@ window.onload = function () {
   };
 
   //= modules/readme.js
-
 }
