@@ -121,7 +121,7 @@ window.onload = function () {
     function touchMoveHandler(e) {
       e.preventDefault();
       e.stopPropagation();
-      fullscreenImg.addEventListener("touchend", touchEndHandler);
+      // fullscreenImg.addEventListener("touchend", touchEndHandler);
       if (swipeStart) {
         distanceSwipeEnd = distance(e.targetTouches[0],e.targetTouches[1]);
         if (distanceSwipeStart > distanceSwipeEnd) {
