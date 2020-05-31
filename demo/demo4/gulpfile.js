@@ -105,6 +105,7 @@ gulp.task('webserver', function() {
     {
         // root: './',
         livereload: true,
+				host: "localhost",
         port: 3000
     }
   );
