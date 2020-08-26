@@ -2,6 +2,14 @@
 .checkbox {
   position: absolute;
   opacity: 0;
+
+  &:active + label::after, &:focus + label::after{
+    outline-style: solid;
+    outline-offset: 1px;
+    outline-color: inherit;
+    // outline-style: outset;
+    outline-width: thin;
+  }
 }
 
 .check_line label {

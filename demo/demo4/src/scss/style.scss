@@ -64,7 +64,7 @@ h2 {
     opacity: 0.6;
   }
 
-  &:hover img:hover {
+  &:hover img:hover, &:hover img:focus {
     opacity: 1;
   }
 }

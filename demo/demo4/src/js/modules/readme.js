@@ -16,6 +16,7 @@ fetch("readme.html")
 doc.append(readmeWindow);
 readmeWindow.append(readmeMessage);
 readmeWindow.append(readmeButton);
+readmeButton.focus();
 readmeButton.addEventListener("click", function () {
   readmeButton.remove();
   readmeMessage.remove();

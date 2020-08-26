@@ -141,7 +141,7 @@ gulp.task('prepare_css', function() {
 });
 
 gulp.task('prepare_js', function() {
-  return gulp.src('./src/js/*.js')
+  return gulp.src('./src/js/script.js')
 		.pipe(rigger())
     .pipe(plumber())
     .pipe(concat('script.min.js', {newLine: ';'}))
@@ -165,7 +165,7 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function () {
   gulp.watch('./src/scss/**/*.scss', gulp.series('sass', 'prepare_css'));
-  gulp.watch('./src/js/*.js', gulp.series('prepare_js'));
+  gulp.watch('./src/js/**/*.js', gulp.series('prepare_js'));
   gulp.watch('./src/html/**/*.html', gulp.series('prepare_html'));
 });
 

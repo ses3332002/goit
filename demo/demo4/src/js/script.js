@@ -1,6 +1,8 @@
 "use strict";
 window.onload = function () {
 
+
+
   //= modules/exif.js
 
   //= modules/themes.js
@@ -15,7 +17,22 @@ window.onload = function () {
 
   images.forEach(function (el,i) {
     el.addEventListener("click", galleryHandler);
+    el.addEventListener("focus", galleryFocusHandler);
   });
+
+  //отслеживание навигации по галерее с клавиатуры
+  function galleryFocusHandler(e) {
+    var eventKeyOnPhoto;
+    e.target.addEventListener("keydown", galleryKeyHandler);
+
+    function galleryKeyHandler(e) {
+      if ((e.keyCode == 32)||(e.key == "Enter")) {
+        eventKeyOnPhoto = new Event("click");
+        e.target.removeEventListener("keydown", galleryKeyHandler);
+        e.target.dispatchEvent(eventKeyOnPhoto);
+      };
+    };
+  };
 
   //отключаем масштабирование сайта колесом мыши
   doc.addEventListener("wheel", function (e) {
@@ -243,4 +260,5 @@ window.onload = function () {
   };
 
   //= modules/readme.js
+
 }
