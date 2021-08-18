@@ -1,345 +1,490 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Landing demo</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="./build/css/style.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="./build/js/script.min.js"></script>
+  </head>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Landing demo</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-	<link rel="manifest" href="site.webmanifest">
-	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-	<link rel="stylesheet" href="build/css/style.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="build/js/script.min.js"></script>
-</head>
+  <body>
+    <section class="header">
+      <h1 class="invisible_header">Landing demo - купи слона!</h1>
+      <div class="header__content">
+        <div class="header__top">
+          <div class="header__logo">
+            <a href="#">
+              <picture>
+                <source
+                  srcset="./build/img/logo.webp 1x, ./build/img/logo_2x.webp 2x"
+                  type="image/webp"
+                />
+                <img src="./build/img/logo.png" srcset="./build/img/logo_2x.png 2x" alt="Лого" />
+              </picture>
+            </a>
+          </div>
+        </div>
+        <div class="header__appeal">
+          Они пришли!<br /><br />
+          Мир уже не будет прежним
+        </div>
+        <div class="header__appeal-right">
+          <div class="bang">Слоны!</div>
+          <div class="header__slogan">Только у нас и только сейчас</div>
+          <div class="buy_button">
+            <a href="#">Купить слона!</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<body>
-	<section class="header">
-		<h1 class="invisible_header">Landing demo - купи слона!</h1>
-		<div class="header__content">
-			<div class="header__top">
-				<div class="header__logo">
-					<a href="#">
-						<picture>
-							<img src = "./build/img/logo.png" srcset="./build/img/logo_2x.png 2x" alt="Лого">
-						</picture>
-					</a>
-				</div>
-			</div>
-			<div class="header__appeal">
-				Они пришли!<br><br>
-				Мир уже не будет прежним
-			</div>
-			<div class="header__appeal-right">
-				<div class="bang">Слоны!</div>
-				<div class="header__slogan">Только у нас и только сейчас</div>
-				<div class="buy_button">
-					<a href="#">Купить слона!</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<aside class="phonecall">
-		<div class="phonecall__content">
-			На все вопросы ответит наш эксперт-элефантолог.<br>
-			Звони бесплатно: <span>+38 (123) 456-7890</span>
-			<div class="phonecall__face">
-				<a href="#">
-					<picture>
-						<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-						<img src="./build/img/phonecall__face.jpg" srcset="./build/img/phonecall__face_2x.jpg 2x" alt="Эксперт">
-					</picture>
-				</a>
-			</div>
-		</div>
-	</aside>
-	<section class="easy123">
-		<div class="easy123__content">
-			<h2>Это реально просто:</h2>
-			<div class="easy123__part">
-				<div class="easy123__step">1. Выбери слона</div>
-				<div class="easy123__logo"><i class="fa fa-wpbeginner fa-3x"></i></div>
-			</div>
-			<div class="easy123__part">
-				<div class="easy123__step">2. Оформи заказ</div>
-				<div class="easy123__logo"><i class="fa fa-phone fa-3x"></i></div>
-			</div>
-			<div class="easy123__part">
-				<div class="easy123__step">3. Оплати после доставки и проверки на месте</div>
-				<div class="easy123__logo"><i class="fa fa-money fa-3x fa-spin"></i></div>
-			</div>
-			<div class="easy123__payment">
-				Принимаем оплату картами:
-				<i class="fa fa-cc-visa fa-lg pay-blue"></i>
-				<i class="fa fa-cc-mastercard fa-lg pay-red"></i>
-				<i class="fa fa-cc-paypal fa-lg pay-blue2"></i>
-			</div>
-		</div>
-	</section>
-	<aside class="phonecall phonecall-2">
-		<div class="phonecall__content">
-			Оставьте свои данные и мы вам перезвоним<br>
-			<div class="phonecall__form">
-				<input type="text" placeholder="Ваше имя" name="searchField1" class="phonecall__search"/>
-				<input type="text" placeholder="Ваш телефон" name="searchField2" class="phonecall__search"/>
-				<div class="phonecall__button">
-					<input class="phonecall__submit" type="submit" value="Заказать звонок"/>
-				</div>
-			</div>
-			<div class="phonecall__face">
-				<a href="#">
-					<picture>
-						<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-						<img src="./build/img/phonecall__face.jpg" srcset="./build/img/phonecall__face_2x.jpg 2x" alt="Эксперт">
-					</picture>
-				</a>
-			</div>
-		</div>
-	</aside>
-	<section class="action">
-		<h2 class="invisible_header">Акция</h2>
-		<div class="action__content">
-			<div class="action__slogan">
-				<div class="bang">Акция!</div>
-				Сделай заказ сегодня и получи в подарок уникальную книгу <span>"Украина - родина слонов".</span>
-				<div class="buy_button">
-					<a href="#">Купить слона!</a>
-				</div>
-			</div>
-			<div class="action__counter">
-				<div id="countdown"></div>
-				<div id="note"></div>
-				<div class="action__book"><img src="./build/img/action__book.png" srcset="./build/img/action__book_2x.png 2x" alt="Подарок"></div>
-			</div>
-		</div>
-	</section>
-	<aside class="phonecall">
-		<div class="phonecall__content">
-			На все вопросы ответит наш эксперт-элефантолог.<br>
-			Звони бесплатно: <span>+38 (123) 456-7890</span>
-			<div class="phonecall__face">
-				<a href="#">
-					<picture>
-						<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-						<img src="./build/img/phonecall__face.jpg" srcset="./build/img/phonecall__face_2x.jpg 2x" alt="Эксперт">
-					</picture>
-				</a>
-			</div>
-		</div>
-	</aside>
-	<section class="sliders">
-		<h2>Что говорят наши покупатели</h2>
-		<div class="owl-carousel">
-			<div class="item item-1">
-				<div class="item__photo">
-					<div class="item__face">
-						<picture>
-							<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-							<img src="./build/img/item__photo1.jpg" srcset="./build/img/item__photo1_2x.jpg 2x" alt="Покупатель">
-						</picture>
-					</div>
-					<div class="item__name">Зинаида, Харьков</div>
-				</div>
-				<div class="item__text">
-					Сплошная радость: с детьми гуляет, ковры выбивает, огород удобряет, в жару обдувает ушами.
-				</div>
-			</div>
-			<div class="item item-2">
-				<div class="item__photo">
-					<div class="item__face">
-						<picture>
-							<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-							<img src="./build/img/item__photo2.jpg" srcset="./build/img/item__photo2_2x.jpg 2x" alt="Покупатель">
-						</picture>
-					</div>
-					<div class="item__name">Семен из Днепра</div>
-				</div>
-				<div class="item__text">
-					Я в работе использую несколько мощных рабочих слонов. Они роют ямы, переносят шпалы. С помощью слонов я смог полностью отказаться от использования детского и женского труда.
-				</div>
-			</div>
-			<div class="item item-3">
-				<div class="item__photo">
-					<div class="item__face">
-						<picture>
-							<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-							<img src="./build/img/item__photo3.jpg" srcset="./build/img/item__photo3_2x.jpg 2x" alt="Покупатель">
-						</picture>
-					</div>
-					<div class="item__name">Михаил Попов</div>
-				</div>
-				<div class="item__text">
-					Я своего вывозил на выходные на дачу, так он объел всю соседскую малину. Раньше сосед возмущался бы, а сейчас - ничего, улыбнулся и ушел. Кстати, до сих пор улыбается.
-				</div>
-			</div>
-			<div class="item item-4">
-				<div class="item__photo">
-					<div class="item__face">
-						<picture>
-							<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-							<img src="./build/img/item__photo4.jpg" srcset="./build/img/item__photo4_2x.jpg 2x" alt="Покупатель">
-						</picture>
-					</div>
-					<div class="item__name">Алла, Киев</div>
-				</div>
-				<div class="item__text">
-					Лучше всего заниматься бегом со слоном. Ни велосипедисты, ни автомобилисты не мешают - лежат тихонько в кюветах и желают тебе новых спортивных успехов.
-				</div>
-			</div>
-			<div class="item item-5">
-				<div class="item__photo">
-					<div class="item__face">
-						<picture>
-							<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-							<img src="./build/img/item__photo5.jpg" srcset="./build/img/item__photo5_2x.jpg 2x" alt="Покупатель">
-						</picture>
-					</div>
-					<div class="item__name">Степа, Житомир</div>
-				</div>
-				<div class="item__text">
-					Начал ездить на слоне на работу, при нынешних цена на бензин - просто находка. Небыстро, бывает опаздываю, но начальник не против, я паркую своего Дамбика рядом с его бэхой :)
-				</div>
-			</div>
-		</div>
-	</section>
-	<aside class="phonecall phonecall-2">
-		<div class="phonecall__content">
-			Оставьте свои данные и мы вам перезвоним<br>
-			<div class="phonecall__form">
-				<input type="text" placeholder="Ваше имя" name="searchField1" class="phonecall__search"/>
-				<input type="text" placeholder="Ваш телефон" name="searchField2" class="phonecall__search"/>
-				<div class="phonecall__button">
-					<input class="phonecall__submit" type="submit" value="Заказать звонок"/>
-				</div>
-			</div>
-			<div class="phonecall__face">
-				<a href="#">
-					<picture>
-						<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-						<img src="./build/img/phonecall__face.jpg" srcset="./build/img/phonecall__face_2x.jpg 2x" alt="Эксперт">
-					</picture>
-				</a>
-			</div>
-		</div>
-	</aside>
-	<section class="questions">
-		<h2 class="invisible_header">Ответы на частые вопросы</h2>
-		<div class="questions__content">
-			<h2>Ответы на частые вопросы</h2>
-			<div class="accordion active">
-				Вы предлагаете самок или самцов?
-			</div>
-			<div class="accordion__content">
-				Наши клиенты могут сами выбрать как пол, так и возраст животного. Также можно заказать длину бивней и хвоста.
-			</div>
-			<div class="accordion">
-				Если у слонихи будет потомство - оно будет принадлежать клиенту?
-			</div>
-			<div class="accordion__content">
-				Безусловно! И слонята, и навоз - все, что произедет на свет ваш слон, будет принадлежать только вам. Пользуйтесь на здоровье!
-			</div>
-			<div class="accordion">
-				Привиты ли слоны от дурных болезней?
-			</div>
-			<div class="accordion__content">
-				Все животные соответствуют стандарту ISO 9002 и полностью привиты по нормам ВОЗ.
-			</div>
-			<div class="accordion">
-				Можно ли использовать навоз от слонов для удобрения огорода?
-			</div>
-			<div class="accordion__content">
-				Экскременты наших слонов соответствуют самым строгим стандартам Украгропрома и могут использоваться в качестве удобрений,
-				в том числе для продуктов детского питания.
-			</div>
-			<div class="accordion">
-				Соответствуют ли продукты сельского хозяйства после использования слоновьего навоза строгим вегетарианским стандартам?
-			</div>
-			<div class="accordion__content">
-				Согласно заявлению Всемирной Ассоциации Веган, удобрение слоновьим навозом является полностью естественным природным процессом
-				и не накладывает ограничений на употребление продуктов питания, которым удастся вырасти.
-			</div>
-			<div class="accordion">
-				Как защитить своего слона от мышей?
-			</div>
-			<div class="accordion__content">
-				Страх слонов перед мышами - всего лишь миф, раздуваемый производителями мышеловок. Если ваш слон увидит мышку или другое животное, он, скорее
-				всего, просто начнет играть с новым другом, весело бегая по дому и радуя детей.
-			</div>
-			<div class="accordion">
-				Могу ли я забрать слона самостоятельно?
-			</div>
-			<div class="accordion__content">
-				Да, конечно, возможен вариант "самовыхода" слона: вы приходите в наш питомник, садитесь на купленного слона (седло и скипидар мы предоставляем бесплатно)
-				и просто едете на нем домой.
-			</div>
-		</div>
-	</section>
-	<aside class="phonecall">
-		<div class="phonecall__content">
-			На все вопросы ответит наш эксперт-элефантолог.<br>
-			Звони бесплатно: <span>+38 (123) 456-7890</span>
-			<div class="phonecall__face">
-				<a href="#">
-					<picture>
-						<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-						<img src="./build/img/phonecall__face.jpg" srcset="./build/img/phonecall__face_2x.jpg 2x" alt="Эксперт">
-					</picture>
-				</a>
-			</div>
-		</div>
-	</aside>
-	<section class="showcase">
-		<div class="showcase__content">
-			<h2>Наши лучшие питомцы: <span>выбери своего!</span></h2>
-			<div id="gallery">
-			</div>
-			<div class="showcase__slogan">
-				Мы не предлагаем нашим клиентам товар из стран третьего мира.<br>Только проверенные европейские слоны!
-			</div>
-		</div>
-	</section>
-	<aside class="phonecall phonecall-2 phonecall-last">
-		<div class="phonecall__content">
-			Ну позвоните хоть кто-нибудь!<br>
-			Человек реально ждет: <span>+38 (123) 456-7890</span>
-			<div class="phonecall__face">
-				<a href="#">
-					<picture>
-						<source media="(max-width: 747px)" srcset="./build/img/no_img.jpg">
-						<img src="./build/img/phonecall__face.jpg" srcset="./build/img/phonecall__face_2x.jpg 2x" alt="Эксперт">
-					</picture>
-				</a>
-			</div>
-		</div>
-	</aside>
-	<footer>
-		<div class="footer__content">
-			<div class="footer__label-1">
-				<img src = "./build/img/footer__label-1.png" srcset="./build/img/footer__label-1_2x.png 2x" alt="Лого">
-			</div>
-			<div class="footer__label-2">
-				<img src = "./build/img/footer__label-2.png" srcset="./build/img/footer__label-2_2x.png 2x" alt="Лого">
-			</div>
-			<div class="footer__label-3">
-				<img src = "./build/img/footer__label-3.png" srcset="./build/img/footer__label-3_2x.png 2x" alt="Лого">
-			</div>
-			<div class="footer__copyright">
-				Разработка Сергея Гаврилова
-			</div>
-		</div>
-	</footer>
-	<div class="progress">
-    <div class="progress__container">
-    	<span class="progress__bar"></span>
+    <aside class="phonecall">
+      <div class="phonecall__content">
+        На все вопросы ответит наш эксперт-элефантолог.<br />
+        Звони бесплатно: <a href="tel:+381234567890"><span>+38 (123) 456-7890</span></a>
+        <div class="phonecall__face">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+              <source
+                srcset="./build/img/phonecall__face.webp 1x, ./build/img/phonecall__face_2x.webp 2x"
+                type="image/webp"
+              />
+              <img
+                src="./build/img/phonecall__face.jpg"
+                srcset="./build/img/phonecall__face_2x.jpg 2x"
+                alt="Эксперт"
+              />
+            </picture>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <section class="easy123">
+      <div class="easy123__content">
+        <h2>Это реально просто:</h2>
+        <div class="easy123__part">
+          <div class="easy123__step">1. Выбери слона</div>
+          <div class="easy123__logo"><i class="fa fa-wpbeginner fa-3x"></i></div>
+        </div>
+        <div class="easy123__part">
+          <div class="easy123__step">2. Оформи заказ</div>
+          <div class="easy123__logo"><i class="fa fa-phone fa-3x"></i></div>
+        </div>
+        <div class="easy123__part">
+          <div class="easy123__step">3. Оплати после доставки и проверки на месте</div>
+          <div class="easy123__logo"><i class="fa fa-money fa-3x fa-spin"></i></div>
+        </div>
+        <div class="easy123__payment">
+          Принимаем оплату картами:
+          <i class="fa fa-cc-visa fa-lg pay-blue"></i>
+          <i class="fa fa-cc-mastercard fa-lg pay-red"></i>
+          <i class="fa fa-cc-paypal fa-lg pay-blue2"></i>
+        </div>
+      </div>
+    </section>
+
+    <aside class="phonecall phonecall-2">
+      <div class="phonecall__content">
+        Оставьте свои данные и мы вам перезвоним<br />
+        <div class="phonecall__form">
+          <input type="text" placeholder="Ваше имя" name="searchField1" class="phonecall__search" />
+          <input type="text" placeholder="Ваш телефон" name="searchField2" class="phonecall__search" />
+          <div class="phonecall__button">
+            <input class="phonecall__submit" type="submit" value="Заказать звонок" />
+          </div>
+        </div>
+        <div class="phonecall__face">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+              <source
+                srcset="./build/img/phonecall__face.webp 1x, ./build/img/phonecall__face_2x.webp 2x"
+                type="image/webp"
+              />
+              <img
+                src="./build/img/phonecall__face.jpg"
+                srcset="./build/img/phonecall__face_2x.jpg 2x"
+                alt="Эксперт"
+              />
+            </picture>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <section class="action">
+      <h2 class="invisible_header">Акция</h2>
+      <div class="action__content">
+        <div class="action__slogan">
+          <div class="bang">Акция!</div>
+          Сделай заказ сегодня и получи в подарок уникальную книгу
+          <span>"Украина - родина слонов".</span>
+          <div class="buy_button">
+            <a href="#">Купить слона!</a>
+          </div>
+        </div>
+        <div class="action__counter">
+          <div id="countdown"></div>
+          <div id="note"></div>
+          <div class="action__book">
+            <picture>
+              <source
+                srcset="./build/img/action__book.webp 1x, ./build/img/action__book_2x.webp 2x"
+                type="image/webp"
+              />
+              <img
+                src="./build/img/action__book.png"
+                srcset="./build/img/action__book_2x.png 2x"
+                alt="Подарок"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="phonecall">
+      <div class="phonecall__content">
+        На все вопросы ответит наш эксперт-элефантолог.<br />
+        Звони бесплатно: <a href="tel:+381234567890"><span>+38 (123) 456-7890</span></a>
+        <div class="phonecall__face">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+              <source
+                srcset="./build/img/phonecall__face.webp 1x, ./build/img/phonecall__face_2x.webp 2x"
+                type="image/webp"
+              />
+              <img
+                src="./build/img/phonecall__face.jpg"
+                srcset="./build/img/phonecall__face_2x.jpg 2x"
+                alt="Эксперт"
+              />
+            </picture>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <section class="sliders">
+      <h2>Что говорят наши покупатели</h2>
+      <div class="owl-carousel">
+        <div class="item item-1">
+          <div class="item__photo">
+            <div class="item__face">
+              <picture>
+                <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+                <source
+                  srcset="./build/img/item__photo1.webp 1x, ./build/img/item__photo1_2x.webp 2x"
+                  type="image/webp"
+                />
+                <img
+                  src="./build/img/item__photo1.jpg"
+                  srcset="./build/img/item__photo1_2x.jpg 2x"
+                  alt="Покупатель"
+                />
+              </picture>
+            </div>
+            <div class="item__name">Зинаида, Харьков</div>
+          </div>
+          <div class="item__text">
+            Сплошная радость: с детьми гуляет, ковры выбивает, огород удобряет, в жару обдувает
+            ушами.
+          </div>
+        </div>
+        <div class="item item-2">
+          <div class="item__photo">
+            <div class="item__face">
+              <picture>
+                <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+                <source
+                  srcset="./build/img/item__photo2.webp 1x, ./build/img/item__photo2_2x.webp 2x"
+                  type="image/webp"
+                />
+                <img
+                  src="./build/img/item__photo2.jpg"
+                  srcset="./build/img/item__photo2_2x.jpg 2x"
+                  alt="Покупатель"
+                />
+              </picture>
+            </div>
+            <div class="item__name">Семен из Днепра</div>
+          </div>
+          <div class="item__text">
+            Я в работе использую несколько мощных рабочих слонов. Они роют ямы, переносят шпалы. С
+            помощью слонов я смог полностью отказаться от использования детского и женского труда.
+          </div>
+        </div>
+        <div class="item item-3">
+          <div class="item__photo">
+            <div class="item__face">
+              <picture>
+                <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+                <source
+                  srcset="./build/img/item__photo3.webp 1x, ./build/img/item__photo3_2x.webp 2x"
+                  type="image/webp"
+                />
+                <img
+                  src="./build/img/item__photo3.jpg"
+                  srcset="./build/img/item__photo3_2x.jpg 2x"
+                  alt="Покупатель"
+                />
+              </picture>
+            </div>
+            <div class="item__name">Михаил Попов</div>
+          </div>
+          <div class="item__text">
+            Я своего вывозил на выходные на дачу, так он объел всю соседскую малину. Раньше сосед
+            возмущался бы, а сейчас - ничего, улыбнулся и ушел. Кстати, до сих пор улыбается.
+          </div>
+        </div>
+        <div class="item item-4">
+          <div class="item__photo">
+            <div class="item__face">
+              <picture>
+                <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+                <source
+                  srcset="./build/img/item__photo4.webp 1x, ./build/img/item__photo4_2x.webp 2x"
+                  type="image/webp"
+                />
+                <img
+                  src="./build/img/item__photo4.jpg"
+                  srcset="./build/img/item__photo4_2x.jpg 2x"
+                  alt="Покупатель"
+                />
+              </picture>
+            </div>
+            <div class="item__name">Алла, Киев</div>
+          </div>
+          <div class="item__text">
+            Лучше всего заниматься бегом со слоном. Ни велосипедисты, ни автомобилисты не мешают -
+            лежат тихонько в кюветах и желают тебе новых спортивных успехов.
+          </div>
+        </div>
+        <div class="item item-5">
+          <div class="item__photo">
+            <div class="item__face">
+              <picture>
+                <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+                <source
+                  srcset="./build/img/item__photo5.webp 1x, ./build/img/item__photo5_2x.webp 2x"
+                  type="image/webp"
+                />
+                <img
+                  src="./build/img/item__photo5.jpg"
+                  srcset="./build/img/item__photo5_2x.jpg 2x"
+                  alt="Покупатель"
+                />
+              </picture>
+            </div>
+            <div class="item__name">Степа, Житомир</div>
+          </div>
+          <div class="item__text">
+            Начал ездить на слоне на работу, при нынешних цена на бензин - просто находка. Небыстро,
+            бывает опаздываю, но начальник не против, я паркую своего Дамбика рядом с его бэхой :)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="phonecall phonecall-2">
+      <div class="phonecall__content">
+        Оставьте свои данные и мы вам перезвоним<br />
+        <div class="phonecall__form">
+          <input type="text" placeholder="Ваше имя" name="searchField1" class="phonecall__search" />
+          <input type="text" placeholder="Ваш телефон" name="searchField2" class="phonecall__search" />
+          <div class="phonecall__button">
+            <input class="phonecall__submit" type="submit" value="Заказать звонок" />
+          </div>
+        </div>
+        <div class="phonecall__face">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+              <source
+                srcset="./build/img/phonecall__face.webp 1x, ./build/img/phonecall__face_2x.webp 2x"
+                type="image/webp"
+              />
+              <img
+                src="./build/img/phonecall__face.jpg"
+                srcset="./build/img/phonecall__face_2x.jpg 2x"
+                alt="Эксперт"
+              />
+            </picture>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <section class="questions">
+      <h2 class="invisible_header">Ответы на частые вопросы</h2>
+      <div class="questions__content">
+        <h2>Ответы на частые вопросы</h2>
+        <div class="accordion active">Вы предлагаете самок или самцов?</div>
+        <div class="accordion__content">
+          Наши клиенты могут сами выбрать как пол, так и возраст животного. Также можно заказать
+          длину бивней и хвоста.
+        </div>
+        <div class="accordion">
+          Если у слонихи будет потомство - оно будет принадлежать клиенту?
+        </div>
+        <div class="accordion__content">
+          Безусловно! И слонята, и навоз - все, что произедет на свет ваш слон, будет принадлежать
+          только вам. Пользуйтесь на здоровье!
+        </div>
+        <div class="accordion">Привиты ли слоны от дурных болезней?</div>
+        <div class="accordion__content">
+          Все животные соответствуют стандарту ISO 9002 и полностью привиты по нормам ВОЗ.
+        </div>
+        <div class="accordion">Можно ли использовать навоз от слонов для удобрения огорода?</div>
+        <div class="accordion__content">
+          Экскременты наших слонов соответствуют самым строгим стандартам Украгропрома и могут
+          использоваться в качестве удобрений, в том числе для продуктов детского питания.
+        </div>
+        <div class="accordion">
+          Соответствуют ли продукты сельского хозяйства после использования слоновьего навоза
+          строгим вегетарианским стандартам?
+        </div>
+        <div class="accordion__content">
+          Согласно заявлению Всемирной Ассоциации Веган, удобрение слоновьим навозом является
+          полностью естественным природным процессом и не накладывает ограничений на употребление
+          продуктов питания, которым удастся вырасти.
+        </div>
+        <div class="accordion">Как защитить своего слона от мышей?</div>
+        <div class="accordion__content">
+          Страх слонов перед мышами - всего лишь миф, раздуваемый производителями мышеловок. Если
+          ваш слон увидит мышку или другое животное, он, скорее всего, просто начнет играть с новым
+          другом, весело бегая по дому и радуя детей.
+        </div>
+        <div class="accordion">Могу ли я забрать слона самостоятельно?</div>
+        <div class="accordion__content">
+          Да, конечно, возможен вариант "самовыхода" слона: вы приходите в наш питомник, садитесь на
+          купленного слона (седло и скипидар мы предоставляем бесплатно) и просто едете на нем
+          домой.
+        </div>
+      </div>
+    </section>
+
+    <aside class="phonecall">
+      <div class="phonecall__content">
+        На все вопросы ответит наш эксперт-элефантолог.<br />
+        Звони бесплатно: <a href="tel:+381234567890"><span>+38 (123) 456-7890</span></a>
+        <div class="phonecall__face">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+              <source
+                srcset="./build/img/phonecall__face.webp 1x, ./build/img/phonecall__face_2x.webp 2x"
+                type="image/webp"
+              />
+              <img
+                src="./build/img/phonecall__face.jpg"
+                srcset="./build/img/phonecall__face_2x.jpg 2x"
+                alt="Эксперт"
+              />
+            </picture>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <section class="showcase">
+      <div class="showcase__content">
+        <h2>Наши лучшие питомцы: <span>выбери своего!</span></h2>
+        <div id="gallery"></div>
+        <div class="showcase__slogan">
+          Мы не предлагаем нашим клиентам товар из стран третьего мира.<br />Только проверенные
+          европейские слоны!
+        </div>
+      </div>
+    </section>
+
+    <aside class="phonecall phonecall-2 phonecall-last">
+      <div class="phonecall__content">
+        Ну позвоните хоть кто-нибудь!<br />
+        Человек реально ждет: <a href="tel:+381234567890"><span>+38 (123) 456-7890</span></a>
+        <div class="phonecall__face">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 747px)" srcset="./build/img/no_img.png" />
+              <source
+                srcset="./build/img/phonecall__face.webp 1x, ./build/img/phonecall__face_2x.webp 2x"
+                type="image/webp"
+              />
+              <img
+                src="./build/img/phonecall__face.jpg"
+                srcset="./build/img/phonecall__face_2x.jpg 2x"
+                alt="Эксперт"
+              />
+            </picture>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <footer>
+      <div class="footer__content">
+        <div class="footer__label-1">
+          <picture>
+            <source
+              srcset="./build/img/footer__label-1.webp 1x, ./build/img/footer__label-1_2x.webp 2x"
+              type="image/webp"
+            />
+            <img
+              src="./build/img/footer__label-1.png"
+              srcset="./build/img/footer__label-1_2x.png 2x"
+              alt="Лого"
+            />
+          </picture>
+        </div>
+        <div class="footer__label-2">
+          <picture>
+            <source
+              srcset="./build/img/footer__label-2.webp 1x, ./build/img/footer__label-2_2x.webp 2x"
+              type="image/webp"
+            />
+            <img
+              src="./build/img/footer__label-2.png"
+              srcset="./build/img/footer__label-2_2x.png 2x"
+              alt="Лого"
+            />
+          </picture>
+        </div>
+        <div class="footer__label-3">
+          <picture>
+            <source
+              srcset="./build/img/footer__label-3.webp 1x, ./build/img/footer__label-3_2x.webp 2x"
+              type="image/webp"
+            />
+            <img
+              src="./build/img/footer__label-3.png"
+              srcset="./build/img/footer__label-3_2x.png 2x"
+              alt="Лого"
+            />
+          </picture>
+        </div>
+        <div class="footer__copyright">Разработка Сергея Гаврилова</div>
+      </div>
+    </footer>
+    <div class="progress">
+      <div class="progress__container">
+        <span class="progress__bar"></span>
+      </div>
     </div>
-	</div>
-	<div class="back__top">
-  	<a href="#" class="back__up"><i class="fa fa-arrow-circle-o-up fa-3x"></i></a>
-	</div>
-</body>
+    <div class="back__top">
+      <a href="#" class="back__up"><i class="fa fa-arrow-circle-o-up fa-3x"></i></a>
+    </div>
+  </body>
 </html>

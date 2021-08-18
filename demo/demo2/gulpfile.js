@@ -1,77 +1,122 @@
-'use strict';
+const gulp = require('gulp');
+const { series, parallel, src, dest, watch } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const concatCss = require('gulp-concat-css');
+const cleanCSS = require('gulp-clean-css');
+const autoprefixer = require('gulp-autoprefixer');
+const gcmq = require('gulp-group-css-media-queries');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const plumber = require('gulp-plumber');
+const rigger = require('gulp-rigger');
+const webserver = require('gulp-webserver');
+const squoosh = require('gulp-libsquoosh');
 
-var gulp = require('gulp');
-var imagemin = require('gulp-imagemin');
-// var spritesmith = require('gulp.spritesmith');
-var sass = require('gulp-sass');
-var concatCss = require('gulp-concat-css');
-var cleanCSS = require('gulp-clean-css');
-var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var webserver = require('gulp-webserver');
-var gutil = require('gulp-util');
-
-gulp.task('webserver', function() {
-  gulp.src('./')
-    .pipe(webserver({
+function brOpen() {
+  gulp.src('.').pipe(
+    webserver({
       livereload: true,
-      directoryListing: true,
-      open: true
-    }));
-    gutil.beep();
-});
+      open: 'http://localhost:8000',
+    }),
+  );
+}
 
-gulp.task('imagemin', function() {
-  gulp.src('./src/img/*.*')
-    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest('./build/img'))
-});
+function prepareHtml() {
+  return gulp.src('./src/html/index.html').pipe(rigger()).pipe(gulp.dest('.'));
+}
 
-gulp.task('prepare_css', function() {
-  gulp.src(['./src/css/reset.css', './src/css/owl.carousel.css', './src/css/jquery.countdown.css', './src/css/unite-gallery.css', './src/css/ug-theme-default.css', './src/css/style.css'])
-      .pipe(concatCss('./build/css/style.min.css', {
-        rebaseUrls: false
-      }))
-      .pipe(cleanCSS())
-      .pipe(gulp.dest(''));
-  // gulp.src('./src/css/ie8.css')
-  //     .pipe(cleanCSS())
-  //     .pipe(gulp.dest('./build/css/'));
-});
+function prepareCss() {
+  return gulp
+    .src([
+      './src/css/reset.css',
+      './src/css/owl.carousel.css',
+      './src/css/jquery.countdown.css',
+      './src/css/unite-gallery.css',
+      './src/css/ug-theme-default.css',
+      './src/css/style.css',
+    ])
+    .pipe(
+      concatCss('./build/css/style.min.css', {
+        rebaseUrls: false,
+      }),
+    )
+    .pipe(gcmq())
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('.'));
+}
 
-gulp.task('prepare_js', function() {
-  gulp.src('./src/js/*.js')
-    .pipe(concat('script.min.js', {newLine: ';'}))
+function prepareSass() {
+  return gulp
+    .src('./src/scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(
+      autoprefixer({
+        autoprefixer: ['last 2 versions'],
+        cascade: false,
+      }),
+    )
+    .pipe(gulp.dest('./src/css'));
+}
+
+function prepareJs() {
+  return gulp
+    .src('./src/js/*.js')
+    .pipe(plumber())
+    .pipe(concat('script.min.js', { newLine: ';' }))
     .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
-});
+}
 
-gulp.task('sass', function () {
-  gulp.src('./src/scss/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 3 versions'],
-      cascade: false
-    }))
-    .pipe(gulp.dest('./src/css'));
-});
+function images() {
+  return (
+    src('src/img/*.png')
+      .pipe(
+        squoosh({
+          // mozjpeg: {
+          //   quality: 70,
+          // },
+          oxipng: {
+            quality: 70,
+          },
+        }),
+      )
+      // .pipe(
+      //   squoosh({
+      //     webp: {},
+      //     avif: {},
+      //   }),
+      // )
 
-gulp.task('watch', function () {
-  gulp.watch('./src/scss/*.scss', ['sass', 'prepare_css']);
-  gulp.watch('./src/js/*.js', ['prepare_js']);
-});
+      .pipe(dest('build/img'))
+  );
+}
 
-// gulp.task('sprite', function() {
-//   var spriteData =
-//     gulp.src('./src/img/for_sprite/*.*')
-//       .pipe(spritesmith({
-//         imgName: '../img/users__sprite.png',
-//         cssName: 'users__sprite.css',
-//       }));
-//
-//   spriteData.img.pipe(gulp.dest('./build/img/'));
-//   spriteData.css.pipe(gulp.dest('./src/css/'));
-// });
+exports.images = series(images);
 
-gulp.task('default', ['imagemin', 'prepare_js', 'sass', 'prepare_css', 'webserver', 'watch']);
+// function css(cb) {
+//   cb();
+// }
+
+// function javascript(cb) {
+//   //   cb(new Error('kaboom'));
+//   cb();
+// }
+
+// function streamTask() {
+//   return src('*.js').pipe(dest('output'));
+// }
+
+// exports.build = series(clean, parallel(css, javascript));
+
+function watcher() {
+  watch('./src/scss/*.scss', series(prepareSass, prepareCss));
+  watch('./src/js/*.js', prepareJs);
+  watch('./src/html/**/*.html', prepareHtml);
+}
+
+// exports.styles = series(prepareSass, prepareCss);
+// exports.scripts = prepareJs;
+// exports.brOpen = brOpen;
+// exports.html = prepareHtml;
+exports.build = parallel(prepareHtml, prepareJs, series(prepareSass, prepareCss));
+exports.default = parallel(brOpen, watcher);

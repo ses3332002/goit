@@ -1,10 +1,8 @@
+@use 'sass:math';
+
 @font-face {
   font-family: 'helvetica neue';
-  src: url('../fonts/helveticaneuecyr-light-webfont.eot');
-  src: url('../fonts/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/helveticaneuecyr-light-webfont.woff2') format('woff2'),
-  url('../fonts/helveticaneuecyr-light-webfont.woff') format('woff'),
-  url('../fonts/helveticaneuecyr-light-webfont.ttf') format('truetype');
+  src: url('../fonts/helveticaneuecyr-light-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,8 +13,8 @@ $contentWidth1: 940px;
 $contentWidth2: 748px;
 $contentWidth3: 320px;
 $contentWidth4: 300px;
-$contentWidth5: $contentWidth1 / 3 - 5px;
-$contentWidth6: $contentWidth2 / 3 - 5px;
+$contentWidth5: math.div($contentWidth1, 3) - 5px;
+$contentWidth6: math.div($contentWidth2, 3) - 5px;
 $contentWidth7: 160px;
 
 $siteColor1: #f00;
@@ -28,8 +26,8 @@ $siteColor6: #999999;
 $siteColor7: #666666;
 $siteColor8: #fff;
 $siteColor9: #cccccc;
-$siteColor10: RGBA(255,255,255,0.5);
-$siteColor11: RGBA(0,0,0,0.5);
+$siteColor10: RGBA(255, 255, 255, 0.5);
+$siteColor11: RGBA(0, 0, 0, 0.5);
 
 $fontSize1: 20px;
 $fontSize2: 22px;
@@ -48,6 +46,7 @@ $fontSize11: 26px;
   margin: 0 auto;
   max-width: $contentWidth4;
   width: 100%;
+
   @media screen and (min-width: $contentWidth2) {
     max-width: $contentWidth2;
   }
@@ -60,6 +59,7 @@ $fontSize11: 26px;
   text-align: center;
   font-size: $fontSize2;
   line-height: $fontSize3;
+
   @media screen and (min-width: $contentWidth2) {
     font-size: $fontSize3;
     line-height: $fontSize4;
@@ -73,7 +73,7 @@ $fontSize11: 26px;
 .effect1 {
   &:hover {
     background: $siteColor4;
-    box-shadow: 0 0 14px rgba(255,255,255,.9);
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.9);
     transition: all 0.4s ease;
 
     a {
@@ -86,7 +86,7 @@ $fontSize11: 26px;
 .effect2 {
   &:hover {
     background: $siteColor1;
-    box-shadow: 0 0 14px rgba(255,255,255,.9);
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.9);
     transition: all 0.4s ease;
   }
 }
@@ -107,6 +107,8 @@ $fontSize11: 26px;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
+  user-select: none;
+
   @media screen and (min-width: $contentWidth2) {
     margin-top: 35px;
     width: 240px;
@@ -121,16 +123,19 @@ $fontSize11: 26px;
 }
 
 .bang {
-  background-image: url(../img/bg__bang.png);
+  background-image: image-set(
+    url('../img/bg__bang_2x.webp') 2x,
+    url('../img/bg__bang.webp') 1x,
+    url('../img/bg__bang_2x.png') 2x,
+    url('../img/bg__bang.png') 1x
+  );
   background-size: 139px;
   background-repeat: no-repeat;
   background-position: center;
   padding: 30px;
   font-size: $fontSize4;
   margin-bottom: 40px;
-  @media screen and (min-resolution: 1.5dppx) {
-    background-image: url(../img/bg__bang_2x.png);
-  }
+  user-select: none;
 
   &:hover {
     transform: scale(1.1);
@@ -146,32 +151,43 @@ $fontSize11: 26px;
   top: -10px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-width: $contentWidth3;
   font-family: 'helvetica neue';
 
   .header {
-    background-image: url(../img/bg__top_phone.jpg);
+    background-image: image-set(
+      url('../img/bg__top_phone.webp') 1x,
+      url('../img/bg__top_phone_2x.webp') 2x,
+      url('../img/bg__top_phone.jpg') 1x,
+      url('../img/bg__top_phone_2x.jpg') 2x
+    );
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     color: $siteColor8;
-    @media screen and (min-resolution: 1.5dppx) {
-      background-image: url(../img/bg__top_phone_2x.jpg);
-    }
+
     @media screen and (min-width: $contentWidth2) {
-      background-image: url(../img/bg__top_tablet.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/bg__top_tablet_2x.jpg);
-      }
+      background-image: image-set(
+        url('../img/bg__top_tablet.webp') 1x,
+        url('../img/bg__top_tablet_2x.webp') 2x,
+        url('../img/bg__top_tablet.jpg') 1x,
+        url('../img/bg__top_tablet_2x.jpg') 2x
+      );
     }
     @media screen and (min-width: $contentWidth1) {
-      background-image: url(../img/bg__top.jpg);
+      background-image: image-set(
+        url('../img/bg__top.webp') 1x,
+        url('../img/bg__top_2x.webp') 2x,
+        url('../img/bg__top.jpg') 1x,
+        url('../img/bg__top_2x.jpg') 2x
+      );
       background-size: 1920px;
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/bg__top_2x.jpg);
-      }
     }
 
     .header__content {
@@ -183,6 +199,7 @@ body {
       .header__top {
         vertical-align: top;
         text-align: center;
+
         @media screen and (min-width: $contentWidth2) {
           text-align: left;
         }
@@ -211,9 +228,10 @@ body {
         line-height: $fontSize6;
         text-align: center;
         text-shadow: 1px 1px 2px $siteColor4;
+
         @media screen and (min-width: $contentWidth2) {
           display: inline-block;
-          max-width: $contentWidth2 / 2;
+          max-width: math.div($contentWidth2, 2);
           width: 100%;
           margin-bottom: 200px;
           font-size: $fontSize8;
@@ -221,7 +239,7 @@ body {
           margin-top: 120px;
         }
         @media screen and (min-width: $contentWidth1) {
-          max-width: $contentWidth1 / 2;
+          max-width: math.div($contentWidth1, 2);
           width: 100%;
           margin-bottom: 295px;
         }
@@ -236,15 +254,16 @@ body {
         margin-bottom: 0;
         padding-bottom: 50px;
         text-shadow: 1px 1px 2px $siteColor4;
+
         @media screen and (min-width: $contentWidth2) {
           display: inline-block;
-          max-width: $contentWidth2 / 2;
+          max-width: math.div($contentWidth2, 2);
           width: 100%;
           margin-top: 70px;
           font-size: $fontSize3;
         }
         @media screen and (min-width: $contentWidth1) {
-          max-width: $contentWidth1 / 2;
+          max-width: math.div($contentWidth1, 2);
           width: 100%;
         }
 
@@ -257,6 +276,7 @@ body {
           width: $contentWidth4 - 40px;
           height: 60px;
           border-radius: 10px;
+
           @media screen and (min-width: $contentWidth2) {
             width: inherit;
             border-radius: 0;
@@ -278,6 +298,7 @@ body {
     height: 160px;
     background: $siteColor2;
     color: $siteColor8;
+
     @media screen and (min-width: $contentWidth2) {
       height: 80px;
     }
@@ -287,6 +308,7 @@ body {
       font-size: $fontSize3;
       line-height: $fontSize6;
       position: relative;
+
       @media screen and (min-width: $contentWidth2) {
         font-size: $fontSize2;
         line-height: $fontSize6;
@@ -294,6 +316,10 @@ body {
 
       span {
         white-space: nowrap;
+      }
+
+      a {
+        color: inherit;
       }
     }
 
@@ -310,6 +336,7 @@ body {
       overflow: hidden;
       cursor: pointer;
       border: 4px solid $siteColor2;
+
       @media screen and (min-width: $contentWidth2) {
         display: inline-block;
       }
@@ -325,12 +352,14 @@ body {
   .phonecall-2 {
     background: $siteColor3;
     height: 196px;
+
     @media screen and (min-width: $contentWidth2) {
       height: 80px;
     }
 
     .phonecall__form {
       text-align: center;
+
       @media screen and (min-width: $contentWidth2) {
         text-align: left;
       }
@@ -349,6 +378,7 @@ body {
         border-radius: 3px;
         color: $siteColor6;
         padding-left: 10px;
+
         @media screen and (min-width: $contentWidth2) {
           width: 200px;
         }
@@ -367,6 +397,7 @@ body {
           color: $siteColor8;
           border: 0 solid red;
           width: $contentWidth4 - 2px;
+
           @media screen and (min-width: $contentWidth2) {
             width: 190px;
           }
@@ -376,6 +407,7 @@ body {
 
     .phonecall__face-2 {
       border: 4px solid $siteColor3;
+
       @media screen and (min-width: $contentWidth2) {
         left: $contentWidth2 - 110px;
       }
@@ -431,19 +463,21 @@ body {
       margin-bottom: 0;
       padding: 10px;
       opacity: 0;
+
       @media screen and (min-width: $contentWidth2) {
-        width: $contentWidth2 / 3;
+        width: math.div($contentWidth2, 3);
         margin-top: 30px;
         margin-bottom: 60px;
       }
       @media screen and (min-width: $contentWidth1) {
-        width: $contentWidth1 / 3;
+        width: math.div($contentWidth1, 3);
       }
 
       .easy123__step {
         vertical-align: sub;
         height: 40px;
         font-size: $fontSize1;
+
         @media screen and (min-width: $contentWidth2) {
           margin-bottom: 30px;
           font-size: $fontSize1;
@@ -463,33 +497,40 @@ body {
         font-size: $fontSize3;
         line-height: $fontSize10;
         color: $siteColor8;
-        box-shadow: 0 0 14px rgba(255,255,255,.9);
+        box-shadow: 0 0 14px rgba(255, 255, 255, 0.9);
       }
     }
   }
 
   .action {
     margin: 0 auto;
-    background-image: url(../img/bg__next_phone.jpg);
+    background-image: image-set(
+      url('../img/bg__next_phone.webp') 1x,
+      url('../img/bg__next_phone_2x.webp') 2x,
+      url('../img/bg__next_phone.jpg') 1x,
+      url('../img/bg__next_phone_2x.jpg') 2x
+    );
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     color: $siteColor8;
-    @media screen and (min-resolution: 1.5dppx) {
-      background-image: url(../img/bg__next_phone_2x.jpg);
-    }
+
     @media screen and (min-width: $contentWidth2) {
-      background-image: url(../img/bg__next_tablet.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/bg__next_tablet_2x.jpg);
-      }
+      background-image: image-set(
+        url('../img/bg__next_tablet.webp') 1x,
+        url('../img/bg__next_tablet_2x.webp') 2x,
+        url('../img/bg__next_tablet.jpg') 1x,
+        url('../img/bg__next_tablet_2x.jpg') 2x
+      );
     }
     @media screen and (min-width: $contentWidth1) {
-      background-image: url(../img/bg__next.jpg);
+      background-image: image-set(
+        url('../img/bg__next.webp') 1x,
+        url('../img/bg__next_2x.webp') 2x,
+        url('../img/bg__next.jpg') 1x,
+        url('../img/bg__next_2x.jpg') 2x
+      );
       background-size: 1920px;
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/bg__next_2x.jpg);
-      }
     }
 
     .action__content {
@@ -505,9 +546,10 @@ body {
         margin-bottom: 30px;
         box-sizing: border-box;
         text-shadow: 1px 1px 2px $siteColor4;
+
         @media screen and (min-width: $contentWidth2) {
           display: inline-block;
-          max-width: $contentWidth2 / 2;
+          max-width: math.div($contentWidth2, 2);
           width: 100%;
           margin-bottom: 50px;
           font-size: $fontSize3;
@@ -517,7 +559,7 @@ body {
           padding-right: 20px;
         }
         @media screen and (min-width: $contentWidth1) {
-          max-width: $contentWidth1 / 2;
+          max-width: math.div($contentWidth1, 2);
           width: 100%;
         }
 
@@ -531,9 +573,10 @@ body {
       .action__counter {
         box-sizing: border-box;
         vertical-align: top;
+
         @media screen and (min-width: $contentWidth2) {
           display: inline-block;
-          max-width: $contentWidth2 / 2;
+          max-width: math.div($contentWidth2, 2);
           width: 100%;
           margin-bottom: 50px;
           margin-top: 120px;
@@ -541,7 +584,7 @@ body {
           padding-right: 20px;
         }
         @media screen and (min-width: $contentWidth1) {
-          max-width: $contentWidth1 / 2;
+          max-width: math.div($contentWidth1, 2);
           width: 100%;
         }
 
@@ -552,9 +595,10 @@ body {
         }
 
         .countdownHolder {
-          font-family: 'Open Sans Condensed',sans-serif;
+          font-family: 'Open Sans Condensed', sans-serif;
           font-size: 20px;
           line-height: 1.5;
+
           @media screen and (min-width: $contentWidth2) {
             font-size: 30px !important;
             line-height: 1.5;
@@ -587,6 +631,7 @@ body {
       @extend .caption;
       margin-top: 30px;
       margin-bottom: 15px;
+
       @media screen and (min-width: $contentWidth2) {
         margin-top: 40px;
       }
@@ -596,6 +641,7 @@ body {
       width: $contentWidth4;
       margin: 25px auto;
       position: relative;
+
       @media screen and (min-width: $contentWidth2) {
         width: $contentWidth2 - 40px;
         margin-bottom: 80px;
@@ -622,6 +668,7 @@ body {
         transform: translateZ(0);
         -webkit-transform: translateZ(0);
         -ms-transform: translateZ(0);
+
         @media screen and (min-width: $contentWidth2) {
           height: 450px;
         }
@@ -633,6 +680,7 @@ body {
           width: 120px;
           font-weight: bold;
           color: $siteColor5;
+
           @media screen and (min-width: $contentWidth2) {
             text-align: center;
             padding-top: 30px;
@@ -649,6 +697,7 @@ body {
             display: none;
             margin-bottom: 20px;
             overflow: auto;
+
             @media screen and (min-width: $contentWidth2) {
               display: inline-block;
             }
@@ -657,6 +706,7 @@ body {
           .item__name {
             background-color: $siteColor10;
             padding-left: 10px;
+
             @media screen and (min-width: $contentWidth2) {
               padding-left: 0;
             }
@@ -672,6 +722,7 @@ body {
           padding-right: 4px;
           padding-left: 4px;
           text-align: right;
+
           @media screen and (min-width: $contentWidth2) {
             font-size: $fontSize2;
             line-height: $fontSize4;
@@ -685,98 +736,134 @@ body {
       }
 
       .item-1 {
-        background-image: url(../img/slide1_phone.jpg);
-        @media screen and (min-resolution: 1.5dppx) {
-          background-image: url(../img/slide1_phone_2x.jpg);
-        }
+        background-image: image-set(
+          url('../img/slide1_phone.webp') 1x,
+          url('../img/slide1_phone_2x.webp') 2x,
+          url('../img/slide1_phone.jpg') 1x,
+          url('../img/slide1_phone_2x.jpg') 2x
+        );
+
         @media screen and (min-width: $contentWidth2) {
-          background-image: url(../img/slide1_tablet.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide1_tablet_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide1_tablet.webp') 1x,
+            url('../img/slide1_tablet_2x.webp') 2x,
+            url('../img/slide1_tablet.jpg') 1x,
+            url('../img/slide1_tablet_2x.jpg') 2x
+          );
         }
         @media screen and (min-width: $contentWidth1) {
-          background-image: url(../img/slide1.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide1_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide1.webp') 1x,
+            url('../img/slide1_2x.webp') 2x,
+            url('../img/slide1.jpg') 1x,
+            url('../img/slide1_2x.jpg') 2x
+          );
         }
       }
       .item-2 {
-        background-image: url(../img/slide2_phone.jpg);
-        @media screen and (min-resolution: 1.5dppx) {
-          background-image: url(../img/slide2_phone_2x.jpg);
-        }
+        background-image: image-set(
+          url('../img/slide2_phone.webp') 1x,
+          url('../img/slide2_phone_2x.webp') 2x,
+          url('../img/slide2_phone.jpg') 1x,
+          url('../img/slide2_phone_2x.jpg') 2x
+        );
+
         @media screen and (min-width: $contentWidth2) {
-          background-image: url(../img/slide2_tablet.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide2_tablet_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide2_tablet.webp') 1x,
+            url('../img/slide2_tablet_2x.webp') 2x,
+            url('../img/slide2_tablet.jpg') 1x,
+            url('../img/slide2_tablet_2x.jpg') 2x
+          );
         }
         @media screen and (min-width: $contentWidth1) {
-          background-image: url(../img/slide2.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide2_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide2.webp') 1x,
+            url('../img/slide2_2x.webp') 2x,
+            url('../img/slide2.jpg') 1x,
+            url('../img/slide2_2x.jpg') 2x
+          );
         }
       }
       .item-3 {
-        background-image: url(../img/slide3_phone.jpg);
-        @media screen and (min-resolution: 1.5dppx) {
-          background-image: url(../img/slide3_phone_2x.jpg);
-        }
+        background-image: image-set(
+          url('../img/slide3_phone.webp') 1x,
+          url('../img/slide3_phone_2x.webp') 2x,
+          url('../img/slide3_phone.jpg') 1x,
+          url('../img/slide3_phone_2x.jpg') 2x
+        );
+
         @media screen and (min-width: $contentWidth2) {
-          background-image: url(../img/slide3_tablet.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide3_tablet_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide3_tablet.webp') 1x,
+            url('../img/slide3_tablet_2x.webp') 2x,
+            url('../img/slide3_tablet.jpg') 1x,
+            url('../img/slide3_tablet_2x.jpg') 2x
+          );
         }
         @media screen and (min-width: $contentWidth1) {
-          background-image: url(../img/slide3.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide3_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide3.webp') 1x,
+            url('../img/slide3_2x.webp') 2x,
+            url('../img/slide3.jpg') 1x,
+            url('../img/slide3_2x.jpg') 2x
+          );
         }
       }
       .item-4 {
-        background-image: url(../img/slide4_phone.jpg);
-        @media screen and (min-resolution: 1.5dppx) {
-          background-image: url(../img/slide4_phone_2x.jpg);
-        }
+        background-image: image-set(
+          url('../img/slide4_phone.webp') 1x,
+          url('../img/slide4_phone_2x.webp') 2x,
+          url('../img/slide4_phone.jpg') 1x,
+          url('../img/slide4_phone_2x.jpg') 2x
+        );
+
         @media screen and (min-width: $contentWidth2) {
-          background-image: url(../img/slide4_tablet.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide4_tablet_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide4_tablet.webp') 1x,
+            url('../img/slide4_tablet_2x.webp') 2x,
+            url('../img/slide4_tablet.jpg') 1x,
+            url('../img/slide4_tablet_2x.jpg') 2x
+          );
         }
         @media screen and (min-width: $contentWidth1) {
-          background-image: url(../img/slide4.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide4_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide4.webp') 1x,
+            url('../img/slide4_2x.webp') 2x,
+            url('../img/slide4.jpg') 1x,
+            url('../img/slide4_2x.jpg') 2x
+          );
         }
       }
       .item-5 {
-        background-image: url(../img/slide5_phone.jpg);
-        @media screen and (min-resolution: 1.5dppx) {
-          background-image: url(../img/slide5_phone_2x.jpg);
-        }
+        background-image: image-set(
+          url('../img/slide5_phone.webp') 1x,
+          url('../img/slide5_phone_2x.webp') 2x,
+          url('../img/slide5_phone.jpg') 1x,
+          url('../img/slide5_phone_2x.jpg') 2x
+        );
+
         @media screen and (min-width: $contentWidth2) {
-          background-image: url(../img/slide5_tablet.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide5_tablet_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide5_tablet.webp') 1x,
+            url('../img/slide5_tablet_2x.webp') 2x,
+            url('../img/slide5_tablet.jpg') 1x,
+            url('../img/slide5_tablet_2x.jpg') 2x
+          );
         }
         @media screen and (min-width: $contentWidth1) {
-          background-image: url(../img/slide5.jpg);
-          @media screen and (min-resolution: 1.5dppx) {
-            background-image: url(../img/slide5_2x.jpg);
-          }
+          background-image: image-set(
+            url('../img/slide5.webp') 1x,
+            url('../img/slide5_2x.webp') 2x,
+            url('../img/slide5.jpg') 1x,
+            url('../img/slide5_2x.jpg') 2x
+          );
         }
       }
 
       .owl-controls {
         display: none;
+
         @media screen and (min-width: $contentWidth2) {
           display: inline-block;
           position: relative;
@@ -813,6 +900,7 @@ body {
     background-color: $siteColor9;
     padding-top: 30px;
     min-height: 940px;
+
     @media screen and (min-width: $contentWidth2) {
       padding-top: 40px;
       min-height: 700px;
@@ -839,6 +927,7 @@ body {
         line-height: 30px;
         position: relative;
         cursor: pointer;
+
         @media screen and (min-width: $contentWidth2) {
           min-height: 50px;
           line-height: 50px;
@@ -869,27 +958,34 @@ body {
 
   .showcase {
     margin: 0 auto;
-    background-image: url(../img/bg__new_life_phone.jpg);
+    background-image: image-set(
+      url('../img/bg__new_life_phone.webp') 1x,
+      url('../img/bg__new_life_phone_2x.webp') 2x,
+      url('../img/bg__new_life_phone.jpg') 1x,
+      url('../img/bg__new_life_phone_2x.jpg') 2x
+    );
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     color: $siteColor8;
-    @media screen and (min-resolution: 1.5dppx) {
-      background-image: url(../img/bg__new_life_phone_2x.jpg);
-    }
+
     @media screen and (min-width: $contentWidth2) {
-      background-image: url(../img/bg__new_life_tablet.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/bg__new_life_tablet_2x.jpg);
-      }
+      background-image: image-set(
+        url('../img/bg__new_life_tablet.webp') 1x,
+        url('../img/bg__new_life_tablet_2x.webp') 2x,
+        url('../img/bg__new_life_tablet.jpg') 1x,
+        url('../img/bg__new_life_tablet_2x.jpg') 2x
+      );
     }
     @media screen and (min-width: $contentWidth1) {
-      background-image: url(../img/bg__new_life.jpg);
       background-size: 1920px;
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/bg__new_life_2x.jpg);
-      }
+      background-image: image-set(
+        url('../img/bg__new_life.webp') 1x,
+        url('../img/bg__new_life_2x.webp') 2x,
+        url('../img/bg__new_life.jpg') 1x,
+        url('../img/bg__new_life_2x.jpg') 2x
+      );
     }
 
     .showcase__content {
@@ -897,6 +993,7 @@ body {
       height: 650px;
       font-size: $fontSize2;
       padding-top: 20px;
+
       @media screen and (min-width: $contentWidth2) {
         padding-top: 50px;
       }
@@ -916,13 +1013,13 @@ body {
         margin: 20px auto;
         background-color: $siteColor4;
         line-height: $fontSize4;
+
         @media screen and (min-width: $contentWidth2) {
           line-height: $fontSize6;
           margin-top: 50px;
           margin-bottom: 30px;
         }
       }
-
     }
   }
 
@@ -939,6 +1036,7 @@ body {
       margin-top: 20px;
       margin-bottom: 20px;
       vertical-align: middle;
+
       @media screen and (min-width: $contentWidth2) {
         width: $contentWidth6;
       }
@@ -1000,52 +1098,6 @@ body {
       i {
         text-shadow: 0px 0px 2px $siteColor8;
       }
-    }
-  }
-
-  .readme {
-    display: none;
-    padding: 8px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -157px;
-    margin-top: -200px;
-    width: 300px;
-    border: 2px solid $siteColor5;
-    border-radius: 5px;
-    background: $siteColor9;
-    z-index: 100;
-    opacity: 0.9;
-    text-align: center;
-    font-size: $fontSize1;
-    line-height: $fontSize2;
-    @media screen and (min-width: $contentWidth2) {
-      width: 600px;
-      height: 380px;
-      // padding: 7px;
-      top: 50%;
-      left: 50%;
-      line-height: $fontSize3;
-      margin-left: -312px;
-      margin-top: -160px;
-    }
-
-    .readme__message {
-      text-align: left;
-      overflow-y: auto;
-      max-height: 310px;
-      @media screen and (min-width: $contentWidth2) {
-        max-height: 480px;
-      }
-    }
-
-    button {
-      font-size: $fontSize1;
-      line-height: $fontSize1;
-      margin-top: 15px;
-      font-weight: normal;
-      cursor: pointer;
     }
   }
 }
