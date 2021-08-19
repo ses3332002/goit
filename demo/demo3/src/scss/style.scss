@@ -1,7 +1,8 @@
+@use 'sass:math';
+
 @font-face {
   font-family: 'helvetica neue';
-  src:
-  url('../fonts/helveticaneuecyr-light-webfont.woff') format('woff');
+  src: url('../fonts/helveticaneuecyr-light-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -12,8 +13,8 @@ $contentWidth1: 1024px;
 $contentWidth2: 748px;
 $contentWidth3: 320px;
 $contentWidth4: 300px;
-$contentWidth5: $contentWidth1 / 3 - 5px;
-$contentWidth6: $contentWidth2 / 3 - 5px;
+$contentWidth5: math.div($contentWidth1, 3) - 5px;
+$contentWidth6: math.div($contentWidth2, 3) - 5px;
 $contentWidth7: 1400px;
 
 $siteColor1: #fff;
@@ -22,8 +23,8 @@ $siteColor3: #fc8800;
 $siteColor4: #e4370f;
 $siteColor5: #862009;
 $siteColor6: #000;
-$siteColor7: RGBA(0,0,0,0.5);
-$siteColor8: RGBA(241,136,45,0.9);
+$siteColor7: RGBA(0, 0, 0, 0.5);
+$siteColor8: RGBA(241, 136, 45, 0.9);
 $siteColor9: #aaa;
 
 $fontSize1: 12px;
@@ -42,6 +43,7 @@ $fontSize10: 60px;
   margin: 0 auto;
   max-width: $contentWidth4;
   width: 100%;
+
   @media screen and (min-width: $contentWidth2) {
     max-width: $contentWidth2;
   }
@@ -54,6 +56,7 @@ $fontSize10: 60px;
   text-align: center;
   font-size: $fontSize3;
   line-height: $fontSize4;
+
   @media screen and (min-width: $contentWidth2) {
     font-size: $fontSize4;
     line-height: $fontSize5;
@@ -65,12 +68,16 @@ $fontSize10: 60px;
 }
 
 %invisible_header {
-  height: 1px;
-  width: 1px;
   position: absolute;
-  overflow: hidden;
-  // top: -10px;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
   clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .words__important {
@@ -91,6 +98,7 @@ a {
   cursor: pointer;
   font-weight: bold;
   color: $siteColor5;
+
   @media screen and (min-width: $contentWidth2) {
   }
 
@@ -108,6 +116,7 @@ a {
   box-sizing: border-box;
   padding-left: 10px;
   padding-right: 10px;
+
   @media screen and (min-width: $contentWidth2) {
   }
 }
@@ -117,8 +126,9 @@ body {
   font-family: 'helvetica neue', Arial, sans-serif;
   background-color: $siteColor8;
   color: $siteColor6;
+
   @media (prefers-color-scheme: dark) {
-      background-color: darken($siteColor3, 25%);
+    background-color: darken($siteColor3, 25%);
   }
 
   main {
@@ -128,12 +138,12 @@ body {
   }
 }
 
-
 header {
   .header__content {
     @extend .content;
     height: 0;
     overflow: hidden;
+
     @media screen and (min-width: $contentWidth1) {
       height: 40px;
       padding-top: 15px;
@@ -155,6 +165,7 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0px;
+
   @media screen and (min-width: $contentWidth1) {
     grid-template-columns: 180px 1fr;
     grid-template-rows: minmax(100px, max-content) 1fr;
@@ -168,6 +179,7 @@ header {
     margin-top: 3px;
     margin-bottom: 6px;
     position: relative;
+
     @media screen and (min-width: $contentWidth2) {
       box-sizing: border-box;
       padding-left: 20px;
@@ -193,6 +205,7 @@ header {
       left: 0px;
       font-size: $fontSize7;
       z-index: 500;
+
       @media screen and (min-width: $contentWidth2) {
         left: 15px;
       }
@@ -213,12 +226,13 @@ header {
       padding-top: 2px;
       padding-left: 26px;
       font-size: 0;
+
       @media screen and (min-width: $contentWidth1) {
         padding-left: 0px;
         height: auto;
       }
       @media (prefers-color-scheme: dark) {
-          background-color: darken($siteColor1, 20%);
+        background-color: darken($siteColor1, 20%);
       }
 
       li {
@@ -232,6 +246,7 @@ header {
         line-height: 100%;
         text-align: left;
         font-size: $fontSize4;
+
         @media screen and (min-width: $contentWidth1) {
           display: block;
         }
@@ -248,9 +263,9 @@ header {
         color: $siteColor4;
         height: 16px;
         overflow-y: hidden;
+
         @media screen and (min-width: $contentWidth1) {
           height: auto;
-          // display: block;
         }
 
         .hide_words {
@@ -260,9 +275,9 @@ header {
     }
 
     .nav__menu-opened {
-      // position: absolute;
       height: auto;
       width: $contentWidth4 - 28px;
+
       @media screen and (min-width: $contentWidth2) {
         width: $contentWidth2 - 68px;
       }
@@ -276,6 +291,7 @@ header {
   .main__content {
     text-align: center;
     grid-row: 2 / 3;
+
     @media screen and (min-width: $contentWidth1) {
       grid-row: 1 / 3;
       grid-column: 2 / 3;
@@ -287,6 +303,7 @@ header {
   width: $contentWidth4;
   margin: 0px auto;
   position: relative;
+
   @media screen and (min-width: $contentWidth2) {
     width: $contentWidth2 - 40px;
   }
@@ -313,6 +330,7 @@ header {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
+
     @media screen and (min-width: $contentWidth2) {
       height: 300px;
     }
@@ -329,6 +347,7 @@ header {
       padding-right: 4px;
       padding-left: 4px;
       text-align: center;
+
       @media screen and (min-width: $contentWidth2) {
         font-size: $fontSize7;
         line-height: $fontSize8;
@@ -349,6 +368,7 @@ header {
   .item-1 {
     background: linear-gradient(0deg, $siteColor5, $siteColor4);
     padding-top: 15px;
+
     @media screen and (min-width: $contentWidth2) {
       padding-top: 50px;
     }
@@ -361,7 +381,8 @@ header {
       font-size: $fontSize6;
       color: $siteColor3;
       text-shadow: $siteColor6 1px 1px 0, $siteColor6 -1px -1px 0,
-      $siteColor6 -1px 1px 0, $siteColor6 1px -1px 0;
+        $siteColor6 -1px 1px 0, $siteColor6 1px -1px 0;
+
       @media screen and (min-width: $contentWidth2) {
         font-size: $fontSize8;
       }
@@ -372,6 +393,7 @@ header {
       .item__name {
         display: inline-block;
         vertical-align: top;
+
         @media screen and (min-width: $contentWidth2) {
           margin-top: 50px;
         }
@@ -384,99 +406,130 @@ header {
   }
 
   .item-2 {
-    background-image: url(../img/slide2_phone.jpg);
-    @media screen and (min-width: $contentWidth4) and (min-resolution: 1.5dppx) {
-      background-image: url(../img/slide2_phone_2x.jpg);
-    }
+    background-image: image-set(
+      url(../img/slide2_phone.webp) 1x,
+      url(../img/slide2_phone_2x.webp) 2x,
+      url(../img/slide2_phone.jpg) 1x,
+      url(../img/slide2_phone_2x.jpg) 2x
+    );
     @media screen and (min-width: $contentWidth2) {
-      background-image: url(../img/slide2_tablet.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide2_tablet_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide2_tablet.webp) 1x,
+        url(../img/slide2_tablet_2x.webp) 2x,
+        url(../img/slide2_tablet.jpg) 1x,
+        url(../img/slide2_tablet_2x.jpg) 2x
+      );
     }
     @media screen and (min-width: $contentWidth1) {
-      background-image: url(../img/slide2.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide2_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide2.webp) 1x,
+        url(../img/slide2_2x.webp) 2x,
+        url(../img/slide2.jpg) 1x,
+        url(../img/slide2_2x.jpg) 2x
+      );
     }
   }
 
   .item-3 {
-    background-image: url(../img/slide3_phone.jpg);
-    @media screen and (min-width: $contentWidth4) and (min-resolution: 1.5dppx) {
-      background-image: url(../img/slide3_phone_2x.jpg);
-    }
+    background-image: image-set(
+      url(../img/slide3_phone.webp) 1x,
+      url(../img/slide3_phone_2x.webp) 2x,
+      url(../img/slide3_phone.jpg) 1x,
+      url(../img/slide3_phone_2x.jpg) 2x
+    );
     @media screen and (min-width: $contentWidth2) {
-      background-image: url(../img/slide3_tablet.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide3_tablet_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide3_tablet.webp) 1x,
+        url(../img/slide3_tablet_2x.webp) 2x,
+        url(../img/slide3_tablet.jpg) 1x,
+        url(../img/slide3_tablet_2x.jpg) 2x
+      );
     }
     @media screen and (min-width: $contentWidth1) {
-      background-image: url(../img/slide3.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide3_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide3.webp) 1x,
+        url(../img/slide3_2x.webp) 2x,
+        url(../img/slide3.jpg) 1x,
+        url(../img/slide3_2x.jpg) 2x
+      );
     }
   }
   .item-4 {
-    background-image: url(../img/slide4_phone.jpg);
-    @media screen and (min-width: $contentWidth4) and (min-resolution: 1.5dppx) {
-      background-image: url(../img/slide4_phone_2x.jpg);
-    }
+    background-image: image-set(
+      url(../img/slide4_phone.webp) 1x,
+      url(../img/slide4_phone_2x.webp) 2x,
+      url(../img/slide4_phone.jpg) 1x,
+      url(../img/slide4_phone_2x.jpg) 2x
+    );
     @media screen and (min-width: $contentWidth2) {
-      background-image: url(../img/slide4_tablet.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide4_tablet_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide4_tablet.webp) 1x,
+        url(../img/slide4_tablet_2x.webp) 2x,
+        url(../img/slide4_tablet.jpg) 1x,
+        url(../img/slide4_tablet_2x.jpg) 2x
+      );
     }
     @media screen and (min-width: $contentWidth1) {
-      background-image: url(../img/slide4.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide4_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide4.webp) 1x,
+        url(../img/slide4_2x.webp) 2x,
+        url(../img/slide4.jpg) 1x,
+        url(../img/slide4_2x.jpg) 2x
+      );
     }
   }
   .item-5 {
-    background-image: url(../img/slide5_phone.jpg);
-    @media screen and (min-width: $contentWidth4) and (min-resolution: 1.5dppx) {
-      background-image: url(../img/slide5_phone_2x.jpg);
-    }
+    background-image: image-set(
+      url(../img/slide5_phone.webp) 1x,
+      url(../img/slide5_phone_2x.webp) 2x,
+      url(../img/slide5_phone.jpg) 1x,
+      url(../img/slide5_phone_2x.jpg) 2x
+    );
     @media screen and (min-width: $contentWidth2) {
-      background-image: url(../img/slide5_tablet.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide5_tablet_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide5_tablet.webp) 1x,
+        url(../img/slide5_tablet_2x.webp) 2x,
+        url(../img/slide5_tablet.jpg) 1x,
+        url(../img/slide5_tablet_2x.jpg) 2x
+      );
     }
     @media screen and (min-width: $contentWidth1) {
-      background-image: url(../img/slide5.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide5_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide5.webp) 1x,
+        url(../img/slide5_2x.webp) 2x,
+        url(../img/slide5.jpg) 1x,
+        url(../img/slide5_2x.jpg) 2x
+      );
     }
   }
   .item-6 {
-    background-image: url(../img/slide6_phone.jpg);
-    @media screen and (min-width: $contentWidth4) and (min-resolution: 1.5dppx) {
-      background-image: url(../img/slide6_phone_2x.jpg);
-    }
+    background-image: image-set(
+      url(../img/slide6_phone.webp) 1x,
+      url(../img/slide6_phone_2x.webp) 2x,
+      url(../img/slide6_phone.jpg) 1x,
+      url(../img/slide6_phone_2x.jpg) 2x
+    );
     @media screen and (min-width: $contentWidth2) {
-      background-image: url(../img/slide6_tablet.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide6_tablet_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide6_tablet.webp) 1x,
+        url(../img/slide6_tablet_2x.webp) 2x,
+        url(../img/slide6_tablet.jpg) 1x,
+        url(../img/slide6_tablet_2x.jpg) 2x
+      );
     }
     @media screen and (min-width: $contentWidth1) {
-      background-image: url(../img/slide6.jpg);
-      @media screen and (min-resolution: 1.5dppx) {
-        background-image: url(../img/slide6_2x.jpg);
-      }
+      background-image: image-set(
+        url(../img/slide6.webp) 1x,
+        url(../img/slide6_2x.webp) 2x,
+        url(../img/slide6.jpg) 1x,
+        url(../img/slide6_2x.jpg) 2x
+      );
     }
   }
 
   .owl-controls {
     display: none;
+
     @media screen and (min-width: $contentWidth2) {
       display: inline-block;
       position: relative;
@@ -513,6 +566,7 @@ header {
   text-align: left;
   font-size: $fontSize3;
   line-height: $fontSize5;
+
   @media screen and (min-width: $contentWidth2) {
     font-size: $fontSize4;
     line-height: $fontSize6;
@@ -524,15 +578,16 @@ header {
   .articles__article {
     margin-top: 20px;
     text-align: left;
+
     @media screen and (min-width: $contentWidth2) {
       text-align: justify;
     }
 
-  ul {
-    list-style: disc;
-    padding-left: 12px;
+    ul {
+      list-style: disc;
+      padding-left: 12px;
+    }
   }
-}
 
   .articles__article-center {
     text-align: center !important;
@@ -546,6 +601,7 @@ header {
     font-size: $fontSize5;
     line-height: $fontSize7;
     font-weight: bold;
+
     @media screen and (min-width: $contentWidth1) {
       font-size: $fontSize6;
       line-height: $fontSize8;
@@ -565,6 +621,7 @@ header {
   .articles__container {
     text-align: center;
     display: inline-block;
+
     @media screen and (min-width: $contentWidth1) {
       width: 790px;
     }
@@ -580,6 +637,7 @@ header {
   transform-style: preserve-3d;
   perspective: 400px;
   transition: 0.5s;
+
   @media screen and (min-width: $contentWidth2) {
     width: 340px;
   }
@@ -595,7 +653,8 @@ header {
     transform: rotateX(-180deg);
   }
 
-  .flipping_card__front, .flipping_card__back {
+  .flipping_card__front,
+  .flipping_card__back {
     position: absolute;
     top: 0;
     left: 0;
@@ -633,6 +692,7 @@ header {
     padding-right: 4px;
     padding-left: 4px;
     text-align: center;
+
     @media screen and (min-width: $contentWidth2) {
       font-size: $fontSize7;
       line-height: $fontSize8;
@@ -645,38 +705,48 @@ header {
 }
 
 .flipping_card:nth-of-type(1) .flipping_card__front {
-  background-image: url(../img/pk.jpg);
   background-size: cover;
-  @media screen and (min-resolution: 1.5dppx) {
-    background-image: url(../img/pk_2x.jpg);
-  }
+  background-image: image-set(
+    url(../img/pk.webp) 1x,
+    url(../img/pk_2x.webp) 2x,
+    url(../img/pk.jpg) 1x,
+    url(../img/pk_2x.jpg) 2x
+  );
 }
 .flipping_card:nth-of-type(2) .flipping_card__front {
   background-size: cover;
-  background-image: url(../img/rm.jpg);
-  @media screen and (min-resolution: 1.5dppx) {
-    background-image: url(../img/rm_2x.jpg);
-  }
+  background-image: image-set(
+    url(../img/rm.webp) 1x,
+    url(../img/rm_2x.webp) 2x,
+    url(../img/rm.jpg) 1x,
+    url(../img/rm_2x.jpg) 2x
+  );
 }
 .flipping_card:nth-of-type(3) .flipping_card__front {
   background-size: cover;
-  background-image: url(../img/notebook-repair.jpg);
-  @media screen and (min-resolution: 1.5dppx) {
-    background-image: url(../img/notebook-repair_2x.jpg);
-  }
+  background-image: image-set(
+    url(../img/notebook-repair.webp) 1x,
+    url(../img/notebook-repair_2x.webp) 2x,
+    url(../img/notebook-repair.jpg) 1x,
+    url(../img/notebook-repair_2x.jpg) 2x
+  );
 }
+
 .flipping_card:nth-of-type(4) .flipping_card__front {
   background-size: cover;
-  background-image: url(../img/printer-repair.jpg);
-  @media screen and (min-resolution: 1.5dppx) {
-    background-image: url(../img/printer-repair_2x.jpg);
-  }
+  background-image: image-set(
+    url(../img/printer-repair.webp) 1x,
+    url(../img/printer-repair_2x.webp) 2x,
+    url(../img/printer-repair.jpg) 1x,
+    url(../img/printer-repair_2x.jpg) 2x
+  );
 }
 
 .informers {
   grid-row: 4 / 5;
   margin-bottom: 10px;
   text-align: center;
+
   @media screen and (min-width: $contentWidth1) {
     margin-bottom: 0px;
     grid-column: 1 / 2;
@@ -684,7 +754,6 @@ header {
   }
 
   h2 {
-    // appearance: none;
     @extend %invisible_header;
   }
 
@@ -695,6 +764,7 @@ header {
     width: 180px;
     margin: 0;
     vertical-align: top;
+
     @media screen and (min-width: $contentWidth2) {
       margin-left: 60px;
       margin-right: 60px;
@@ -710,8 +780,9 @@ header {
       border-radius: 4px;
       height: 136px;
       background-color: $siteColor1;
+
       @media (prefers-color-scheme: dark) {
-          background-color: darken($siteColor1, 20%);
+        background-color: darken($siteColor1, 20%);
       }
       .currency_label {
         display: inline-block;
@@ -731,7 +802,6 @@ header {
         font-size: $fontSize3;
         color: $siteColor5;
       }
-
 
       td {
         box-sizing: border-box;
@@ -758,11 +828,8 @@ header {
 
       .weather_description {
         font-size: $fontSize2;
-        // max-height: $fontSize3;
-        // max-width: 170px;
         white-space: nowrap;
         overflow-x: hidden;
-        // text-overflow: clip;
       }
 
       .wind_description {
@@ -793,6 +860,7 @@ header {
 footer {
   @extend .content;
   grid-row: 3 / 4;
+
   @media screen and (min-width: $contentWidth1) {
     grid-column: 1 / 3;
   }
@@ -809,6 +877,7 @@ footer {
       font-weight: bold;
       font-size: $fontSize4;
       line-height: $fontSize5;
+
       @media screen and (min-width: $contentWidth2) {
         font-size: $fontSize4;
         line-height: $fontSize5;
@@ -827,12 +896,14 @@ footer {
         padding-left: 10px;
         padding-right: 10px;
         cursor: pointer;
+
         @media screen and (min-width: $contentWidth2) {
           border: solid 0px $siteColor2;
         }
 
         &:hover {
           background: $siteColor1;
+
           @media screen and (min-width: $contentWidth2) {
             background: transparent;
           }
@@ -851,6 +922,7 @@ footer {
 
     .footer__copyright {
       display: none;
+
       @media screen and (min-width: $contentWidth1) {
         display: inline;
         padding-bottom: 10px;
@@ -862,13 +934,10 @@ footer {
 .readme {
   display: none;
   padding: 5px;
-  // position: fixed;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  // margin-left: -157px;
-  // margin-top: -190px;
+  transform: translate(-50%, -50%);
   width: 300px;
   border: 2px solid $siteColor5;
   border-radius: 5px;
@@ -878,13 +947,12 @@ footer {
   text-align: center;
   font-size: $fontSize4;
   line-height: $fontSize5;
+
   @media screen and (min-width: $contentWidth2) {
     padding: 10px;
     top: 50%;
     left: 50%;
     line-height: $fontSize6;
-    // margin-left: -312px;
-    // margin-top: -162px;
     width: 600px;
     height: 424px;
   }
@@ -893,6 +961,7 @@ footer {
     text-align: left;
     overflow-y: auto;
     max-height: 310px;
+
     @media screen and (min-width: $contentWidth2) {
       max-height: 480px;
     }

@@ -17,7 +17,7 @@ function brOpen() {
     webserver({
       livereload: true,
       open: 'http://localhost:8000',
-    }),
+    })
   );
 }
 
@@ -38,7 +38,7 @@ function prepareCss() {
     .pipe(
       concatCss('./build/css/style.min.css', {
         rebaseUrls: false,
-      }),
+      })
     )
     .pipe(gcmq())
     .pipe(cleanCSS())
@@ -53,7 +53,7 @@ function prepareSass() {
       autoprefixer({
         autoprefixer: ['last 2 versions'],
         cascade: false,
-      }),
+      })
     )
     .pipe(gulp.dest('./src/css'));
 }
@@ -78,7 +78,7 @@ function images() {
           oxipng: {
             quality: 70,
           },
-        }),
+        })
       )
       // .pipe(
       //   squoosh({
@@ -91,7 +91,7 @@ function images() {
   );
 }
 
-exports.images = series(images);
+exports.images = images;
 
 // function css(cb) {
 //   cb();
@@ -118,5 +118,9 @@ function watcher() {
 // exports.scripts = prepareJs;
 // exports.brOpen = brOpen;
 // exports.html = prepareHtml;
-exports.build = parallel(prepareHtml, prepareJs, series(prepareSass, prepareCss));
+exports.build = parallel(
+  prepareHtml,
+  prepareJs,
+  series(prepareSass, prepareCss)
+);
 exports.default = parallel(brOpen, watcher);
