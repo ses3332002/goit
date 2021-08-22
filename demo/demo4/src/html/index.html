@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
-//= templates/head.html
-<body>
-  <svg style="display: none;">
-    <symbol id="check_symbol" viewBox="0 0 60 60">
-      <path d = "M 6,33 C -2.6,7.4 25,46.4 25,46.4 40.3,24.5 54,8.9 58.2,8.9 c 4.1,0 -3.2,11.6 -13.6,24.4 C 36.9,43.3 30.6,59.5 24,59.3 20.2,59.5 13.3,46.8 6.1,32.8 Z"
-        fill="currentColor" />
-    </symbol>
-  </svg>
+  //= templates/head.html
+  <body>
+    <svg style="display: none">
+      <symbol id="check_symbol" viewBox="0 0 60 60">
+        <path
+          d="M 6,33 C -2.6,7.4 25,46.4 25,46.4 40.3,24.5 54,8.9 58.2,8.9 c 4.1,0 -3.2,11.6 -13.6,24.4 C 36.9,43.3 30.6,59.5 24,59.3 20.2,59.5 13.3,46.8 6.1,32.8 Z"
+          fill="currentColor"
+        />
+      </symbol>
+    </svg>
 
-  <h1>Фотогалерея</h1>
+    <h1>Фотогалерея</h1>
 
-  <section class="gallery_settings">
-    <h2>Настройки</h2>
-    <div class="settings">
+    <section class="gallery_settings">
+      <h2>Настройки</h2>
+      <div class="settings">
+        //= templates/theme_selector.html
+        <!-- comment -->
+        //= templates/bg_color_selector.html
+        <!-- comment -->
+        //= templates/exif_checker.html
+      </div>
+      <div class="disclaimer">
+        Полноэкранный режим: клик/тач.<br />
+        Выход: Esc/клик/тач.<br />
+        Масштаб: NumPad + и -/Ctrl+прокрутка/щипок.<br />
+        Предыдущий/следующий снимок: как угодно.
+      </div>
+    </section>
+    <section class="gallery">
+      <h2>Фотографии</h2>
+      <div class="gallery__container">
+        <img tabindex="0" src="./build/img/img01.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img02.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img03.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img04.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img05.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img06.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img07.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img08.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img09.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img10.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img11.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img12.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img13.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img14.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img15.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img16.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img17.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img18.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img19.jpg" alt="фотография" />
+        <img tabindex="0" src="./build/img/img20.jpg" alt="фотография" />
+      </div>
+    </section>
 
-      //= templates/theme_selector.html
-
-      //= templates/bg_color_selector.html
-
-      //= templates/exif_checker.html
-
-    </div>
-    <div class="disclaimer">
-      Полноэкранный режим: клик/тач.<br>
-      Выход: Esc/клик/тач.<br>
-      Масштаб: NumPad + и -/Ctrl+прокрутка/щипок.<br>
-      Предыдущий/следующий снимок: как угодно.
-    </div>
-  </section>
-  <section class="gallery">
-    <h2>Фотографии</h2>
-    <div class="gallery__container">
-      <img tabindex="0" src="./build/img/img01.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img02.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img03.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img04.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img05.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img06.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img07.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img08.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img09.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img10.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img11.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img12.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img13.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img14.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img15.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img16.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img17.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img18.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img19.jpg" alt="фотография">
-      <img tabindex="0" src="./build/img/img20.jpg" alt="фотография">
-    </div>
-  </section>
-
-  //= templates/footer.html
-</body>
+    //= templates/footer.html
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/exif-js" defer></script> -->
+  </body>
 </html>

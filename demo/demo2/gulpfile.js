@@ -93,21 +93,6 @@ function images() {
 
 exports.images = images;
 
-// function css(cb) {
-//   cb();
-// }
-
-// function javascript(cb) {
-//   //   cb(new Error('kaboom'));
-//   cb();
-// }
-
-// function streamTask() {
-//   return src('*.js').pipe(dest('output'));
-// }
-
-// exports.build = series(clean, parallel(css, javascript));
-
 function watcher() {
   watch('./src/scss/*.scss', series(prepareSass, prepareCss));
   watch('./src/js/*.js', prepareJs);
