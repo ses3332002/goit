@@ -160,7 +160,7 @@ function brOpen() {
 
 function prepareHtml() {
   return gulp
-    .src('./src/html/*.html')
+    .src('./src/html/index.html')
     .pipe(rigger())
     .pipe(webphtml(['.jpg', '.png']))
     .pipe(gulp.dest('.'));
