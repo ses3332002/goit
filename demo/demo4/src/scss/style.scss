@@ -103,24 +103,23 @@ h2 {
   margin-left: 0;
   margin-right: 0;
   object-fit: contain;
-  transition: opacity 0.3s;
-  transform-origin: left top;
+  animation: appear 0.4s normal;
+  animation-timing-function: ease-in-out;
+
+  &-zoom {
+    transform-origin: left top;
+  }
 }
 
-.fullscreen_img-appear {
-  opacity: 0;
-}
-
-.fullscreen_img-fade_to_right {
-  transition: all 0.3s;
-  margin-left: 35px;
-  opacity: 0;
-}
-
-.fullscreen_img-fade_to_left {
-  transition: all 0.3s;
-  margin-left: -35px;
-  opacity: 0;
+@keyframes appear {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .fs_exif_info {
