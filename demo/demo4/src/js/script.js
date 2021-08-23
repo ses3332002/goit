@@ -171,37 +171,17 @@ function zoomOut() {
 function fsTouchHandler(e) {
   let distanceSwipeStart;
   let distanceSwipeEnd;
-  // let swipeStart = 0;
-
-  // function distance(p1, p2) {
-  //   return Math.sqrt(Math.pow(p1.clientX - p2.clientX, 2) + Math.pow(p1.clientY - p2.clientY, 2));
-  // }
 
   e.preventDefault();
   e.stopPropagation();
-  // if (e.targetTouches[1]) {
-  //   swipeStart = 1;
-  //   distanceSwipeStart = distance(e.targetTouches[0], e.targetTouches[1]);
-  //   fullscreenImg.addEventListener('touchmove', touchMoveHandler);
-  // } else {
   eventTouchToMouse = new Event('mousedown');
   eventTouchToMouse.clientX = e.targetTouches[0].clientX;
   fullscreenBack.dispatchEvent(eventTouchToMouse);
   fullscreenImg.addEventListener('touchend', touchEndHandler);
-  // }
 
   function touchMoveHandler(e) {
     e.preventDefault();
     e.stopPropagation();
-    // fullscreenImg.addEventListener('touchend', touchEndHandler);
-    // if (swipeStart) {
-    //   distanceSwipeEnd = distance(e.targetTouches[0], e.targetTouches[1]);
-    //   if (distanceSwipeStart > distanceSwipeEnd) {
-    //     zoomOut();
-    //   } else {
-    //     zoomIn();
-    //   }
-    // }
   }
 
   function touchEndHandler(e) {
