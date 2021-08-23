@@ -1,48 +1,69 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <html><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Gallery">
-    <title>Фотогалерея</title>
-    <link rel="stylesheet" href="./build/css/style.css">
-    <link rel="preload" href="./build/fonts/helveticaneuecyr-light-webfont.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="./build/fonts/Bellota-Regular.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="./build/fonts/PTSans-Regular.woff2" as="font" crossorigin="anonymous">
-    <link rel="prefetch" href="./build/img/fullsize/img01.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img02.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img03.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img04.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img05.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img06.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img07.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img08.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img09.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img10.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img11.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img12.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img13.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img14.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img15.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img16.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img17.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img18.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img19.webp">
-    <link rel="prefetch" href="./build/img/fullsize/img20.webp">
-    <script src="./build/js/script.js" defer=""></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-  <link rel="manifest" href="./site.webmanifest">
-  <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="./favicon.ico">
-  <meta name="apple-mobile-web-app-title" content="Gallery">
-  <meta name="application-name" content="Gallery">
-  <meta name="msapplication-TileColor" content="#603cba">
-  <meta name="msapplication-config" content="./browserconfig.xml">
-  <meta name="theme-color" content="#ffffff"></head>
-  <body></body></html>
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <meta name="description" content="Gallery" />
+      <title>Фотогалерея</title>
+      <link rel="stylesheet" href="./build/css/style.css" />
+      <link
+        rel="preload"
+        href="./build/fonts/helveticaneuecyr-light-webfont.woff2"
+        as="font"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="./build/fonts/Bellota-Regular.woff2"
+        as="font"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="./build/fonts/PTSans-Regular.woff2"
+        as="font"
+        crossorigin="anonymous"
+      />
+      <link rel="prefetch" href="./build/img/fullsize/img01.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img02.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img03.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img04.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img05.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img06.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img07.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img08.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img09.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img10.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img11.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img12.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img13.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img14.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img15.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img16.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img17.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img18.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img19.webp" as="image" />
+      <link rel="prefetch" href="./build/img/fullsize/img20.webp" as="image" />
+      <script src="./build/js/script.js" defer=""></script>
+      <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+      <link rel="manifest" href="./site.webmanifest" />
+      <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5" />
+      <link rel="shortcut icon" href="./favicon.ico" />
+      <meta name="apple-mobile-web-app-title" content="Gallery" />
+      <meta name="application-name" content="Gallery" />
+      <meta name="msapplication-TileColor" content="#603cba" />
+      <meta name="msapplication-config" content="./browserconfig.xml" />
+      <meta name="theme-color" content="#ffffff" />
+    </head>
+    <body></body>
+  </html>
   <body>
     <svg style="display: none">
       <symbol id="check_symbol" viewBox="0 0 60 60">
@@ -103,140 +124,140 @@
 									<picture>
 										<source srcset="./build/img/img01.webp" type="image/webp">
 										<source srcset="./build/img/img01.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img01.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img01.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img02.webp" type="image/webp">
 										<source srcset="./build/img/img02.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img02.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img02.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img03.webp" type="image/webp">
 										<source srcset="./build/img/img03.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img03.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img03.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img04.webp" type="image/webp">
 										<source srcset="./build/img/img04.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img04.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img04.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img05.webp" type="image/webp">
 										<source srcset="./build/img/img05.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img05.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img05.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img06.webp" type="image/webp">
 										<source srcset="./build/img/img06.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img06.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img06.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img07.webp" type="image/webp">
 										<source srcset="./build/img/img07.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img07.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img07.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img08.webp" type="image/webp">
 										<source srcset="./build/img/img08.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img08.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img08.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img09.webp" type="image/webp">
 										<source srcset="./build/img/img09.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img09.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img09.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img10.webp" type="image/webp">
 										<source srcset="./build/img/img10.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img10.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img10.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img11.webp" type="image/webp">
 										<source srcset="./build/img/img11.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img11.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img11.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img12.webp" type="image/webp">
 										<source srcset="./build/img/img12.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img12.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img12.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img13.webp" type="image/webp">
 										<source srcset="./build/img/img13.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img13.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img13.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img14.webp" type="image/webp">
 										<source srcset="./build/img/img14.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img14.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img14.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img15.webp" type="image/webp">
 										<source srcset="./build/img/img15.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img15.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img15.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img16.webp" type="image/webp">
 										<source srcset="./build/img/img16.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img16.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img16.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img17.webp" type="image/webp">
 										<source srcset="./build/img/img17.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img17.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img17.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img18.webp" type="image/webp">
 										<source srcset="./build/img/img18.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img18.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img18.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img19.webp" type="image/webp">
 										<source srcset="./build/img/img19.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img19.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img19.jpg" alt="фотография" />
 									</picture>
 								
 
 									<picture>
 										<source srcset="./build/img/img20.webp" type="image/webp">
 										<source srcset="./build/img/img20.jpg" type="image/jpeg">
-										<img tabindex="0" src="./build/img/img20.jpg" alt="фотография" loading="lazy" />
+										<img tabindex="0" src="./build/img/img20.jpg" alt="фотография" />
 									</picture>
 								
       </div>
