@@ -17,6 +17,35 @@ const fs = require('fs');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const imagemin = require('gulp-imagemin');
 const cwebp = require('gulp-cwebp');
+const imageResize = require('gulp-image-resize');
+const rename = require('gulp-rename');
+
+function thumbs() {
+  return (
+    gulp
+      .src('./build/img/fullsize/*')
+      .pipe(
+        imageResize({
+          width: 910,
+          height: 0,
+          crop: false,
+          upscale: false,
+        })
+      )
+      // .pipe(
+      //   rename(function (path) {
+      //     // Updates the object in-place
+      //     // path.dirname += "/ciao";
+      //     path.basename += '_thumb';
+      //     // path.extname = ".md";
+      //   })
+      // )
+      // .pipe(gulp.dest("./dist"));
+      .pipe(gulp.dest('./build/img'))
+  );
+}
+
+exports.thumbs = thumbs;
 
 function img2webp() {
   return (
@@ -59,7 +88,7 @@ function generateFavicon(done) {
     {
       masterPicture: 'src/icons/logo_templ.png',
       dest: './',
-      iconsPath: '/',
+      iconsPath: './',
       design: {
         ios: {
           pictureAspect: 'backgroundAndMargin',
