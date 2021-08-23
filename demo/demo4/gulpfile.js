@@ -34,7 +34,7 @@ function img2min() {
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 75, progressive: true }),
+        imagemin.mozjpeg({ quality: 70, progressive: true }),
         imagemin.optipng({ optimizationLevel: 5 }),
         imagemin.svgo({
           plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
@@ -47,10 +47,7 @@ function img2min() {
 exports.images = parallel(img2min, img2webp);
 
 function fontConvert() {
-  return gulp
-    .src(['./src/fonts/*.ttf'])
-    .pipe(ttf2woff2())
-    .pipe(gulp.dest('./build/fonts/'));
+  return gulp.src(['./src/fonts/*.ttf']).pipe(ttf2woff2()).pipe(gulp.dest('./build/fonts/'));
 }
 
 exports.fonts = fontConvert;
@@ -204,7 +201,7 @@ function prepareJs() {
       // .pipe(rigger())
       .pipe(plumber())
       // .pipe(concat('script.min.js', { newLine: ';' }))
-      // .pipe(uglify())
+      .pipe(uglify())
       .pipe(gulp.dest('./build/js'))
   );
 }
@@ -236,7 +233,7 @@ function watcher() {
 }
 
 exports.styles = series(prepareSass);
-// exports.scripts = prepareJs;
+exports.scripts = prepareJs;
 // exports.brOpen = brOpen;
 // exports.html = prepareHtml;
 

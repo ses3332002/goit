@@ -62,9 +62,7 @@ function bgReset(e) {
 }
 
 let showEXIF = false;
-document
-  .getElementById('exif_option')
-  .addEventListener('change', EXIFCheckboxHandler);
+document.getElementById('exif_option').addEventListener('change', EXIFCheckboxHandler);
 
 function EXIFCheckboxHandler(e) {
   e.target.checked ? (showEXIF = true) : (showEXIF = false);
@@ -174,10 +172,7 @@ function fsTouchHandler(e) {
   let swipeStart = 0;
 
   function distance(p1, p2) {
-    return Math.sqrt(
-      Math.pow(p1.clientX - p2.clientX, 2) +
-        Math.pow(p1.clientY - p2.clientY, 2)
-    );
+    return Math.sqrt(Math.pow(p1.clientX - p2.clientX, 2) + Math.pow(p1.clientY - p2.clientY, 2));
   }
 
   e.preventDefault();
@@ -196,7 +191,7 @@ function fsTouchHandler(e) {
   function touchMoveHandler(e) {
     e.preventDefault();
     e.stopPropagation();
-    fullscreenImg.addEventListener('touchend', touchEndHandler);
+    // fullscreenImg.addEventListener('touchend', touchEndHandler);
     if (swipeStart) {
       distanceSwipeEnd = distance(e.targetTouches[0], e.targetTouches[1]);
       if (distanceSwipeStart > distanceSwipeEnd) {
@@ -222,10 +217,7 @@ function fsTouchHandler(e) {
 function fsMouseHandler(e) {
   firstX = e.clientX;
   firstY = e.clientY;
-  if (
-    firstX > fullscreenBack.clientWidth ||
-    firstY > fullscreenBack.clientHeight
-  ) {
+  if (firstX > fullscreenBack.clientWidth || firstY > fullscreenBack.clientHeight) {
     return;
   }
 
@@ -258,11 +250,7 @@ function fsKeyHandler(e) {
     zoomOut();
   } else if (e.key == 'ArrowLeft' || e.key == 'ArrowUp' || e.key == 'PageUp') {
     prevImg();
-  } else if (
-    e.key == 'ArrowRight' ||
-    e.key == 'ArrowDown' ||
-    e.key == 'PageDown'
-  ) {
+  } else if (e.key == 'ArrowRight' || e.key == 'ArrowDown' || e.key == 'PageDown') {
     nextImg();
   }
 }
