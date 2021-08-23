@@ -36,7 +36,7 @@ themeBtns.forEach((el, i) => {
   el.style.setProperty('background-color', themes[i].color2);
   el.style.setProperty('border-color', themes[i].color3);
   el.style.setProperty('font-family', themes[i].font);
-  el.style.setProperty('font-size', themes[i].baseFontSize - 1 + 'px');
+  el.style.setProperty('font-size', `${themes[i].baseFontSize - 1}px`);
   el.addEventListener('click', () => themeReset(i));
 });
 
@@ -45,20 +45,20 @@ function themeReset(index) {
   doc.style.setProperty('--background_color', themes[index].color2);
   doc.style.setProperty('--decor_color', themes[index].color3);
   doc.style.setProperty('--font_family', themes[index].font);
-  doc.style.setProperty('--base_font_size', themes[index].baseFontSize + 'px');
+  doc.style.setProperty('--base_font_size', `${themes[index].baseFontSize}px`);
 }
 
 bgBtns.forEach((el, i) => {
   el.style.setProperty(
     'background-color',
-    'hsl(0, 0%, ' + (1 + el.previousElementSibling.value * 18) + '%)'
+    `hsl(0, 0%, ${1 + el.previousElementSibling.value * 18}%)`
   );
 });
 
 document.forms.bgSelect.addEventListener('input', bgReset);
 
 function bgReset(e) {
-  doc.style.setProperty('--fs_bg_color', 1 + e.target.value * 18 + '%');
+  doc.style.setProperty('--fs_bg_color', `${1 + e.target.value * 18}%`);
 }
 
 let showEXIF = false;
@@ -171,37 +171,37 @@ function zoomOut() {
 function fsTouchHandler(e) {
   let distanceSwipeStart;
   let distanceSwipeEnd;
-  let swipeStart = 0;
+  // let swipeStart = 0;
 
-  function distance(p1, p2) {
-    return Math.sqrt(Math.pow(p1.clientX - p2.clientX, 2) + Math.pow(p1.clientY - p2.clientY, 2));
-  }
+  // function distance(p1, p2) {
+  //   return Math.sqrt(Math.pow(p1.clientX - p2.clientX, 2) + Math.pow(p1.clientY - p2.clientY, 2));
+  // }
 
   e.preventDefault();
   e.stopPropagation();
-  if (e.targetTouches[1]) {
-    swipeStart = 1;
-    distanceSwipeStart = distance(e.targetTouches[0], e.targetTouches[1]);
-    fullscreenImg.addEventListener('touchmove', touchMoveHandler);
-  } else {
-    eventTouchToMouse = new Event('mousedown');
-    eventTouchToMouse.clientX = e.targetTouches[0].clientX;
-    fullscreenBack.dispatchEvent(eventTouchToMouse);
-    fullscreenImg.addEventListener('touchend', touchEndHandler);
-  }
+  // if (e.targetTouches[1]) {
+  //   swipeStart = 1;
+  //   distanceSwipeStart = distance(e.targetTouches[0], e.targetTouches[1]);
+  //   fullscreenImg.addEventListener('touchmove', touchMoveHandler);
+  // } else {
+  eventTouchToMouse = new Event('mousedown');
+  eventTouchToMouse.clientX = e.targetTouches[0].clientX;
+  fullscreenBack.dispatchEvent(eventTouchToMouse);
+  fullscreenImg.addEventListener('touchend', touchEndHandler);
+  // }
 
   function touchMoveHandler(e) {
     e.preventDefault();
     e.stopPropagation();
     // fullscreenImg.addEventListener('touchend', touchEndHandler);
-    if (swipeStart) {
-      distanceSwipeEnd = distance(e.targetTouches[0], e.targetTouches[1]);
-      if (distanceSwipeStart > distanceSwipeEnd) {
-        zoomOut();
-      } else {
-        zoomIn();
-      }
-    }
+    // if (swipeStart) {
+    //   distanceSwipeEnd = distance(e.targetTouches[0], e.targetTouches[1]);
+    //   if (distanceSwipeStart > distanceSwipeEnd) {
+    //     zoomOut();
+    //   } else {
+    //     zoomIn();
+    //   }
+    // }
   }
 
   function touchEndHandler(e) {
@@ -234,13 +234,9 @@ function fsMouseHandler(e) {
     } else if (firstX - lastX > 20) {
       prevImg();
     } else if (firstX - lastX < 20 || lastX - firstX < 20) {
-      fsClickHandler();
+      fullscreenEsc();
     }
   }
-}
-
-function fsClickHandler() {
-  fullscreenEsc();
 }
 
 function fsKeyHandler(e) {
@@ -259,7 +255,6 @@ function fsKeyHandler(e) {
 
 function fullscreenEsc() {
   normalScale();
-
   hideImage();
   fullscreenOut();
 }
@@ -289,7 +284,7 @@ function nextImg() {
   }
   fullscreenImg.setAttribute('src', '');
   fullscreenImg.remove();
-  setTimeout(function () {
+  setTimeout(() => {
     showImage(currImg);
   }, 60);
 }
@@ -303,7 +298,7 @@ function prevImg() {
   }
   fullscreenImg.setAttribute('src', '');
   fullscreenImg.remove();
-  setTimeout(function () {
+  setTimeout(() => {
     showImage(currImg);
   }, 60);
 }
@@ -315,12 +310,12 @@ function showImage(elem) {
     elem.childNodes[5].currentSrc.replace('build/img', 'build/img/fullsize')
   );
   fullscreenBack.append(fullscreenImg);
-  fullscreenImg.addEventListener('dragstart', function (e) {
+  fullscreenImg.addEventListener('dragstart', (e) => {
     e.preventDefault();
   });
 
   fullscreenImg.addEventListener('touchstart', fsTouchHandler);
-  fullscreenImg.addEventListener('click', function (e) {
+  fullscreenImg.addEventListener('click', (e) => {
     e.preventDefault();
   });
   if (showEXIF) {
@@ -330,11 +325,7 @@ function showImage(elem) {
 
 function hideImage() {
   fullscreenImg.classList.remove('fullscreen_img');
-
   fullscreenImg.removeEventListener('touchstart', fsTouchHandler);
-  fullscreenImg.removeEventListener('click', function (e) {
-    e.preventDefault();
-  });
   if (showEXIF) {
     exifInfo.remove();
   }
@@ -349,19 +340,14 @@ function getExif(el) {
   let allMetaData;
   EXIF.getData(el, function () {
     if (Boolean(EXIF.getTag(this, 'Make'))) {
-      allMetaData =
-        'Камера ' +
-        EXIF.getTag(this, 'Make') +
-        ' ' +
-        EXIF.getTag(this, 'Model') +
-        ', дата и время ' +
-        EXIF.getTag(this, 'DateTime') +
-        ', ISO ' +
-        EXIF.getTag(this, 'ISOSpeedRatings') +
-        ', выдержка 1/' +
-        Math.round(1 / EXIF.getTag(this, 'ExposureTime')) +
-        ', диафрагма ' +
-        EXIF.getTag(this, 'FNumber');
+      allMetaData = `Камера ${EXIF.getTag(this, 'Make')} ${EXIF.getTag(
+        this,
+        'Model'
+      )}, дата и время: ${EXIF.getTag(this, 'DateTime')}, ISO ${EXIF.getTag(
+        this,
+        'ISOSpeedRatings'
+      )}, выдержка 1/${Math.round(1 / EXIF.getTag(this, 'ExposureTime'))}, диафрагма 
+${EXIF.getTag(this, 'FNumber')}`;
     } else {
       allMetaData = 'нет данных';
     }
